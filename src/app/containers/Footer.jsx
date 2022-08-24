@@ -139,7 +139,7 @@ function Footer(props) {
               <div>
                 <ReactCountryFlag countryCode="us" svg />
                 {' '}
-                en
+                EN
               </div>
             </MenuItem>
             <MenuItem
@@ -151,7 +151,7 @@ function Footer(props) {
               <div>
                 <ReactCountryFlag countryCode="fr" svg />
                 {' '}
-                fr
+                FR
               </div>
             </MenuItem>
             <MenuItem
@@ -163,7 +163,7 @@ function Footer(props) {
               <div>
                 <ReactCountryFlag countryCode="nl" svg />
                 {' '}
-                nl
+                NL
               </div>
             </MenuItem>
           </Menu>
