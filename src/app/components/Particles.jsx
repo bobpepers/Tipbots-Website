@@ -2,6 +2,8 @@ import React from 'react';
 import Particles from 'react-tsparticles';
 import { loadFull } from 'tsparticles';
 import Runebase from '../assets/images/runebaseloop.gif';
+import Pirate from '../assets/images/pirate.png';
+import Tokel from '../assets/images/tokel.png';
 
 function ParticlesRunebase() {
   const particlesInit = async (main) => {
@@ -120,11 +122,23 @@ function ParticlesRunebase() {
                 },
                 shape: {
                   type: 'image',
-                  image: {
-                    src: Runebase,
-                    height: 76,
-                    width: 100,
-                  },
+                  image: [
+                    {
+                      src: Runebase,
+                      height: 76,
+                      width: 100,
+                    },
+                    {
+                      src: Pirate,
+                      height: 100,
+                      width: 100,
+                    },
+                    {
+                      src: Tokel,
+                      height: 100,
+                      width: 100,
+                    },
+                  ],
                 },
               },
               interactivity: {

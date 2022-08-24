@@ -19,6 +19,9 @@ import AccountCircle from '@mui/icons-material/AccountCircle';
 import IconButton from '@mui/material/IconButton';
 import { Trans } from '@lingui/macro';
 import { ReactComponent as MobileNav } from '../assets/images/mobilenav.svg';
+import Runebase from '../assets/images/runebaseloop.gif';
+import Pirate from '../assets/images/pirate.png';
+import Tokel from '../assets/images/tokel.png';
 
 const Header = function (props) {
   const {
@@ -29,8 +32,8 @@ const Header = function (props) {
   const heightRef = useRef(null);
   const [menu, setMenu] = useState(false);
   const [height, setHeight] = useState(0);
-  const [anchorElManagement, setAnchorElManagement] = useState(null);
-  const openManagement = Boolean(anchorElManagement);
+  const [anchorElTipBots, setAnchorElTipBots] = useState(null);
+  const openTipBots = Boolean(anchorElTipBots);
   const [anchorElFunctions, setAnchorElFunctions] = useState(null);
   const openFunctions = Boolean(anchorElFunctions);
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -58,25 +61,15 @@ const Header = function (props) {
     setMenu(!menu);
   };
 
-  const handleClickManagement = (event) => {
-    setAnchorElManagement(event.currentTarget);
+  const handleClickTipbots = (event) => {
+    setAnchorElTipBots(event.currentTarget);
   };
-  const handleCloseManagement = () => {
-    setAnchorElManagement(null);
+  const handleCloseTipbots = () => {
+    setAnchorElTipBots(null);
   };
 
-  const handleClickFunctions = (event) => {
-    setAnchorElFunctions(event.currentTarget);
-  };
-  const handleCloseFunctions = () => {
-    setAnchorElFunctions(null);
-  };
   const handleProfileMenuOpen = (event) => {
     setAnchorEl(event.currentTarget);
-  };
-  const handleMenuClose = () => {
-    setAnchorEl(null);
-    // handleMobileMenuClose();
   };
 
   const show = (menu) ? 'show' : '';
@@ -119,20 +112,57 @@ const Header = function (props) {
               <Trans>Home</Trans>
             </Button>
             <Button
-              component={Link}
+              aria-controls="basic-menu"
+              aria-haspopup="true"
+              aria-expanded={openTipBots ? 'true' : undefined}
+              onClick={handleClickTipbots}
               variant="outlined"
               style={{
                 fontSize: '14px',
                 fontWeight: 200,
                 marginRight: '10px',
               }}
-              size="large"
-              to="/tipbots"
-              aria-controls="basic-menu"
-              aria-haspopup="true"
             >
               <Trans>Tipbots</Trans>
             </Button>
+            <Menu
+              anchorEl={anchorElTipBots}
+              open={openTipBots}
+              onClose={handleCloseTipbots}
+              MenuListProps={{
+                //  'aria-labelledby': 'basic-button',
+              }}
+            >
+              <Link
+                className="nav-link"
+                to="/tipbots/runestip"
+              >
+                <MenuItem onClick={handleCloseTipbots}>
+                  <img className="menuIcon" src={Runebase} alt="Runebase Logo" />
+                  RunesTip
+                </MenuItem>
+              </Link>
+
+              <Link
+                className="nav-link"
+                to="/tipbots/piratetip"
+              >
+                <MenuItem onClick={handleCloseTipbots}>
+                  <img className="menuIcon" src={Pirate} alt="Pirate Logo" />
+                  PirateTip
+                </MenuItem>
+              </Link>
+
+              <Link
+                className="nav-link"
+                to="/tipbots/tokeltip"
+              >
+                <MenuItem onClick={handleCloseTipbots}>
+                  <img className="menuIcon" src={Tokel} alt="Tokel Logo" />
+                  TokelTip
+                </MenuItem>
+              </Link>
+            </Menu>
             <Button
               component={Link}
               variant="outlined"
@@ -148,8 +178,24 @@ const Header = function (props) {
             >
               <Trans>Uptime</Trans>
             </Button>
+
+            <Button
+              component={Link}
+              variant="outlined"
+              style={{
+                fontSize: '14px',
+                fontWeight: 200,
+                marginRight: '10px',
+              }}
+              size="large"
+              to="/contact"
+              aria-controls="basic-menu"
+              aria-haspopup="true"
+            >
+              <Trans>Contact</Trans>
+            </Button>
           </Nav>
-          <ul>
+          {/* <ul>
             <li>
               <IconButton
                 size="large"
@@ -163,7 +209,7 @@ const Header = function (props) {
                 <AccountCircle />
               </IconButton>
             </li>
-          </ul>
+          </ul> */}
         </Navbar.Collapse>
       </Navbar>
     </header>
