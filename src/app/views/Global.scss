@@ -12,6 +12,15 @@ body {
   overflow-x: hidden;
 }
 
+.tipBotLinkLogo {
+  width: 128px;
+  height: 128px;
+}
+
+.tipBotLinkLogoContainer {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
 .content {
   position: relative;
   flex: 1;
@@ -46,6 +55,8 @@ svg.MuiSvgIcon-root.MuiSvgIcon-fontSizeMedium.previousArrowDisabled.css-i4bv87-M
 
 .content {
   color: var(--textColorGlobal);
+  margin-left: 16px;
+  margin-right: 16px;
 }
 
 h2 {

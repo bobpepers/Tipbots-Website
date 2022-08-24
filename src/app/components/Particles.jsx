@@ -4,6 +4,7 @@ import { loadFull } from 'tsparticles';
 import Runebase from '../assets/images/runebaseloop.gif';
 import Pirate from '../assets/images/pirate.png';
 import Tokel from '../assets/images/tokel.png';
+import RunesCoin from '../assets/images/runescoin.png';
 
 function ParticlesRunebase() {
   const particlesInit = async (main) => {
@@ -135,6 +136,11 @@ function ParticlesRunebase() {
                     },
                     {
                       src: Tokel,
+                      height: 100,
+                      width: 100,
+                    },
+                    {
+                      src: RunesCoin,
                       height: 100,
                       width: 100,
                     },

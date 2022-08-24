@@ -189,11 +189,11 @@ const Header = function (props) {
                 marginRight: '10px',
               }}
               size="large"
-              to="/contact"
+              to="/support"
               aria-controls="basic-menu"
               aria-haspopup="true"
             >
-              <Trans>Contact</Trans>
+              <Trans>Support</Trans>
             </Button>
           </Nav>
           {/* <ul>
