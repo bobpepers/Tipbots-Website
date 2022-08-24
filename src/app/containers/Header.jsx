@@ -17,7 +17,7 @@ import {
 } from '@mui/material';
 import AccountCircle from '@mui/icons-material/AccountCircle';
 import IconButton from '@mui/material/IconButton';
-import { Trans } from '@lingui/macro'
+import { Trans } from '@lingui/macro';
 import { ReactComponent as MobileNav } from '../assets/images/mobilenav.svg';
 
 const Header = function (props) {

@@ -3,13 +3,16 @@ import React, {
   useState,
 } from 'react';
 import PropTypes from 'prop-types';
+import { Trans } from '@lingui/macro';
 import { useNavigate } from 'react-router-dom';
 import { connect } from 'react-redux';
 import CircularProgress from '@mui/material/CircularProgress';
 import {
   Grid,
   Divider,
+  Typography,
 } from '@mui/material';
+import Runebase from '../assets/images/runebaseloop.gif';
 
 import { withRouter } from '../hooks/withRouter';
 
@@ -36,18 +39,43 @@ const Home = function (props) {
       <Grid
         container
         spacing={0}
-        style={{ marginTop: '5px' }}
+        alignItems="center"
+        justifyContent="center"
       >
+        <Grid
+          item
+          xs={3}
+          md={3}
+        >
+          <img
+            src={Runebase}
+            alt="Runebase Logo"
+          />
+        </Grid>
+        <Grid
+          item
+          xs={12}
+        >
+          <Typography
+            variant="h3"
+            align="center"
+          >
+            <Trans>Personalized Tipbots</Trans>
+          </Typography>
+
+        </Grid>
         <Divider
           style={{ width: '100%' }}
         />
+
       </Grid>
     </div>
   );
 }
 
 Home.propTypes = {
-  classes: PropTypes.object.isRequired,
+  classes: PropTypes.shape({}).isRequired,
+  nodeStatus: PropTypes.shape({}).isRequired,
 };
 
 const mapStateToProps = (state) => ({

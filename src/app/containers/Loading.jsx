@@ -6,7 +6,7 @@ const LoadingContainer = function () {
     <div className="container h-100 loader">
       <div className="row align-items-center h-100">
         <div className="col-6 mx-auto text-center">
-          <img className="mx-auto" src={Runebase} alt="" />
+          <img className="mx-auto" src={Runebase} alt="Runebase Logo" />
           <p className="text-center">Loading</p>
           <div id="fountainG">
             <div id="fountainG_1" className="fountainG" />

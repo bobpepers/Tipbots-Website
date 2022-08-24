@@ -24,13 +24,31 @@ import './assets/fonts/texgyreheros-regular.woff';
 import './theme/style.scss';
 import LoadingContainer from './containers/Loading';
 
-const ParticlesRunebase = lazy(() => import('./components/ParticlesRunebase'));
+const Particles = lazy(() => import('./components/Particles'));
 const Header = lazy(() => import('./containers/Header'));
 const Notifier = lazy(() => import('./containers/Alert'));
 const Footer = lazy(() => import('./containers/Footer'));
 const Routes = lazy(() => import('./routes'));
 
-const theme = createTheme();
+const theme = createTheme({
+  typography: {
+    fontFamily: [
+      'TeXGyreHeros-Regular',
+      'TeXGyreHeros-Bold',
+      '-apple-system',
+      'BlinkMacSystemFont',
+      '"Segoe UI"',
+      'Roboto',
+      '"Helvetica Neue"',
+      'Arial',
+      'sans-serif',
+      '"Apple Color Emoji"',
+      '"Segoe UI Emoji"',
+      '"Segoe UI Symbol"',
+    ].join(','),
+  },
+});
+
 const notistackRef = createRef();
 
 const styles = {
@@ -78,7 +96,7 @@ function App() {
               <BrowserRouter>
                 <Suspense fallback={<LoadingContainer />}>
                   <Notifier />
-                  <ParticlesRunebase />
+                  <Particles />
                   <Header />
                   <Routes />
                   <Footer
