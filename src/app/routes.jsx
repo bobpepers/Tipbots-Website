@@ -10,6 +10,7 @@ import { connect } from 'react-redux';
 import toggleTheme from './helpers/toggleTheme';
 
 import Home from './views/Home';
+import Uptime from './views/Uptime';
 
 const RoutesX = function (props) {
   const {
@@ -26,6 +27,10 @@ const RoutesX = function (props) {
       <Route
         path="/"
         element={<Home />}
+      />
+      <Route
+        path="/uptime"
+        element={<Uptime />}
       />
     </Routes>
   )
