@@ -1,0 +1,1 @@
+/*eslint-disable*/module.exports={messages:{"Dashboard":"Dashboard","Home":"Home","Management":"Management","Tipbots":"Tipbots","Uptime":"Uptime"}};
