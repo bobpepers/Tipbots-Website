@@ -1,7 +1,8 @@
-import React, { useEffect } from 'react';
+import React, {
+  useEffect,
+} from 'react';
 import {
   Grid,
-  Divider,
   Typography,
   Button,
 } from '@mui/material';

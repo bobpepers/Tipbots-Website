@@ -5,14 +5,14 @@ import React, {
 import PropTypes from 'prop-types';
 import { Trans } from '@lingui/macro';
 import {
-  useNavigate,
   useLocation,
+  Link,
 } from 'react-router-dom';
 import { connect } from 'react-redux';
 import {
   Grid,
-  Divider,
   Typography,
+  Button,
 } from '@mui/material';
 import { tipbotInfoArray } from '../helpers/tipbotsInfoArray';
 import UptimeRobot from '../components/Uptimerobot';
@@ -73,26 +73,83 @@ const Tipbot = function (props) {
           item
           xs={12}
         >
-          <DiscordCommands />
-        </Grid>
-
-        <Grid
-          item
-          xs={12}
-        >
-          <TelegramCommands />
-        </Grid>
-
-        <Grid
-          item
-          xs={12}
-        >
           <UptimeRobot
             apikey="ur1719256-ba1375b28cf44c17640ac06e"
             CountDays={60}
             WhichTipBots={tipbotInfo.uptimeRobotMonitorId}
           />
         </Grid>
+
+        <Grid
+          container
+          item
+          xs={6}
+          alignItems="center"
+          justifyContent="center"
+          className="pb-1"
+        >
+          <Button
+            component={Link}
+            variant="outlined"
+            style={{
+              fontSize: '14px',
+              fontWeight: 200,
+              marginRight: '10px',
+            }}
+            size="large"
+            to={`/tipbots/${tipbotInfo.name.toLowerCase()}/terms-of-service`}
+            aria-controls="basic-menu"
+            aria-haspopup="true"
+            className="headerMenuTextColor"
+          >
+            <Trans>Terms of Service</Trans>
+          </Button>
+        </Grid>
+
+        <Grid
+          container
+          item
+          xs={6}
+          alignItems="center"
+          justifyContent="center"
+          className="pb-1"
+        >
+          <Button
+            component={Link}
+            variant="outlined"
+            style={{
+              fontSize: '14px',
+              fontWeight: 200,
+              marginRight: '10px',
+            }}
+            size="large"
+            to={`/tipbots/${tipbotInfo.name.toLowerCase()}/privacy-policy`}
+            aria-controls="basic-menu"
+            aria-haspopup="true"
+            className="headerMenuTextColor"
+          >
+            <Trans>Privacy Policy</Trans>
+          </Button>
+        </Grid>
+
+        <Grid
+          item
+          xs={12}
+        >
+          <DiscordCommands
+            tipbotInfo={tipbotInfo}
+          />
+        </Grid>
+
+        <Grid
+          item
+          xs={12}
+        >
+          <TelegramCommands
+            tipbotInfo={tipbotInfo}
+          />
+        </Grid>
+
       </Grid>
     </div>
   );
