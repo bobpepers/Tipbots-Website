@@ -19,7 +19,6 @@ import { GetMonitors } from '../helpers/uptimerobot';
 function UptimeRobot({
   apikey,
   CountDays,
-  ShowLink,
   WhichTipBots,
 }) {
   const status = {

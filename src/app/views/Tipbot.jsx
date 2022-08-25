@@ -15,7 +15,9 @@ import {
   Typography,
 } from '@mui/material';
 import { tipbotInfoArray } from '../helpers/tipbotsInfoArray';
-import UptimeRobot from '../components/uptimerobot';
+import UptimeRobot from '../components/Uptimerobot';
+import DiscordCommands from '../components/DiscordCommands';
+import TelegramCommands from '../components/TelegramCommands'
 import { ReactComponent as Discord } from '../assets/images/discord.svg';
 import { ReactComponent as Telegram } from '../assets/images/telegram.svg';
 
@@ -65,7 +67,20 @@ const Tipbot = function (props) {
           >
             {tipbotInfo.name}
           </Typography>
+        </Grid>
 
+        <Grid
+          item
+          xs={12}
+        >
+          <DiscordCommands />
+        </Grid>
+
+        <Grid
+          item
+          xs={12}
+        >
+          <TelegramCommands />
         </Grid>
 
         <Grid

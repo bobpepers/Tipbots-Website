@@ -3,17 +3,16 @@ import {
   Grid,
   Divider,
   Typography,
+  Button,
 } from '@mui/material';
-import UptimeRobot from '../components/uptimerobot';
+import { Trans } from '@lingui/macro';
+import UptimeRobot from '../components/Uptimerobot';
 import { tipbotInfoArray } from '../helpers/tipbotsInfoArray';
 
 const monitorIds = tipbotInfoArray.map((a) => a.uptimeRobotMonitorId);
 
 function Uptime() {
-  useEffect(() => {
-    // window.open('https://stats.uptimerobot.com/klo5QskN2k', '_blank')
-    // window.location.href = 'https://stats.uptimerobot.com/klo5QskN2k';
-  }, []);
+  useEffect(() => { }, []);
 
   return (
     <div className="height100 content">
@@ -27,7 +26,12 @@ function Uptime() {
           item
           xs={12}
         >
-          <h2>Uptime</h2>
+          <Typography
+            variant="h3"
+            align="center"
+          >
+            <Trans>Uptime Monitor</Trans>
+          </Typography>
         </Grid>
 
         <Grid
@@ -42,10 +46,29 @@ function Uptime() {
           />
         </Grid>
         <Grid
+          container
           item
           xs={12}
+          alignItems="center"
+          justifyContent="center"
         >
-          Link to UptimeRobot
+          <Button
+            variant="outlined"
+            style={{
+              fontSize: '14px',
+              fontWeight: 200,
+              marginRight: '10px',
+            }}
+            size="large"
+            onClick={() => window.open('https://stats.uptimerobot.com/klo5QskN2k', '_blank')}
+            aria-controls="basic-menu"
+            aria-haspopup="true"
+            className="headerMenuTextColor"
+          >
+            <Trans>View monitor on</Trans>
+            {' '}
+            UptimeRobot
+          </Button>
         </Grid>
       </Grid>
     </div>
