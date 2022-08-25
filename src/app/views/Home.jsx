@@ -1,21 +1,15 @@
 import React, {
   useEffect,
-  useState,
 } from 'react';
 import PropTypes from 'prop-types';
 import { Trans } from '@lingui/macro';
-import { useNavigate } from 'react-router-dom';
 import { connect } from 'react-redux';
-import CircularProgress from '@mui/material/CircularProgress';
 import {
   Grid,
   Divider,
   Typography,
 } from '@mui/material';
 import Runebase from '../assets/images/runebaseloop.gif';
-import RunesCoin from '../assets/images/runescoin.png';
-import Pirate from '../assets/images/pirate.png';
-import Tokel from '../assets/images/tokel.png';
 import { ReactComponent as Discord } from '../assets/images/discord.svg';
 import { ReactComponent as Telegram } from '../assets/images/telegram.svg';
 import { tipbotInfoArray } from '../helpers/tipbotsInfoArray';

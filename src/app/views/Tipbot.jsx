@@ -5,12 +5,9 @@ import React, {
 import PropTypes from 'prop-types';
 import { Trans } from '@lingui/macro';
 import {
-  useSearchParams,
   useNavigate,
-  useParams,
 } from 'react-router-dom';
 import { connect } from 'react-redux';
-import CircularProgress from '@mui/material/CircularProgress';
 import {
   Grid,
   Divider,
