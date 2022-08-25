@@ -18,6 +18,8 @@ import {
 import AccountCircle from '@mui/icons-material/AccountCircle';
 import IconButton from '@mui/material/IconButton';
 import { Trans } from '@lingui/macro';
+import { ReactComponent as Discord } from '../assets/images/discord.svg';
+import { ReactComponent as Telegram } from '../assets/images/telegram.svg';
 import { ReactComponent as MobileNav } from '../assets/images/mobilenav.svg';
 import Runebase from '../assets/images/runebaseloop.gif';
 import Pirate from '../assets/images/pirate.png';
@@ -196,21 +198,49 @@ const Header = function (props) {
               <Trans>Support</Trans>
             </Button>
           </Nav>
-          {/* <ul>
+          <ul>
             <li>
               <IconButton
                 size="large"
                 edge="end"
-                aria-label="account of current user"
+                aria-label="Link to discord community server"
                 aria-controls="primary-search-account-menu"
                 aria-haspopup="true"
-                onClick={handleProfileMenuOpen}
+                target="_blank"
+                href="https://discord.gg/CdUSaVfp8Q"
                 color="inherit"
+                style={{
+                  marginRight: '0.5rem',
+                }}
               >
-                <AccountCircle />
+                <Discord
+                  style={{
+                    height: '1.5rem',
+                    width: '1.5rem',
+                  }}
+                />
               </IconButton>
             </li>
-          </ul> */}
+            <li>
+              <IconButton
+                size="large"
+                edge="end"
+                aria-label="Link to telegram community server"
+                aria-controls="primary-search-account-menu"
+                aria-haspopup="true"
+                target="_blank"
+                href="https://t.me/runebase_runes"
+                color="inherit"
+              >
+                <Telegram
+                  style={{
+                    height: '1.5rem',
+                    width: '1.5rem',
+                  }}
+                />
+              </IconButton>
+            </li>
+          </ul>
         </Navbar.Collapse>
       </Navbar>
     </header>

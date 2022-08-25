@@ -139,6 +139,7 @@ const Home = function (props) {
                 marginLeft: '15px',
                 marginRight: '15px',
                 height: '3rem',
+                width: '3rem',
               }}
             />
             <Trans>Discord Tipbots</Trans>
@@ -147,6 +148,7 @@ const Home = function (props) {
                 marginLeft: '15px',
                 marginRight: '15px',
                 height: '3rem',
+                width: '3rem',
               }}
             />
           </Typography>
@@ -208,6 +210,7 @@ const Home = function (props) {
                 marginLeft: '15px',
                 marginRight: '15px',
                 height: '3rem',
+                width: '3rem',
               }}
             />
             <Trans>Telegram Tipbots</Trans>
@@ -216,6 +219,7 @@ const Home = function (props) {
                 marginLeft: '15px',
                 marginRight: '15px',
                 height: '3rem',
+                width: '3rem',
               }}
             />
           </Typography>
