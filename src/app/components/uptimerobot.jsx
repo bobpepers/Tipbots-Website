@@ -5,11 +5,16 @@ import React, {
 import ReactTooltip from 'react-tooltip';
 import {
   Grid,
+  Box,
   Divider,
   Typography,
 } from '@mui/material';
-import { GetMonitors } from '../helpers/uptimerobot';
+import CircularProgress from '@mui/material/CircularProgress';
+import CheckIcon from '@mui/icons-material/Check';
+import CloseIcon from '@mui/icons-material/Close';
+import QuestionMarkIcon from '@mui/icons-material/QuestionMark';
 import { formatDuration, formatNumber } from '../helpers/utils';
+import { GetMonitors } from '../helpers/uptimerobot';
 
 function UptimeRobot({
   apikey,
@@ -20,7 +25,7 @@ function UptimeRobot({
   const status = {
     ok: 'Ok',
     down: 'Down',
-    unknow: 'Unknown',
+    unknown: 'Unknown',
   };
 
   const [monitors, setMonitors] = useState();
@@ -41,42 +46,125 @@ function UptimeRobot({
 
   if (monitors) {
     return monitors.map((site) => (
-      <div id="uptime">
-        <div key={site.id} className="site">
+      <Grid
+        container
+        className="uptime"
+      >
+        <Grid
+          item
+          xs={12}
+          key={site.id}
+          className="site"
+        >
           <div className="meta">
-            <span className="name">
+            <Typography variant="subtitle2">
               {site.name}
-            </span>
-            <span className={`status ${site.status}`}>{status[site.status]}</span>
+            </Typography>
+            <Typography
+              variant="subtitle2"
+              className={`status ${site.status}`}
+            >
+              {
+                site.status === 'ok' && (
+                  <CheckIcon
+                    style={{
+                      color: 'green',
+                    }}
+                  />
+                )
+              }
+              {
+                site.status === 'down' && (
+                  <CloseIcon
+                    style={{
+                      color: '#de484a',
+                    }}
+                  />
+                )
+              }
+              {
+                site.status === 'unknown' && (
+                  <QuestionMarkIcon
+                    style={{
+                      color: '#969ea8',
+                    }}
+                  />
+                )
+              }
+              {status[site.status]}
+            </Typography>
           </div>
           <div className="timeline">
             {site.daily.map((data, index) => {
-              let status = '';
-              let text = data.date.format('YYYY-MM-DD ');
+              let upTimeStatus = '';
+              let text = `${data.date.format('DD-MM-YYYY ')}`;
               if (data.uptime >= 100) {
-                status = 'ok';
-                text += `availability ${formatNumber(data.uptime)}%`;
+                upTimeStatus = 'ok';
+                text += `<br />availability: ${formatNumber(data.uptime)}%`;
               } else if (data.uptime <= 0 && data.down.times === 0) {
-                status = 'none';
-                text += 'no data';
+                upTimeStatus = 'none';
+                text += 'No data';
               } else {
-                status = 'down';
-                text += `Fault ${data.down.times} times，outage-time ${formatDuration(data.down.duration)}，availability ${formatNumber(data.uptime)}%`;
+                upTimeStatus = 'down';
+                text += `<br />Faulted: ${data.down.times} time<br />outage-time: ${formatDuration(data.down.duration)}<br />availability: ${formatNumber(data.uptime)}%`;
               }
-              return (<i key={index} className={status} data-tip={text} />)
+              return (
+                <i
+                  key={index}
+                  className={upTimeStatus}
+                  data-tip={text}
+                />
+              )
             })}
           </div>
-          <div className="summary">
-            <span>{site.daily[site.daily.length - 1].date.format('YYYY-MM-DD')}</span>
-            <span>
-              {site.total.times
-                ? `recent ${CountDays} day outages ${site.total.times} times，outage-time ${formatDuration(site.total.duration)}，average availability ${site.average}%`
-                : `recent ${CountDays} day availability ${site.average}%`}
-            </span>
-            <span>today</span>
-          </div>
-          <ReactTooltip className="tooltip" place="top" type="dark" effect="solid" />
-        </div>
+          <Grid
+            container
+          >
+            <Grid item xs={6}>
+              <Typography
+                variant="subtitle2"
+              >
+                {site.daily[site.daily.length - 1].date.format('DD-MM-YYYY')}
+              </Typography>
+            </Grid>
+            <Grid item xs={6}>
+              <Typography
+                variant="subtitle2"
+                align="right"
+              >
+                today
+              </Typography>
+            </Grid>
+
+          </Grid>
+          <Grid container>
+            <Grid item xs={12}>
+              <Typography
+                variant="subtitle2"
+                align="center"
+              >
+                {site.total.times
+                  ? `recent ${CountDays} day`
+                  : `recent ${CountDays} day`}
+              </Typography>
+              <Typography
+                variant="subtitle2"
+                align="center"
+              >
+                {site.total.times
+                  ? `outages ${site.total.times} times，outage-time ${formatDuration(site.total.duration)}，average availability ${site.average}%`
+                  : `availability ${site.average}%`}
+              </Typography>
+            </Grid>
+          </Grid>
+          <ReactTooltip
+            className="tooltip"
+            place="top"
+            type="dark"
+            effect="solid"
+            html
+          />
+        </Grid>
         <Grid
           container
         >
@@ -97,14 +185,14 @@ function UptimeRobot({
           </Grid>
         </Grid>
 
-      </div>
+      </Grid>
     ));
   }
 
   return (
-    <div className="site">
-      <div className="loading" />
-    </div>
+    <Box sx={{ display: 'flex' }}>
+      <CircularProgress />
+    </Box>
   );
 }
 

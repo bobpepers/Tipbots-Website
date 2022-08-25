@@ -31,12 +31,16 @@ export async function GetMonitors(
 
   const response = await axios.post('https://api.uptimerobot.com/v2/getMonitors', postdata, { timeout: 10000 });
   if (response.data.stat !== 'ok') throw response.data.error;
+
   return response.data.monitors.map((monitor) => {
+    let sum = 0;
+    let sumLength = 0;
     const newRanges = monitor.custom_uptime_ranges.split('-');
-    const average = formatNumber(newRanges.pop());
     const daily = [];
     const map = [];
     dates.forEach((date, index) => {
+      sum += newRanges[index] ? Number(newRanges[index]) : 0;
+      sumLength += newRanges[index] !== '0.000' && newRanges[index] ? 1 : 0;
       map[date.format('YYYYMMDD')] = index;
       daily[index] = {
         date,
@@ -48,7 +52,8 @@ export async function GetMonitors(
       }
     });
 
-    const total = monitor.logs.reduce((totalX, log) => {
+    const total = monitor.logs.reduce((total, log) => {
+      console.log(log.type);
       if (log.type === 1) {
         const date = moment.unix(log.datetime).format('YYYYMMDD');
         totalX.duration += log.duration;
@@ -57,18 +62,20 @@ export async function GetMonitors(
         daily[map[date]].down.times += 1;
       }
       return totalX;
-    }, { times: 0, duration: 0 });
+    }, {
+      times: 0,
+      duration: 0,
+    });
 
     const result = {
       id: monitor.id,
       name: monitor.friendly_name,
       url: `https://stats.uptimerobot.com/klo5QskN2k/${monitor.id}`,
-      average,
+      average: (sum / sumLength).toFixed(2),
       daily,
       total,
-      status: 'unknow',
+      status: 'unknown',
     };
-    console.log(result);
 
     if (monitor.status === 2) result.status = 'ok';
     if (monitor.status === 9) result.status = 'down';
