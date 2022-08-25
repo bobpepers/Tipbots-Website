@@ -43,9 +43,12 @@ const Tipbot = function (props) {
         justifyContent="center"
       >
         <Grid
+          container
           item
           xs={3}
           md={3}
+          alignItems="center"
+          justifyContent="center"
         >
           <img
             src={tipbotInfo.logo}
@@ -72,7 +75,6 @@ const Tipbot = function (props) {
           <UptimeRobot
             apikey="ur1719256-ba1375b28cf44c17640ac06e"
             CountDays={60}
-            ShowLink
             WhichTipBots={tipbotInfo.uptimeRobotMonitorId}
           />
         </Grid>

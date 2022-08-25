@@ -15,9 +15,12 @@ import {
   MenuItem,
   Menu,
 } from '@mui/material';
-import AccountCircle from '@mui/icons-material/AccountCircle';
 import IconButton from '@mui/material/IconButton';
 import { Trans } from '@lingui/macro';
+import HomeIcon from '@mui/icons-material/Home';
+import KeyboardDoubleArrowUpIcon from '@mui/icons-material/KeyboardDoubleArrowUp';
+import SupportAgentIcon from '@mui/icons-material/SupportAgent';
+import SmartToyIcon from '@mui/icons-material/SmartToy';
 import { ReactComponent as Discord } from '../assets/images/discord.svg';
 import { ReactComponent as Telegram } from '../assets/images/telegram.svg';
 import { ReactComponent as MobileNav } from '../assets/images/mobilenav.svg';
@@ -36,10 +39,7 @@ const Header = function (props) {
   const [height, setHeight] = useState(0);
   const [anchorElTipBots, setAnchorElTipBots] = useState(null);
   const openTipBots = Boolean(anchorElTipBots);
-  const [anchorElFunctions, setAnchorElFunctions] = useState(null);
-  const openFunctions = Boolean(anchorElFunctions);
   const [anchorEl, setAnchorEl] = React.useState(null);
-  const isMenuOpen = Boolean(anchorEl);
 
   const handleWindowResize = useCallback((event) => {
     if (height !== heightRef.current.clientHeight) {
@@ -68,10 +68,6 @@ const Header = function (props) {
   };
   const handleCloseTipbots = () => {
     setAnchorElTipBots(null);
-  };
-
-  const handleProfileMenuOpen = (event) => {
-    setAnchorEl(event.currentTarget);
   };
 
   const show = (menu) ? 'show' : '';
@@ -110,7 +106,11 @@ const Header = function (props) {
               to="/"
               aria-controls="basic-menu"
               aria-haspopup="true"
+              className="headerMenuTextColor"
             >
+              <HomeIcon
+                className="buttonMenuIcon headerMenuTextColor"
+              />
               <Trans>Home</Trans>
             </Button>
             <Button
@@ -124,7 +124,11 @@ const Header = function (props) {
                 fontWeight: 200,
                 marginRight: '10px',
               }}
+              className="headerMenuTextColor"
             >
+              <SmartToyIcon
+                className="buttonMenuIcon headerMenuTextColor"
+              />
               <Trans>Tipbots</Trans>
             </Button>
             <Menu
@@ -178,7 +182,11 @@ const Header = function (props) {
               // onClick={() => window.open('https://stats.uptimerobot.com/klo5QskN2k', '_blank')}
               aria-controls="basic-menu"
               aria-haspopup="true"
+              className="headerMenuTextColor"
             >
+              <KeyboardDoubleArrowUpIcon
+                className="buttonMenuIcon headerMenuTextColor"
+              />
               <Trans>Uptime</Trans>
             </Button>
 
@@ -194,7 +202,11 @@ const Header = function (props) {
               to="/support"
               aria-controls="basic-menu"
               aria-haspopup="true"
+              className="headerMenuTextColor"
             >
+              <SupportAgentIcon
+                className="buttonMenuIcon headerMenuTextColor"
+              />
               <Trans>Support</Trans>
             </Button>
           </Nav>
@@ -253,4 +265,4 @@ function mapStateToProps(state) {
   };
 }
 
-export default connect(mapStateToProps)(Header);
+export default connect(mapStateToProps, null)(Header);
