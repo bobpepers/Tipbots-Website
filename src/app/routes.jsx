@@ -12,6 +12,8 @@ import toggleTheme from './helpers/toggleTheme';
 import Home from './views/Home';
 import Uptime from './views/Uptime';
 import Tipbot from './views/Tipbot';
+import PrivacyPolicy from './views/PrivacyPolicy';
+import TermsOfService from './views/TermsOfService';
 
 const RoutesX = function (props) {
   const {
@@ -44,6 +46,14 @@ const RoutesX = function (props) {
       <Route
         path="/tipbots/tokeltip"
         element={<Tipbot />}
+      />
+      <Route
+        path="/tipbots/:tipbotUrlParam/terms-of-service"
+        element={<TermsOfService />}
+      />
+      <Route
+        path="/tipbots/:tipbotUrlParam/privacy-policy"
+        element={<PrivacyPolicy />}
       />
     </Routes>
   )
