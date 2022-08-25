@@ -13,6 +13,7 @@ export const tipbotInfoArray = [
     telegramLink: 'https://t.me/runes_tip_bot',
     discordCommandPrefix: '/runestip',
     telegramCommandPrefix: '!runestip',
+    uptimerobotLink: 'https://stats.uptimerobot.com/klo5QskN2k/791625646',
   },
   {
     name: 'PirateTip',
@@ -24,6 +25,7 @@ export const tipbotInfoArray = [
     telegramLink: 'https://t.me/PirateTipBot',
     discordCommandPrefix: '/piratetip',
     telegramCommandPrefix: '!piratetip',
+    uptimerobotLink: 'https://stats.uptimerobot.com/klo5QskN2k/791626722',
   },
   {
     name: 'TokelTip',
@@ -35,5 +37,6 @@ export const tipbotInfoArray = [
     telegramLink: 'https://t.me/TokelTip_bot',
     discordCommandPrefix: '/tokeltip',
     telegramCommandPrefix: '!tokeltip',
+    uptimerobotLink: 'https://stats.uptimerobot.com/klo5QskN2k/792311676',
   },
 ]
