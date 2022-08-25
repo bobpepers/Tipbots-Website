@@ -3,10 +3,13 @@ import {
 } from '../actions/types/index';
 
 const initialState = {
-  theme: 'light',
+  theme: localStorage.getItem('theme') ? localStorage.getItem('theme') : 'light',
 };
 
-export default (state = initialState, action) => {
+export default (
+  state = initialState,
+  action,
+) => {
   switch (action.type) {
   case THEME_TOGGLE:
     return {

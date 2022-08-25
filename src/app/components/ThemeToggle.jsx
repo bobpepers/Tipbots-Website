@@ -1,6 +1,7 @@
 import React from 'react';
 import {
   connect,
+  useDispatch,
 } from 'react-redux';
 import { withStyles } from 'tss-react/mui';
 import {
@@ -10,6 +11,7 @@ import {
   Brightness3,
   WbSunny,
 } from '@mui/icons-material';
+import PropTypes from 'prop-types';
 import { changeTheme } from '../actions';
 
 const ThemeSwitch = withStyles(Switch, (_theme, _params, classes) => ({
@@ -26,17 +28,17 @@ const ThemeSwitch = withStyles(Switch, (_theme, _params, classes) => ({
   track: {},
 }));
 
-// tslint:disable:jsx-no-lambda
 function ThemeToggle(props) {
   const {
     theme: {
       theme,
     },
-    changeTheme,
   } = props;
 
+  const dispatch = useDispatch();
+
   const handleChangeCurrentStyleMode = (value) => {
-    changeTheme(value);
+    dispatch(changeTheme(value));
   };
 
   return (
@@ -44,12 +46,19 @@ function ThemeToggle(props) {
       <WbSunny />
       <ThemeSwitch
         checked={theme !== 'light'}
-        onChange={(e) => handleChangeCurrentStyleMode(theme === 'light' ? 'dark' : 'light')}
+        onChange={() => handleChangeCurrentStyleMode(theme === 'light' ? 'dark' : 'light')}
       />
       <Brightness3 />
     </div>
   );
 }
+
+ThemeToggle.propTypes = {
+  theme: PropTypes.shape({
+    theme: PropTypes.string.isRequired,
+  }).isRequired,
+
+};
 
 const mapStateToProps = (state) => ({
   theme: state.theme,
