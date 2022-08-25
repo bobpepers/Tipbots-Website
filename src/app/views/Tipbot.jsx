@@ -6,6 +6,7 @@ import PropTypes from 'prop-types';
 import { Trans } from '@lingui/macro';
 import {
   useNavigate,
+  useLocation,
 } from 'react-router-dom';
 import { connect } from 'react-redux';
 import {
@@ -14,23 +15,20 @@ import {
   Typography,
 } from '@mui/material';
 import { tipbotInfoArray } from '../helpers/tipbotsInfoArray';
-
+import UptimeRobot from '../components/uptimerobot';
 import { ReactComponent as Discord } from '../assets/images/discord.svg';
 import { ReactComponent as Telegram } from '../assets/images/telegram.svg';
 
 import { withRouter } from '../hooks/withRouter';
 
 const Tipbot = function (props) {
-  const {
-    location: {
-      pathname,
-    },
-  } = props;
-  const [tipbotInfo, setTipBotInfo] = useState({});
+  const location = useLocation();
+
+  const [tipbotInfo, setTipBotInfo] = useState(tipbotInfoArray.find((x) => x.name.toLowerCase() === location.pathname.split('/')[2]));
 
   useEffect(() => {
-    setTipBotInfo(tipbotInfoArray.find((x) => x.name.toLowerCase() === pathname.split('/')[2]));
-  }, []);
+    setTipBotInfo(tipbotInfoArray.find((x) => x.name.toLowerCase() === location.pathname.split('/')[2]));
+  }, [location.pathname]);
 
   useEffect(() => {
     document.title = `Tipbots - ${tipbotInfo.name}`;
@@ -67,6 +65,17 @@ const Tipbot = function (props) {
 
         </Grid>
 
+        <Grid
+          item
+          xs={12}
+        >
+          <UptimeRobot
+            apikey="ur1719256-ba1375b28cf44c17640ac06e"
+            CountDays={60}
+            ShowLink
+            WhichTipBots={tipbotInfo.uptimeRobotMonitorId}
+          />
+        </Grid>
       </Grid>
     </div>
   );

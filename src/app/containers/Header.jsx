@@ -166,7 +166,7 @@ const Header = function (props) {
               </Link>
             </Menu>
             <Button
-              // component={Link}
+              component={Link}
               variant="outlined"
               style={{
                 fontSize: '14px',
@@ -174,8 +174,8 @@ const Header = function (props) {
                 marginRight: '10px',
               }}
               size="large"
-              // to="/uptime"
-              onClick={() => window.open('https://stats.uptimerobot.com/klo5QskN2k', '_blank')}
+              to="/uptime"
+              // onClick={() => window.open('https://stats.uptimerobot.com/klo5QskN2k', '_blank')}
               aria-controls="basic-menu"
               aria-haspopup="true"
             >
