@@ -19,6 +19,7 @@ body {
   margin-top: 2rem;
   margin-bottom: 2rem;
 }
+
 .content {
   position: relative;
   flex: 1;
@@ -29,13 +30,11 @@ body {
 
 .content a {
   color: var(--textColorGlobal);
-}
-.content a {
   background-image: linear-gradient(
     to right,
     #54b3d6,
     #54b3d6 50%,
-    #000 50%
+    var(--textColorGlobal) 50%
   );
   background-size: 200% 100%;
   background-position: -100%;
