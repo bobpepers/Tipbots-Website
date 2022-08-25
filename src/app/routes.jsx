@@ -11,6 +11,7 @@ import toggleTheme from './helpers/toggleTheme';
 
 import Home from './views/Home';
 import Uptime from './views/Uptime';
+import Tipbot from './views/Tipbot';
 
 const RoutesX = function (props) {
   const {
@@ -31,6 +32,18 @@ const RoutesX = function (props) {
       <Route
         path="/uptime"
         element={<Uptime />}
+      />
+      <Route
+        path="/tipbots/runestip"
+        element={<Tipbot />}
+      />
+      <Route
+        path="/tipbots/piratetip"
+        element={<Tipbot />}
+      />
+      <Route
+        path="/tipbots/tokeltip"
+        element={<Tipbot />}
       />
     </Routes>
   )
