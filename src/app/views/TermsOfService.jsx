@@ -45,9 +45,13 @@ const Tipbot = function (props) {
         justifyContent="center"
       >
         <Grid
+          container
           item
           xs={3}
           md={3}
+          alignItems="center"
+          justifyContent="center"
+          className="pb-1"
         >
           <img
             src={tipbotInfo.logo}
@@ -57,18 +61,200 @@ const Tipbot = function (props) {
         <Grid
           item
           xs={12}
+          className="pb-1"
         >
           <Typography
             variant="h3"
             align="center"
           >
             {tipbotInfo.name}
-            {' '}
-            - Terms of Service
           </Typography>
-
+          <Typography
+            variant="h3"
+            align="center"
+          >
+            Terms of Service
+          </Typography>
+        </Grid>
+        <Grid
+          item
+          xs={12}
+          className="pb-1"
+        >
+          <Typography
+            variant="h6"
+            align="center"
+          >
+            {tipbotInfo.name}
+            {' '}
+            <Trans>is beta software</Trans>
+          </Typography>
+          <Typography
+            variant="body1"
+            align="center"
+          >
+            <Trans>In no event shall</Trans>
+            {' '}
+            {tipbotInfo.name}
+            {' '}
+            <Trans>or its authors be responsible for any lost, misdirected or stolen funds.</Trans>
+          </Typography>
         </Grid>
 
+        <Grid
+          item
+          xs={12}
+          className="pb-1"
+        >
+          <Typography
+            variant="h6"
+            align="center"
+          >
+            {tipbotInfo.name}
+            {' '}
+            <Trans>Tips are non-reversible and non-refundable.</Trans>
+          </Typography>
+          <Typography
+            variant="body1"
+            align="center"
+          >
+            <Trans>We don't reverse or refund any tips that made by the user. Please check twice before making any tips.</Trans>
+          </Typography>
+        </Grid>
+
+        <Grid
+          item
+          xs={12}
+          className="pb-1"
+        >
+          <Typography
+            variant="h6"
+            align="center"
+          >
+            {tipbotInfo.name}
+            &apos;s
+            {' '}
+            <Trans>security</Trans>
+          </Typography>
+          <Typography
+            variant="body1"
+            align="center"
+          >
+            <Trans>
+              Your tipbot wallet security is as safe as your Discord account is.
+            </Trans>
+            <Trans>
+              Use features like two-factor authentication to keep your account secure.
+            </Trans>
+            <Trans>
+              In regards to
+
+            </Trans>
+            {' '}
+            {tipbotInfo.name}
+            &apos;s
+            {' '}
+            <Trans>security, we hold up to industry standards.</Trans>
+            <Trans>
+              Your wallet is powered by proven technology. In case of concerns, please contact our support.
+            </Trans>
+          </Typography>
+        </Grid>
+
+        <Grid
+          item
+          xs={12}
+          className="pb-1"
+        >
+          <Typography
+            variant="h6"
+            align="center"
+          >
+            <Trans>Abuse</Trans>
+          </Typography>
+          <Typography
+            variant="body1"
+            align="center"
+          >
+            <Trans>
+              If you are found abusing any systems, your funds will be frozen and seized. We reserve the right to freeze suspicious accounts as well, until proven innocent.
+            </Trans>
+          </Typography>
+        </Grid>
+
+        <Grid
+          item
+          xs={12}
+          className="pb-1"
+        >
+          <Typography
+            variant="h6"
+            align="center"
+          >
+            <Trans>Always keep small sums of coins in your</Trans>
+            {' '}
+            {tipbotInfo.name}
+            &apos;s
+            {' '}
+            <Trans>wallet</Trans>
+          </Typography>
+          <Typography
+            variant="body1"
+            align="center"
+          >
+            <Trans>
+              Even if we keep up with industry standards in terms of security practices, we ask you to not keep huge sums on the bot. Please keep them in a non-custodial wallet.
+            </Trans>
+          </Typography>
+        </Grid>
+        <Divider
+          style={{
+            width: '100%',
+          }}
+          className="pb-1"
+        />
+        <Grid
+          item
+          xs={12}
+          className="pb-1"
+        >
+          <Typography
+            variant="body1"
+            align="center"
+          >
+            <Trans>
+              We reserve the right to change or modify any of the terms and conditions contained in the ToS, at any time and in our sole discretion. Any changes or modifications will be effective immediately
+            </Trans>
+          </Typography>
+        </Grid>
+        <Divider
+          style={{
+            width: '100%',
+          }}
+          className="pb-1"
+        />
+
+        <Grid
+          item
+          xs={12}
+          className="pb-1"
+        >
+          <Typography
+            variant="h6"
+            align="center"
+          >
+            <Trans>
+              When using
+            </Trans>
+            {' '}
+            {tipbotInfo.name}
+            ,
+            {' '}
+            <Trans>
+              you agree to the terms and conditions above.
+            </Trans>
+          </Typography>
+        </Grid>
       </Grid>
     </div>
   );
