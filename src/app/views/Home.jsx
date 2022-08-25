@@ -18,6 +18,7 @@ import Pirate from '../assets/images/pirate.png';
 import Tokel from '../assets/images/tokel.png';
 import { ReactComponent as Discord } from '../assets/images/discord.svg';
 import { ReactComponent as Telegram } from '../assets/images/telegram.svg';
+import { tipbotInfoArray } from '../helpers/tipbotsInfoArray';
 
 import { withRouter } from '../hooks/withRouter';
 
@@ -161,89 +162,39 @@ const Home = function (props) {
             width: '100%',
           }}
         />
-        <Grid
-          container
-          item
-          xs={12}
-          sm={12}
-          md={6}
-          lg={4}
-          alignItems="center"
-          justifyContent="center"
-          className="tipBotLinkLogoContainer"
-        >
-          <a
-            href="https://discord.com/api/oauth2/authorize?client_id=906563045248094249&permissions=523328&scope=bot%20applications.commands"
+        {tipbotInfoArray.map((tipbot) => (
+          <Grid
+            container
+            item
+            xs={12}
+            sm={12}
+            md={6}
+            lg={4}
+            alignItems="center"
+            justifyContent="center"
+            className="tipBotLinkLogoContainer"
+            key={`discord-${tipbot.name}`}
           >
-            <img
-              src={RunesCoin}
-              alt="RunesTip Logo"
-              className="tipBotLinkLogo"
-            />
-            <Typography
-              variant="subtitle1"
-              align="center"
+            <a
+              href={tipbot.discordLink}
             >
-              <Trans>Invite RunesTip</Trans>
-            </Typography>
-          </a>
-        </Grid>
-        <Grid
-          container
-          item
-          xs={12}
-          sm={12}
-          md={6}
-          lg={4}
-          alignItems="center"
-          justifyContent="center"
-          className="tipBotLinkLogoContainer"
-        >
-          <a
-            href="https://discord.com/api/oauth2/authorize?client_id=919753481894633474&permissions=523328&scope=bot%20applications.commands"
-          >
-            <img
-              src={Pirate}
-              alt="PirateTip Logo"
-              className="tipBotLinkLogo"
-            />
-            <Typography
-              variant="subtitle1"
-              align="center"
-            >
-              <Trans>Invite PirateTip</Trans>
-            </Typography>
-          </a>
+              <img
+                src={tipbot.logo}
+                alt={`${tipbot.name} Logo`}
+                className="tipBotLinkLogo"
+              />
+              <Typography
+                variant="subtitle1"
+                align="center"
+              >
+                <Trans>Invite</Trans>
+                {' '}
+                {tipbot.name}
+              </Typography>
+            </a>
+          </Grid>
+        ))}
 
-        </Grid>
-        <Grid
-          container
-          item
-          xs={12}
-          sm={12}
-          md={6}
-          lg={4}
-          alignItems="center"
-          justifyContent="center"
-          className="tipBotLinkLogoContainer"
-        >
-          <a
-            href="https://discord.com/api/oauth2/authorize?client_id=999573343000854658&permissions=523328&scope=bot%20applications.commands"
-          >
-            <img
-              src={Tokel}
-              alt="TokelTip Logo"
-              className="tipBotLinkLogo"
-            />
-            <Typography
-              variant="subtitle1"
-              align="center"
-            >
-              <Trans>Invite TokelTip</Trans>
-            </Typography>
-          </a>
-
-        </Grid>
         <Divider
           style={{
             width: '100%',
@@ -280,90 +231,38 @@ const Home = function (props) {
             width: '100%',
           }}
         />
-        <Grid
-          container
-          item
-          xs={12}
-          sm={12}
-          md={6}
-          lg={4}
-          alignItems="center"
-          justifyContent="center"
-          className="tipBotLinkLogoContainer"
-        >
-          <a
-            href="https://t.me/runes_tip_bot"
+        {tipbotInfoArray.map((tipbot) => (
+          <Grid
+            container
+            item
+            xs={12}
+            sm={12}
+            md={6}
+            lg={4}
+            alignItems="center"
+            justifyContent="center"
+            className="tipBotLinkLogoContainer"
+            key={`telegram-${tipbot.name}`}
           >
-            <img
-              src={RunesCoin}
-              alt="RunesTip Logo"
-              className="tipBotLinkLogo"
-            />
-            <Typography
-              variant="subtitle1"
-              align="center"
+            <a
+              href={tipbot.telegramLink}
             >
-              <Trans>Invite RunesTip</Trans>
-            </Typography>
-          </a>
-        </Grid>
-        <Grid
-          container
-          item
-          xs={12}
-          sm={12}
-          md={6}
-          lg={4}
-          alignItems="center"
-          justifyContent="center"
-          className="tipBotLinkLogoContainer"
-        >
-          <a
-            href="https://t.me/PirateTipBot"
-          >
-            <img
-              src={Pirate}
-              alt="PirateTip Logo"
-              className="tipBotLinkLogo"
-            />
-            <Typography
-              variant="subtitle1"
-              align="center"
-            >
-              <Trans>Invite PirateTip</Trans>
-            </Typography>
-          </a>
-
-        </Grid>
-        <Grid
-          container
-          item
-          xs={12}
-          sm={12}
-          md={6}
-          lg={4}
-          alignItems="center"
-          justifyContent="center"
-          className="tipBotLinkLogoContainer"
-        >
-          <a
-            href="https://t.me/TokelTip_bot"
-          >
-            <img
-              src={Tokel}
-              alt="TokelTip Logo"
-              className="tipBotLinkLogo"
-            />
-            <Typography
-              variant="subtitle1"
-              align="center"
-            >
-              <Trans>Invite TokelTip</Trans>
-            </Typography>
-          </a>
-
-        </Grid>
-
+              <img
+                src={tipbot.logo}
+                alt={`${tipbot.name} Logo`}
+                className="tipBotLinkLogo"
+              />
+              <Typography
+                variant="subtitle1"
+                align="center"
+              >
+                <Trans>Invite</Trans>
+                {' '}
+                {tipbot.name}
+              </Typography>
+            </a>
+          </Grid>
+        ))}
       </Grid>
     </div>
   );
