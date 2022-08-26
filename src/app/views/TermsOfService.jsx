@@ -73,7 +73,9 @@ const Tipbot = function (props) {
             variant="h3"
             align="center"
           >
-            Terms of Service
+            <Trans>
+              Terms of Service
+            </Trans>
           </Typography>
         </Grid>
         <Grid
@@ -87,17 +89,21 @@ const Tipbot = function (props) {
           >
             {tipbotInfo.name}
             {' '}
-            <Trans>is beta software</Trans>
+            <Trans>
+              is beta software
+            </Trans>
           </Typography>
           <Typography
             variant="body1"
             align="center"
           >
-            <Trans>In no event shall</Trans>
-            {' '}
-            {tipbotInfo.name}
-            {' '}
-            <Trans>or its authors be responsible for any lost, misdirected or stolen funds.</Trans>
+            <Trans>
+              In no event shall
+              {' '}
+              {tipbotInfo.name}
+              {' '}
+              or its authors be responsible for any lost, misdirected or stolen funds.
+            </Trans>
           </Typography>
         </Grid>
 
@@ -112,13 +118,17 @@ const Tipbot = function (props) {
           >
             {tipbotInfo.name}
             {' '}
-            <Trans>Tips are non-reversible and non-refundable.</Trans>
+            <Trans>
+              Tips are non-reversible and non-refundable.
+            </Trans>
           </Typography>
           <Typography
             variant="body1"
             align="center"
           >
-            <Trans>We don't reverse or refund any tips that made by the user. Please check twice before making any tips.</Trans>
+            <Trans>
+              We don&apos;t reverse or refund any tips that made by the user. Please check twice before making any tips.
+            </Trans>
           </Typography>
         </Grid>
 
@@ -134,29 +144,21 @@ const Tipbot = function (props) {
             {tipbotInfo.name}
             &apos;s
             {' '}
-            <Trans>security</Trans>
+            <Trans>
+              security
+            </Trans>
           </Typography>
           <Typography
             variant="body1"
             align="center"
           >
             <Trans>
-              Your tipbot wallet security is as safe as your Discord account is.
-            </Trans>
-            <Trans>
-              Use features like two-factor authentication to keep your account secure.
-            </Trans>
-            <Trans>
-              In regards to
-
-            </Trans>
-            {' '}
-            {tipbotInfo.name}
-            &apos;s
-            {' '}
-            <Trans>security, we hold up to industry standards.</Trans>
-            <Trans>
-              Your wallet is powered by proven technology. In case of concerns, please contact our support.
+              Your tipbot wallet security is as safe as your Discord account is. Use features like two-factor authentication to keep your account secure. In regards to
+              {' '}
+              {tipbotInfo.name}
+              &apos;s
+              {' '}
+              security, we hold up to industry standards. Your wallet is powered by proven technology. In case of concerns, please contact our support.
             </Trans>
           </Typography>
         </Grid>
@@ -170,7 +172,9 @@ const Tipbot = function (props) {
             variant="h6"
             align="center"
           >
-            <Trans>Abuse</Trans>
+            <Trans>
+              Abuse
+            </Trans>
           </Typography>
           <Typography
             variant="body1"
@@ -191,12 +195,14 @@ const Tipbot = function (props) {
             variant="h6"
             align="center"
           >
-            <Trans>Always keep small sums of coins in your</Trans>
-            {' '}
-            {tipbotInfo.name}
-            &apos;s
-            {' '}
-            <Trans>wallet</Trans>
+            <Trans>
+              Always keep small sums of coins in your
+              {' '}
+              {tipbotInfo.name}
+              &apos;s
+              {' '}
+              wallet
+            </Trans>
           </Typography>
           <Typography
             variant="body1"
@@ -245,12 +251,10 @@ const Tipbot = function (props) {
           >
             <Trans>
               When using
-            </Trans>
-            {' '}
-            {tipbotInfo.name}
-            ,
-            {' '}
-            <Trans>
+              {' '}
+              {tipbotInfo.name}
+              ,
+              {' '}
               you agree to the terms and conditions above.
             </Trans>
           </Typography>

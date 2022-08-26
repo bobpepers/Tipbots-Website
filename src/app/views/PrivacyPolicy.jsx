@@ -72,7 +72,9 @@ const Tipbot = function (props) {
             variant="h3"
             align="center"
           >
-            Privacy Policy
+            <Trans>
+              Privacy Policy
+            </Trans>
           </Typography>
         </Grid>
 
@@ -85,17 +87,21 @@ const Tipbot = function (props) {
             variant="h6"
             align="left"
           >
-            <Trans>1. Introduction</Trans>
+            <Trans>
+              1. Introduction
+            </Trans>
           </Typography>
           <Typography
             variant="body1"
             align="left"
           >
-            <Trans>This Privacy Policy (“Privacy Policy“) apply to the use of the service (“Service“, “Bot“) provided by</Trans>
-            {' '}
-            {tipbotInfo.name}
-            {' '}
-            <Trans>(hereinafter also referred as “we” or “us”).</Trans>
+            <Trans>
+              This Privacy Policy (“Privacy Policy“) apply to the use of the service (“Service“, “Bot“) provided by
+              {' '}
+              {tipbotInfo.name}
+              {' '}
+              (hereinafter also referred as “we” or “us”).
+            </Trans>
           </Typography>
 
           <Typography
@@ -104,12 +110,11 @@ const Tipbot = function (props) {
           >
             <Trans>
               If you have any questions or comments about this Privacy Policy,
+              {' '}
               please contact
-            </Trans>
-            {' '}
-            {tipbotInfo.name}
-            {' '}
-            <Trans>
+              {' '}
+              {tipbotInfo.name}
+              {' '}
               support or the developer through discord
             </Trans>
             : Bago#7842
@@ -195,29 +200,37 @@ const Tipbot = function (props) {
             variant="h6"
             align="left"
           >
-            <Trans>2. Information we may collect about you</Trans>
+            <Trans>
+              2. Information we may collect about you
+            </Trans>
           </Typography>
           <Typography
             variant="body1"
             align="left"
           >
-            <Trans>We collect and process the following information which may include your personal data.</Trans>
+            <Trans>
+              We collect and process the following information which may include your personal data.
+            </Trans>
           </Typography>
           <Typography
             variant="body1"
             align="left"
           >
-            <Trans>Your Discord ID, Discord Username, Discord Server ID & Name, Discord Channel ID & Name, your user preferences as well as all the data you supply to us and information provided by you when using the Service</Trans>
-            {' '}
-            (
-            {tipbotInfo.name}
-            ).
+            <Trans>
+              Your Discord ID, Discord Username, Discord Server ID & Name, Discord Channel ID & Name, your user preferences as well as all the data you supply to us and information provided by you when using the Service
+              {' '}
+              (
+              {tipbotInfo.name}
+              ).
+            </Trans>
           </Typography>
           <Typography
             variant="body1"
             align="left"
           >
-            <Trans>We do not access or store emails or phone numbers for our Discord bot users.</Trans>
+            <Trans>
+              We do not access or store emails or phone numbers for our Discord bot users.
+            </Trans>
           </Typography>
         </Grid>
 
@@ -230,7 +243,9 @@ const Tipbot = function (props) {
             variant="h6"
             align="left"
           >
-            <Trans>3. Collecting, processing and using personal data</Trans>
+            <Trans>
+              3. Collecting, processing and using personal data
+            </Trans>
           </Typography>
           <Typography
             variant="body1"
@@ -238,18 +253,14 @@ const Tipbot = function (props) {
           >
             <Trans>
               We only store and process your personal data when you have voluntarily supplied us with it such as adding
-            </Trans>
-            {' '}
-            {tipbotInfo.nae}
-            {' '}
-            <Trans>
+              {' '}
+              {tipbotInfo.name}
+              {' '}
               on your server or by interacting with
-            </Trans>
-            {' '}
-            {tipbotInfo.name}
-            .
-            {' '}
-            <Trans>
+              {' '}
+              {tipbotInfo.name}
+              .
+              {' '}
               Your personal data will only be disclosed or otherwise transmitted if this is necessary to implement the contract, render our Services or you have given your prior consent.
             </Trans>
           </Typography>
@@ -264,7 +275,9 @@ const Tipbot = function (props) {
             variant="h6"
             align="left"
           >
-            <Trans>4. Why we collect information about you (purpose of processing)</Trans>
+            <Trans>
+              4. Why we collect information about you (purpose of processing)
+            </Trans>
           </Typography>
           <Typography
             variant="body1"
@@ -285,7 +298,9 @@ const Tipbot = function (props) {
             variant="h6"
             align="left"
           >
-            <Trans>5. Log files</Trans>
+            <Trans>
+              5. Log files
+            </Trans>
           </Typography>
           <Typography
             variant="body1"
@@ -306,7 +321,9 @@ const Tipbot = function (props) {
             variant="h6"
             align="left"
           >
-            <Trans>6. Data sharing</Trans>
+            <Trans>
+              6. Data sharing
+            </Trans>
           </Typography>
           <Typography
             variant="body1"
@@ -345,7 +362,9 @@ const Tipbot = function (props) {
             variant="h6"
             align="left"
           >
-            <Trans>7. Your rights</Trans>
+            <Trans>
+              7. Your rights
+            </Trans>
           </Typography>
           <Typography
             variant="body1"
@@ -374,7 +393,6 @@ const Tipbot = function (props) {
             </Trans>
           </Typography>
         </Grid>
-
       </Grid>
     </div>
   );
