@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.5](https://github.com/bobpepers/Tipbots-Website/compare/v0.0.4...v0.0.5) (2022-08-26)
+
+
+### Bug Fixes
+
+* 🎨 breakpoints tos, pp buttons.. tipbotLogosize tos, pp ([57a68df](https://github.com/bobpepers/Tipbots-Website/commit/57a68df34bc9d0fbdfc1ffd9f50a93512fe1fb0e))
+* 🐛 break sentence aparts if not fit, axios no crash on fail ([6ae863d](https://github.com/bobpepers/Tipbots-Website/commit/6ae863d8d43209c078ed7b123b77afe0ed18d232))
+
 ### [0.0.4](https://github.com/bobpepers/Tipbots-Website/compare/v0.0.3...v0.0.4) (2022-08-26)
 
 
