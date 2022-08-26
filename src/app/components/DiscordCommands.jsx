@@ -343,7 +343,9 @@ function DiscordCommands(
               <code>
                 <Typography>
                   {tipbotInfo.discordCommandPrefix}
-                  {' withdraw ReU2nhYXamYRd2VBk4auwresov6jwLEuSg 5.20'}
+                  {' withdraw '}
+                  {tipbotInfo.exampleAddress}
+                  {' 5.20'}
                 </Typography>
               </code>
             </pre>
@@ -1002,6 +1004,7 @@ DiscordCommands.propTypes = {
     name: PropTypes.string.isRequired,
     discordCommandPrefix: PropTypes.string.isRequired,
     ticker: PropTypes.string.isRequired,
+    exampleAddress: PropTypes.string.isRequired,
   }).isRequired,
 };
 

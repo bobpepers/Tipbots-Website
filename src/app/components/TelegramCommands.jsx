@@ -548,7 +548,9 @@ function TelegramCommands(
               <code>
                 <Typography>
                   {tipbotInfo.telegramCommandPrefix}
-                  {' withdraw ReU2nhYXamYRd2VBk4auwresov6jwLEuSg 5.20'}
+                  {' withdraw '}
+                  {tipbotInfo.exampleAddress}
+                  5.20
                 </Typography>
               </code>
             </pre>
@@ -610,6 +612,7 @@ TelegramCommands.propTypes = {
     name: PropTypes.string.isRequired,
     telegramCommandPrefix: PropTypes.string.isRequired,
     ticker: PropTypes.string.isRequired,
+    exampleAddress: PropTypes.string.isRequired,
   }).isRequired,
 };
 
