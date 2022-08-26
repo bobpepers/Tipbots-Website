@@ -14,6 +14,7 @@ import Uptime from './views/Uptime';
 import Tipbot from './views/Tipbot';
 import PrivacyPolicy from './views/PrivacyPolicy';
 import TermsOfService from './views/TermsOfService';
+import Support from './views/Support';
 
 const RoutesX = function (props) {
   const {
@@ -34,6 +35,10 @@ const RoutesX = function (props) {
       <Route
         path="/uptime"
         element={<Uptime />}
+      />
+      <Route
+        path="/support"
+        element={<Support />}
       />
       <Route
         path="/tipbots/runestip"

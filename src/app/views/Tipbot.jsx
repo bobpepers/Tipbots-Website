@@ -156,6 +156,7 @@ const Tipbot = function (
         >
           <a
             href={tipbotInfo.discordLink}
+            style={{ textAlign: 'center' }}
           >
             <Discord
               className="tipBotLinkLogo pb-1"
@@ -183,6 +184,7 @@ const Tipbot = function (
         >
           <a
             href={tipbotInfo.telegramLink}
+            style={{ textAlign: 'center' }}
           >
             <Telegram
               className="tipBotLinkLogo pb-1"
