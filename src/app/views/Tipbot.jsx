@@ -23,7 +23,9 @@ import { ReactComponent as Telegram } from '../assets/images/telegram.svg';
 
 import { withRouter } from '../hooks/withRouter';
 
-const Tipbot = function (props) {
+const Tipbot = function (
+  props,
+) {
   const location = useLocation();
 
   const [tipbotInfo, setTipBotInfo] = useState(tipbotInfoArray.find((x) => x.name.toLowerCase() === location.pathname.split('/')[2]));
@@ -53,6 +55,7 @@ const Tipbot = function (props) {
           justifyContent="center"
         >
           <img
+            className="tipbotLogo"
             src={tipbotInfo.logo}
             alt={`${tipbotInfo.coin} Logo`}
           />
@@ -60,6 +63,7 @@ const Tipbot = function (props) {
         <Grid
           item
           xs={12}
+          className="pt-1 pb-1"
         >
           <Typography
             variant="h3"
@@ -67,17 +71,6 @@ const Tipbot = function (props) {
           >
             {tipbotInfo.name}
           </Typography>
-        </Grid>
-
-        <Grid
-          item
-          xs={12}
-        >
-          <UptimeRobot
-            apikey="ur1719256-ba1375b28cf44c17640ac06e"
-            CountDays={60}
-            WhichTipBots={tipbotInfo.uptimeRobotMonitorId}
-          />
         </Grid>
 
         <Grid
@@ -134,6 +127,73 @@ const Tipbot = function (props) {
               Privacy Policy
             </Trans>
           </Button>
+        </Grid>
+
+        <Grid
+          item
+          xs={12}
+          className="pt-1"
+        >
+          <UptimeRobot
+            apikey="ur1719256-ba1375b28cf44c17640ac06e"
+            CountDays={60}
+            WhichTipBots={tipbotInfo.uptimeRobotMonitorId}
+          />
+        </Grid>
+
+        <Grid
+          container
+          item
+          xs={12}
+          sm={12}
+          md={6}
+          alignItems="center"
+          justifyContent="center"
+          className="pt-1 pb-1"
+        >
+          <a
+            href={tipbotInfo.discordLink}
+          >
+            <Discord
+              className="tipBotLinkLogo pb-1"
+            />
+            <Typography
+              variant="subtitle1"
+              align="center"
+            >
+              <Trans>Invite</Trans>
+              {' '}
+              {tipbotInfo.name}
+            </Typography>
+          </a>
+
+        </Grid>
+        <Grid
+          container
+          item
+          xs={12}
+          sm={12}
+          md={6}
+          className="pt-1 pb-1"
+          alignItems="center"
+          justifyContent="center"
+        >
+          <a
+            href={tipbotInfo.telegramLink}
+          >
+            <Telegram
+              className="tipBotLinkLogo pb-1"
+            />
+            <Typography
+              variant="subtitle1"
+              align="center"
+            >
+              <Trans>Invite</Trans>
+              {' '}
+              {tipbotInfo.name}
+            </Typography>
+          </a>
+
         </Grid>
 
         <Grid

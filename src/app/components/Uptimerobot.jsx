@@ -6,14 +6,17 @@ import ReactTooltip from 'react-tooltip';
 import {
   Grid,
   Box,
-  Divider,
   Typography,
+  CircularProgress,
 } from '@mui/material';
-import CircularProgress from '@mui/material/CircularProgress';
 import CheckIcon from '@mui/icons-material/Check';
 import CloseIcon from '@mui/icons-material/Close';
 import QuestionMarkIcon from '@mui/icons-material/QuestionMark';
-import { formatDuration, formatNumber } from '../helpers/utils';
+import PropTypes from 'prop-types';
+import {
+  formatDuration,
+  formatNumber,
+} from '../helpers/utils';
 import { GetMonitors } from '../helpers/uptimerobot';
 
 function UptimeRobot({
@@ -194,5 +197,11 @@ function UptimeRobot({
     </Box>
   );
 }
+
+UptimeRobot.propTypes = {
+  apikey: PropTypes.string.isRequired,
+  WhichTipBots: PropTypes.string.isRequired,
+  CountDays: PropTypes.number.isRequired,
+};
 
 export default UptimeRobot;
