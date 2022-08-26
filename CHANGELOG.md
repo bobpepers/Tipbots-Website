@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.4](https://github.com/bobpepers/Tipbots-Website/compare/v0.0.3...v0.0.4) (2022-08-26)
+
+
+### Bug Fixes
+
+* 🐛 default theme dark, fix localStorage language initiation ([e239318](https://github.com/bobpepers/Tipbots-Website/commit/e23931833ec991b84e7298c0d9f573a611e7c70a))
+
 ### [0.0.3](https://github.com/bobpepers/Tipbots-Website/compare/v0.0.2...v0.0.3) (2022-08-26)
 
 
