@@ -96,11 +96,9 @@ const Tipbot = function (props) {
             align="left"
           >
             <Trans>
-              This Privacy Policy (“Privacy Policy“) apply to the use of the service (“Service“, “Bot“) provided by
-              {' '}
+              {'This Privacy Policy (“Privacy Policy“) apply to the use of the service (“Service“, “Bot“) provided by '}
               {tipbotInfo.name}
-              {' '}
-              (hereinafter also referred as “we” or “us”).
+              {`${' '}(hereinafter also referred as “we” or “us”).`}
             </Trans>
           </Typography>
 
@@ -109,13 +107,10 @@ const Tipbot = function (props) {
             align="left"
           >
             <Trans>
-              If you have any questions or comments about this Privacy Policy,
-              {' '}
-              please contact
-              {' '}
+              {'If you have any questions or comments about this Privacy Policy, '}
+              {'please contact '}
               {tipbotInfo.name}
-              {' '}
-              support or the developer through discord
+              {`${' '}support or the developer through discord`}
             </Trans>
             : Bago#7842
           </Typography>
@@ -125,14 +120,10 @@ const Tipbot = function (props) {
             align="left"
           >
             <Trans>
-              We are committed to protecting and respecting your privacy.
-              {' '}
-              The Privacy Policy explains the basis on which personal information we collect from you will be processed by us or on our behalf.
-              {' '}
-              Where we decide the purpose or means for which personal data you supply through these Services is processed, we are the “controller”.
-              {' '}
-              Where you decide the purpose or means for which personal data you supply through these Services is processed, you are the “controller”.
-              {' '}
+              {'We are committed to protecting and respecting your privacy. '}
+              {'The Privacy Policy explains the basis on which personal information we collect from you will be processed by us or on our behalf. '}
+              {'Where we decide the purpose or means for which personal data you supply through these Services is processed, we are the “controller”. '}
+              {'Where you decide the purpose or means for which personal data you supply through these Services is processed, you are the “controller”. '}
               We will comply with proper and applicable data protection laws.
             </Trans>
           </Typography>
@@ -151,10 +142,8 @@ const Tipbot = function (props) {
             align="left"
           >
             <Trans>
-              What information we may collect about you; How we will use the information we collect about you;
-              {' '}
-              Whether we will disclose your details to anyone else;
-              {' '}
+              {'What information we may collect about you; How we will use the information we collect about you; '}
+              {'Whether we will disclose your details to anyone else; '}
               And your choices and rights regarding the personal information you have provided to us.
             </Trans>
           </Typography>
@@ -217,8 +206,7 @@ const Tipbot = function (props) {
             align="left"
           >
             <Trans>
-              Your Discord ID, Discord Username, Discord Server ID & Name, Discord Channel ID & Name, your user preferences as well as all the data you supply to us and information provided by you when using the Service
-              {' '}
+              {'Your Discord ID, Discord Username, Discord Server ID & Name, Discord Channel ID & Name, your user preferences as well as all the data you supply to us and information provided by you when using the Service '}
               (
               {tipbotInfo.name}
               ).
@@ -252,16 +240,12 @@ const Tipbot = function (props) {
             align="left"
           >
             <Trans>
-              We only store and process your personal data when you have voluntarily supplied us with it such as adding
-              {' '}
+              {'We only store and process your personal data when you have voluntarily supplied us with it such as adding '}
               {tipbotInfo.name}
-              {' '}
-              on your server or by interacting with
-              {' '}
+              {`${' '}on your server or by interacting with `}
               {tipbotInfo.name}
               .
-              {' '}
-              Your personal data will only be disclosed or otherwise transmitted if this is necessary to implement the contract, render our Services or you have given your prior consent.
+              {`${' '}Your personal data will only be disclosed or otherwise transmitted if this is necessary to implement the contract, render our Services or you have given your prior consent.`}
             </Trans>
           </Typography>
         </Grid>

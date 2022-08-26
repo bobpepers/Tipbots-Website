@@ -98,11 +98,9 @@ const Tipbot = function (props) {
             align="center"
           >
             <Trans>
-              In no event shall
-              {' '}
+              {'In no event shall '}
               {tipbotInfo.name}
-              {' '}
-              or its authors be responsible for any lost, misdirected or stolen funds.
+              {`${' '}or its authors be responsible for any lost, misdirected or stolen funds.`}
             </Trans>
           </Typography>
         </Grid>
@@ -117,9 +115,8 @@ const Tipbot = function (props) {
             align="center"
           >
             {tipbotInfo.name}
-            {' '}
             <Trans>
-              Tips are non-reversible and non-refundable.
+              {`${' '}Tips are non-reversible and non-refundable.`}
             </Trans>
           </Typography>
           <Typography
@@ -127,7 +124,7 @@ const Tipbot = function (props) {
             align="center"
           >
             <Trans>
-              We don&apos;t reverse or refund any tips that made by the user. Please check twice before making any tips.
+              {'We don\'t reverse or refund any tips that made by the user. Please check twice before making any tips.'}
             </Trans>
           </Typography>
         </Grid>
@@ -153,12 +150,10 @@ const Tipbot = function (props) {
             align="center"
           >
             <Trans>
-              Your tipbot wallet security is as safe as your Discord account is. Use features like two-factor authentication to keep your account secure. In regards to
-              {' '}
+              {'Your tipbot wallet security is as safe as your Discord account is. Use features like two-factor authentication to keep your account secure. In regards to '}
               {tipbotInfo.name}
               &apos;s
-              {' '}
-              security, we hold up to industry standards. Your wallet is powered by proven technology. In case of concerns, please contact our support.
+              {`${' '}security, we hold up to industry standards. Your wallet is powered by proven technology. In case of concerns, please contact our support.`}
             </Trans>
           </Typography>
         </Grid>
@@ -196,12 +191,10 @@ const Tipbot = function (props) {
             align="center"
           >
             <Trans>
-              Always keep small sums of coins in your
-              {' '}
+              {'Always keep small sums of coins in your '}
               {tipbotInfo.name}
               &apos;s
-              {' '}
-              wallet
+              {`${' '}wallet`}
             </Trans>
           </Typography>
           <Typography
@@ -250,12 +243,9 @@ const Tipbot = function (props) {
             align="center"
           >
             <Trans>
-              When using
-              {' '}
+              {'When using '}
               {tipbotInfo.name}
-              ,
-              {' '}
-              you agree to the terms and conditions above.
+              ,  you agree to the terms and conditions above.
             </Trans>
           </Typography>
         </Grid>

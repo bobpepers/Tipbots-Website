@@ -57,11 +57,9 @@ function DiscordCommands(
               className="pb-1"
             >
               <Trans>
-                Displays
-                {' '}
+                {'Displays '}
                 {tipbotInfo.name}
-                {' '}
-                help message
+                {`${' '}help message`}
               </Trans>
             </Typography>
             <Typography>
@@ -73,8 +71,7 @@ function DiscordCommands(
               <code>
                 <Typography>
                   {tipbotInfo.discordCommandPrefix}
-                  {' '}
-                  help
+                  {' help'}
                 </Typography>
               </code>
             </pre>
@@ -98,11 +95,9 @@ function DiscordCommands(
               className="pb-1"
             >
               <Trans>
-                Displays
-                {' '}
+                {'Displays '}
                 {tipbotInfo.ticker}
-                {' '}
-                coin info
+                {`${' '}coin info`}
               </Trans>
             </Typography>
             <Typography>
@@ -114,8 +109,7 @@ function DiscordCommands(
               <code>
                 <Typography>
                   {tipbotInfo.discordCommandPrefix}
-                  {' '}
-                  info
+                  {' info'}
                 </Typography>
               </code>
             </pre>
@@ -139,11 +133,9 @@ function DiscordCommands(
               className="pb-1"
             >
               <Trans>
-                Displays your
-                {' '}
+                {'Displays your '}
                 {tipbotInfo.ticker}
-                {' '}
-                balance
+                {`${' '}balance`}
               </Trans>
             </Typography>
             <Typography>
@@ -155,8 +147,7 @@ function DiscordCommands(
               <code>
                 <Typography>
                   {tipbotInfo.discordCommandPrefix}
-                  {' '}
-                  balance
+                  {' balance'}
                 </Typography>
               </code>
             </pre>
@@ -182,11 +173,9 @@ function DiscordCommands(
               className="pb-1"
             >
               <Trans>
-                Displays
-                {' '}
+                {'Displays '}
                 {tipbotInfo.ticker}
-                {' '}
-                price
+                {`${' '}price`}
               </Trans>
             </Typography>
             <Typography>
@@ -198,8 +187,7 @@ function DiscordCommands(
               <code>
                 <Typography>
                   {tipbotInfo.discordCommandPrefix}
-                  {' '}
-                  price
+                  {' price'}
                 </Typography>
               </code>
             </pre>
@@ -224,11 +212,9 @@ function DiscordCommands(
               className="pb-1"
             >
               <Trans>
-                Displays your
-                {' '}
+                {'Displays your '}
                 {tipbotInfo.name}
-                {' '}
-                tip statistics
+                {`${' '}tip statistics`}
               </Trans>
             </Typography>
             <Typography>
@@ -240,8 +226,7 @@ function DiscordCommands(
               <code>
                 <Typography>
                   {tipbotInfo.discordCommandPrefix}
-                  {' '}
-                  stats
+                  {' stats'}
                 </Typography>
               </code>
             </pre>
@@ -266,11 +251,9 @@ function DiscordCommands(
               className="pb-1"
             >
               <Trans>
-                Displays
-                {' '}
+                {'Displays '}
                 {tipbotInfo.ticker}
-                {' '}
-                deposit address and QR code
+                {`${' '}deposit address and QR code`}
               </Trans>
             </Typography>
             <Typography>
@@ -282,8 +265,7 @@ function DiscordCommands(
               <code>
                 <Typography>
                   {tipbotInfo.discordCommandPrefix}
-                  {' '}
-                  deposit
+                  {' deposit'}
                 </Typography>
               </code>
             </pre>
@@ -308,11 +290,9 @@ function DiscordCommands(
               className="pb-1"
             >
               <Trans>
-                Displays
-                {' '}
+                {'Displays '}
                 {tipbotInfo.ticker}
-                {' '}
-                fee schedule
+                {`${' '}fee schedule`}
               </Trans>
             </Typography>
             <Typography>
@@ -324,8 +304,7 @@ function DiscordCommands(
               <code>
                 <Typography>
                   {tipbotInfo.discordCommandPrefix}
-                  {' '}
-                  fees
+                  {' fees'}
                 </Typography>
               </code>
             </pre>
@@ -350,11 +329,9 @@ function DiscordCommands(
               className="pb-1"
             >
               <Trans>
-                Withdraws the entered amount to a
-                {' '}
+                {'Withdraws the entered amount to a '}
                 {tipbotInfo.ticker}
-                {' '}
-                address of your choice
+                {`${' '}address of your choice`}
               </Trans>
             </Typography>
             <Typography>
@@ -366,8 +343,7 @@ function DiscordCommands(
               <code>
                 <Typography>
                   {tipbotInfo.discordCommandPrefix}
-                  {' '}
-                  withdraw ReU2nhYXamYRd2VBk4auwresov6jwLEuSg 5.20
+                  {' withdraw ReU2nhYXamYRd2VBk4auwresov6jwLEuSg 5.20'}
                 </Typography>
               </code>
             </pre>
@@ -392,8 +368,7 @@ function DiscordCommands(
               className="pb-1"
             >
               <Trans>
-                Tips the @ mentioned user with the desired amount of
-                {' '}
+                {'Tips the @ mentioned user with the desired amount of '}
                 {tipbotInfo.ticker}
               </Trans>
             </Typography>
@@ -406,8 +381,7 @@ function DiscordCommands(
               <code>
                 <Typography>
                   {tipbotInfo.discordCommandPrefix}
-                  {' '}
-                  tip @test123456#7890 1.00
+                  {' tip @test123456#7890 1.00'}
                 </Typography>
               </code>
             </pre>
@@ -421,8 +395,7 @@ function DiscordCommands(
               <code>
                 <Typography>
                   {tipbotInfo.discordCommandPrefix}
-                  {' '}
-                  tip @test123456#7890 @test123457#7890 1.00 each
+                  {' tip @test123456#7890 @test123457#7890 1.00 each'}
                 </Typography>
               </code>
             </pre>
@@ -447,11 +420,9 @@ function DiscordCommands(
               className="pb-1"
             >
               <Trans>
-                Rains the desired amount of
-                {' '}
+                {'Rains the desired amount of '}
                 {tipbotInfo.ticker}
-                {' '}
-                onto all online users (optionally, within specified role)
+                {`${' '}onto all online users (optionally, within specified role)`}
               </Trans>
             </Typography>
             <Typography>
@@ -463,8 +434,7 @@ function DiscordCommands(
               <code>
                 <Typography>
                   {tipbotInfo.discordCommandPrefix}
-                  {' '}
-                  rain 10
+                  {' rain 10'}
                 </Typography>
               </code>
             </pre>
@@ -472,8 +442,7 @@ function DiscordCommands(
               <code>
                 <Typography>
                   {tipbotInfo.discordCommandPrefix}
-                  {' '}
-                  rain 10 @supporters
+                  {' rain 10 @supporters'}
                 </Typography>
               </code>
             </pre>
@@ -497,11 +466,9 @@ function DiscordCommands(
               className="pb-1"
             >
               <Trans>
-                Soaks the desired amount of
-                {' '}
+                {'Soaks the desired amount of '}
                 {tipbotInfo.ticker}
-                {' '}
-                onto all online and idle users (optionally, within specified role)
+                {`${' '}onto all online and idle users (optionally, within specified role)`}
               </Trans>
             </Typography>
             <Typography>
@@ -513,8 +480,7 @@ function DiscordCommands(
               <code>
                 <Typography>
                   {tipbotInfo.discordCommandPrefix}
-                  {' '}
-                  soak 3.00
+                  {' soak 3.00'}
                 </Typography>
               </code>
             </pre>
@@ -522,8 +488,7 @@ function DiscordCommands(
               <code>
                 <Typography>
                   {tipbotInfo.discordCommandPrefix}
-                  {' '}
-                  soak 3.00 @supporters
+                  {' soak 3.00 @supporters'}
                 </Typography>
               </code>
             </pre>
@@ -547,11 +512,9 @@ function DiscordCommands(
               className="pb-1"
             >
               <Trans>
-                Floods the desired amount of
-                {' '}
+                {'Floods the desired amount of '}
                 {tipbotInfo.ticker}
-                {' '}
-                onto all users, including offline users (optionally, within specified role)
+                {`${' '}onto all users, including offline users (optionally, within specified role)`}
               </Trans>
             </Typography>
             <Typography>
@@ -563,8 +526,7 @@ function DiscordCommands(
               <code>
                 <Typography>
                   {tipbotInfo.discordCommandPrefix}
-                  {' '}
-                  flood 5.00
+                  {' flood 5.00'}
                 </Typography>
               </code>
             </pre>
@@ -572,8 +534,7 @@ function DiscordCommands(
               <code>
                 <Typography>
                   {tipbotInfo.discordCommandPrefix}
-                  {' '}
-                  flood 5.00 @supporters
+                  {' flood 5.00 @supporters'}
                 </Typography>
               </code>
             </pre>
@@ -597,11 +558,9 @@ function DiscordCommands(
               className="pb-1"
             >
               <Trans>
-                Makes a sleet storm with the desired amount of
-                {' '}
+                {'Makes a sleet storm with the desired amount of '}
                 {tipbotInfo.ticker}
-                {' '}
-                onto all users that have been active in the channel in the last 15 minutes (optionally, within a specified time)
+                {`${' '}onto all users that have been active in the channel in the last 15 minutes (optionally, within a specified time)`}
               </Trans>
             </Typography>
             <Typography>
@@ -613,8 +572,7 @@ function DiscordCommands(
               <code>
                 <Typography>
                   {tipbotInfo.discordCommandPrefix}
-                  {' '}
-                  sleet 5.00
+                  {' sleet 5.00'}
                 </Typography>
               </code>
             </pre>
@@ -622,8 +580,7 @@ function DiscordCommands(
               <code>
                 <Typography>
                   {tipbotInfo.discordCommandPrefix}
-                  {' '}
-                  sleet 5.00 10m
+                  {' sleet 5.00 10m'}
                 </Typography>
               </code>
             </pre>
@@ -647,11 +604,9 @@ function DiscordCommands(
               className="pb-1"
             >
               <Trans>
-                Rains the desired amount of
-                {' '}
+                {'Rains the desired amount of '}
                 {tipbotInfo.ticker}
-                {' '}
-                onto all listening users in the mentioned voice channel.
+                {`${' '}onto all listening users in the mentioned voice channel.`}
               </Trans>
             </Typography>
             <Typography>
@@ -663,8 +618,7 @@ function DiscordCommands(
               <code>
                 <Typography>
                   {tipbotInfo.discordCommandPrefix}
-                  {' '}
-                  voicerain 5.00 #General
+                  {' voicerain 5.00 #General'}
                 </Typography>
               </code>
             </pre>
@@ -672,8 +626,7 @@ function DiscordCommands(
               <code>
                 <Typography>
                   {tipbotInfo.discordCommandPrefix}
-                  {' '}
-                  voicerain 5.00 #General @supporters
+                  {' voicerain 5.00 #General @supporters'}
                 </Typography>
               </code>
             </pre>
@@ -697,11 +650,9 @@ function DiscordCommands(
               className="pb-1"
             >
               <Trans>
-                Tips a random lucky online user with an amount of
-                {' '}
+                {'Tips a random lucky online user with an amount of '}
                 {tipbotInfo.ticker}
-                {' '}
-                (optionally, within specified role)
+                {`${' '}(optionally, within specified role)`}
               </Trans>
             </Typography>
             <Typography>
@@ -713,8 +664,7 @@ function DiscordCommands(
               <code>
                 <Typography>
                   {tipbotInfo.discordCommandPrefix}
-                  {' '}
-                  thunder 5
+                  {' thunder 5'}
                 </Typography>
               </code>
             </pre>
@@ -722,8 +672,7 @@ function DiscordCommands(
               <code>
                 <Typography>
                   {tipbotInfo.discordCommandPrefix}
-                  {' '}
-                  thunder 5 @supporters
+                  {' thunder 5 @supporters'}
                 </Typography>
               </code>
             </pre>
@@ -747,11 +696,9 @@ function DiscordCommands(
               className="pb-1"
             >
               <Trans>
-                Tips a specified number (max: 50) random lucky online users with part of the amount of
-                {' '}
+                {'Tips a specified number (max: 50) random lucky online users with part of the amount of '}
                 {tipbotInfo.ticker}
-                {' '}
-                (optionally, within specified role)
+                {`${' '}(optionally, within specified role)`}
               </Trans>
             </Typography>
             <Typography>
@@ -772,8 +719,7 @@ function DiscordCommands(
               <code>
                 <Typography>
                   {tipbotInfo.discordCommandPrefix}
-                  {' '}
-                  thunderstorm 10 5.00 @supporters
+                  {' thunderstorm 10 5.00 @supporters'}
                 </Typography>
               </code>
             </pre>
@@ -797,11 +743,9 @@ function DiscordCommands(
               className="pb-1"
             >
               <Trans>
-                Tips a specified number (max: 50) random lucky online and idle users with part of the amount of
-                {' '}
+                {'Tips a specified number (max: 50) random lucky online and idle users with part of the amount of '}
                 {tipbotInfo.ticker}
-                {' '}
-                (optionally, within specified role)
+                {`${' '}(optionally, within specified role)`}
               </Trans>
             </Typography>
             <Typography>
@@ -813,8 +757,7 @@ function DiscordCommands(
               <code>
                 <Typography>
                   {tipbotInfo.discordCommandPrefix}
-                  {' '}
-                  hurricane 10 5.00
+                  {' hurricane 10 5.00'}
                 </Typography>
               </code>
             </pre>
@@ -822,8 +765,7 @@ function DiscordCommands(
               <code>
                 <Typography>
                   {tipbotInfo.discordCommandPrefix}
-                  {' '}
-                  hurricane 10 5.00 @supporters
+                  {' hurricane 10 5.00 @supporters'}
                 </Typography>
               </code>
             </pre>
@@ -848,9 +790,7 @@ function DiscordCommands(
               className="pb-1"
             >
               <Trans>
-                Performs a react airdrop with the amount, optionally within custom time, optionally using a custom-supplied emoji.
-                {' '}
-                &lt;time&gt; parameter accepts time interval expressions in the form of: 60s, 5m, 1h. Default time interval is 5m (5minutes)
+                {'Performs a react airdrop with the amount, optionally within custom time, optionally using a custom-supplied emoji. <time> parameter accepts time interval expressions in the form of: 60s, 5m, 1h. Default time interval is 5m (5minutes)'}
               </Trans>
             </Typography>
             <Typography>
@@ -862,8 +802,7 @@ function DiscordCommands(
               <code>
                 <Typography>
                   {tipbotInfo.discordCommandPrefix}
-                  {' '}
-                  reactdrop &lt;amount&gt; [&lt;time&gt;] [&lt;emoji&gt;]
+                  {' reactdrop <amount> [<time>] [<emoji>]'}
                 </Typography>
               </code>
             </pre>
@@ -871,8 +810,7 @@ function DiscordCommands(
               <code>
                 <Typography>
                   {tipbotInfo.discordCommandPrefix}
-                  {' '}
-                  reactdrop 10 20m
+                  {' reactdrop 10 20m'}
                 </Typography>
               </code>
             </pre>
@@ -880,8 +818,7 @@ function DiscordCommands(
               <code>
                 <Typography>
                   {tipbotInfo.discordCommandPrefix}
-                  {' '}
-                  reactdrop 10 3h 😃
+                  {' reactdrop 10 3h 😃'}
                 </Typography>
               </code>
             </pre>
@@ -905,12 +842,9 @@ function DiscordCommands(
               className="pb-1"
             >
               <Trans>
-                Performs a trivia with the amount of
-                {' '}
+                {'Performs a trivia with the amount of '}
                 {tipbotInfo.ticker}
-                ,
-                {' '}
-                optionally with set amount of of people, optionally within custom time. &lt;time&gt; parameter accepts time interval expressions in the form of: 60s, 5m, 1h. Default time interval is 5m (5minutes)
+                {',  optionally with set amount of of people, optionally within custom time. &lt;time&gt; parameter accepts time interval expressions in the form of: 60s, 5m, 1h. Default time interval is 5m (5minutes)'}
               </Trans>
             </Typography>
             <Typography>
@@ -922,8 +856,7 @@ function DiscordCommands(
               <code>
                 <Typography>
                   {tipbotInfo.discordCommandPrefix}
-                  {' '}
-                  trivia &lt;amount&gt; [&lt;amountOfPeople&gt;] [&lt;time&gt;]
+                  {' trivia <amount> [<amountOfPeople>] [<time>]'}
                 </Typography>
               </code>
             </pre>
@@ -931,8 +864,7 @@ function DiscordCommands(
               <code>
                 <Typography>
                   {tipbotInfo.discordCommandPrefix}
-                  {' '}
-                  trivia 5
+                  {' trivia 5'}
                 </Typography>
               </code>
             </pre>
@@ -940,8 +872,7 @@ function DiscordCommands(
               <code>
                 <Typography>
                   {tipbotInfo.discordCommandPrefix}
-                  {' '}
-                  trivia 5 3 40s
+                  {' trivia 5 3 40s'}
                 </Typography>
               </code>
             </pre>
@@ -977,8 +908,7 @@ function DiscordCommands(
               <code>
                 <Typography>
                   {tipbotInfo.discordCommandPrefix}
-                  {' '}
-                  ignoreme
+                  {' ignoreme'}
                 </Typography>
               </code>
             </pre>
@@ -1003,11 +933,9 @@ function DiscordCommands(
               className="pb-1"
             >
               <Trans>
-                Gets a small amount of
-                {' '}
+                {'Gets a small amount of '}
                 {tipbotInfo.ticker}
-                {' '}
-                from the faucet (applicable every 4 hours)
+                {`${' '}from the faucet (applicable every 4 hours)`}
               </Trans>
             </Typography>
             <Typography>
@@ -1019,8 +947,7 @@ function DiscordCommands(
               <code>
                 <Typography>
                   {tipbotInfo.discordCommandPrefix}
-                  {' '}
-                  faucet
+                  {' faucet'}
                 </Typography>
               </code>
             </pre>
@@ -1044,11 +971,9 @@ function DiscordCommands(
               className="pb-1"
             >
               <Trans>
-                Show link to
-                {' '}
+                {'Show link to '}
                 {tipbotInfo.name}
-                {' '}
-                support server
+                {`${' '}support server`}
               </Trans>
             </Typography>
             <Typography>
@@ -1060,12 +985,10 @@ function DiscordCommands(
               <code>
                 <Typography>
                   {tipbotInfo.discordCommandPrefix}
-                  {' '}
-                  support
+                  {' support'}
                 </Typography>
               </code>
             </pre>
-
           </AccordionDetails>
         </Accordion>
 
