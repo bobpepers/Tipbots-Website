@@ -343,6 +343,14 @@ function DiscordCommands(
               <code>
                 <Typography>
                   {tipbotInfo.discordCommandPrefix}
+                  {' withdraw <address> <amount|all>'}
+                </Typography>
+              </code>
+            </pre>
+            <pre>
+              <code>
+                <Typography>
+                  {tipbotInfo.discordCommandPrefix}
                   {' withdraw '}
                   {tipbotInfo.exampleAddress}
                   {' 5.20'}
@@ -383,6 +391,14 @@ function DiscordCommands(
               <code>
                 <Typography>
                   {tipbotInfo.discordCommandPrefix}
+                  {' tip <@user> <amount|all>'}
+                </Typography>
+              </code>
+            </pre>
+            <pre>
+              <code>
+                <Typography>
+                  {tipbotInfo.discordCommandPrefix}
                   {' tip @test123456#7890 1.00'}
                 </Typography>
               </code>
@@ -393,6 +409,14 @@ function DiscordCommands(
                 Multiple users:
               </Trans>
             </Typography>
+            <pre>
+              <code>
+                <Typography>
+                  {tipbotInfo.discordCommandPrefix}
+                  {' tip <@user> <@user> <@user> <amount|all> [split|each]'}
+                </Typography>
+              </code>
+            </pre>
             <pre>
               <code>
                 <Typography>
@@ -432,6 +456,14 @@ function DiscordCommands(
                 Examples:
               </Trans>
             </Typography>
+            <pre>
+              <code>
+                <Typography>
+                  {tipbotInfo.discordCommandPrefix}
+                  {' rain <amount|all> [<@role>]'}
+                </Typography>
+              </code>
+            </pre>
             <pre>
               <code>
                 <Typography>
@@ -482,6 +514,14 @@ function DiscordCommands(
               <code>
                 <Typography>
                   {tipbotInfo.discordCommandPrefix}
+                  {' soak <amount|all> [<@role>]'}
+                </Typography>
+              </code>
+            </pre>
+            <pre>
+              <code>
+                <Typography>
+                  {tipbotInfo.discordCommandPrefix}
                   {' soak 3.00'}
                 </Typography>
               </code>
@@ -524,6 +564,14 @@ function DiscordCommands(
                 Examples:
               </Trans>
             </Typography>
+            <pre>
+              <code>
+                <Typography>
+                  {tipbotInfo.discordCommandPrefix}
+                  {' flood <amount|all> [<@role>]'}
+                </Typography>
+              </code>
+            </pre>
             <pre>
               <code>
                 <Typography>
@@ -574,6 +622,14 @@ function DiscordCommands(
               <code>
                 <Typography>
                   {tipbotInfo.discordCommandPrefix}
+                  {' sleet <amount|all> [<time>] [<@role>]'}
+                </Typography>
+              </code>
+            </pre>
+            <pre>
+              <code>
+                <Typography>
+                  {tipbotInfo.discordCommandPrefix}
                   {' sleet 5.00'}
                 </Typography>
               </code>
@@ -616,6 +672,14 @@ function DiscordCommands(
                 Examples:
               </Trans>
             </Typography>
+            <pre>
+              <code>
+                <Typography>
+                  {tipbotInfo.discordCommandPrefix}
+                  {' voicerain <amount|all> <@voiceChannel> [<@role>]'}
+                </Typography>
+              </code>
+            </pre>
             <pre>
               <code>
                 <Typography>
@@ -666,6 +730,14 @@ function DiscordCommands(
               <code>
                 <Typography>
                   {tipbotInfo.discordCommandPrefix}
+                  {' thunder <amount|all> [<@role>]'}
+                </Typography>
+              </code>
+            </pre>
+            <pre>
+              <code>
+                <Typography>
+                  {tipbotInfo.discordCommandPrefix}
                   {' thunder 5'}
                 </Typography>
               </code>
@@ -708,6 +780,14 @@ function DiscordCommands(
                 Examples:
               </Trans>
             </Typography>
+            <pre>
+              <code>
+                <Typography>
+                  {tipbotInfo.discordCommandPrefix}
+                  {' thunderstorm <numberOfUsers> <amount|all> [<@role>]'}
+                </Typography>
+              </code>
+            </pre>
             <pre>
               <code>
                 <Typography>
@@ -755,6 +835,14 @@ function DiscordCommands(
                 Examples:
               </Trans>
             </Typography>
+            <pre>
+              <code>
+                <Typography>
+                  {tipbotInfo.discordCommandPrefix}
+                  {' hurricane <numberOfUsers> <amount|all> [<@role>]'}
+                </Typography>
+              </code>
+            </pre>
             <pre>
               <code>
                 <Typography>
@@ -955,6 +1043,83 @@ function DiscordCommands(
             </pre>
           </AccordionDetails>
         </Accordion>
+
+        {
+          tipbotInfo.name === 'PirateTip' && (
+            <>
+              <Accordion>
+                <AccordionSummary
+                  expandIcon={<ExpandMoreIcon />}
+                  aria-controls="panel19a-content"
+                  id="panel19a-header"
+                >
+                  <Typography>
+                    <Trans>
+                      Halving
+                    </Trans>
+                  </Typography>
+                </AccordionSummary>
+                <AccordionDetails>
+                  <Typography
+                    className="pb-1"
+                  >
+                    <Trans>
+                      Displays time left until next halving, etc
+                    </Trans>
+                  </Typography>
+                  <Typography>
+                    <Trans>
+                      Examples:
+                    </Trans>
+                  </Typography>
+                  <pre>
+                    <code>
+                      <Typography>
+                        {tipbotInfo.discordCommandPrefix}
+                        {' halving'}
+                      </Typography>
+                    </code>
+                  </pre>
+                </AccordionDetails>
+              </Accordion>
+              <Accordion>
+                <AccordionSummary
+                  expandIcon={<ExpandMoreIcon />}
+                  aria-controls="panel19a-content"
+                  id="panel19a-header"
+                >
+                  <Typography>
+                    <Trans>
+                      Mining
+                    </Trans>
+                  </Typography>
+                </AccordionSummary>
+                <AccordionDetails>
+                  <Typography
+                    className="pb-1"
+                  >
+                    <Trans>
+                      Displays mining info
+                    </Trans>
+                  </Typography>
+                  <Typography>
+                    <Trans>
+                      Examples:
+                    </Trans>
+                  </Typography>
+                  <pre>
+                    <code>
+                      <Typography>
+                        {tipbotInfo.discordCommandPrefix}
+                        {' mining'}
+                      </Typography>
+                    </code>
+                  </pre>
+                </AccordionDetails>
+              </Accordion>
+            </>
+          )
+        }
 
         <Accordion>
           <AccordionSummary
