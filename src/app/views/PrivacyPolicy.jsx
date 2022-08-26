@@ -53,6 +53,7 @@ const Tipbot = function (props) {
           justifyContent="center"
         >
           <img
+            className="tipbotLogo"
             src={tipbotInfo.logo}
             alt={`${tipbotInfo.coin} Logo`}
           />

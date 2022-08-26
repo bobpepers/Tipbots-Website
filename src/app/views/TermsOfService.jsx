@@ -54,6 +54,7 @@ const Tipbot = function (props) {
           className="pb-1"
         >
           <img
+            className="tipbotLogo"
             src={tipbotInfo.logo}
             alt={`${tipbotInfo.coin} Logo`}
           />

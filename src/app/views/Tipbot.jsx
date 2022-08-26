@@ -49,8 +49,7 @@ const Tipbot = function (
         <Grid
           container
           item
-          xs={3}
-          md={3}
+          xs={12}
           alignItems="center"
           justifyContent="center"
         >
@@ -76,7 +75,9 @@ const Tipbot = function (
         <Grid
           container
           item
-          xs={6}
+          xs={12}
+          sm={6}
+          md={6}
           alignItems="center"
           justifyContent="center"
           className="pb-1"
@@ -104,7 +105,9 @@ const Tipbot = function (
         <Grid
           container
           item
-          xs={6}
+          xs={12}
+          sm={6}
+          md={6}
           alignItems="center"
           justifyContent="center"
           className="pb-1"
