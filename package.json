@@ -1,6 +1,6 @@
 {
   "name": "tipbots-website",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "Admin dashboard for RUNES-tip",
   "scripts": {
     "extract": "lingui extract",
@@ -26,17 +26,19 @@
     "Runes",
     "Runebase",
     "Tipbot",
+    "RunesTip",
+    "PirateTip",
+    "TokelTip",
     "Discord",
     "Telegram",
     "Matrix",
-    "Dashboard"
+    "Website"
   ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/bobpepers/Tipbots-Website"
   },
   "author": "Jonas Collier",
-  "license": "MIT",
   "devDependencies": {
     "@babel/core": "^7.18.13",
     "@babel/plugin-proposal-class-properties": "^7.18.6",

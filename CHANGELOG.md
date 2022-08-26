@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.6](https://github.com/bobpepers/Tipbots-Website/compare/v0.0.5...v0.0.6) (2022-08-26)
+
+
+### Features
+
+* ✨ Add route to support page ([bdae8df](https://github.com/bobpepers/Tipbots-Website/commit/bdae8df1342570541266b1a33fadf8d54ef3702b))
+* ✨ animated flood example gif homepage ([1e9fcab](https://github.com/bobpepers/Tipbots-Website/commit/1e9fcabf30ac9007a2cdd8c811f7293cdd119f4e))
+
 ### [0.0.5](https://github.com/bobpepers/Tipbots-Website/compare/v0.0.4...v0.0.5) (2022-08-26)
 
 
