@@ -155,3 +155,16 @@ input.outlined-adornment-password {
 .pb-1 {
   margin-bottom: 1rem;
 }
+
+code, .code, pre {
+  background: #292929;
+  color: #fafafa;
+  padding: 10px;
+  display: block;
+  &:before {
+    display: block;
+    width: calc(100%);
+    margin-top: -3px;
+    padding: 3px;
+  }
+}
