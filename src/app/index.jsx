@@ -70,6 +70,11 @@ i18n.load({
 
 i18n.activate('en');
 
+const persistedLanguage = localStorage.getItem('language');
+if (!persistedLanguage) {
+  localStorage.setItem('language', 'en');
+}
+
 function DismissAction({ id }) {
   return (
     <Button onClick={() => notistackRef.current.closeSnackbar(id)}>Dismiss</Button>

@@ -3,7 +3,7 @@ import {
 } from '../actions/types/index';
 
 const initialState = {
-  theme: localStorage.getItem('theme') ? localStorage.getItem('theme') : 'light',
+  theme: localStorage.getItem('theme') ? localStorage.getItem('theme') : 'dark',
 };
 
 export default (
