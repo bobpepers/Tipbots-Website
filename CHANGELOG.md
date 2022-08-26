@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.3](https://github.com/bobpepers/Tipbots-Website/compare/v0.0.2...v0.0.3) (2022-08-26)
+
+
+### Bug Fixes
+
+* ⚡️ Add missing discord commands, examples ([4181d07](https://github.com/bobpepers/Tipbots-Website/commit/4181d0733a8ee63afce83158add5121a74a469b8))
+
 ### 0.0.2 (2022-08-26)
 
 
