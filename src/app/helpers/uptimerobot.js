@@ -29,56 +29,67 @@ export async function GetMonitors(
     monitors: WhichTipBots, // Monitor Id's to return
   };
 
-  const response = await axios.post('https://api.uptimerobot.com/v2/getMonitors', postdata, { timeout: 10000 });
-  if (response.data.stat !== 'ok') throw response.data.error;
-
-  return response.data.monitors.map((monitor) => {
-    let sum = 0;
-    let sumLength = 0;
-    const newRanges = monitor.custom_uptime_ranges.split('-');
-    const daily = [];
-    const map = [];
-    dates.forEach((date, index) => {
-      sum += newRanges[index] ? Number(newRanges[index]) : 0;
-      sumLength += newRanges[index] !== '0.000' && newRanges[index] ? 1 : 0;
-      map[date.format('YYYYMMDD')] = index;
-      daily[index] = {
-        date,
-        uptime: formatNumber(newRanges[index]),
-        down: {
-          times: 0,
-          duration: 0,
-        },
-      }
-    });
-
-    const total = monitor.logs.reduce((total, log) => {
-      console.log(log.type);
-      if (log.type === 1) {
-        const date = moment.unix(log.datetime).format('YYYYMMDD');
-        totalX.duration += log.duration;
-        totalX.times += 1;
-        daily[map[date]].down.duration += log.duration;
-        daily[map[date]].down.times += 1;
-      }
-      return totalX;
-    }, {
-      times: 0,
-      duration: 0,
-    });
-
-    const result = {
-      id: monitor.id,
-      name: monitor.friendly_name,
-      url: `https://stats.uptimerobot.com/klo5QskN2k/${monitor.id}`,
-      average: (sum / sumLength).toFixed(2),
-      daily,
-      total,
-      status: 'unknown',
-    };
-
-    if (monitor.status === 2) result.status = 'ok';
-    if (monitor.status === 9) result.status = 'down';
-    return result;
+  const response = await axios.post(
+    'https://api.uptimerobot.com/v2/getMonitors',
+    postdata,
+    {
+      timeout: 10000,
+    },
+  ).catch(() => {
+    console.log('failed response uptime');
   });
+
+  if (response && response.data && response.data.stat !== 'ok') console.log('failed response uptime');
+
+  if (response && response.data && response.data.stat === 'ok') {
+    return response.data.monitors.map((monitor) => {
+      let sum = 0;
+      let sumLength = 0;
+      const newRanges = monitor.custom_uptime_ranges.split('-');
+      const daily = [];
+      const map = [];
+      dates.forEach((date, index) => {
+        sum += newRanges[index] ? Number(newRanges[index]) : 0;
+        sumLength += newRanges[index] !== '0.000' && newRanges[index] ? 1 : 0;
+        map[date.format('YYYYMMDD')] = index;
+        daily[index] = {
+          date,
+          uptime: formatNumber(newRanges[index]),
+          down: {
+            times: 0,
+            duration: 0,
+          },
+        }
+      });
+
+      const total = monitor.logs.reduce((total, log) => {
+        console.log(log.type);
+        if (log.type === 1) {
+          const date = moment.unix(log.datetime).format('YYYYMMDD');
+          totalX.duration += log.duration;
+          totalX.times += 1;
+          daily[map[date]].down.duration += log.duration;
+          daily[map[date]].down.times += 1;
+        }
+        return totalX;
+      }, {
+        times: 0,
+        duration: 0,
+      });
+
+      const result = {
+        id: monitor.id,
+        name: monitor.friendly_name,
+        url: `https://stats.uptimerobot.com/klo5QskN2k/${monitor.id}`,
+        average: (sum / sumLength).toFixed(2),
+        daily,
+        total,
+        status: 'unknown',
+      };
+
+      if (monitor.status === 2) result.status = 'ok';
+      if (monitor.status === 9) result.status = 'down';
+      return result;
+    });
+  }
 }

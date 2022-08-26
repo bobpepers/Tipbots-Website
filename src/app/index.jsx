@@ -32,6 +32,7 @@ const Routes = lazy(() => import('./routes'));
 
 const theme = createTheme({
   typography: {
+    whiteSpace: 'break-spaces',
     fontFamily: [
       'TeXGyreHeros-Regular',
       'TeXGyreHeros-Bold',

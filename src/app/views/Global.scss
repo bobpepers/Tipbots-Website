@@ -161,10 +161,15 @@ code, .code, pre {
   color: #fafafa;
   padding: 10px;
   display: block;
+  word-wrap: break-word;
   &:before {
     display: block;
     width: calc(100%);
     margin-top: -3px;
     padding: 3px;
   }
+}
+
+p {
+  white-space: break-spaces;
 }
