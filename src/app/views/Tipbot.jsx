@@ -102,7 +102,9 @@ const Tipbot = function (props) {
             aria-haspopup="true"
             className="headerMenuTextColor"
           >
-            <Trans>Terms of Service</Trans>
+            <Trans>
+              Terms of Service
+            </Trans>
           </Button>
         </Grid>
 
@@ -128,7 +130,9 @@ const Tipbot = function (props) {
             aria-haspopup="true"
             className="headerMenuTextColor"
           >
-            <Trans>Privacy Policy</Trans>
+            <Trans>
+              Privacy Policy
+            </Trans>
           </Button>
         </Grid>
 
