@@ -10,6 +10,7 @@ import {
   Typography,
 } from '@mui/material';
 import Runebase from '../assets/images/runebaseloop.gif';
+import FloodExample from '../assets/images/floodExample.gif';
 import { ReactComponent as Discord } from '../assets/images/discord.svg';
 import { ReactComponent as Telegram } from '../assets/images/telegram.svg';
 import { tipbotInfoArray } from '../helpers/tipbotsInfoArray';
@@ -84,7 +85,7 @@ const Home = function (props) {
             variant="body1"
             align="left"
           >
-            <Trans>Example gif here</Trans>
+            <img src={FloodExample} alt="runestip flood example" />
           </Typography>
         </Grid>
         <Grid
@@ -97,7 +98,7 @@ const Home = function (props) {
             align="left"
             gutterBottom
           >
-            <Trans>Personalized Discord and Telegram tipbot for your crypto project.</Trans>
+            <Trans>Personalized Discord and Telegram tipbots for crypto projects.</Trans>
           </Typography>
           <Typography
             variant="body1"
@@ -105,7 +106,7 @@ const Home = function (props) {
             gutterBottom
           >
             <Trans>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed luctus ut dolor pulvinar gravida. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Quisque ac erat rhoncus, scelerisque libero pretium, aliquet risus. Praesent non quam ut nunc feugiat convallis. Morbi mauris orci, viverra sed mauris vel, feugiat elementum nisi. Sed accumsan est a felis gravida, a placerat eros rhoncus. Mauris a placerat metus. Nulla consectetur erat libero, vitae viverra nisi fermentum pretium. Maecenas consectetur porttitor ante, eget volutpat mi aliquet sit amet. Ut dui magna, ullamcorper at est ut, semper egestas elit. Duis quis leo ac quam aliquam tincidunt in eget massa. Cras bibendum orci non ultricies scelerisque. Nunc ac gravida nunc. Nullam eu lacus mi.
+              Top quality personalized tipbots for bitcoin forks, zcash forks, komodo smartchains with dedicated developer and support.
             </Trans>
           </Typography>
           <Typography
@@ -114,7 +115,7 @@ const Home = function (props) {
             gutterBottom
           >
             <Trans>
-              Cras euismod augue quis orci molestie, non dignissim dolor iaculis. Curabitur dignissim sem eros, vel eleifend augue porta quis. Etiam sed urna diam. Interdum et malesuada fames ac ante ipsum primis in faucibus. Quisque dapibus diam mi, consequat pretium arcu consequat et. Morbi congue consequat consequat. Ut a euismod leo, vitae dictum nisl. Morbi varius eget enim pulvinar gravida. Cras finibus dapibus neque in tincidunt. Curabitur condimentum ullamcorper sapien, et efficitur erat consectetur a. Sed sodales dolor ligula, nec facilisis ipsum efficitur nec. Nulla et velit eu nisi maximus vulputate hendrerit nec magna. Vivamus sit amet lectus bibendum, interdum augue eu, egestas enim. Vivamus at mi vulputate, ornare sem ac, imperdiet sem.
+              A wide range of features.
             </Trans>
           </Typography>
 
