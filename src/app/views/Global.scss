@@ -28,7 +28,7 @@ body {
   color: var(--textColorGlobal);
 }
 
-.content a, .content button {
+.content a, .tipbots button {
   color: var(--textColorGlobal);
   background-image: linear-gradient(
     to right,
@@ -45,7 +45,7 @@ body {
   transition: all 0.3s ease-in-out;
 }
 
-.content a:before, .content button:before{
+.content a:before, .tipbots button:before{
   content: '';
   background: #54b3d6;
   display: block;

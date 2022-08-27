@@ -13,6 +13,7 @@
     "max-len": 0,
     "default-param-last": "off",
     "import/prefer-default-export": "off",
+    "react/jsx-props-no-spreading": "off",
     "indent": [
       "error",
       2
@@ -22,5 +23,5 @@
     "document": true,
     "window": true,
     "localStorage": true
-  }
+  }  
 }

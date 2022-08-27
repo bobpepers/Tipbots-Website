@@ -39,7 +39,7 @@ const Tipbot = function (
   }, [tipbotInfo]);
 
   return (
-    <div className="height100 content">
+    <div className="height100 content tipbots">
       <Grid
         container
         spacing={0}

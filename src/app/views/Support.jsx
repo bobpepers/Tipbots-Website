@@ -11,6 +11,7 @@ import {
 import { Trans } from '@lingui/macro';
 import { ReactComponent as Discord } from '../assets/images/discord.svg';
 import { withRouter } from '../hooks/withRouter';
+import SupportForm from '../components/SupportForm';
 
 const Support = function (
   props,
@@ -109,6 +110,9 @@ const Support = function (
               Please note: Using form to contact support has a significant longer wait-time then using the Ticket Tool
             </Trans>
           </Typography>
+        </Grid>
+        <Grid item xs={12}>
+          <SupportForm />
         </Grid>
       </Grid>
     </div>

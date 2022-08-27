@@ -48,6 +48,16 @@ const theme = createTheme({
       '"Segoe UI Symbol"',
     ].join(','),
   },
+  components: {
+    MuiFormControl: {
+      styleOverrides: {
+        root: {
+          marginTop: '0px',
+          marginBottom: '0px',
+        },
+      },
+    },
+  },
 });
 
 const notistackRef = createRef();
