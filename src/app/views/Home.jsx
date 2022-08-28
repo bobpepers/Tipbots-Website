@@ -24,7 +24,7 @@ const Home = function (props) {
     nodeStatus,
   } = props;
   const theme = useTheme();
-  const addTextMargin = useMediaQuery(theme.breakpoints.up('lg'));
+  const lgUp = useMediaQuery(theme.breakpoints.up('lg'));
 
   useEffect(() => {
     document.title = 'Tipbots - Home';
@@ -132,17 +132,17 @@ const Home = function (props) {
         >
           <Typography
             variant="body1"
-            align="left"
+            align={lgUp ? 'left' : 'center'}
             gutterBottom
-            className={addTextMargin ? 'addExampleTextMarginLeft' : ''}
+            className={lgUp ? 'addExampleTextMarginLeft' : ''}
           >
             <Trans>Personalized Discord and Telegram tipbots for crypto projects.</Trans>
           </Typography>
           <Typography
             variant="body1"
-            align="left"
+            align={lgUp ? 'left' : 'center'}
             gutterBottom
-            className={addTextMargin ? 'addExampleTextMarginLeft' : ''}
+            className={lgUp ? 'addExampleTextMarginLeft' : ''}
           >
             <Trans>
               Top quality personalized tipbots for bitcoin forks, zcash forks, komodo smartchains with dedicated developer and support.
@@ -150,9 +150,9 @@ const Home = function (props) {
           </Typography>
           <Typography
             variant="body1"
-            align="left"
+            align={lgUp ? 'left' : 'center'}
             gutterBottom
-            className={addTextMargin ? 'addExampleTextMarginLeft' : ''}
+            className={lgUp ? 'addExampleTextMarginLeft' : ''}
           >
             <Trans>
               A rich arsenal of features like tip, multi-tip, rain, flood, soak, sleet, voicerain, hurricane, thunderstorm, thunder, reactdrop, trivia, faucet, help, info, balance, statistics, ignoreme, support, ...
