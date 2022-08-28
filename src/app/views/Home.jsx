@@ -136,7 +136,7 @@ const Home = function (props) {
             className={addTextMargin ? 'addExampleTextMarginLeft' : ''}
           >
             <Trans>
-              A wide range of features.
+              A rich arsenal of features like tip, multi-tip, rain, flood, soak, sleet, voicerain, hurricane, thunderstorm, thunder, reactdrop, trivia, faucet, help, info, balance, statistics, ignoreme, support, ...
             </Trans>
           </Typography>
 
