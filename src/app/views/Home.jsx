@@ -76,7 +76,9 @@ const Home = function (props) {
             variant="h3"
             align="center"
           >
-            <Trans>Personalized Tipbots</Trans>
+            <Trans>
+              Personalized Tipbots
+            </Trans>
           </Typography>
 
         </Grid>
@@ -86,12 +88,23 @@ const Home = function (props) {
             marginBottom: '2rem',
           }}
         />
+      </Grid>
+      <Grid
+        container
+        spacing={0}
+      >
         <Grid
           item
           xs={12}
           sm={12}
           md={12}
           lg={6}
+          order={{
+            xs: 2,
+            sm: 2,
+            md: 2,
+            lg: 1,
+          }}
         >
           <Typography
             variant="body1"
@@ -110,6 +123,12 @@ const Home = function (props) {
           sm={12}
           md={12}
           lg={6}
+          order={{
+            xs: 1,
+            sm: 1,
+            md: 1,
+            lg: 2,
+          }}
         >
           <Typography
             variant="body1"
@@ -141,14 +160,13 @@ const Home = function (props) {
           </Typography>
 
         </Grid>
-
-        <Divider
-          style={{
-            width: '100%',
-            marginTop: '2rem',
-          }}
-        />
       </Grid>
+      <Divider
+        style={{
+          width: '100%',
+          marginTop: '2rem',
+        }}
+      />
       <Grid
         container
         spacing={0}
