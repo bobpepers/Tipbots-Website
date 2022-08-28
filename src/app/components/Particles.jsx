@@ -2,9 +2,13 @@ import React from 'react';
 import Particles from 'react-tsparticles';
 import { loadFull } from 'tsparticles';
 import Runebase from '../assets/images/runebaseloop.gif';
-import Pirate from '../assets/images/pirate.png';
-import Tokel from '../assets/images/tokel.png';
-import RunesCoin from '../assets/images/runescoin.png';
+import { tipbotInfoArray } from '../helpers/tipbotsInfoArray';
+
+const particleImagesTipbots = tipbotInfoArray.map((x) => ({
+  src: x.logo,
+  height: 100,
+  width: 100,
+}))
 
 function ParticlesRunebase() {
   const particlesInit = async (main) => {
@@ -129,21 +133,7 @@ function ParticlesRunebase() {
                       height: 76,
                       width: 100,
                     },
-                    {
-                      src: Pirate,
-                      height: 100,
-                      width: 100,
-                    },
-                    {
-                      src: Tokel,
-                      height: 100,
-                      width: 100,
-                    },
-                    {
-                      src: RunesCoin,
-                      height: 100,
-                      width: 100,
-                    },
+                    ...particleImagesTipbots,
                   ],
                 },
               },
