@@ -353,11 +353,15 @@ msgstr ""
 msgid "Info"
 msgstr ""
 
-#: src/app/views/Home.jsx:269
-#: src/app/views/Home.jsx:379
+#: src/app/views/Home.jsx:270
+#: src/app/views/Home.jsx:381
 #: src/app/views/Tipbot.jsx:168
 #: src/app/views/Tipbot.jsx:196
 msgid "Invite"
+msgstr ""
+
+#: src/app/components/SupportForm.jsx:139
+msgid "Issue Description"
 msgstr ""
 
 #: src/app/views/Support.jsx:86
@@ -428,6 +432,10 @@ msgstr ""
 msgid "Personnel: We keep your information confidential, but may disclose it to our personnel insofar as it is reasonably necessary for the purposes set out in this Privacy Policy. However, this is on the basis that they do not make independent use of the information, and have agreed to safeguard it."
 msgstr ""
 
+#: src/app/components/SupportForm.jsx:121
+msgid "Platform"
+msgstr ""
+
 #: src/app/views/Support.jsx:109
 msgid "Please note: Using form to contact support has a significant longer wait-time then using the Ticket Tool"
 msgstr ""
@@ -484,6 +492,10 @@ msgstr ""
 msgid "Required by law: In addition, we may disclose your information to the extent that we are required to do so by law (which may include to government bodies and law enforcement agencies); in connection with any legal proceedings or prospective legal proceedings; and in order to establish, exercise or defend our legal rights."
 msgstr ""
 
+#: src/app/components/SupportForm.jsx:199
+msgid "Reset"
+msgstr ""
+
 #: src/app/components/DiscordCommands.jsx:828
 #~ msgid "Show link to"
 #~ msgstr ""
@@ -521,7 +533,7 @@ msgstr ""
 #~ msgid "Soaks the desired amount of{0}onto all online and idle users (optionally, within specified role)"
 #~ msgstr ""
 
-#: src/app/components/SupportForm.jsx:172
+#: src/app/components/SupportForm.jsx:178
 msgid "Something went wrong, please retry submitting"
 msgstr ""
 
@@ -529,7 +541,11 @@ msgstr ""
 msgid "Statistics"
 msgstr ""
 
-#: src/app/components/SupportForm.jsx:212
+#: src/app/components/SupportForm.jsx:160
+msgid "Submit"
+msgstr ""
+
+#: src/app/components/SupportForm.jsx:220
 msgid "Successfully Send Support Request"
 msgstr ""
 
@@ -543,7 +559,7 @@ msgstr ""
 msgid "Telegram Commands"
 msgstr ""
 
-#: src/app/views/Home.jsx:324
+#: src/app/views/Home.jsx:325
 msgid "Telegram Tipbots"
 msgstr ""
 
@@ -579,6 +595,10 @@ msgstr ""
 #: src/app/components/DiscordCommands.jsx:371
 #: src/app/components/TelegramCommands.jsx:275
 msgid "Tip"
+msgstr ""
+
+#: src/app/components/SupportForm.jsx:101
+msgid "Tipbot"
 msgstr ""
 
 #: src/app/containers/Header.jsx:137

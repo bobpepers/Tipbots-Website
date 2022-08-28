@@ -9,7 +9,7 @@ import {
   MenuItem,
   Typography,
 } from '@mui/material';
-import { Trans } from '@lingui/macro';
+import { Trans, t } from '@lingui/macro';
 import { Form } from 'react-final-form';
 import axios from 'axios';
 import { withRouter } from '../hooks/withRouter';
@@ -70,7 +70,7 @@ const SupportForm = function () {
         form,
         submitting,
         pristine,
-        values,
+        // values,
       }) => (
         <form onSubmit={handleSubmit}>
           {
@@ -98,7 +98,7 @@ const SupportForm = function () {
                 >
                   <Select
                     name="bot"
-                    label="TipBot"
+                    label={t`Tipbot`}
                     formControlProps={{ margin: 'normal' }}
                     required
                   >
@@ -118,12 +118,16 @@ const SupportForm = function () {
                 >
                   <Select
                     name="platform"
-                    label="Platform"
+                    label={t`Platform`}
                     formControlProps={{ margin: 'normal' }}
                     required
                   >
-                    <MenuItem value="discord">Discord</MenuItem>
-                    <MenuItem value="telegram">Telegram</MenuItem>
+                    <MenuItem value="discord">
+                      Discord
+                    </MenuItem>
+                    <MenuItem value="telegram">
+                      Telegram
+                    </MenuItem>
                   </Select>
                 </Grid>
                 <Grid
@@ -132,7 +136,7 @@ const SupportForm = function () {
                   className="mb-1"
                 >
                   <TextField
-                    label="Issue Description"
+                    label={t`Issue Description`}
                     name="description"
                     required
                     multiline
@@ -153,7 +157,9 @@ const SupportForm = function () {
                     fullWidth
                     size="large"
                   >
-                    Submit
+                    <Trans>
+                      Submit
+                    </Trans>
                   </Button>
                 </Grid>
                 {
@@ -190,7 +196,9 @@ const SupportForm = function () {
                     fullWidth
                     size="large"
                   >
-                    Reset
+                    <Trans>
+                      Reset
+                    </Trans>
                   </Button>
                 </Grid>
               </Grid>
