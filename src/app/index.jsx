@@ -23,6 +23,7 @@ import '@fortawesome/fontawesome-free/css/all.css';
 import './assets/fonts/texgyreheros-regular.woff';
 import './theme/style.scss';
 import LoadingContainer from './containers/Loading';
+import ScrollToTop from './handle/ScrollToTop';
 
 const Particles = lazy(() => import('./components/Particles'));
 const Header = lazy(() => import('./containers/Header'));
@@ -110,6 +111,7 @@ function App() {
               action={(key) => <DismissAction id={key} />}
             >
               <BrowserRouter>
+                <ScrollToTop />
                 <Suspense fallback={<LoadingContainer />}>
                   <Notifier />
                   <Particles />
