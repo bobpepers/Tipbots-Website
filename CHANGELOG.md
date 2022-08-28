@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.11](https://github.com/bobpepers/Tipbots-Website/compare/v0.0.10...v0.0.11) (2022-08-28)
+
+
+### Bug Fixes
+
+* 🎨 center invite link text (home) ([76f3397](https://github.com/bobpepers/Tipbots-Website/commit/76f3397f74fc1518453a938ad502b85e46b54920))
+* 🎨 runebase gif logo animation "clipping" reflection fix ([4524c2b](https://github.com/bobpepers/Tipbots-Website/commit/4524c2be3cc3c64679d4586631c24a90b2a7f3db))
+
+
+### Style
+
+* ⚡️ add to home description text ([31c0b03](https://github.com/bobpepers/Tipbots-Website/commit/31c0b03a7339b572e8649597a6ff9c42eb360ceb))
+* 🎨 center description text under lg breakpoint (home) ([1421bf9](https://github.com/bobpepers/Tipbots-Website/commit/1421bf975e155ed48ba9c9418931686522064aac))
+* 🎨 Change stack order responsive grid for gif & description ([4e30316](https://github.com/bobpepers/Tipbots-Website/commit/4e3031660f7703f12c3a7ce7ac6c7fb6f481c5a9))
+
 ### [0.0.10](https://github.com/bobpepers/Tipbots-Website/compare/v0.0.9...v0.0.10) (2022-08-28)
 
 
