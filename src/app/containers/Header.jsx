@@ -27,6 +27,7 @@ import { ReactComponent as MobileNav } from '../assets/images/mobilenav.svg';
 import Runebase from '../assets/images/runebaseloop.gif';
 import Pirate from '../assets/images/pirate.png';
 import Tokel from '../assets/images/tokel.png';
+import { tipbotInfoArray } from '../helpers/tipbotsInfoArray';
 
 const Header = function (props) {
   const {
@@ -148,56 +149,24 @@ const Header = function (props) {
                 //  'aria-labelledby': 'basic-button',
               }}
             >
-              <Link
-                className="nav-link"
-                to="/tipbots/runestip"
-                onClick={() => toggleCloseMenu()}
-              >
-                <MenuItem
-                  onClick={handleCloseTipbots}
+              {tipbotInfoArray.map((tipbot) => (
+                <Link
+                  className="nav-link"
+                  to={`/tipbots/${tipbot.name.toLowerCase()}`}
+                  onClick={() => toggleCloseMenu()}
                 >
-                  <img
-                    className="menuIcon"
-                    src={Runebase}
-                    alt="Runebase Logo"
-                  />
-                  RunesTip
-                </MenuItem>
-              </Link>
-
-              <Link
-                className="nav-link"
-                to="/tipbots/piratetip"
-                onClick={() => toggleCloseMenu()}
-              >
-                <MenuItem
-                  onClick={handleCloseTipbots}
-                >
-                  <img
-                    className="menuIcon"
-                    src={Pirate}
-                    alt="Pirate Logo"
-                  />
-                  PirateTip
-                </MenuItem>
-              </Link>
-
-              <Link
-                className="nav-link"
-                to="/tipbots/tokeltip"
-                onClick={() => toggleCloseMenu()}
-              >
-                <MenuItem
-                  onClick={handleCloseTipbots}
-                >
-                  <img
-                    className="menuIcon"
-                    src={Tokel}
-                    alt="Tokel Logo"
-                  />
-                  TokelTip
-                </MenuItem>
-              </Link>
+                  <MenuItem
+                    onClick={handleCloseTipbots}
+                  >
+                    <img
+                      className="menuIcon"
+                      src={tipbot.logo}
+                      alt={`${tipbot.name} Logo`}
+                    />
+                    {tipbot.name}
+                  </MenuItem>
+                </Link>
+              ))}
             </Menu>
             <Button
               component={Link}
