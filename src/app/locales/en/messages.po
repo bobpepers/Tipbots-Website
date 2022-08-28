@@ -51,9 +51,13 @@ msgstr ""
 msgid "7. Your rights"
 msgstr ""
 
-#: src/app/views/Home.jsx:138
-msgid "A wide range of features."
+#: src/app/views/Home.jsx:157
+msgid "A rich arsenal of features like tip, multi-tip, rain, flood, soak, sleet, voicerain, hurricane, thunderstorm, thunder, reactdrop, trivia, faucet, help, info, balance, statistics, ignoreme, support, ..."
 msgstr ""
+
+#: src/app/views/Home.jsx:138
+#~ msgid "A wide range of features."
+#~ msgstr ""
 
 #: src/app/views/TermsOfService.jsx:171
 msgid "Abuse"
@@ -101,7 +105,7 @@ msgstr ""
 msgid "Discord Commands"
 msgstr ""
 
-#: src/app/views/Home.jsx:196
+#: src/app/views/Home.jsx:214
 msgid "Discord Tipbots"
 msgstr ""
 
@@ -349,8 +353,8 @@ msgstr ""
 msgid "Info"
 msgstr ""
 
-#: src/app/views/Home.jsx:251
-#: src/app/views/Home.jsx:361
+#: src/app/views/Home.jsx:269
+#: src/app/views/Home.jsx:379
 #: src/app/views/Tipbot.jsx:168
 #: src/app/views/Tipbot.jsx:196
 msgid "Invite"
@@ -412,7 +416,7 @@ msgstr ""
 #~ msgid "Personalized Discord and Telegram tipbot for your crypto project."
 #~ msgstr ""
 
-#: src/app/views/Home.jsx:120
+#: src/app/views/Home.jsx:139
 msgid "Personalized Discord and Telegram tipbots for crypto projects."
 msgstr ""
 
@@ -539,7 +543,7 @@ msgstr ""
 msgid "Telegram Commands"
 msgstr ""
 
-#: src/app/views/Home.jsx:306
+#: src/app/views/Home.jsx:324
 msgid "Telegram Tipbots"
 msgstr ""
 
@@ -638,7 +642,7 @@ msgstr ""
 msgid "To make a request, please let contact support or the developer on discord: Bago#7842"
 msgstr ""
 
-#: src/app/views/Home.jsx:128
+#: src/app/views/Home.jsx:147
 msgid "Top quality personalized tipbots for bitcoin forks, zcash forks, komodo smartchains with dedicated developer and support."
 msgstr ""
 
