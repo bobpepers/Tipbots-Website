@@ -256,6 +256,7 @@ const Home = function (props) {
           >
             <a
               href={tipbot.discordLink}
+              style={{ textAlign: 'center' }}
             >
               <img
                 src={tipbot.logo}
@@ -366,6 +367,7 @@ const Home = function (props) {
           >
             <a
               href={tipbot.telegramLink}
+              style={{ textAlign: 'center' }}
             >
               <img
                 src={tipbot.logo}
