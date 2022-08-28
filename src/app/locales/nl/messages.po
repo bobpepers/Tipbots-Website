@@ -43,7 +43,7 @@ msgstr "7. Jou rechten"
 
 #: src/app/views/Home.jsx:157
 msgid "A rich arsenal of features like tip, multi-tip, rain, flood, soak, sleet, voicerain, hurricane, thunderstorm, thunder, reactdrop, trivia, faucet, help, info, balance, statistics, ignoreme, support, ..."
-msgstr "Een rijk arsenaal aan functies zoals tip, multi-tip, regen, overstroming, doorweekt, ijzel, stemregen, orkaan, onweersbui, donder, reageer airdrop, trivia, faucet, help, info, balans, statistieken, negeer mij, ondersteuning, ..."
+msgstr "Een rijk arsenaal aan functies zoals tip, multi-tip, rain, flood, soak, sleet, voicerain, hurricane, thunderstorm, thunder, reactdrop, trivia, faucet, help, info, balance, statistics, ignoreme, support, ..."
 
 #: src/app/views/TermsOfService.jsx:171
 msgid "Abuse"
@@ -93,7 +93,7 @@ msgstr "Toon mining info"
 
 #: src/app/components/DiscordCommands.jsx:1066
 msgid "Displays time left until next halving, etc"
-msgstr "Toont de resterende tijd tot de volgende halvering, enz."
+msgstr "Toont de resterende tijd tot de volgende halvering, enzovoort"
 
 #: src/app/components/DiscordCommands.jsx:135
 msgid "Displays your {0}{1}balance"
@@ -242,16 +242,14 @@ msgstr "In geen geval zullen {0}{1} of zijn auteurs verantwoordelijk zijn voor v
 msgid "Info"
 msgstr "Informatie"
 
-#: src/app/views/Home.jsx:270
-#: src/app/views/Home.jsx:381
-#: src/app/views/Tipbot.jsx:168
-#: src/app/views/Tipbot.jsx:196
+#: src/app/views/Home.jsx:270 src/app/views/Home.jsx:381
+#: src/app/views/Tipbot.jsx:168 src/app/views/Tipbot.jsx:196
 msgid "Invite"
 msgstr "Uitnodigen"
 
 #: src/app/components/SupportForm.jsx:139
 msgid "Issue Description"
-msgstr ""
+msgstr "Probleem beschrijving"
 
 #: src/app/views/Support.jsx:86
 msgid "Join Discord Support Server"
@@ -291,7 +289,7 @@ msgstr "Personeel: Wij houden uw informatie vertrouwelijk, maar kunnen deze beke
 
 #: src/app/components/SupportForm.jsx:121
 msgid "Platform"
-msgstr ""
+msgstr "Platform"
 
 #: src/app/views/Support.jsx:109
 msgid "Please note: Using form to contact support has a significant longer wait-time then using the Ticket Tool"
@@ -306,8 +304,7 @@ msgstr "De beste manier om ondersteuning te vragen is door een ticket te openen 
 msgid "Price"
 msgstr "Prijs"
 
-#: src/app/views/PrivacyPolicy.jsx:76
-#: src/app/views/Tipbot.jsx:129
+#: src/app/views/PrivacyPolicy.jsx:76 src/app/views/Tipbot.jsx:129
 msgid "Privacy Policy"
 msgstr "Privacybeleid"
 
@@ -338,7 +335,7 @@ msgstr "Wettelijk verplicht: Daarnaast kunnen wij uw informatie openbaar maken v
 
 #: src/app/components/SupportForm.jsx:199
 msgid "Reset"
-msgstr ""
+msgstr "Resetten"
 
 #: src/app/components/DiscordCommands.jsx:1140
 msgid "Show link to {0}{1}support server"
@@ -371,15 +368,14 @@ msgstr "Statistieken"
 
 #: src/app/components/SupportForm.jsx:160
 msgid "Submit"
-msgstr ""
+msgstr "Indienen"
 
 #: src/app/components/SupportForm.jsx:220
 msgid "Successfully Send Support Request"
 msgstr "Succesvol verzonden ondersteuningsverzoek"
 
 #: src/app/components/DiscordCommands.jsx:1131
-#: src/app/containers/Header.jsx:209
-#: src/app/views/Support.jsx:40
+#: src/app/containers/Header.jsx:209 src/app/views/Support.jsx:40
 msgid "Support"
 msgstr "Support"
 
@@ -391,8 +387,7 @@ msgstr "Telegram commando's"
 msgid "Telegram Tipbots"
 msgstr "Telegram Tipbots"
 
-#: src/app/views/TermsOfService.jsx:77
-#: src/app/views/Tipbot.jsx:99
+#: src/app/views/TermsOfService.jsx:77 src/app/views/Tipbot.jsx:99
 msgid "Terms of Service"
 msgstr "Voorwaarden van de Dienst"
 
@@ -418,8 +413,9 @@ msgid "Tip"
 msgstr "Tip"
 
 #: src/app/components/SupportForm.jsx:101
+#, fuzzy
 msgid "Tipbot"
-msgstr ""
+msgstr "Wij bieden uitgebreide tipbot ondersteuning in de Runebase Discord community server."
 
 #: src/app/containers/Header.jsx:137
 msgid "Tipbots"
