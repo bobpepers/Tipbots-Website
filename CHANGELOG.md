@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.12](https://github.com/bobpepers/Tipbots-Website/compare/v0.0.11...v0.0.12) (2022-08-28)
+
+
+### Bug Fixes
+
+* **translations:** 💬 add missing translation macros ([896b3d7](https://github.com/bobpepers/Tipbots-Website/commit/896b3d750664c1aa813d69bad3f891c61916004b))
+
+
+### Refactor
+
+* ⚡️ grab particle tipbot images from tipbotInfoArray ([a99e5f0](https://github.com/bobpepers/Tipbots-Website/commit/a99e5f0e3c41b07e45264cd4cafaed6dfea54be0))
+
 ### [0.0.11](https://github.com/bobpepers/Tipbots-Website/compare/v0.0.10...v0.0.11) (2022-08-28)
 
 
