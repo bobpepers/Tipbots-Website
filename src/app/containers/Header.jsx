@@ -30,8 +30,6 @@ import Tokel from '../assets/images/tokel.png';
 
 const Header = function (props) {
   const {
-    t,
-    i18n,
     user,
   } = props;
   const heightRef = useRef(null);
@@ -39,7 +37,6 @@ const Header = function (props) {
   const [height, setHeight] = useState(0);
   const [anchorElTipBots, setAnchorElTipBots] = useState(null);
   const openTipBots = Boolean(anchorElTipBots);
-  const [anchorEl, setAnchorEl] = React.useState(null);
 
   const handleWindowResize = useCallback((event) => {
     if (height !== heightRef.current.clientHeight) {
@@ -63,9 +60,14 @@ const Header = function (props) {
     setMenu(!menu);
   };
 
+  const toggleCloseMenu = () => {
+    setMenu(false);
+  };
+
   const handleClickTipbots = (event) => {
     setAnchorElTipBots(event.currentTarget);
   };
+
   const handleCloseTipbots = () => {
     setAnchorElTipBots(null);
   };
@@ -93,7 +95,9 @@ const Header = function (props) {
           id="basic-navbar-nav"
           className={`collapse navbar-collapse ${show}`}
         >
-          <Nav className="mr-auto rNavbar">
+          <Nav
+            className="mr-auto rNavbar"
+          >
             <Button
               component={Link}
               variant="outlined"
@@ -107,11 +111,14 @@ const Header = function (props) {
               aria-controls="basic-menu"
               aria-haspopup="true"
               className="headerMenuTextColor"
+              onClick={() => toggleCloseMenu()}
             >
               <HomeIcon
                 className="buttonMenuIcon headerMenuTextColor"
               />
-              <Trans>Home</Trans>
+              <Trans>
+                Home
+              </Trans>
             </Button>
             <Button
               aria-controls="basic-menu"
@@ -129,7 +136,9 @@ const Header = function (props) {
               <SmartToyIcon
                 className="buttonMenuIcon headerMenuTextColor"
               />
-              <Trans>Tipbots</Trans>
+              <Trans>
+                Tipbots
+              </Trans>
             </Button>
             <Menu
               anchorEl={anchorElTipBots}
@@ -142,9 +151,16 @@ const Header = function (props) {
               <Link
                 className="nav-link"
                 to="/tipbots/runestip"
+                onClick={() => toggleCloseMenu()}
               >
-                <MenuItem onClick={handleCloseTipbots}>
-                  <img className="menuIcon" src={Runebase} alt="Runebase Logo" />
+                <MenuItem
+                  onClick={handleCloseTipbots}
+                >
+                  <img
+                    className="menuIcon"
+                    src={Runebase}
+                    alt="Runebase Logo"
+                  />
                   RunesTip
                 </MenuItem>
               </Link>
@@ -152,9 +168,16 @@ const Header = function (props) {
               <Link
                 className="nav-link"
                 to="/tipbots/piratetip"
+                onClick={() => toggleCloseMenu()}
               >
-                <MenuItem onClick={handleCloseTipbots}>
-                  <img className="menuIcon" src={Pirate} alt="Pirate Logo" />
+                <MenuItem
+                  onClick={handleCloseTipbots}
+                >
+                  <img
+                    className="menuIcon"
+                    src={Pirate}
+                    alt="Pirate Logo"
+                  />
                   PirateTip
                 </MenuItem>
               </Link>
@@ -162,9 +185,16 @@ const Header = function (props) {
               <Link
                 className="nav-link"
                 to="/tipbots/tokeltip"
+                onClick={() => toggleCloseMenu()}
               >
-                <MenuItem onClick={handleCloseTipbots}>
-                  <img className="menuIcon" src={Tokel} alt="Tokel Logo" />
+                <MenuItem
+                  onClick={handleCloseTipbots}
+                >
+                  <img
+                    className="menuIcon"
+                    src={Tokel}
+                    alt="Tokel Logo"
+                  />
                   TokelTip
                 </MenuItem>
               </Link>
@@ -179,15 +209,17 @@ const Header = function (props) {
               }}
               size="large"
               to="/uptime"
-              // onClick={() => window.open('https://stats.uptimerobot.com/klo5QskN2k', '_blank')}
               aria-controls="basic-menu"
               aria-haspopup="true"
               className="headerMenuTextColor"
+              onClick={() => toggleCloseMenu()}
             >
               <KeyboardDoubleArrowUpIcon
                 className="buttonMenuIcon headerMenuTextColor"
               />
-              <Trans>Uptime</Trans>
+              <Trans>
+                Uptime
+              </Trans>
             </Button>
 
             <Button
@@ -203,11 +235,14 @@ const Header = function (props) {
               aria-controls="basic-menu"
               aria-haspopup="true"
               className="headerMenuTextColor"
+              onClick={() => toggleCloseMenu()}
             >
               <SupportAgentIcon
                 className="buttonMenuIcon headerMenuTextColor"
               />
-              <Trans>Support</Trans>
+              <Trans>
+                Support
+              </Trans>
             </Button>
           </Nav>
           <ul>
