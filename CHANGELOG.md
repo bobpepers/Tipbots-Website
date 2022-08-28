@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.8](https://github.com/bobpepers/Tipbots-Website/compare/v0.0.7...v0.0.8) (2022-08-28)
+
+
+### Bug Fixes
+
+* ⚡️ Scroll to top on router location changes ([53c8b10](https://github.com/bobpepers/Tipbots-Website/commit/53c8b1025c30c918898f482589d0cb4d0a83e0b3))
+* ⚡️ trigger closeMenu when user clicks menu link ([060a290](https://github.com/bobpepers/Tipbots-Website/commit/060a2907b56efe72bd147beb1a8fbe186f5f789e))
+* 🎨 breakpoint section title images home (tipbots) ([8e4e6b9](https://github.com/bobpepers/Tipbots-Website/commit/8e4e6b92bcd496b2dfb52bef5498515e6442d415))
+
 ### [0.0.7](https://github.com/bobpepers/Tipbots-Website/compare/v0.0.6...v0.0.7) (2022-08-27)
 
 
