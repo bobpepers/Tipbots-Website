@@ -128,12 +128,20 @@ const Home = function (props) {
           }}
         />
         <Grid
+          container
           item
           xs={12}
+          alignItems="center"
+          justifyContent="center"
         >
-          <Typography
-            variant="h3"
-            align="center"
+          <Grid
+            container
+            item
+            xs={12}
+            sm="auto"
+            md="auto"
+            alignItems="center"
+            justifyContent="center"
           >
             <Discord
               style={{
@@ -143,7 +151,34 @@ const Home = function (props) {
                 width: '3rem',
               }}
             />
-            <Trans>Discord Tipbots</Trans>
+          </Grid>
+          <Grid
+            container
+            item
+            xs={12}
+            sm="auto"
+            md="auto"
+            alignItems="center"
+            justifyContent="center"
+          >
+            <Typography
+              variant="h3"
+              align="center"
+            >
+              <Trans>Discord Tipbots</Trans>
+
+            </Typography>
+          </Grid>
+
+          <Grid
+            container
+            item
+            xs={12}
+            sm="auto"
+            md="auto"
+            alignItems="center"
+            justifyContent="center"
+          >
             <Discord
               style={{
                 marginLeft: '15px',
@@ -152,7 +187,8 @@ const Home = function (props) {
                 width: '3rem',
               }}
             />
-          </Typography>
+          </Grid>
+
         </Grid>
         <Divider
           style={{
@@ -199,12 +235,20 @@ const Home = function (props) {
         />
 
         <Grid
+          container
           item
           xs={12}
+          alignItems="center"
+          justifyContent="center"
         >
-          <Typography
-            variant="h3"
-            align="center"
+          <Grid
+            container
+            item
+            xs={12}
+            sm="auto"
+            md="auto"
+            alignItems="center"
+            justifyContent="center"
           >
             <Telegram
               style={{
@@ -214,7 +258,37 @@ const Home = function (props) {
                 width: '3rem',
               }}
             />
-            <Trans>Telegram Tipbots</Trans>
+          </Grid>
+          <Grid
+            container
+            item
+            xs={12}
+            sm="auto"
+            md="auto"
+            alignItems="center"
+            justifyContent="center"
+          >
+            <Typography
+              variant="h3"
+              align="center"
+              style={{
+                display: 'inline-block',
+              }}
+            >
+              <Trans>
+                Telegram Tipbots
+              </Trans>
+            </Typography>
+          </Grid>
+          <Grid
+            container
+            item
+            xs={12}
+            sm="auto"
+            md="auto"
+            alignItems="center"
+            justifyContent="center"
+          >
             <Telegram
               style={{
                 marginLeft: '15px',
@@ -223,7 +297,8 @@ const Home = function (props) {
                 width: '3rem',
               }}
             />
-          </Typography>
+          </Grid>
+
         </Grid>
         <Divider
           style={{
