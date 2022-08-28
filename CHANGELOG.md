@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.10](https://github.com/bobpepers/Tipbots-Website/compare/v0.0.9...v0.0.10) (2022-08-28)
+
+
+### Refactor
+
+* ⚡️ Build menu link from tipbot array helper ([62aa3e0](https://github.com/bobpepers/Tipbots-Website/commit/62aa3e0d0f63c177f03fec83a38d417b5c7bd47a))
+* ⚡️ build tipbot routes from tipbotInfoArray ([9e5cedf](https://github.com/bobpepers/Tipbots-Website/commit/9e5cedf89e39850ebd6d7b2ef25b0d19f3861630))
+
 ### [0.0.9](https://github.com/bobpepers/Tipbots-Website/compare/v0.0.8...v0.0.9) (2022-08-28)
 
 
