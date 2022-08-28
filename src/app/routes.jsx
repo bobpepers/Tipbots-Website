@@ -15,6 +15,7 @@ import Tipbot from './views/Tipbot';
 import PrivacyPolicy from './views/PrivacyPolicy';
 import TermsOfService from './views/TermsOfService';
 import Support from './views/Support';
+import { tipbotInfoArray } from './helpers/tipbotsInfoArray';
 
 const RoutesX = function (props) {
   const {
@@ -40,26 +41,24 @@ const RoutesX = function (props) {
         path="/support"
         element={<Support />}
       />
-      <Route
-        path="/tipbots/runestip"
-        element={<Tipbot />}
-      />
-      <Route
-        path="/tipbots/piratetip"
-        element={<Tipbot />}
-      />
-      <Route
-        path="/tipbots/tokeltip"
-        element={<Tipbot />}
-      />
-      <Route
-        path="/tipbots/:tipbotUrlParam/terms-of-service"
-        element={<TermsOfService />}
-      />
-      <Route
-        path="/tipbots/:tipbotUrlParam/privacy-policy"
-        element={<PrivacyPolicy />}
-      />
+      {tipbotInfoArray.map((tipbot) => (
+        <Route
+          path={`/tipbots/${tipbot.name.toLowerCase()}`}
+          element={<Tipbot />}
+        />
+      ))}
+      {tipbotInfoArray.map((tipbot) => (
+        <Route
+          path={`/tipbots/${tipbot.name.toLowerCase()}/terms-of-service`}
+          element={<TermsOfService />}
+        />
+      ))}
+      {tipbotInfoArray.map((tipbot) => (
+        <Route
+          path={`/tipbots/${tipbot.name.toLowerCase()}/privacy-policy`}
+          element={<PrivacyPolicy />}
+        />
+      ))}
     </Routes>
   )
 }

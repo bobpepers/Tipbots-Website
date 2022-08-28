@@ -24,9 +24,6 @@ import SmartToyIcon from '@mui/icons-material/SmartToy';
 import { ReactComponent as Discord } from '../assets/images/discord.svg';
 import { ReactComponent as Telegram } from '../assets/images/telegram.svg';
 import { ReactComponent as MobileNav } from '../assets/images/mobilenav.svg';
-import Runebase from '../assets/images/runebaseloop.gif';
-import Pirate from '../assets/images/pirate.png';
-import Tokel from '../assets/images/tokel.png';
 import { tipbotInfoArray } from '../helpers/tipbotsInfoArray';
 
 const Header = function (props) {
