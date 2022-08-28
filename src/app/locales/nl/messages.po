@@ -413,9 +413,8 @@ msgid "Tip"
 msgstr "Tip"
 
 #: src/app/components/SupportForm.jsx:101
-#, fuzzy
 msgid "Tipbot"
-msgstr "Wij bieden uitgebreide tipbot ondersteuning in de Runebase Discord community server."
+msgstr "Tipbot"
 
 #: src/app/containers/Header.jsx:137
 msgid "Tipbots"
