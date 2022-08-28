@@ -23,43 +23,51 @@ msgstr ""
 #~ msgid "(optionally, within specified role)"
 #~ msgstr ""
 
-#: src/app/views/PrivacyPolicy.jsx:90
+#: src/app/views/PrivacyPolicy.jsx:91
 msgid "1. Introduction"
 msgstr ""
 
-#: src/app/views/PrivacyPolicy.jsx:192
+#: src/app/views/PrivacyPolicy.jsx:193
 msgid "2. Information we may collect about you"
 msgstr ""
 
-#: src/app/views/PrivacyPolicy.jsx:234
+#: src/app/views/PrivacyPolicy.jsx:235
 msgid "3. Collecting, processing and using personal data"
 msgstr ""
 
-#: src/app/views/PrivacyPolicy.jsx:262
+#: src/app/views/PrivacyPolicy.jsx:263
 msgid "4. Why we collect information about you (purpose of processing)"
 msgstr ""
 
-#: src/app/views/PrivacyPolicy.jsx:285
+#: src/app/views/PrivacyPolicy.jsx:286
 msgid "5. Log files"
 msgstr ""
 
-#: src/app/views/PrivacyPolicy.jsx:308
+#: src/app/views/PrivacyPolicy.jsx:309
 msgid "6. Data sharing"
 msgstr ""
 
-#: src/app/views/PrivacyPolicy.jsx:349
+#: src/app/views/PrivacyPolicy.jsx:350
 msgid "7. Your rights"
 msgstr ""
 
-#: src/app/views/TermsOfService.jsx:170
+#: src/app/views/Home.jsx:138
+msgid "A wide range of features."
+msgstr ""
+
+#: src/app/views/TermsOfService.jsx:171
 msgid "Abuse"
+msgstr ""
+
+#: src/app/views/Support.jsx:101
+msgid "Alternatively you can fill out the form below."
 msgstr ""
 
 #: src/app/views/TermsOfService.jsx:194
 #~ msgid "Always keep small sums of coins in your"
 #~ msgstr ""
 
-#: src/app/views/TermsOfService.jsx:193
+#: src/app/views/TermsOfService.jsx:194
 msgid "Always keep small sums of coins in your {0}'s{1}wallet"
 msgstr ""
 
@@ -72,13 +80,13 @@ msgstr ""
 msgid "Balance"
 msgstr ""
 
-#: src/app/components/TelegramCommands.jsx:574
+#: src/app/components/TelegramCommands.jsx:576
 msgid "Claim a small amount of {0}{1}from the faucet"
 msgstr ""
 
 #: src/app/views/Home.jsx:116
-msgid "Cras euismod augue quis orci molestie, non dignissim dolor iaculis. Curabitur dignissim sem eros, vel eleifend augue porta quis. Etiam sed urna diam. Interdum et malesuada fames ac ante ipsum primis in faucibus. Quisque dapibus diam mi, consequat pretium arcu consequat et. Morbi congue consequat consequat. Ut a euismod leo, vitae dictum nisl. Morbi varius eget enim pulvinar gravida. Cras finibus dapibus neque in tincidunt. Curabitur condimentum ullamcorper sapien, et efficitur erat consectetur a. Sed sodales dolor ligula, nec facilisis ipsum efficitur nec. Nulla et velit eu nisi maximus vulputate hendrerit nec magna. Vivamus sit amet lectus bibendum, interdum augue eu, egestas enim. Vivamus at mi vulputate, ornare sem ac, imperdiet sem."
-msgstr ""
+#~ msgid "Cras euismod augue quis orci molestie, non dignissim dolor iaculis. Curabitur dignissim sem eros, vel eleifend augue porta quis. Etiam sed urna diam. Interdum et malesuada fames ac ante ipsum primis in faucibus. Quisque dapibus diam mi, consequat pretium arcu consequat et. Morbi congue consequat consequat. Ut a euismod leo, vitae dictum nisl. Morbi varius eget enim pulvinar gravida. Cras finibus dapibus neque in tincidunt. Curabitur condimentum ullamcorper sapien, et efficitur erat consectetur a. Sed sodales dolor ligula, nec facilisis ipsum efficitur nec. Nulla et velit eu nisi maximus vulputate hendrerit nec magna. Vivamus sit amet lectus bibendum, interdum augue eu, egestas enim. Vivamus at mi vulputate, ornare sem ac, imperdiet sem."
+#~ msgstr ""
 
 #: src/app/containers/Header.jsx:133
 #~ msgid "Dashboard"
@@ -93,7 +101,7 @@ msgstr ""
 msgid "Discord Commands"
 msgstr ""
 
-#: src/app/views/Home.jsx:145
+#: src/app/views/Home.jsx:196
 msgid "Discord Tipbots"
 msgstr ""
 
@@ -112,6 +120,14 @@ msgstr ""
 #: src/app/components/DiscordCommands.jsx:256
 #~ msgid "Displays"
 #~ msgstr ""
+
+#: src/app/components/DiscordCommands.jsx:1101
+msgid "Displays mining info"
+msgstr ""
+
+#: src/app/components/DiscordCommands.jsx:1066
+msgid "Displays time left until next halving, etc"
+msgstr ""
 
 #: src/app/components/DiscordCommands.jsx:119
 #: src/app/components/DiscordCommands.jsx:188
@@ -181,17 +197,17 @@ msgstr ""
 #~ msgid "Displays{0}price"
 #~ msgstr ""
 
-#: src/app/views/PrivacyPolicy.jsx:293
+#: src/app/views/PrivacyPolicy.jsx:294
 msgid "During every interaction with the Service, user data is store in a database and protocol files, the so-called log files. The datasets stored here may contain such data as date and time of the interaction, ID and username of the interacting user, the command used, ID and name of the Discord Server in which the interaction took place as well as the ID and name of the Discord Channel the interaction took place in."
 msgstr ""
 
-#: src/app/views/TermsOfService.jsx:204
+#: src/app/views/TermsOfService.jsx:205
 msgid "Even if we keep up with industry standards in terms of security practices, we ask you to not keep huge sums on the bot. Please keep them in a non-custodial wallet."
 msgstr ""
 
 #: src/app/views/Home.jsx:87
-msgid "Example gif here"
-msgstr ""
+#~ msgid "Example gif here"
+#~ msgstr ""
 
 #: src/app/components/DiscordCommands.jsx:66
 #: src/app/components/DiscordCommands.jsx:104
@@ -201,20 +217,22 @@ msgstr ""
 #: src/app/components/DiscordCommands.jsx:260
 #: src/app/components/DiscordCommands.jsx:299
 #: src/app/components/DiscordCommands.jsx:338
-#: src/app/components/DiscordCommands.jsx:376
-#: src/app/components/DiscordCommands.jsx:429
-#: src/app/components/DiscordCommands.jsx:475
-#: src/app/components/DiscordCommands.jsx:521
-#: src/app/components/DiscordCommands.jsx:567
-#: src/app/components/DiscordCommands.jsx:613
-#: src/app/components/DiscordCommands.jsx:659
-#: src/app/components/DiscordCommands.jsx:705
-#: src/app/components/DiscordCommands.jsx:752
-#: src/app/components/DiscordCommands.jsx:797
-#: src/app/components/DiscordCommands.jsx:851
-#: src/app/components/DiscordCommands.jsx:903
-#: src/app/components/DiscordCommands.jsx:942
-#: src/app/components/DiscordCommands.jsx:980
+#: src/app/components/DiscordCommands.jsx:386
+#: src/app/components/DiscordCommands.jsx:455
+#: src/app/components/DiscordCommands.jsx:509
+#: src/app/components/DiscordCommands.jsx:563
+#: src/app/components/DiscordCommands.jsx:617
+#: src/app/components/DiscordCommands.jsx:671
+#: src/app/components/DiscordCommands.jsx:725
+#: src/app/components/DiscordCommands.jsx:779
+#: src/app/components/DiscordCommands.jsx:834
+#: src/app/components/DiscordCommands.jsx:887
+#: src/app/components/DiscordCommands.jsx:941
+#: src/app/components/DiscordCommands.jsx:993
+#: src/app/components/DiscordCommands.jsx:1032
+#: src/app/components/DiscordCommands.jsx:1071
+#: src/app/components/DiscordCommands.jsx:1106
+#: src/app/components/DiscordCommands.jsx:1147
 #: src/app/components/TelegramCommands.jsx:66
 #: src/app/components/TelegramCommands.jsx:118
 #: src/app/components/TelegramCommands.jsx:163
@@ -226,12 +244,12 @@ msgstr ""
 #: src/app/components/TelegramCommands.jsx:444
 #: src/app/components/TelegramCommands.jsx:490
 #: src/app/components/TelegramCommands.jsx:535
-#: src/app/components/TelegramCommands.jsx:581
+#: src/app/components/TelegramCommands.jsx:583
 msgid "Examples:"
 msgstr ""
 
-#: src/app/components/DiscordCommands.jsx:926
-#: src/app/components/TelegramCommands.jsx:565
+#: src/app/components/DiscordCommands.jsx:1016
+#: src/app/components/TelegramCommands.jsx:567
 msgid "Faucet"
 msgstr ""
 
@@ -240,7 +258,7 @@ msgstr ""
 msgid "Fees"
 msgstr ""
 
-#: src/app/components/DiscordCommands.jsx:505
+#: src/app/components/DiscordCommands.jsx:547
 #: src/app/components/TelegramCommands.jsx:336
 msgid "Flood"
 msgstr ""
@@ -253,7 +271,7 @@ msgstr ""
 msgid "Floods the desired amount of {0}{1}onto all users (including offline users)"
 msgstr ""
 
-#: src/app/components/DiscordCommands.jsx:514
+#: src/app/components/DiscordCommands.jsx:556
 msgid "Floods the desired amount of {0}{1}onto all users, including offline users (optionally, within specified role)"
 msgstr ""
 
@@ -265,7 +283,7 @@ msgstr ""
 #~ msgid "Gets a small amount of"
 #~ msgstr ""
 
-#: src/app/components/DiscordCommands.jsx:935
+#: src/app/components/DiscordCommands.jsx:1025
 msgid "Gets a small amount of {0}{1}from the faucet (applicable every 4 hours)"
 msgstr ""
 
@@ -273,20 +291,24 @@ msgstr ""
 #~ msgid "Gets a small amount of{0}from the faucet (applicable every 4 hours)"
 #~ msgstr ""
 
+#: src/app/components/DiscordCommands.jsx:1057
+msgid "Halving"
+msgstr ""
+
 #: src/app/components/DiscordCommands.jsx:50
 #: src/app/components/TelegramCommands.jsx:50
 msgid "Help"
 msgstr ""
 
-#: src/app/containers/Header.jsx:114
+#: src/app/containers/Header.jsx:117
 msgid "Home"
 msgstr ""
 
-#: src/app/components/DiscordCommands.jsx:736
+#: src/app/components/DiscordCommands.jsx:818
 msgid "Hurricane"
 msgstr ""
 
-#: src/app/views/TermsOfService.jsx:178
+#: src/app/views/TermsOfService.jsx:179
 msgid "If you are found abusing any systems, your funds will be frozen and seized. We reserve the right to freeze suspicious accounts as well, until proven innocent."
 msgstr ""
 
@@ -294,7 +316,7 @@ msgstr ""
 #~ msgid "If you have any questions or comments about this Privacy Policy, please contact"
 #~ msgstr ""
 
-#: src/app/views/PrivacyPolicy.jsx:109
+#: src/app/views/PrivacyPolicy.jsx:110
 msgid "If you have any questions or comments about this Privacy Policy, please contact {0}{1}support or the developer through discord"
 msgstr ""
 
@@ -302,7 +324,7 @@ msgstr ""
 #~ msgid "If you have any questions or comments about this Privacy Policy, please contact{0}support or the developer through discord"
 #~ msgstr ""
 
-#: src/app/components/DiscordCommands.jsx:889
+#: src/app/components/DiscordCommands.jsx:979
 msgid "IgnoreMe"
 msgstr ""
 
@@ -310,7 +332,7 @@ msgstr ""
 #~ msgid "In no event shall"
 #~ msgstr ""
 
-#: src/app/views/TermsOfService.jsx:100
+#: src/app/views/TermsOfService.jsx:101
 msgid "In no event shall {0}{1}or its authors be responsible for any lost, misdirected or stolen funds."
 msgstr ""
 
@@ -327,20 +349,26 @@ msgstr ""
 msgid "Info"
 msgstr ""
 
-#: src/app/views/Home.jsx:186
-#: src/app/views/Home.jsx:257
+#: src/app/views/Home.jsx:251
+#: src/app/views/Home.jsx:361
+#: src/app/views/Tipbot.jsx:168
+#: src/app/views/Tipbot.jsx:196
 msgid "Invite"
 msgstr ""
 
-#: src/app/views/Home.jsx:107
-msgid "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed luctus ut dolor pulvinar gravida. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Quisque ac erat rhoncus, scelerisque libero pretium, aliquet risus. Praesent non quam ut nunc feugiat convallis. Morbi mauris orci, viverra sed mauris vel, feugiat elementum nisi. Sed accumsan est a felis gravida, a placerat eros rhoncus. Mauris a placerat metus. Nulla consectetur erat libero, vitae viverra nisi fermentum pretium. Maecenas consectetur porttitor ante, eget volutpat mi aliquet sit amet. Ut dui magna, ullamcorper at est ut, semper egestas elit. Duis quis leo ac quam aliquam tincidunt in eget massa. Cras bibendum orci non ultricies scelerisque. Nunc ac gravida nunc. Nullam eu lacus mi."
+#: src/app/views/Support.jsx:86
+msgid "Join Discord Support Server"
 msgstr ""
+
+#: src/app/views/Home.jsx:107
+#~ msgid "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed luctus ut dolor pulvinar gravida. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Quisque ac erat rhoncus, scelerisque libero pretium, aliquet risus. Praesent non quam ut nunc feugiat convallis. Morbi mauris orci, viverra sed mauris vel, feugiat elementum nisi. Sed accumsan est a felis gravida, a placerat eros rhoncus. Mauris a placerat metus. Nulla consectetur erat libero, vitae viverra nisi fermentum pretium. Maecenas consectetur porttitor ante, eget volutpat mi aliquet sit amet. Ut dui magna, ullamcorper at est ut, semper egestas elit. Duis quis leo ac quam aliquam tincidunt in eget massa. Cras bibendum orci non ultricies scelerisque. Nunc ac gravida nunc. Nullam eu lacus mi."
+#~ msgstr ""
 
 #: src/app/components/DiscordCommands.jsx:497
 #~ msgid "Makes a sleet storm with the desired amount of"
 #~ msgstr ""
 
-#: src/app/components/DiscordCommands.jsx:560
+#: src/app/components/DiscordCommands.jsx:610
 msgid "Makes a sleet storm with the desired amount of {0}{1}onto all users that have been active in the channel in the last 15 minutes (optionally, within a specified time)"
 msgstr ""
 
@@ -352,11 +380,15 @@ msgstr ""
 #~ msgid "Management"
 #~ msgstr ""
 
-#: src/app/components/DiscordCommands.jsx:390
+#: src/app/components/DiscordCommands.jsx:1092
+msgid "Mining"
+msgstr ""
+
+#: src/app/components/DiscordCommands.jsx:408
 msgid "Multiple users:"
 msgstr ""
 
-#: src/app/components/DiscordCommands.jsx:792
+#: src/app/components/DiscordCommands.jsx:882
 msgid "Performs a react airdrop with the amount, optionally within custom time, optionally using a custom-supplied emoji. <time> parameter accepts time interval expressions in the form of: 60s, 5m, 1h. Default time interval is 5m (5minutes)"
 msgstr ""
 
@@ -364,7 +396,7 @@ msgstr ""
 #~ msgid "Performs a react airdrop with the amount, optionally within custom time, optionally using a custom-supplied emoji.<time> parameter accepts time interval expressions in the form of: 60s, 5m, 1h. Default time interval is 5m (5minutes)"
 #~ msgstr ""
 
-#: src/app/components/DiscordCommands.jsx:844
+#: src/app/components/DiscordCommands.jsx:934
 msgid "Performs a trivia with the amount of {0},  optionally with set amount of of people, optionally within custom time. &lt;time&gt; parameter accepts time interval expressions in the form of: 60s, 5m, 1h. Default time interval is 5m (5minutes)"
 msgstr ""
 
@@ -377,15 +409,27 @@ msgstr ""
 #~ msgstr ""
 
 #: src/app/views/Home.jsx:100
-msgid "Personalized Discord and Telegram tipbot for your crypto project."
+#~ msgid "Personalized Discord and Telegram tipbot for your crypto project."
+#~ msgstr ""
+
+#: src/app/views/Home.jsx:120
+msgid "Personalized Discord and Telegram tipbots for crypto projects."
 msgstr ""
 
-#: src/app/views/Home.jsx:68
+#: src/app/views/Home.jsx:79
 msgid "Personalized Tipbots"
 msgstr ""
 
-#: src/app/views/PrivacyPolicy.jsx:325
+#: src/app/views/PrivacyPolicy.jsx:326
 msgid "Personnel: We keep your information confidential, but may disclose it to our personnel insofar as it is reasonably necessary for the purposes set out in this Privacy Policy. However, this is on the basis that they do not make independent use of the information, and have agreed to safeguard it."
+msgstr ""
+
+#: src/app/views/Support.jsx:109
+msgid "Please note: Using form to contact support has a significant longer wait-time then using the Ticket Tool"
+msgstr ""
+
+#: src/app/views/Support.jsx:60
+msgid "Prefered way to request support is by opening a ticket with the \"Ticket Tool\" that you find in the Discord community server"
 msgstr ""
 
 #: src/app/components/DiscordCommands.jsx:165
@@ -393,12 +437,12 @@ msgstr ""
 msgid "Price"
 msgstr ""
 
-#: src/app/views/PrivacyPolicy.jsx:75
-#: src/app/views/Tipbot.jsx:133
+#: src/app/views/PrivacyPolicy.jsx:76
+#: src/app/views/Tipbot.jsx:129
 msgid "Privacy Policy"
 msgstr ""
 
-#: src/app/components/DiscordCommands.jsx:413
+#: src/app/components/DiscordCommands.jsx:439
 #: src/app/components/TelegramCommands.jsx:382
 msgid "Rain"
 msgstr ""
@@ -408,11 +452,11 @@ msgstr ""
 #~ msgid "Rains the desired amount of"
 #~ msgstr ""
 
-#: src/app/components/DiscordCommands.jsx:606
+#: src/app/components/DiscordCommands.jsx:664
 msgid "Rains the desired amount of {0}{1}onto all listening users in the mentioned voice channel."
 msgstr ""
 
-#: src/app/components/DiscordCommands.jsx:422
+#: src/app/components/DiscordCommands.jsx:448
 msgid "Rains the desired amount of {0}{1}onto all online users (optionally, within specified role)"
 msgstr ""
 
@@ -428,11 +472,11 @@ msgstr ""
 #~ msgid "Rains the desired amount of{0}onto all online users (optionally, within specified role)"
 #~ msgstr ""
 
-#: src/app/components/DiscordCommands.jsx:783
+#: src/app/components/DiscordCommands.jsx:873
 msgid "Reactdrop"
 msgstr ""
 
-#: src/app/views/PrivacyPolicy.jsx:334
+#: src/app/views/PrivacyPolicy.jsx:335
 msgid "Required by law: In addition, we may disclose your information to the extent that we are required to do so by law (which may include to government bodies and law enforcement agencies); in connection with any legal proceedings or prospective legal proceedings; and in order to establish, exercise or defend our legal rights."
 msgstr ""
 
@@ -440,7 +484,7 @@ msgstr ""
 #~ msgid "Show link to"
 #~ msgstr ""
 
-#: src/app/components/DiscordCommands.jsx:973
+#: src/app/components/DiscordCommands.jsx:1140
 msgid "Show link to {0}{1}support server"
 msgstr ""
 
@@ -448,7 +492,7 @@ msgstr ""
 #~ msgid "Show link to{0}support server"
 #~ msgstr ""
 
-#: src/app/components/DiscordCommands.jsx:551
+#: src/app/components/DiscordCommands.jsx:601
 #: src/app/components/TelegramCommands.jsx:428
 msgid "Sleet"
 msgstr ""
@@ -457,7 +501,7 @@ msgstr ""
 msgid "Sleets the desired amount of {0}{1}onto all active users (default time is 15min)"
 msgstr ""
 
-#: src/app/components/DiscordCommands.jsx:459
+#: src/app/components/DiscordCommands.jsx:493
 msgid "Soak"
 msgstr ""
 
@@ -465,7 +509,7 @@ msgstr ""
 #~ msgid "Soaks the desired amount of"
 #~ msgstr ""
 
-#: src/app/components/DiscordCommands.jsx:468
+#: src/app/components/DiscordCommands.jsx:502
 msgid "Soaks the desired amount of {0}{1}onto all online and idle users (optionally, within specified role)"
 msgstr ""
 
@@ -473,12 +517,21 @@ msgstr ""
 #~ msgid "Soaks the desired amount of{0}onto all online and idle users (optionally, within specified role)"
 #~ msgstr ""
 
+#: src/app/components/SupportForm.jsx:172
+msgid "Something went wrong, please retry submitting"
+msgstr ""
+
 #: src/app/components/DiscordCommands.jsx:205
 msgid "Statistics"
 msgstr ""
 
-#: src/app/components/DiscordCommands.jsx:964
-#: src/app/containers/Header.jsx:210
+#: src/app/components/SupportForm.jsx:212
+msgid "Successfully Send Support Request"
+msgstr ""
+
+#: src/app/components/DiscordCommands.jsx:1131
+#: src/app/containers/Header.jsx:209
+#: src/app/views/Support.jsx:40
 msgid "Support"
 msgstr ""
 
@@ -486,16 +539,16 @@ msgstr ""
 msgid "Telegram Commands"
 msgstr ""
 
-#: src/app/views/Home.jsx:216
+#: src/app/views/Home.jsx:306
 msgid "Telegram Tipbots"
 msgstr ""
 
-#: src/app/views/TermsOfService.jsx:76
-#: src/app/views/Tipbot.jsx:105
+#: src/app/views/TermsOfService.jsx:77
+#: src/app/views/Tipbot.jsx:99
 msgid "Terms of Service"
 msgstr ""
 
-#: src/app/views/PrivacyPolicy.jsx:155
+#: src/app/views/PrivacyPolicy.jsx:156
 msgid "The Services may contain links to services owned and operated by third parties. (BlockExplorer, Coin Project Website, Advertisement, ...)"
 msgstr ""
 
@@ -503,7 +556,7 @@ msgstr ""
 #~ msgid "This Privacy Policy (“Privacy Policy“) apply to the use of the service (“Service“, “Bot“) provided by"
 #~ msgstr ""
 
-#: src/app/views/PrivacyPolicy.jsx:98
+#: src/app/views/PrivacyPolicy.jsx:99
 msgid "This Privacy Policy (“Privacy Policy“) apply to the use of the service (“Service“, “Bot“) provided by {0}{1}(hereinafter also referred as “we” or “us”)."
 msgstr ""
 
@@ -511,20 +564,20 @@ msgstr ""
 #~ msgid "This Privacy Policy (“Privacy Policy“) apply to the use of the service (“Service“, “Bot“) provided by{0}(hereinafter also referred as “we” or “us”)."
 #~ msgstr ""
 
-#: src/app/components/DiscordCommands.jsx:643
+#: src/app/components/DiscordCommands.jsx:709
 msgid "Thunder"
 msgstr ""
 
-#: src/app/components/DiscordCommands.jsx:689
+#: src/app/components/DiscordCommands.jsx:763
 msgid "ThunderStorm"
 msgstr ""
 
-#: src/app/components/DiscordCommands.jsx:361
+#: src/app/components/DiscordCommands.jsx:371
 #: src/app/components/TelegramCommands.jsx:275
 msgid "Tip"
 msgstr ""
 
-#: src/app/containers/Header.jsx:132
+#: src/app/containers/Header.jsx:137
 msgid "Tipbots"
 msgstr ""
 
@@ -532,7 +585,7 @@ msgstr ""
 #~ msgid "Tips a random lucky online user with an amount of"
 #~ msgstr ""
 
-#: src/app/components/DiscordCommands.jsx:652
+#: src/app/components/DiscordCommands.jsx:718
 msgid "Tips a random lucky online user with an amount of {0}{1}(optionally, within specified role)"
 msgstr ""
 
@@ -544,7 +597,7 @@ msgstr ""
 #~ msgid "Tips a specified number (max: 50) random lucky online and idle users with part of the amount of"
 #~ msgstr ""
 
-#: src/app/components/DiscordCommands.jsx:745
+#: src/app/components/DiscordCommands.jsx:827
 msgid "Tips a specified number (max: 50) random lucky online and idle users with part of the amount of {0}{1}(optionally, within specified role)"
 msgstr ""
 
@@ -556,7 +609,7 @@ msgstr ""
 #~ msgid "Tips a specified number (max: 50) random lucky online users with part of the amount of"
 #~ msgstr ""
 
-#: src/app/components/DiscordCommands.jsx:698
+#: src/app/components/DiscordCommands.jsx:772
 msgid "Tips a specified number (max: 50) random lucky online users with part of the amount of {0}{1}(optionally, within specified role)"
 msgstr ""
 
@@ -572,7 +625,7 @@ msgstr ""
 #~ msgid "Tips the @ mentioned user with the desired amount of"
 #~ msgstr ""
 
-#: src/app/components/DiscordCommands.jsx:370
+#: src/app/components/DiscordCommands.jsx:380
 #: src/app/components/TelegramCommands.jsx:284
 msgid "Tips the @ mentioned user with the desired amount of {0}"
 msgstr ""
@@ -581,19 +634,23 @@ msgstr ""
 #~ msgid "Tips the @ mentioned user with the desired amount of{0}"
 #~ msgstr ""
 
-#: src/app/views/PrivacyPolicy.jsx:366
+#: src/app/views/PrivacyPolicy.jsx:367
 msgid "To make a request, please let contact support or the developer on discord: Bago#7842"
 msgstr ""
 
-#: src/app/components/DiscordCommands.jsx:835
+#: src/app/views/Home.jsx:128
+msgid "Top quality personalized tipbots for bitcoin forks, zcash forks, komodo smartchains with dedicated developer and support."
+msgstr ""
+
+#: src/app/components/DiscordCommands.jsx:925
 msgid "Trivia"
 msgstr ""
 
-#: src/app/components/DiscordCommands.jsx:898
+#: src/app/components/DiscordCommands.jsx:988
 msgid "Turns @mentioning you during mass operations on/off"
 msgstr ""
 
-#: src/app/containers/Header.jsx:190
+#: src/app/containers/Header.jsx:186
 msgid "Uptime"
 msgstr ""
 
@@ -609,47 +666,51 @@ msgstr ""
 msgid "View monitor on"
 msgstr ""
 
-#: src/app/components/DiscordCommands.jsx:597
+#: src/app/components/DiscordCommands.jsx:655
 msgid "VoiceRain"
 msgstr ""
 
-#: src/app/views/PrivacyPolicy.jsx:122
+#: src/app/views/PrivacyPolicy.jsx:123
 msgid "We are committed to protecting and respecting your privacy. The Privacy Policy explains the basis on which personal information we collect from you will be processed by us or on our behalf. Where we decide the purpose or means for which personal data you supply through these Services is processed, we are the “controller”. Where you decide the purpose or means for which personal data you supply through these Services is processed, you are the “controller”. We will comply with proper and applicable data protection laws."
 msgstr ""
 
-#: src/app/views/PrivacyPolicy.jsx:200
+#: src/app/views/PrivacyPolicy.jsx:201
 msgid "We collect and process the following information which may include your personal data."
 msgstr ""
 
-#: src/app/views/PrivacyPolicy.jsx:164
+#: src/app/views/PrivacyPolicy.jsx:165
 msgid "We do NOT provide third-parties any personal data."
 msgstr ""
 
-#: src/app/views/PrivacyPolicy.jsx:316
+#: src/app/views/PrivacyPolicy.jsx:317
 msgid "We do NOT sell your personal data and we don’t provide it to anyone outside our organisation for any other purpose than the Service you subscribed for."
 msgstr ""
 
-#: src/app/views/PrivacyPolicy.jsx:219
+#: src/app/views/PrivacyPolicy.jsx:220
 msgid "We do not access or store emails or phone numbers for our Discord bot users."
 msgstr ""
 
-#: src/app/views/TermsOfService.jsx:126
+#: src/app/views/TermsOfService.jsx:127
 msgid "We don't reverse or refund any tips that made by the user. Please check twice before making any tips."
 msgstr ""
 
-#: src/app/views/PrivacyPolicy.jsx:135
+#: src/app/views/PrivacyPolicy.jsx:136
 msgid "We encourage you to read this Privacy Policy carefully as it contains important information about the following:"
 msgstr ""
 
-#: src/app/views/PrivacyPolicy.jsx:173
+#: src/app/views/PrivacyPolicy.jsx:174
 msgid "We may make changes to this Privacy Policy in the future. You should check this page from time to time to ensure you are aware of any changes. Where appropriate we may notify you of such changes."
+msgstr ""
+
+#: src/app/views/Support.jsx:52
+msgid "We offer extensive tipbot support in the Runebase Discord community server."
 msgstr ""
 
 #: src/app/views/PrivacyPolicy.jsx:239
 #~ msgid "We only store and process your personal data when you have voluntarily supplied us with it such as adding"
 #~ msgstr ""
 
-#: src/app/views/PrivacyPolicy.jsx:242
+#: src/app/views/PrivacyPolicy.jsx:243
 msgid "We only store and process your personal data when you have voluntarily supplied us with it such as adding {0}{1}on your server or by interacting with {2}.{3}Your personal data will only be disclosed or otherwise transmitted if this is necessary to implement the contract, render our Services or you have given your prior consent."
 msgstr ""
 
@@ -657,15 +718,15 @@ msgstr ""
 #~ msgid "We only store and process your personal data when you have voluntarily supplied us with it such as adding{0}on your server or by interacting with{1}. Your personal data will only be disclosed or otherwise transmitted if this is necessary to implement the contract, render our Services or you have given your prior consent."
 #~ msgstr ""
 
-#: src/app/views/TermsOfService.jsx:224
+#: src/app/views/TermsOfService.jsx:225
 msgid "We reserve the right to change or modify any of the terms and conditions contained in the ToS, at any time and in our sole discretion. Any changes or modifications will be effective immediately"
 msgstr ""
 
-#: src/app/views/PrivacyPolicy.jsx:270
+#: src/app/views/PrivacyPolicy.jsx:271
 msgid "We will use information about you for delivering our Services to you under the terms of use agreed between us. The processing of information in this way is necessary for us to provide you the Service properly and to ensure the features function properly so that you have the best Service possible."
 msgstr ""
 
-#: src/app/views/PrivacyPolicy.jsx:144
+#: src/app/views/PrivacyPolicy.jsx:145
 msgid "What information we may collect about you; How we will use the information we collect about you; Whether we will disclose your details to anyone else; And your choices and rights regarding the personal information you have provided to us."
 msgstr ""
 
@@ -673,7 +734,7 @@ msgstr ""
 #~ msgid "When using"
 #~ msgstr ""
 
-#: src/app/views/TermsOfService.jsx:245
+#: src/app/views/TermsOfService.jsx:246
 msgid "When using {0},  you agree to the terms and conditions above."
 msgstr ""
 
@@ -702,11 +763,11 @@ msgstr ""
 #~ msgid "Withdraws the entered amount to a{0}address of your choice"
 #~ msgstr ""
 
-#: src/app/views/PrivacyPolicy.jsx:357
+#: src/app/views/PrivacyPolicy.jsx:358
 msgid "You have the following rights over the way your personal data are processed."
 msgstr ""
 
-#: src/app/views/PrivacyPolicy.jsx:375
+#: src/app/views/PrivacyPolicy.jsx:376
 msgid "You have the right to request a copy of the personal information we process about you and to have any inaccuracies corrected. You can ask us to restrict, stop processing personal data."
 msgstr ""
 
@@ -714,7 +775,7 @@ msgstr ""
 #~ msgid "Your Discord ID, Discord Username, Discord Server ID & Name, Discord Channel ID & Name, your user preferences as well as all the data you supply to us and information provided by you when using the Service"
 #~ msgstr ""
 
-#: src/app/views/PrivacyPolicy.jsx:208
+#: src/app/views/PrivacyPolicy.jsx:209
 msgid "Your Discord ID, Discord Username, Discord Server ID & Name, Discord Channel ID & Name, your user preferences as well as all the data you supply to us and information provided by you when using the Service ({0})."
 msgstr ""
 
@@ -726,7 +787,7 @@ msgstr ""
 #~ msgid "Your tipbot wallet security is as safe as your Discord account is."
 #~ msgstr ""
 
-#: src/app/views/TermsOfService.jsx:152
+#: src/app/views/TermsOfService.jsx:153
 msgid "Your tipbot wallet security is as safe as your Discord account is. Use features like two-factor authentication to keep your account secure. In regards to {0}'s{1}security, we hold up to industry standards. Your wallet is powered by proven technology. In case of concerns, please contact our support."
 msgstr ""
 
@@ -768,7 +829,7 @@ msgstr ""
 #~ msgid "help message"
 #~ msgstr ""
 
-#: src/app/views/TermsOfService.jsx:92
+#: src/app/views/TermsOfService.jsx:93
 msgid "is beta software"
 msgstr ""
 
@@ -812,7 +873,7 @@ msgstr ""
 #~ msgid "price"
 #~ msgstr ""
 
-#: src/app/views/TermsOfService.jsx:144
+#: src/app/views/TermsOfService.jsx:145
 msgid "security"
 msgstr ""
 
@@ -840,6 +901,6 @@ msgstr ""
 #~ msgid "you agree to the terms and conditions above."
 #~ msgstr ""
 
-#: src/app/views/TermsOfService.jsx:118
+#: src/app/views/TermsOfService.jsx:119
 msgid "{0}Tips are non-reversible and non-refundable."
 msgstr ""
