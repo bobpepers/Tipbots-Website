@@ -25,7 +25,7 @@ function DiscordCommands(
     <Grid
       container
       spacing={2}
-      className="pb-1"
+      className="mb-1"
     >
       <Grid
         item
@@ -54,7 +54,7 @@ function DiscordCommands(
           </AccordionSummary>
           <AccordionDetails>
             <Typography
-              className="pb-1"
+              className="mb-1"
             >
               <Trans>
                 {'Displays '}
@@ -92,7 +92,7 @@ function DiscordCommands(
           </AccordionSummary>
           <AccordionDetails>
             <Typography
-              className="pb-1"
+              className="mb-1"
             >
               <Trans>
                 {'Displays '}
@@ -130,7 +130,7 @@ function DiscordCommands(
           </AccordionSummary>
           <AccordionDetails>
             <Typography
-              className="pb-1"
+              className="mb-1"
             >
               <Trans>
                 {'Displays your '}
@@ -170,7 +170,7 @@ function DiscordCommands(
           <AccordionDetails>
 
             <Typography
-              className="pb-1"
+              className="mb-1"
             >
               <Trans>
                 {'Displays '}
@@ -209,7 +209,7 @@ function DiscordCommands(
           </AccordionSummary>
           <AccordionDetails>
             <Typography
-              className="pb-1"
+              className="mb-1"
             >
               <Trans>
                 {'Displays your '}
@@ -248,7 +248,7 @@ function DiscordCommands(
           </AccordionSummary>
           <AccordionDetails>
             <Typography
-              className="pb-1"
+              className="mb-1"
             >
               <Trans>
                 {'Displays '}
@@ -287,7 +287,7 @@ function DiscordCommands(
           </AccordionSummary>
           <AccordionDetails>
             <Typography
-              className="pb-1"
+              className="mb-1"
             >
               <Trans>
                 {'Displays '}
@@ -326,7 +326,7 @@ function DiscordCommands(
           </AccordionSummary>
           <AccordionDetails>
             <Typography
-              className="pb-1"
+              className="mb-1"
             >
               <Trans>
                 {'Withdraws the entered amount to a '}
@@ -375,7 +375,7 @@ function DiscordCommands(
           </AccordionSummary>
           <AccordionDetails>
             <Typography
-              className="pb-1"
+              className="mb-1"
             >
               <Trans>
                 {'Tips the @ mentioned user with the desired amount of '}
@@ -443,7 +443,7 @@ function DiscordCommands(
           </AccordionSummary>
           <AccordionDetails>
             <Typography
-              className="pb-1"
+              className="mb-1"
             >
               <Trans>
                 {'Rains the desired amount of '}
@@ -497,7 +497,7 @@ function DiscordCommands(
           </AccordionSummary>
           <AccordionDetails>
             <Typography
-              className="pb-1"
+              className="mb-1"
             >
               <Trans>
                 {'Soaks the desired amount of '}
@@ -551,7 +551,7 @@ function DiscordCommands(
           </AccordionSummary>
           <AccordionDetails>
             <Typography
-              className="pb-1"
+              className="mb-1"
             >
               <Trans>
                 {'Floods the desired amount of '}
@@ -605,7 +605,7 @@ function DiscordCommands(
           </AccordionSummary>
           <AccordionDetails>
             <Typography
-              className="pb-1"
+              className="mb-1"
             >
               <Trans>
                 {'Makes a sleet storm with the desired amount of '}
@@ -659,7 +659,7 @@ function DiscordCommands(
           </AccordionSummary>
           <AccordionDetails>
             <Typography
-              className="pb-1"
+              className="mb-1"
             >
               <Trans>
                 {'Rains the desired amount of '}
@@ -713,7 +713,7 @@ function DiscordCommands(
           </AccordionSummary>
           <AccordionDetails>
             <Typography
-              className="pb-1"
+              className="mb-1"
             >
               <Trans>
                 {'Tips a random lucky online user with an amount of '}
@@ -767,7 +767,7 @@ function DiscordCommands(
           </AccordionSummary>
           <AccordionDetails>
             <Typography
-              className="pb-1"
+              className="mb-1"
             >
               <Trans>
                 {'Tips a specified number (max: 50) random lucky online users with part of the amount of '}
@@ -822,7 +822,7 @@ function DiscordCommands(
           </AccordionSummary>
           <AccordionDetails>
             <Typography
-              className="pb-1"
+              className="mb-1"
             >
               <Trans>
                 {'Tips a specified number (max: 50) random lucky online and idle users with part of the amount of '}
@@ -877,7 +877,7 @@ function DiscordCommands(
           </AccordionSummary>
           <AccordionDetails>
             <Typography
-              className="pb-1"
+              className="mb-1"
             >
               <Trans>
                 {'Performs a react airdrop with the amount, optionally within custom time, optionally using a custom-supplied emoji. <time> parameter accepts time interval expressions in the form of: 60s, 5m, 1h. Default time interval is 5m (5minutes)'}
@@ -929,7 +929,7 @@ function DiscordCommands(
           </AccordionSummary>
           <AccordionDetails>
             <Typography
-              className="pb-1"
+              className="mb-1"
             >
               <Trans>
                 {'Performs a trivia with the amount of '}
@@ -983,7 +983,7 @@ function DiscordCommands(
           </AccordionSummary>
           <AccordionDetails>
             <Typography
-              className="pb-1"
+              className="mb-1"
             >
               <Trans>
                 Turns @mentioning you during mass operations on/off
@@ -1020,7 +1020,7 @@ function DiscordCommands(
           </AccordionSummary>
           <AccordionDetails>
             <Typography
-              className="pb-1"
+              className="mb-1"
             >
               <Trans>
                 {'Gets a small amount of '}
@@ -1061,7 +1061,7 @@ function DiscordCommands(
                 </AccordionSummary>
                 <AccordionDetails>
                   <Typography
-                    className="pb-1"
+                    className="mb-1"
                   >
                     <Trans>
                       Displays time left until next halving, etc
@@ -1096,7 +1096,7 @@ function DiscordCommands(
                 </AccordionSummary>
                 <AccordionDetails>
                   <Typography
-                    className="pb-1"
+                    className="mb-1"
                   >
                     <Trans>
                       Displays mining info
@@ -1135,7 +1135,7 @@ function DiscordCommands(
           </AccordionSummary>
           <AccordionDetails>
             <Typography
-              className="pb-1"
+              className="mb-1"
             >
               <Trans>
                 {'Show link to '}

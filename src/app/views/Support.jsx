@@ -31,7 +31,7 @@ const Support = function (
         <Grid
           item
           xs={12}
-          className="pt-1 pb-1"
+          className="mt-1 mb-1"
         >
           <Typography
             variant="h3"
@@ -43,7 +43,7 @@ const Support = function (
         <Grid
           item
           xs={12}
-          className="pt-1 pb-1"
+          className="mt-1 mb-1"
         >
           <Typography
             variant="body1"
@@ -70,14 +70,14 @@ const Support = function (
           md={6}
           alignItems="center"
           justifyContent="center"
-          className="pt-1 pb-1"
+          className="mt-1 mb-1"
         >
           <a
             href="https://discord.gg/CdUSaVfp8Q"
             style={{ textAlign: 'center' }}
           >
             <Discord
-              className="tipBotLinkLogo pb-1"
+              className="tipBotLinkLogo mb-1"
             />
             <Typography
               variant="subtitle1"
@@ -92,7 +92,7 @@ const Support = function (
         <Grid
           item
           xs={12}
-          className="pt-1 pb-1"
+          className="mt-1 mb-1"
         >
           <Typography
             variant="body1"

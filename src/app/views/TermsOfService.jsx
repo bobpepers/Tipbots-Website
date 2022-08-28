@@ -51,7 +51,7 @@ const Tipbot = function (props) {
           md={3}
           alignItems="center"
           justifyContent="center"
-          className="pb-1"
+          className="mb-1"
         >
           <img
             className="tipbotLogo"
@@ -62,7 +62,7 @@ const Tipbot = function (props) {
         <Grid
           item
           xs={12}
-          className="pb-1"
+          className="mb-1"
         >
           <Typography
             variant="h3"
@@ -82,7 +82,7 @@ const Tipbot = function (props) {
         <Grid
           item
           xs={12}
-          className="pb-1"
+          className="mb-1"
         >
           <Typography
             variant="h6"
@@ -109,7 +109,7 @@ const Tipbot = function (props) {
         <Grid
           item
           xs={12}
-          className="pb-1"
+          className="mb-1"
         >
           <Typography
             variant="h6"
@@ -133,7 +133,7 @@ const Tipbot = function (props) {
         <Grid
           item
           xs={12}
-          className="pb-1"
+          className="mb-1"
         >
           <Typography
             variant="h6"
@@ -162,7 +162,7 @@ const Tipbot = function (props) {
         <Grid
           item
           xs={12}
-          className="pb-1"
+          className="mb-1"
         >
           <Typography
             variant="h6"
@@ -185,7 +185,7 @@ const Tipbot = function (props) {
         <Grid
           item
           xs={12}
-          className="pb-1"
+          className="mb-1"
         >
           <Typography
             variant="h6"
@@ -211,12 +211,12 @@ const Tipbot = function (props) {
           style={{
             width: '100%',
           }}
-          className="pb-1"
+          className="mb-1"
         />
         <Grid
           item
           xs={12}
-          className="pb-1"
+          className="mb-1"
         >
           <Typography
             variant="body1"
@@ -231,13 +231,13 @@ const Tipbot = function (props) {
           style={{
             width: '100%',
           }}
-          className="pb-1"
+          className="mb-1"
         />
 
         <Grid
           item
           xs={12}
-          className="pb-1"
+          className="mb-1"
         >
           <Typography
             variant="h6"

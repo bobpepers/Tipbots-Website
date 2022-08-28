@@ -62,7 +62,7 @@ const Tipbot = function (
         <Grid
           item
           xs={12}
-          className="pt-1 pb-1"
+          className="mt-1 mb-1"
         >
           <Typography
             variant="h3"
@@ -80,7 +80,7 @@ const Tipbot = function (
           md={6}
           alignItems="center"
           justifyContent="center"
-          className="pb-1"
+          className="mb-1"
         >
           <Button
             component={Link}
@@ -110,7 +110,7 @@ const Tipbot = function (
           md={6}
           alignItems="center"
           justifyContent="center"
-          className="pb-1"
+          className="mb-1"
         >
           <Button
             component={Link}
@@ -135,7 +135,7 @@ const Tipbot = function (
         <Grid
           item
           xs={12}
-          className="pt-1"
+          className="mt-1"
         >
           <UptimeRobot
             apikey="ur1719256-ba1375b28cf44c17640ac06e"
@@ -152,14 +152,14 @@ const Tipbot = function (
           md={6}
           alignItems="center"
           justifyContent="center"
-          className="pt-1 pb-1"
+          className="mt-1 mb-1"
         >
           <a
             href={tipbotInfo.discordLink}
             style={{ textAlign: 'center' }}
           >
             <Discord
-              className="tipBotLinkLogo pb-1"
+              className="tipBotLinkLogo mb-1"
             />
             <Typography
               variant="subtitle1"
@@ -178,7 +178,7 @@ const Tipbot = function (
           xs={12}
           sm={12}
           md={6}
-          className="pt-1 pb-1"
+          className="mt-1 mb-1"
           alignItems="center"
           justifyContent="center"
         >
@@ -187,7 +187,7 @@ const Tipbot = function (
             style={{ textAlign: 'center' }}
           >
             <Telegram
-              className="tipBotLinkLogo pb-1"
+              className="tipBotLinkLogo mb-1"
             />
             <Typography
               variant="subtitle1"

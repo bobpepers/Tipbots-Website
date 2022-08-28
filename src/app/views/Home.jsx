@@ -8,7 +8,9 @@ import {
   Grid,
   Divider,
   Typography,
+  useMediaQuery,
 } from '@mui/material';
+import { useTheme } from '@mui/material/styles';
 import Runebase from '../assets/images/runebaseloop.gif';
 import FloodExample from '../assets/images/floodExample.gif';
 import { ReactComponent as Discord } from '../assets/images/discord.svg';
@@ -21,6 +23,8 @@ const Home = function (props) {
   const {
     nodeStatus,
   } = props;
+  const theme = useTheme();
+  const addTextMargin = useMediaQuery(theme.breakpoints.up('lg'));
 
   useEffect(() => {
     document.title = 'Tipbots - Home';
@@ -53,11 +57,17 @@ const Home = function (props) {
             alt="Runebase Logo"
           />
         </Grid>
+      </Grid>
+      <Grid
+        container
+        spacing={0}
+      >
         <Divider
           style={{
             width: '100%',
           }}
         />
+
         <Grid
           item
           xs={12}
@@ -79,24 +89,33 @@ const Home = function (props) {
         <Grid
           item
           xs={12}
-          md={6}
+          sm={12}
+          md={12}
+          lg={6}
         >
           <Typography
             variant="body1"
             align="left"
           >
-            <img src={FloodExample} alt="runestip flood example" />
+            <img
+              src={FloodExample}
+              alt="runestip flood example"
+              className="botExampleGifs"
+            />
           </Typography>
         </Grid>
         <Grid
           item
           xs={12}
-          md={6}
+          sm={12}
+          md={12}
+          lg={6}
         >
           <Typography
             variant="body1"
             align="left"
             gutterBottom
+            className={addTextMargin ? 'addExampleTextMarginLeft' : ''}
           >
             <Trans>Personalized Discord and Telegram tipbots for crypto projects.</Trans>
           </Typography>
@@ -104,6 +123,7 @@ const Home = function (props) {
             variant="body1"
             align="left"
             gutterBottom
+            className={addTextMargin ? 'addExampleTextMarginLeft' : ''}
           >
             <Trans>
               Top quality personalized tipbots for bitcoin forks, zcash forks, komodo smartchains with dedicated developer and support.
@@ -113,6 +133,7 @@ const Home = function (props) {
             variant="body1"
             align="left"
             gutterBottom
+            className={addTextMargin ? 'addExampleTextMarginLeft' : ''}
           >
             <Trans>
               A wide range of features.
@@ -127,6 +148,13 @@ const Home = function (props) {
             marginTop: '2rem',
           }}
         />
+      </Grid>
+      <Grid
+        container
+        spacing={0}
+        alignItems="center"
+        justifyContent="center"
+      >
         <Grid
           container
           item

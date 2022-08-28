@@ -61,7 +61,7 @@ const Tipbot = function (props) {
         <Grid
           item
           xs={12}
-          className="pb-1"
+          className="mb-1"
         >
           <Typography
             variant="h3"
@@ -82,7 +82,7 @@ const Tipbot = function (props) {
         <Grid
           item
           xs={12}
-          className="pb-1"
+          className="mb-1"
         >
           <Typography
             variant="h6"
@@ -184,7 +184,7 @@ const Tipbot = function (props) {
         <Grid
           item
           xs={12}
-          className="pb-1"
+          className="mb-1"
         >
           <Typography
             variant="h6"
@@ -226,7 +226,7 @@ const Tipbot = function (props) {
         <Grid
           item
           xs={12}
-          className="pb-1"
+          className="mb-1"
         >
           <Typography
             variant="h6"
@@ -254,7 +254,7 @@ const Tipbot = function (props) {
         <Grid
           item
           xs={12}
-          className="pb-1"
+          className="mb-1"
         >
           <Typography
             variant="h6"
@@ -277,7 +277,7 @@ const Tipbot = function (props) {
         <Grid
           item
           xs={12}
-          className="pb-1"
+          className="mb-1"
         >
           <Typography
             variant="h6"
@@ -300,7 +300,7 @@ const Tipbot = function (props) {
         <Grid
           item
           xs={12}
-          className="pb-1"
+          className="mb-1"
         >
           <Typography
             variant="h6"
@@ -341,7 +341,7 @@ const Tipbot = function (props) {
         <Grid
           item
           xs={12}
-          className="pb-1"
+          className="mb-1"
         >
           <Typography
             variant="h6"

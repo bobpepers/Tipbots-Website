@@ -25,7 +25,7 @@ function TelegramCommands(
     <Grid
       container
       spacing={2}
-      className="pb-1"
+      className="mb-1"
     >
       <Grid
         item
@@ -54,7 +54,7 @@ function TelegramCommands(
           </AccordionSummary>
           <AccordionDetails>
             <Typography
-              className="pb-1"
+              className="mb-1"
             >
               <Trans>
                 {'Displays '}
@@ -106,7 +106,7 @@ function TelegramCommands(
           </AccordionSummary>
           <AccordionDetails>
             <Typography
-              className="pb-1"
+              className="mb-1"
             >
               <Trans>
                 {'Display current '}
@@ -151,7 +151,7 @@ function TelegramCommands(
           </AccordionSummary>
           <AccordionDetails>
             <Typography
-              className="pb-1"
+              className="mb-1"
             >
               <Trans>
                 {'Displays '}
@@ -196,7 +196,7 @@ function TelegramCommands(
           </AccordionSummary>
           <AccordionDetails>
             <Typography
-              className="pb-1"
+              className="mb-1"
             >
               <Trans>
                 {'Display '}
@@ -241,7 +241,7 @@ function TelegramCommands(
           </AccordionSummary>
           <AccordionDetails>
             <Typography
-              className="pb-1"
+              className="mb-1"
             >
               <Trans>
                 {'Displays '}
@@ -279,7 +279,7 @@ function TelegramCommands(
           </AccordionSummary>
           <AccordionDetails>
             <Typography
-              className="pb-1"
+              className="mb-1"
             >
               <Trans>
                 {'Tips the @ mentioned user with the desired amount of '}
@@ -340,7 +340,7 @@ function TelegramCommands(
           </AccordionSummary>
           <AccordionDetails>
             <Typography
-              className="pb-1"
+              className="mb-1"
             >
               <Trans>
                 {'Floods the desired amount of '}
@@ -386,7 +386,7 @@ function TelegramCommands(
           </AccordionSummary>
           <AccordionDetails>
             <Typography
-              className="pb-1"
+              className="mb-1"
             >
               <Trans>
                 {'Rains the desired amount of '}
@@ -432,7 +432,7 @@ function TelegramCommands(
           </AccordionSummary>
           <AccordionDetails>
             <Typography
-              className="pb-1"
+              className="mb-1"
             >
               <Trans>
                 {'Sleets the desired amount of '}
@@ -478,7 +478,7 @@ function TelegramCommands(
           </AccordionSummary>
           <AccordionDetails>
             <Typography
-              className="pb-1"
+              className="mb-1"
             >
               <Trans>
                 {'Displays your '}
@@ -523,7 +523,7 @@ function TelegramCommands(
           </AccordionSummary>
           <AccordionDetails>
             <Typography
-              className="pb-1"
+              className="mb-1"
             >
               <Trans>
                 {'Withdraws an entered amount to a '}
@@ -571,7 +571,7 @@ function TelegramCommands(
           </AccordionSummary>
           <AccordionDetails>
             <Typography
-              className="pb-1"
+              className="mb-1"
             >
               <Trans>
                 {'Claim a small amount of '}

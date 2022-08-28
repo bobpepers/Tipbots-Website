@@ -81,7 +81,7 @@ const SupportForm = function () {
                 <Grid
                   item
                   xs={12}
-                  className="pb-1"
+                  className="mb-1"
                 >
                   <TextField
                     label="Email"
@@ -94,7 +94,7 @@ const SupportForm = function () {
                 <Grid
                   item
                   xs={12}
-                  className="pb-1"
+                  className="mb-1"
                 >
                   <Select
                     name="bot"
@@ -114,7 +114,7 @@ const SupportForm = function () {
                 <Grid
                   item
                   xs={12}
-                  className="pb-1"
+                  className="mb-1"
                 >
                   <Select
                     name="platform"
@@ -129,7 +129,7 @@ const SupportForm = function () {
                 <Grid
                   item
                   xs={12}
-                  className="pb-1"
+                  className="mb-1"
                 >
                   <TextField
                     label="Issue Description"
@@ -143,7 +143,7 @@ const SupportForm = function () {
                 <Grid
                   item
                   xs={12}
-                  className="pb-1"
+                  className="mb-1"
                 >
                   <Button
                     component={SubmitButton}
