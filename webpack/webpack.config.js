@@ -112,9 +112,11 @@ module.exports = (options) => {
         {
           test: /\.(gif|png|jpe?g)$/i,
           type: 'asset/resource',
-          generator: {
-            filename: 'static/images/[hash][ext][query]',
-          },
+          ...(options.isProduction && {
+            generator: {
+              filename: 'static/images/[hash][ext][query]',
+            },
+          }),
         },
         {
           test: /\.svg$/,
@@ -149,9 +151,11 @@ module.exports = (options) => {
         {
           test: /\.(eot|woff|woff2|ttf)(\?\S*)?$/,
           type: 'asset/resource',
-          generator: {
-            filename: 'static/fonts/[hash][ext][query]',
-          },
+          ...(options.isProduction && {
+            generator: {
+              filename: 'static/fonts/[hash][ext][query]',
+            },
+          }),
         },
         {
           test: /\.css$/,
