@@ -1,6 +1,6 @@
 {
   "name": "tipbots-website",
-  "version": "0.0.17",
+  "version": "0.0.18",
   "description": "Admin dashboard for RUNES-tip",
   "scripts": {
     "lingui:extract": "lingui extract",

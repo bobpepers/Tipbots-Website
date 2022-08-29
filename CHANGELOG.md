@@ -2,6 +2,25 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.18](https://github.com/bobpepers/Tipbots-Website/compare/v0.0.17...v0.0.18) (2022-08-29)
+
+
+### Bug Fixes
+
+* 🐛 add missing var config.js ([86113f2](https://github.com/bobpepers/Tipbots-Website/commit/86113f203509548049b710d823e6518b0195f413))
+
+
+### Tests
+
+* test solving a new webpack issue ([2abee15](https://github.com/bobpepers/Tipbots-Website/commit/2abee159e7745e65cd4061d89b530b75348a2e41))
+
+
+### Build
+
+* **webpack:** ⚡️ changes in webpack build config, rebuild ([a622125](https://github.com/bobpepers/Tipbots-Website/commit/a6221253da35e2963afde608a33029ddad8fb8d9))
+* **webpack:** 🐛 another webpack production build fix attempt (should be fine according to docs?) ([bca598e](https://github.com/bobpepers/Tipbots-Website/commit/bca598e407ccfcbf7ccb2d066cbef040fbfc4cee))
+* **webpack:** 🔧 use url-loader ([a02ac14](https://github.com/bobpepers/Tipbots-Website/commit/a02ac148ffef846ca8680391d93a1fd2212d2ba7))
+
 ### [0.0.17](https://github.com/bobpepers/Tipbots-Website/compare/v0.0.16...v0.0.17) (2022-08-29)
 
 
