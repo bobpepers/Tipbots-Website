@@ -32,9 +32,24 @@ module.exports = (options) => {
             implementation: ImageMinimizerPlugin.imageminMinify,
             options: {
               plugins: [
-                ['gifsicle', { interlaced: true }],
-                ['jpegtran', { progressive: true }],
-                ['optipng', { optimizationLevel: 5 }],
+                [
+                  'gifsicle',
+                  {
+                    interlaced: true,
+                  },
+                ],
+                [
+                  'jpegtran',
+                  {
+                    progressive: true,
+                  },
+                ],
+                [
+                  'optipng',
+                  {
+                    optimizationLevel: 5,
+                  },
+                ],
               ],
             },
           },
@@ -67,12 +82,6 @@ module.exports = (options) => {
     resolve: {
       extensions: ['.js', '.jsx'],
       alias: {
-        // path: require.resolve('path-browserify'),
-        // crypto: require.resolve('crypto-browserify'),
-        // stream: require.resolve('stream-browserify'),
-        // http: require.resolve('stream-http'),
-        // https: require.resolve('https-browserify'),
-        // os: require.resolve('os-browserify/browser'),
         // url: require.resolve('url/'),
         buffer: require.resolve('buffer/'),
         fs: false,
@@ -110,7 +119,11 @@ module.exports = (options) => {
                 prettier: false,
                 svgo: false,
                 svgoConfig: {
-                  plugins: [{ removeViewBox: false }],
+                  plugins: [
+                    {
+                      removeViewBox: false,
+                    },
+                  ],
                 },
                 titleProp: true,
                 ref: true,
@@ -129,14 +142,16 @@ module.exports = (options) => {
         },
         {
           test: /\.(eot|woff|woff2|ttf)(\?\S*)?$/,
-          use: [{
-            loader: 'file-loader',
-            options: {
-              name: '[name].[ext]',
-              outputPath: 'Fonts/',
-              publicPath: '../Fonts/',
+          use: [
+            {
+              loader: 'file-loader',
+              options: {
+                name: 'statis/fonts/[name].[ext]',
+                outputPath: 'static/fonts/',
+                publicPath: '../static/fonts/',
+              },
             },
-          }],
+          ],
         },
         {
           test: /\.css$/,
@@ -155,7 +170,10 @@ module.exports = (options) => {
             loader: 'babel-loader',
             options: {
               envName: !options.isProduction ? 'development' : 'production',
-              presets: ['@babel/preset-react', '@babel/preset-env'],
+              presets: [
+                '@babel/preset-react',
+                '@babel/preset-env',
+              ],
               plugins: [
                 '@babel/plugin-transform-runtime',
               ],
@@ -170,7 +188,10 @@ module.exports = (options) => {
         process: 'process/browser',
       }),
       new Webpack.ProvidePlugin({
-        Buffer: ['buffer', 'Buffer'],
+        Buffer: [
+          'buffer',
+          'Buffer',
+        ],
       }),
       new HtmlWebpackPlugin({
         template: Path.join(__dirname, '../src/index.html'),
@@ -185,17 +206,12 @@ module.exports = (options) => {
   if (options.isProduction) {
     webpackConfig.entry = [Path.join(__dirname, '../src/app/index')];
 
-    // webpackConfig.plugins.push(
-    //  new Webpack.optimize.OccurrenceOrderPlugin(),
-    // );
-
     webpackConfig.plugins.push(
       new CopyPlugin({
         patterns: [
           {
             from: Path.join(__dirname, '../static'),
             to: Path.join(__dirname, '../dist/static'),
-            // context: 'app/',
           },
         ],
       }),
@@ -205,15 +221,28 @@ module.exports = (options) => {
       test: /\.scss$/,
       use: [
         'style-loader', // or MiniCssExtractPlugin.loader
-        { loader: 'css-loader', options: { sourceMap: true, importLoaders: 1 } },
-        { loader: 'sass-loader', options: { sourceMap: true } },
+        {
+          loader: 'css-loader',
+          options: {
+            sourceMap: true,
+            importLoaders: 1,
+          },
+        },
+        {
+          loader: 'sass-loader',
+          options: {
+            sourceMap: true,
+          },
+        },
       ],
     });
 
     webpackConfig.plugins.push(
       new WebpackObfuscator({
         rotateStringArray: true,
-      }, ['excluded_bundle_name.js']),
+      }, [
+        'excluded_bundle_name.js',
+      ]),
     );
   } else {
     webpackConfig.plugins.push(
@@ -224,26 +253,24 @@ module.exports = (options) => {
       rules: [
         {
           test: /\.scss$/,
-          use: ['style-loader', 'css-loader', 'sass-loader'],
+          use: [
+            'style-loader',
+            'css-loader',
+            'sass-loader',
+          ],
         },
       ],
     });
 
     webpackConfig.devServer = {
-      // contentBase: Path.join(__dirname, '../'),
-      // disableHostCheck: true,
       hot: !!options.isProduction,
       port: options.port,
-      // inline: true,
-      // progress: true,
       historyApiFallback: true,
-      // stats: 'errors-warnings',
       host: 'localhost',
       client: {
         overlay: false,
         logging: 'warn', // Want to set this to 'warn' or 'error'
       },
-      // public: 'localhost',
     };
   }
 

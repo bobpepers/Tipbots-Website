@@ -6,6 +6,7 @@
         "javascript"
       ],
       "conventionalCommits.scopes": [
-        "translations"
+        "translations",
+        "webpack"
       ]
 }
