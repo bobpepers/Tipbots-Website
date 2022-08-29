@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.22](https://github.com/bobpepers/Tipbots-Website/compare/v0.0.21...v0.0.22) (2022-08-29)
+
+
+### Bug Fixes
+
+* ⚡️ translation macro for document titles, various warning fixes ([79a4d65](https://github.com/bobpepers/Tipbots-Website/commit/79a4d6512af5aa3df6b370589d6904950ec02369))
+* **translations:** 🩹 fix plurals error ([330acc0](https://github.com/bobpepers/Tipbots-Website/commit/330acc0a45e4f99642e3fffc9eead05d23e7e361))
+
 ### [0.0.21](https://github.com/bobpepers/Tipbots-Website/compare/v0.0.20...v0.0.21) (2022-08-29)
 
 
