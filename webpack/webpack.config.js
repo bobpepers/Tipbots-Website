@@ -22,6 +22,7 @@ module.exports = (options) => {
       filename: `./scripts/[name].${options.jsFileName}`,
       chunkFilename: '[id].[chunkhash].js',
       publicPath: '/',
+      assetModuleFilename: 'static/images/[hash][ext][query]',
     },
     optimization: {
       chunkIds: 'total-size',
@@ -108,17 +109,17 @@ module.exports = (options) => {
         },
         {
           test: /\.(gif|png|jpe?g)$/i,
-          use: [
-            {
-              loader: 'url-loader',
-              options: {
-                name: 'static/images/[hash].[ext]',
-              },
-            },
-          ],
+          type: 'asset/resource',
+          generator: {
+            filename: 'static/images/[hash][ext][query]',
+          },
         },
         {
           test: /\.svg$/,
+          type: 'asset/resource',
+          generator: {
+            filename: 'static/images/[hash][ext][query]',
+          },
           use: [
             {
               loader: '@svgr/webpack',
@@ -136,12 +137,6 @@ module.exports = (options) => {
                 ref: true,
               },
             },
-            {
-              loader: 'file-loader',
-              options: {
-                name: 'static/images/[hash].[ext]',
-              },
-            },
           ],
           issuer: {
             and: [/\.(ts|tsx|js|jsx|md|mdx)$/],
@@ -149,14 +144,10 @@ module.exports = (options) => {
         },
         {
           test: /\.(eot|woff|woff2|ttf)(\?\S*)?$/,
-          use: [
-            {
-              loader: 'url-loader',
-              options: {
-                name: 'static/fonts/[hash].[ext]',
-              },
-            },
-          ],
+          type: 'asset/resource',
+          generator: {
+            filename: 'static/fonts/[hash][ext][query]',
+          },
         },
         {
           test: /\.css$/,
