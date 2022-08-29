@@ -41,7 +41,15 @@ msgstr "6. Het delen van gegevens"
 msgid "7. Your rights"
 msgstr "7. Jou rechten"
 
-#: src/app/views/Home.jsx:157
+#: src/app/components/Uptimerobot.jsx:112
+msgid "<br />Faulted: {0} time<br />outage-time: {1}<br />availability: {2}%"
+msgstr "<br />Defect: {0} tijd<br />uitvaltijd: {1}<br />beschikbaarheid: {2}%"
+
+#: src/app/components/Uptimerobot.jsx:106
+msgid "<br />availability: {0}%"
+msgstr "<br />beschikbaarheid: {0}%"
+
+#: src/app/views/Home.jsx:160
 msgid "A rich arsenal of features like tip, multi-tip, rain, flood, soak, sleet, voicerain, hurricane, thunderstorm, thunder, reactdrop, trivia, faucet, help, info, balance, statistics, ignoreme, support, ..."
 msgstr "Een rijk arsenaal aan functies zoals tip, multi-tip, rain, flood, soak, sleet, voicerain, hurricane, thunderstorm, thunder, reactdrop, trivia, faucet, help, info, balance, statistics, ignoreme, support, ..."
 
@@ -75,7 +83,7 @@ msgstr "Storting"
 msgid "Discord Commands"
 msgstr "Discord Commando's"
 
-#: src/app/views/Home.jsx:214
+#: src/app/views/Home.jsx:217
 msgid "Discord Tipbots"
 msgstr "Discord Tipbots"
 
@@ -129,6 +137,10 @@ msgstr "Toont {0}{1}help bericht"
 #: src/app/components/DiscordCommands.jsx:175
 msgid "Displays {0}{1}price"
 msgstr "Toont {0}{1}prijs"
+
+#: src/app/components/Uptimerobot.jsx:30
+msgid "Down"
+msgstr "Down"
 
 #: src/app/views/PrivacyPolicy.jsx:294
 msgid "During every interaction with the Service, user data is store in a database and protocol files, the so-called log files. The datasets stored here may contain such data as date and time of the interaction, ID and username of the interacting user, the command used, ID and name of the Discord Server in which the interaction took place as well as the ID and name of the Discord Channel the interaction took place in."
@@ -242,8 +254,10 @@ msgstr "In geen geval zullen {0}{1} of zijn auteurs verantwoordelijk zijn voor v
 msgid "Info"
 msgstr "Informatie"
 
-#: src/app/views/Home.jsx:270 src/app/views/Home.jsx:381
-#: src/app/views/Tipbot.jsx:168 src/app/views/Tipbot.jsx:196
+#: src/app/views/Home.jsx:273
+#: src/app/views/Home.jsx:384
+#: src/app/views/Tipbot.jsx:168
+#: src/app/views/Tipbot.jsx:196
 msgid "Invite"
 msgstr "Uitnodigen"
 
@@ -267,6 +281,14 @@ msgstr "Mijnen"
 msgid "Multiple users:"
 msgstr "Meerdere gebruikers:"
 
+#: src/app/components/Uptimerobot.jsx:109
+msgid "No data"
+msgstr "Geen gegevens"
+
+#: src/app/components/Uptimerobot.jsx:29
+msgid "Ok"
+msgstr "Oké"
+
 #: src/app/components/DiscordCommands.jsx:882
 msgid "Performs a react airdrop with the amount, optionally within custom time, optionally using a custom-supplied emoji. <time> parameter accepts time interval expressions in the form of: 60s, 5m, 1h. Default time interval is 5m (5minutes)"
 msgstr "Voert een react airdrop uit met het bedrag, optioneel binnen aangepaste tijd, optioneel met een aangepaste emoji. <tijd> parameter accepteert tijdsinterval expressies in de vorm van: 60s, 5m, 1u. Standaard tijdsinterval is 5m (5minuten)"
@@ -275,11 +297,11 @@ msgstr "Voert een react airdrop uit met het bedrag, optioneel binnen aangepaste 
 msgid "Performs a trivia with the amount of {0},  optionally with set amount of of people, optionally within custom time. &lt;time&gt; parameter accepts time interval expressions in the form of: 60s, 5m, 1h. Default time interval is 5m (5minutes)"
 msgstr "Voert een trivia uit met het aantal {0}, optioneel met ingesteld aantal personen, optioneel binnen aangepaste tijd. &lt;time&gt; parameter accepteert tijdsinterval uitdrukkingen in de vorm van: 60s, 5m, 1u. Standaard tijdsinterval is 5m (5minuten)"
 
-#: src/app/views/Home.jsx:139
+#: src/app/views/Home.jsx:142
 msgid "Personalized Discord and Telegram tipbots for crypto projects."
 msgstr "Gepersonaliseerde Discord en Telegram tipbots voor crypto projecten."
 
-#: src/app/views/Home.jsx:79
+#: src/app/views/Home.jsx:82
 msgid "Personalized Tipbots"
 msgstr "Gepersonaliseerde Tipbots"
 
@@ -304,7 +326,8 @@ msgstr "De beste manier om ondersteuning te vragen is door een ticket te openen 
 msgid "Price"
 msgstr "Prijs"
 
-#: src/app/views/PrivacyPolicy.jsx:76 src/app/views/Tipbot.jsx:129
+#: src/app/views/PrivacyPolicy.jsx:76
+#: src/app/views/Tipbot.jsx:129
 msgid "Privacy Policy"
 msgstr "Privacybeleid"
 
@@ -375,7 +398,8 @@ msgid "Successfully Send Support Request"
 msgstr "Succesvol verzonden ondersteuningsverzoek"
 
 #: src/app/components/DiscordCommands.jsx:1131
-#: src/app/containers/Header.jsx:209 src/app/views/Support.jsx:40
+#: src/app/containers/Header.jsx:209
+#: src/app/views/Support.jsx:40
 msgid "Support"
 msgstr "Support"
 
@@ -383,11 +407,12 @@ msgstr "Support"
 msgid "Telegram Commands"
 msgstr "Telegram commando's"
 
-#: src/app/views/Home.jsx:325
+#: src/app/views/Home.jsx:328
 msgid "Telegram Tipbots"
 msgstr "Telegram Tipbots"
 
-#: src/app/views/TermsOfService.jsx:77 src/app/views/Tipbot.jsx:99
+#: src/app/views/TermsOfService.jsx:77
+#: src/app/views/Tipbot.jsx:99
 msgid "Terms of Service"
 msgstr "Voorwaarden van de Dienst"
 
@@ -441,7 +466,7 @@ msgstr "Tipt de @ genoemde gebruiker met de gewenste hoeveelheid van {0}"
 msgid "To make a request, please let contact support or the developer on discord: Bago#7842"
 msgstr "Om een verzoek in te dienen, kunt u contact opnemen met support of de ontwikkelaar op discord: Bago#7842"
 
-#: src/app/views/Home.jsx:147
+#: src/app/views/Home.jsx:150
 msgid "Top quality personalized tipbots for bitcoin forks, zcash forks, komodo smartchains with dedicated developer and support."
 msgstr "Topkwaliteit gepersonaliseerde tipbots voor bitcoin forks, zcash forks, komodo smartchains met toegewijde ontwikkelaar en ondersteuning."
 
@@ -452,6 +477,10 @@ msgstr "Trivia"
 #: src/app/components/DiscordCommands.jsx:988
 msgid "Turns @mentioning you during mass operations on/off"
 msgstr "Schakelt @gebruikers-vermelding tijdens massaoperaties aan/uit"
+
+#: src/app/components/Uptimerobot.jsx:31
+msgid "Unknown"
+msgstr "Onbekend"
 
 #: src/app/containers/Header.jsx:186
 msgid "Uptime"
@@ -464,6 +493,10 @@ msgstr "Uptime Monitor"
 #: src/app/views/Uptime.jsx:69
 msgid "View monitor on"
 msgstr "Bekijk monitor op"
+
+#: src/app/components/Uptimerobot.jsx:184
+msgid "View {0} status on UpTimeRobot"
+msgstr "Bekijk {0} status op UpTimeRobot"
 
 #: src/app/components/DiscordCommands.jsx:655
 msgid "VoiceRain"
@@ -554,13 +587,45 @@ msgstr "Uw Discord-ID, Discord-gebruikersnaam, Discord-server-ID en naam, Discor
 msgid "Your tipbot wallet security is as safe as your Discord account is. Use features like two-factor authentication to keep your account secure. In regards to {0}'s{1}security, we hold up to industry standards. Your wallet is powered by proven technology. In case of concerns, please contact our support."
 msgstr "De veiligheid van je Tipbot-portemonnee is net zo veilig als je Discord-account. Gebruik functies zoals twee-factor authenticatie om je account veilig te houden. Wat betreft {0}'s{1}veiligheid, wij voldoen aan de industriestandaarden. Uw portemonnee wordt aangedreven door bewezen technologie. In geval van problemen, neem contact op met onze klantenservice."
 
+#: src/app/components/Uptimerobot.jsx:161
+msgid "availability {0}%"
+msgstr "beschikbaarheid {0}%"
+
+#: src/app/components/Uptimerobot.jsx:111
+msgid "down"
+msgstr "down"
+
 #: src/app/views/TermsOfService.jsx:93
 msgid "is beta software"
 msgstr "is beta software"
 
+#: src/app/components/Uptimerobot.jsx:108
+msgid "none"
+msgstr "geen"
+
+#: src/app/components/Uptimerobot.jsx:105
+msgid "ok"
+msgstr "oké"
+
+#: src/app/components/Uptimerobot.jsx:160
+msgid "outages {0} times，outage-time {1}，average availability {2}%"
+msgstr "uitval {0} keer, uitvaltijd {1}, gemiddelde beschikbaarheid {2}%"
+
+#: src/app/components/Uptimerobot.jsx:153
+msgid "recent {CountDays} day"
+msgstr "recent {CountDays} dag"
+
+#: src/app/components/Uptimerobot.jsx:152
+msgid "recent {CountDays} days"
+msgstr "recente {CountDays} dagen"
+
 #: src/app/views/TermsOfService.jsx:145
 msgid "security"
 msgstr "veiligheid"
+
+#: src/app/components/Uptimerobot.jsx:138
+msgid "today"
+msgstr "vandaag"
 
 #: src/app/views/TermsOfService.jsx:119
 msgid "{0}Tips are non-reversible and non-refundable."

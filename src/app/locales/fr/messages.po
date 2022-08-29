@@ -41,7 +41,15 @@ msgstr ""
 msgid "7. Your rights"
 msgstr ""
 
-#: src/app/views/Home.jsx:157
+#: src/app/components/Uptimerobot.jsx:112
+msgid "<br />Faulted: {0} time<br />outage-time: {1}<br />availability: {2}%"
+msgstr ""
+
+#: src/app/components/Uptimerobot.jsx:106
+msgid "<br />availability: {0}%"
+msgstr ""
+
+#: src/app/views/Home.jsx:160
 msgid "A rich arsenal of features like tip, multi-tip, rain, flood, soak, sleet, voicerain, hurricane, thunderstorm, thunder, reactdrop, trivia, faucet, help, info, balance, statistics, ignoreme, support, ..."
 msgstr ""
 
@@ -78,7 +86,7 @@ msgstr ""
 msgid "Discord Commands"
 msgstr ""
 
-#: src/app/views/Home.jsx:214
+#: src/app/views/Home.jsx:217
 msgid "Discord Tipbots"
 msgstr ""
 
@@ -131,6 +139,10 @@ msgstr ""
 
 #: src/app/components/DiscordCommands.jsx:175
 msgid "Displays {0}{1}price"
+msgstr ""
+
+#: src/app/components/Uptimerobot.jsx:30
+msgid "Down"
 msgstr ""
 
 #: src/app/views/PrivacyPolicy.jsx:294
@@ -245,8 +257,8 @@ msgstr ""
 msgid "Info"
 msgstr ""
 
-#: src/app/views/Home.jsx:270
-#: src/app/views/Home.jsx:381
+#: src/app/views/Home.jsx:273
+#: src/app/views/Home.jsx:384
 #: src/app/views/Tipbot.jsx:168
 #: src/app/views/Tipbot.jsx:196
 msgid "Invite"
@@ -275,6 +287,14 @@ msgstr ""
 msgid "Multiple users:"
 msgstr ""
 
+#: src/app/components/Uptimerobot.jsx:109
+msgid "No data"
+msgstr ""
+
+#: src/app/components/Uptimerobot.jsx:29
+msgid "Ok"
+msgstr ""
+
 #: src/app/components/DiscordCommands.jsx:882
 msgid "Performs a react airdrop with the amount, optionally within custom time, optionally using a custom-supplied emoji. <time> parameter accepts time interval expressions in the form of: 60s, 5m, 1h. Default time interval is 5m (5minutes)"
 msgstr ""
@@ -283,11 +303,11 @@ msgstr ""
 msgid "Performs a trivia with the amount of {0},  optionally with set amount of of people, optionally within custom time. &lt;time&gt; parameter accepts time interval expressions in the form of: 60s, 5m, 1h. Default time interval is 5m (5minutes)"
 msgstr ""
 
-#: src/app/views/Home.jsx:139
+#: src/app/views/Home.jsx:142
 msgid "Personalized Discord and Telegram tipbots for crypto projects."
 msgstr ""
 
-#: src/app/views/Home.jsx:79
+#: src/app/views/Home.jsx:82
 msgid "Personalized Tipbots"
 msgstr ""
 
@@ -393,7 +413,7 @@ msgstr ""
 msgid "Telegram Commands"
 msgstr ""
 
-#: src/app/views/Home.jsx:325
+#: src/app/views/Home.jsx:328
 msgid "Telegram Tipbots"
 msgstr ""
 
@@ -452,7 +472,7 @@ msgstr ""
 msgid "To make a request, please let contact support or the developer on discord: Bago#7842"
 msgstr ""
 
-#: src/app/views/Home.jsx:147
+#: src/app/views/Home.jsx:150
 msgid "Top quality personalized tipbots for bitcoin forks, zcash forks, komodo smartchains with dedicated developer and support."
 msgstr ""
 
@@ -462,6 +482,10 @@ msgstr ""
 
 #: src/app/components/DiscordCommands.jsx:988
 msgid "Turns @mentioning you during mass operations on/off"
+msgstr ""
+
+#: src/app/components/Uptimerobot.jsx:31
+msgid "Unknown"
 msgstr ""
 
 #: src/app/containers/Header.jsx:186
@@ -474,6 +498,10 @@ msgstr ""
 
 #: src/app/views/Uptime.jsx:69
 msgid "View monitor on"
+msgstr ""
+
+#: src/app/components/Uptimerobot.jsx:184
+msgid "View {0} status on UpTimeRobot"
 msgstr ""
 
 #: src/app/components/DiscordCommands.jsx:655
@@ -565,12 +593,44 @@ msgstr ""
 msgid "Your tipbot wallet security is as safe as your Discord account is. Use features like two-factor authentication to keep your account secure. In regards to {0}'s{1}security, we hold up to industry standards. Your wallet is powered by proven technology. In case of concerns, please contact our support."
 msgstr ""
 
+#: src/app/components/Uptimerobot.jsx:161
+msgid "availability {0}%"
+msgstr ""
+
+#: src/app/components/Uptimerobot.jsx:111
+msgid "down"
+msgstr ""
+
 #: src/app/views/TermsOfService.jsx:93
 msgid "is beta software"
 msgstr ""
 
+#: src/app/components/Uptimerobot.jsx:108
+msgid "none"
+msgstr ""
+
+#: src/app/components/Uptimerobot.jsx:105
+msgid "ok"
+msgstr ""
+
+#: src/app/components/Uptimerobot.jsx:160
+msgid "outages {0} times，outage-time {1}，average availability {2}%"
+msgstr ""
+
+#: src/app/components/Uptimerobot.jsx:153
+msgid "recent {CountDays} day"
+msgstr ""
+
+#: src/app/components/Uptimerobot.jsx:152
+msgid "recent {CountDays} days"
+msgstr ""
+
 #: src/app/views/TermsOfService.jsx:145
 msgid "security"
+msgstr ""
+
+#: src/app/components/Uptimerobot.jsx:138
+msgid "today"
 msgstr ""
 
 #: src/app/views/TermsOfService.jsx:119
