@@ -109,18 +109,9 @@ module.exports = (options) => {
         {
           test: /\.(gif|png|jpe?g)$/i,
           type: 'asset',
-          use: [
-            {
-              loader: 'file-loader',
-              options: {
-                name: 'static/images/[hash].[ext]',
-              },
-            },
-          ],
         },
         {
           test: /\.svg$/,
-          type: 'asset',
           use: [
             {
               loader: '@svgr/webpack',
@@ -152,14 +143,6 @@ module.exports = (options) => {
         {
           test: /\.(eot|woff|woff2|ttf)(\?\S*)?$/,
           type: 'asset',
-          use: [
-            {
-              loader: 'file-loader',
-              options: {
-                name: 'static/fonts/[hash].[ext]',
-              },
-            },
-          ],
         },
         {
           test: /\.css$/,
