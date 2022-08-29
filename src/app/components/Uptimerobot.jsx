@@ -102,13 +102,13 @@ function UptimeRobot({
               let upTimeStatus = '';
               let text = `${data.date.format('DD-MM-YYYY ')}`;
               if (data.uptime >= 100) {
-                upTimeStatus = t`ok`;
+                upTimeStatus = 'ok';
                 text += t`<br />availability: ${formatNumber(data.uptime)}%`;
               } else if (data.uptime <= 0 && data.down.times === 0) {
-                upTimeStatus = t`none`;
+                upTimeStatus = 'none';
                 text += t`No data`;
               } else {
-                upTimeStatus = t`down`;
+                upTimeStatus = 'down';
                 text += t`<br />Faulted: ${data.down.times} time<br />outage-time: ${formatDuration(data.down.duration)}<br />availability: ${formatNumber(data.uptime)}%`;
               }
               return (

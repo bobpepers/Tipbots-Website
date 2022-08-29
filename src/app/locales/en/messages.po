@@ -872,8 +872,8 @@ msgstr ""
 #~ msgstr ""
 
 #: src/app/components/Uptimerobot.jsx:111
-msgid "down"
-msgstr ""
+#~ msgid "down"
+#~ msgstr ""
 
 #: src/app/components/DiscordCommands.jsx:260
 #~ msgid "fee schedule"
@@ -898,12 +898,12 @@ msgstr ""
 #~ msgstr ""
 
 #: src/app/components/Uptimerobot.jsx:108
-msgid "none"
-msgstr ""
+#~ msgid "none"
+#~ msgstr ""
 
 #: src/app/components/Uptimerobot.jsx:105
-msgid "ok"
-msgstr ""
+#~ msgid "ok"
+#~ msgstr ""
 
 #: src/app/views/PrivacyPolicy.jsx:245
 #~ msgid "on your server or by interacting with"

@@ -592,20 +592,20 @@ msgid "availability {0}%"
 msgstr "beschikbaarheid {0}%"
 
 #: src/app/components/Uptimerobot.jsx:111
-msgid "down"
-msgstr "down"
+#~ msgid "down"
+#~ msgstr "down"
 
 #: src/app/views/TermsOfService.jsx:93
 msgid "is beta software"
 msgstr "is beta software"
 
 #: src/app/components/Uptimerobot.jsx:108
-msgid "none"
-msgstr "geen"
+#~ msgid "none"
+#~ msgstr "geen"
 
 #: src/app/components/Uptimerobot.jsx:105
-msgid "ok"
-msgstr "oké"
+#~ msgid "ok"
+#~ msgstr "oké"
 
 #: src/app/components/Uptimerobot.jsx:160
 msgid "outages {0} times，outage-time {1}，average availability {2}%"
