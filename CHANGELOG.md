@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.19](https://github.com/bobpepers/Tipbots-Website/compare/v0.0.18...v0.0.19) (2022-08-29)
+
+
+### Build
+
+* **webpack:** ➖ better svg handling, remove deprecated file-loader ([8ba803f](https://github.com/bobpepers/Tipbots-Website/commit/8ba803f8bad0fb878cae1b59bf8caed8cb759a36))
+
+
+### Performance
+
+* ➖ remove source-map-loader, fortawesome, babel-runtime ([d0a80ee](https://github.com/bobpepers/Tipbots-Website/commit/d0a80eed6ccb872241798ee7d6346a695ced1c39))
+* **webpack:** ➖ remove deprecated url-loader, optional file-name generator for production build ([13780dc](https://github.com/bobpepers/Tipbots-Website/commit/13780dc71f414c2e980a6181a5cee8fee03f4734))
+
 ### [0.0.18](https://github.com/bobpepers/Tipbots-Website/compare/v0.0.17...v0.0.18) (2022-08-29)
 
 
