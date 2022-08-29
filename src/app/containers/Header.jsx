@@ -1,42 +1,41 @@
+import AppBar from '@mui/material/AppBar';
+import Box from '@mui/material/Box';
+import Toolbar from '@mui/material/Toolbar';
+import IconButton from '@mui/material/IconButton';
 import React, {
   useState,
   useEffect,
   useRef,
   useCallback,
 } from 'react';
-import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-import {
-  Navbar,
-  Nav,
-} from 'react-bootstrap';
 import {
   Button,
   MenuItem,
   Menu,
+  useMediaQuery,
 } from '@mui/material';
-import IconButton from '@mui/material/IconButton';
 import { Trans } from '@lingui/macro';
 import HomeIcon from '@mui/icons-material/Home';
 import KeyboardDoubleArrowUpIcon from '@mui/icons-material/KeyboardDoubleArrowUp';
 import SupportAgentIcon from '@mui/icons-material/SupportAgent';
 import SmartToyIcon from '@mui/icons-material/SmartToy';
+import { useTheme } from '@mui/material/styles';
 import Discord from '../assets/images/discord.svg';
 import Telegram from '../assets/images/telegram.svg';
-import MobileNav from '../assets/images/mobilenav.svg';
 import { tipbotInfoArray } from '../helpers/tipbotsInfoArray';
+import MobileNav from '../assets/images/mobilenav.svg';
 
-const Header = function (props) {
-  const {
-    user,
-  } = props;
+function Header() {
   const heightRef = useRef(null);
   const [menu, setMenu] = useState(false);
   const [height, setHeight] = useState(0);
   const [anchorElTipBots, setAnchorElTipBots] = useState(null);
   const openTipBots = Boolean(anchorElTipBots);
+  const theme = useTheme();
+  const mdDown = useMediaQuery(theme.breakpoints.down('md'));
 
-  const handleWindowResize = useCallback((event) => {
+  const handleWindowResize = useCallback(() => {
     if (height !== heightRef.current.clientHeight) {
       setHeight(heightRef.current.clientHeight);
     }
@@ -76,203 +75,278 @@ const Header = function (props) {
     setAnchorElTipBots(null);
   };
 
-  const show = (menu) ? 'show' : '';
+  const mainMenuItems = () => (
+    <>
+      <Button
+        component={Link}
+        variant="outlined"
+        style={{
+          fontSize: '14px',
+          fontWeight: 200,
+          marginRight: mdDown ? '0px' : '10px',
+          marginBottom: mdDown ? '0.5rem' : '0px',
+          marginTop: mdDown ? '0.5rem' : '0px',
+        }}
+        size="large"
+        to="/"
+        aria-controls="basic-menu"
+        aria-haspopup="true"
+        className="headerMenuTextColor"
+        onClick={() => toggleCloseMenu()}
+      >
+        <HomeIcon
+          className="buttonMenuIcon headerMenuTextColor"
+        />
+        <Trans>
+          Home
+        </Trans>
+      </Button>
+      <Button
+        aria-controls="basic-menu"
+        aria-haspopup="true"
+        aria-expanded={openTipBots ? 'true' : undefined}
+        onClick={handleClickTipbots}
+        variant="outlined"
+        style={{
+          fontSize: '14px',
+          fontWeight: 200,
+          marginRight: mdDown ? '0px' : '10px',
+          marginBottom: mdDown ? '0.5rem' : '0px',
+        }}
+        className="headerMenuTextColor"
+      >
+        <SmartToyIcon
+          className="buttonMenuIcon headerMenuTextColor"
+        />
+        <Trans>
+          Tipbots
+        </Trans>
+      </Button>
+      <Menu
+        anchorEl={anchorElTipBots}
+        open={openTipBots}
+        onClose={handleCloseTipbots}
+        MenuListProps={{
+          //  'aria-labelledby': 'basic-button',
+        }}
+      >
+        {tipbotInfoArray.map((tipbot) => (
+          <Link
+            className="nav-link"
+            to={`/tipbots/${tipbot.name.toLowerCase()}`}
+            onClick={() => toggleCloseMenu()}
+          >
+            <MenuItem
+              onClick={handleCloseTipbots}
+            >
+              <img
+                className="menuIcon"
+                src={tipbot.logo}
+                alt={`${tipbot.name} Logo`}
+              />
+              {tipbot.name}
+            </MenuItem>
+          </Link>
+        ))}
+      </Menu>
+      <Button
+        component={Link}
+        variant="outlined"
+        style={{
+          fontSize: '14px',
+          fontWeight: 200,
+          marginRight: mdDown ? '0px' : '10px',
+          marginBottom: mdDown ? '0.5rem' : '0px',
+        }}
+        size="large"
+        to="/uptime"
+        aria-controls="basic-menu"
+        aria-haspopup="true"
+        className="headerMenuTextColor"
+        onClick={() => toggleCloseMenu()}
+      >
+        <KeyboardDoubleArrowUpIcon
+          className="buttonMenuIcon headerMenuTextColor"
+        />
+        <Trans>
+          Uptime
+        </Trans>
+      </Button>
+
+      <Button
+        component={Link}
+        variant="outlined"
+        style={{
+          fontSize: '14px',
+          fontWeight: 200,
+          marginRight: mdDown ? '0px' : '10px',
+          marginBottom: mdDown ? '0.5rem' : '0px',
+        }}
+        size="large"
+        to="/support"
+        aria-controls="basic-menu"
+        aria-haspopup="true"
+        className="headerMenuTextColor"
+        onClick={() => toggleCloseMenu()}
+      >
+        <SupportAgentIcon
+          className="buttonMenuIcon headerMenuTextColor"
+        />
+        <Trans>
+          Support
+        </Trans>
+      </Button>
+    </>
+  );
+
+  const socialMenuItems = () => (
+    <Box
+      sx={{
+        flexGrow: 1,
+      }}
+    >
+      <div
+        style={{
+          display: 'block',
+          float: 'right',
+        }}
+      >
+        <IconButton
+          size="large"
+          edge="end"
+          aria-label="Link to discord community server"
+          aria-controls="primary-search-account-menu"
+          aria-haspopup="true"
+          target="_blank"
+          href="https://discord.gg/CdUSaVfp8Q"
+          color="inherit"
+          style={{
+            marginLeft: '0.5rem',
+          }}
+        >
+          <Discord
+            style={{
+              height: '1.5rem',
+              width: '1.5rem',
+            }}
+          />
+        </IconButton>
+      </div>
+      <div
+        style={{
+          display: 'block',
+          float: 'right',
+        }}
+      >
+        <IconButton
+          size="large"
+          edge="end"
+          aria-label="Link to telegram community server"
+          aria-controls="primary-search-account-menu"
+          aria-haspopup="true"
+          target="_blank"
+          href="https://t.me/runebase_runes"
+          color="inherit"
+        >
+          <Telegram
+            style={{
+              height: '1.5rem',
+              width: '1.5rem',
+            }}
+          />
+        </IconButton>
+      </div>
+    </Box>
+  );
 
   return (
-    <header
-      className="rootRow header"
-      style={{ height }}
+    <div
+      style={{
+        height,
+      }}
+      className="header"
     >
-      <Navbar
-        ref={heightRef}
-        fixed="top"
-        className="navbar navbar-default"
-        expand="lg"
+      <AppBar
+        position="relative"
+        className="navbar"
       >
-        <button
-          className="navbar-toggler"
-          type="button"
-          onClick={toggleMenu}
+        <Toolbar
+          disableGutters
+          variant="dense"
+          ref={heightRef}
+          sx={{
+            width: '100%',
+            paddingBottom: '0.5rem',
+            paddingTop: '0.5rem',
+          }}
         >
-          <MobileNav
-            className="mobileNav"
-          />
-        </button>
-        <Navbar.Collapse
-          id="basic-navbar-nav"
-          className={`collapse navbar-collapse ${show}`}
-        >
-          <Nav
-            className="mr-auto rNavbar"
+          <Box
+            sx={{
+              flexGrow: 1,
+              flexDirection: 'column',
+              display: {
+                xs: 'flex',
+                md: 'none',
+              },
+            }}
           >
-            <Button
-              component={Link}
-              variant="outlined"
-              style={{
-                fontSize: '14px',
-                fontWeight: 200,
-                marginRight: '10px',
-              }}
-              size="large"
-              to="/"
-              aria-controls="basic-menu"
-              aria-haspopup="true"
-              className="headerMenuTextColor"
-              onClick={() => toggleCloseMenu()}
-            >
-              <HomeIcon
-                className="buttonMenuIcon headerMenuTextColor"
-              />
-              <Trans>
-                Home
-              </Trans>
-            </Button>
-            <Button
-              aria-controls="basic-menu"
-              aria-haspopup="true"
-              aria-expanded={openTipBots ? 'true' : undefined}
-              onClick={handleClickTipbots}
-              variant="outlined"
-              style={{
-                fontSize: '14px',
-                fontWeight: 200,
-                marginRight: '10px',
-              }}
-              className="headerMenuTextColor"
-            >
-              <SmartToyIcon
-                className="buttonMenuIcon headerMenuTextColor"
-              />
-              <Trans>
-                Tipbots
-              </Trans>
-            </Button>
-            <Menu
-              anchorEl={anchorElTipBots}
-              open={openTipBots}
-              onClose={handleCloseTipbots}
-              MenuListProps={{
-                //  'aria-labelledby': 'basic-button',
+            <Box
+              sx={{
+                flexGrow: 1,
+                flexDirection: 'row',
+                display: {
+                  xs: 'flex',
+                  md: 'none',
+                },
               }}
             >
-              {tipbotInfoArray.map((tipbot) => (
-                <Link
-                  className="nav-link"
-                  to={`/tipbots/${tipbot.name.toLowerCase()}`}
-                  onClick={() => toggleCloseMenu()}
-                >
-                  <MenuItem
-                    onClick={handleCloseTipbots}
-                  >
-                    <img
-                      className="menuIcon"
-                      src={tipbot.logo}
-                      alt={`${tipbot.name} Logo`}
-                    />
-                    {tipbot.name}
-                  </MenuItem>
-                </Link>
-              ))}
-            </Menu>
-            <Button
-              component={Link}
-              variant="outlined"
-              style={{
-                fontSize: '14px',
-                fontWeight: 200,
-                marginRight: '10px',
-              }}
-              size="large"
-              to="/uptime"
-              aria-controls="basic-menu"
-              aria-haspopup="true"
-              className="headerMenuTextColor"
-              onClick={() => toggleCloseMenu()}
-            >
-              <KeyboardDoubleArrowUpIcon
-                className="buttonMenuIcon headerMenuTextColor"
-              />
-              <Trans>
-                Uptime
-              </Trans>
-            </Button>
-
-            <Button
-              component={Link}
-              variant="outlined"
-              style={{
-                fontSize: '14px',
-                fontWeight: 200,
-                marginRight: '10px',
-              }}
-              size="large"
-              to="/support"
-              aria-controls="basic-menu"
-              aria-haspopup="true"
-              className="headerMenuTextColor"
-              onClick={() => toggleCloseMenu()}
-            >
-              <SupportAgentIcon
-                className="buttonMenuIcon headerMenuTextColor"
-              />
-              <Trans>
-                Support
-              </Trans>
-            </Button>
-          </Nav>
-          <ul>
-            <li>
               <IconButton
                 size="large"
-                edge="end"
-                aria-label="Link to discord community server"
-                aria-controls="primary-search-account-menu"
+                aria-label="Mobile Navigation"
+                aria-controls="menu-appbar"
                 aria-haspopup="true"
-                target="_blank"
-                href="https://discord.gg/CdUSaVfp8Q"
-                color="inherit"
-                style={{
-                  marginRight: '0.5rem',
+                onClick={toggleMenu}
+                className="navbar-toggler"
+                sx={{
+                  padding: 0,
                 }}
               >
-                <Discord
-                  style={{
-                    height: '1.5rem',
-                    width: '1.5rem',
-                  }}
+                <MobileNav
+                  className="mobileNav"
                 />
               </IconButton>
-            </li>
-            <li>
-              <IconButton
-                size="large"
-                edge="end"
-                aria-label="Link to telegram community server"
-                aria-controls="primary-search-account-menu"
-                aria-haspopup="true"
-                target="_blank"
-                href="https://t.me/runebase_runes"
-                color="inherit"
-              >
-                <Telegram
-                  style={{
-                    height: '1.5rem',
-                    width: '1.5rem',
-                  }}
-                />
-              </IconButton>
-            </li>
-          </ul>
-        </Navbar.Collapse>
-      </Navbar>
-    </header>
-  )
-}
+              {socialMenuItems()}
+            </Box>
+            <Box
+              sx={{
+                flexGrow: 0,
+                flexDirection: 'column',
+                alignSelf: 'flex-start',
+                display: {
+                  xs: menu ? 'flex' : 'none',
+                  md: 'none',
+                },
+              }}
+            >
+              {mainMenuItems()}
+            </Box>
+          </Box>
 
-function mapStateToProps(state) {
-  return {
-    // authenticated: state.auth.authenticated,
-  };
+          <Box
+            sx={{
+              flexGrow: 1,
+              display: {
+                xs: 'none',
+                md: 'flex',
+              },
+            }}
+          >
+            {mainMenuItems()}
+            {socialMenuItems()}
+          </Box>
+        </Toolbar>
+      </AppBar>
+    </div>
+  );
 }
-
-export default connect(mapStateToProps, null)(Header);
+export default Header;

@@ -15,14 +15,14 @@ import { SnackbarProvider } from 'notistack';
 import Button from '@mui/material/Button';
 import { i18n } from '@lingui/core';
 import { I18nProvider } from '@lingui/react';
-import store from './reducers'
-import { messages as enMessages } from './locales/en/messages'
-import { messages as nlMessages } from './locales/nl/messages'
-import { messages as frMessages } from './locales/fr/messages'
-import './assets/fonts/texgyreheros-regular.woff';
-import './theme/style.scss';
+import store from './reducers';
+import { messages as enMessages } from './locales/en/messages';
+import { messages as nlMessages } from './locales/nl/messages';
+import { messages as frMessages } from './locales/fr/messages';
 import LoadingContainer from './containers/Loading';
 import ScrollToTop from './handle/ScrollToTop';
+import './assets/fonts/texgyreheros-regular.woff';
+import './theme/style.scss';
 
 const Particles = lazy(() => import('./components/Particles'));
 const Header = lazy(() => import('./containers/Header'));
