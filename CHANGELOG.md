@@ -2,6 +2,24 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.14](https://github.com/bobpepers/Tipbots-Website/compare/v0.0.13...v0.0.14) (2022-08-29)
+
+
+### Documentation
+
+* 📝 Update readme ([77cbf24](https://github.com/bobpepers/Tipbots-Website/commit/77cbf24906f479a7d10d99383886acb7c1f413ad))
+
+
+### Build
+
+* ➖ Remove 2 unused dependencies ([19161b8](https://github.com/bobpepers/Tipbots-Website/commit/19161b8583e033a83e442284817ed16d327ed1b1))
+
+
+### Style
+
+* 🎨 add additional breakpoints logo frontpage ([53fcefb](https://github.com/bobpepers/Tipbots-Website/commit/53fcefb82c65a6fbb566939c6f1a6c24a4ba82d4))
+* 💬 add translation macros to uptimerobot page ([7aeaa25](https://github.com/bobpepers/Tipbots-Website/commit/7aeaa25b4a562b94d681bbd2e642c7de1290ce54))
+
 ### [0.0.13](https://github.com/bobpepers/Tipbots-Website/compare/v0.0.12...v0.0.13) (2022-08-28)
 
 ### [0.0.12](https://github.com/bobpepers/Tipbots-Website/compare/v0.0.11...v0.0.12) (2022-08-28)
