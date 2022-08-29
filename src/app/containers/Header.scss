@@ -19,6 +19,20 @@ svg {
   box-shadow: 0 4px 10px -2px var(--menuBorderShadow);
 }
 
+.menuIcon {
+  height: 1rem;
+  margin-right: 1rem;
+}
+
+.nav-link {
+  display: block;
+  padding: 0.5rem 1rem;
+}
+
+a {
+  text-decoration: none;
+}
+
 .navbar-toggler {
   padding: 0.25rem 0.75rem;
    font-size: 1.25rem;

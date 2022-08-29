@@ -214,6 +214,30 @@ function Header() {
         <IconButton
           size="large"
           edge="end"
+          aria-label="Link to telegram community server"
+          aria-controls="primary-search-account-menu"
+          aria-haspopup="true"
+          target="_blank"
+          href="https://t.me/runebase_runes"
+          color="inherit"
+        >
+          <Telegram
+            style={{
+              height: '1.5rem',
+              width: '1.5rem',
+            }}
+          />
+        </IconButton>
+      </div>
+      <div
+        style={{
+          display: 'block',
+          float: 'right',
+        }}
+      >
+        <IconButton
+          size="large"
+          edge="end"
           aria-label="Link to discord community server"
           aria-controls="primary-search-account-menu"
           aria-haspopup="true"
@@ -232,30 +256,7 @@ function Header() {
           />
         </IconButton>
       </div>
-      <div
-        style={{
-          display: 'block',
-          float: 'right',
-        }}
-      >
-        <IconButton
-          size="large"
-          edge="end"
-          aria-label="Link to telegram community server"
-          aria-controls="primary-search-account-menu"
-          aria-haspopup="true"
-          target="_blank"
-          href="https://t.me/runebase_runes"
-          color="inherit"
-        >
-          <Telegram
-            style={{
-              height: '1.5rem',
-              width: '1.5rem',
-            }}
-          />
-        </IconButton>
-      </div>
+
     </Box>
   );
 
