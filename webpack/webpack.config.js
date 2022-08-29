@@ -22,7 +22,6 @@ module.exports = (options) => {
       filename: `./scripts/[name].${options.jsFileName}`,
       chunkFilename: '[id].[chunkhash].js',
       publicPath: '/',
-      assetModuleFilename: 'static/images/[hash][ext][query]',
     },
     optimization: {
       chunkIds: 'total-size',
@@ -81,7 +80,10 @@ module.exports = (options) => {
       },
     },
     resolve: {
-      extensions: ['.js', '.jsx'],
+      extensions: [
+        '.js',
+        '.jsx',
+      ],
       alias: {
         // url: require.resolve('url/'),
         buffer: require.resolve('buffer/'),
@@ -116,10 +118,6 @@ module.exports = (options) => {
         },
         {
           test: /\.svg$/,
-          type: 'asset/resource',
-          generator: {
-            filename: 'static/images/[hash][ext][query]',
-          },
           use: [
             {
               loader: '@svgr/webpack',
@@ -135,6 +133,12 @@ module.exports = (options) => {
                 },
                 titleProp: true,
                 ref: true,
+              },
+            },
+            {
+              loader: 'file-loader',
+              options: {
+                name: 'static/images/[name].[hash].[ext]',
               },
             },
           ],
