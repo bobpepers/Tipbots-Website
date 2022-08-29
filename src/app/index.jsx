@@ -79,6 +79,18 @@ i18n.load({
   fr: frMessages,
 });
 
+i18n.loadLocaleData({
+  en: {
+    plurals: enMessages,
+  },
+  nl: {
+    plurals: nlMessages,
+  },
+  fr: {
+    plurals: frMessages,
+  },
+})
+
 i18n.activate('en');
 
 const persistedLanguage = localStorage.getItem('language');
