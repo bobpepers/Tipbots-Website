@@ -108,7 +108,14 @@ module.exports = (options) => {
         },
         {
           test: /\.(gif|png|jpe?g)$/i,
-          type: 'asset',
+          use: [
+            {
+              loader: 'url-loader',
+              options: {
+                name: 'static/images/[hash].[ext]',
+              },
+            },
+          ],
         },
         {
           test: /\.svg$/,
@@ -142,7 +149,14 @@ module.exports = (options) => {
         },
         {
           test: /\.(eot|woff|woff2|ttf)(\?\S*)?$/,
-          type: 'asset',
+          use: [
+            {
+              loader: 'url-loader',
+              options: {
+                name: 'static/fonts/[hash].[ext]',
+              },
+            },
+          ],
         },
         {
           test: /\.css$/,
