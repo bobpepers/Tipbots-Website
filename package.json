@@ -1,7 +1,7 @@
 {
   "name": "tipbots-website",
   "version": "0.0.19",
-  "description": "Admin dashboard for RUNES-tip",
+  "description": "Website for Tipbots",
   "scripts": {
     "lingui:extract": "lingui extract",
     "lingui:compile": "lingui compile",
@@ -75,10 +75,10 @@
     "sass-loader": "^13.0.2",
     "standard-version": "^9.5.0",
     "style-loader": "^3.3.1",
-    "terser-webpack-plugin": "^5.3.5",
+    "terser-webpack-plugin": "^5.3.6",
     "webpack": "^5.74.0",
     "webpack-cli": "^4.10.0",
-    "webpack-dev-server": "^4.10.0",
+    "webpack-dev-server": "^4.10.1",
     "webpack-obfuscator": "^3.5.1"
   },
   "dependencies": {
@@ -87,8 +87,8 @@
     "@lingui/core": "^3.14.0",
     "@lingui/macro": "^3.14.0",
     "@lingui/react": "^3.14.0",
-    "@mui/icons-material": "^5.10.2",
-    "@mui/material": "^5.10.2",
+    "@mui/icons-material": "^5.10.3",
+    "@mui/material": "^5.10.3",
     "@reduxjs/toolkit": "^1.8.5",
     "axios": "^0.27.2",
     "buffer": "^6.0.3",
