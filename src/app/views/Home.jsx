@@ -13,8 +13,8 @@ import {
 import { useTheme } from '@mui/material/styles';
 import Runebase from '../assets/images/runebaseloop.gif';
 import FloodExample from '../assets/images/floodExample.gif';
-import { ReactComponent as Discord } from '../assets/images/discord.svg';
-import { ReactComponent as Telegram } from '../assets/images/telegram.svg';
+import Discord from '../assets/images/discord.svg';
+import Telegram from '../assets/images/telegram.svg';
 import { tipbotInfoArray } from '../helpers/tipbotsInfoArray';
 
 import { withRouter } from '../hooks/withRouter';

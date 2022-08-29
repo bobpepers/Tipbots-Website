@@ -1,21 +1,17 @@
 import React, {
   useEffect,
-  useState,
 } from 'react';
-import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import {
   Grid,
   Typography,
 } from '@mui/material';
 import { Trans } from '@lingui/macro';
-import { ReactComponent as Discord } from '../assets/images/discord.svg';
+import Discord from '../assets/images/discord.svg';
 import { withRouter } from '../hooks/withRouter';
 import SupportForm from '../components/SupportForm';
 
-const Support = function (
-  props,
-) {
+const Support = function () {
   useEffect(() => {
     document.title = 'Tipbots - Support';
   }, []);

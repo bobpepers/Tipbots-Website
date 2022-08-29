@@ -125,22 +125,16 @@ module.exports = (options) => {
               loader: '@svgr/webpack',
               options: {
                 prettier: false,
-                svgo: false,
+                svgo: true,
                 svgoConfig: {
                   plugins: [
                     {
-                      removeViewBox: false,
+                      name: 'removeViewBox',
+                      active: false,
                     },
                   ],
                 },
                 titleProp: true,
-                ref: true,
-              },
-            },
-            {
-              loader: 'file-loader',
-              options: {
-                name: 'static/images/[name].[hash].[ext]',
               },
             },
           ],

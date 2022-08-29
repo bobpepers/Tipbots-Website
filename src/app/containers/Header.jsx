@@ -21,9 +21,9 @@ import HomeIcon from '@mui/icons-material/Home';
 import KeyboardDoubleArrowUpIcon from '@mui/icons-material/KeyboardDoubleArrowUp';
 import SupportAgentIcon from '@mui/icons-material/SupportAgent';
 import SmartToyIcon from '@mui/icons-material/SmartToy';
-import { ReactComponent as Discord } from '../assets/images/discord.svg';
-import { ReactComponent as Telegram } from '../assets/images/telegram.svg';
-import { ReactComponent as MobileNav } from '../assets/images/mobilenav.svg';
+import Discord from '../assets/images/discord.svg';
+import Telegram from '../assets/images/telegram.svg';
+import MobileNav from '../assets/images/mobilenav.svg';
 import { tipbotInfoArray } from '../helpers/tipbotsInfoArray';
 
 const Header = function (props) {
