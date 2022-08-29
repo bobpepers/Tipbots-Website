@@ -64,7 +64,7 @@ server {
 
     location /static {
         autoindex on;
-        alias /home/bago/Tipbots-Website/static;
+        alias /home/bago/Tipbots-Website/dist/static;
     }
 
     location /api/ {

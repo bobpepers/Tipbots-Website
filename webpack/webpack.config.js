@@ -109,9 +109,18 @@ module.exports = (options) => {
         {
           test: /\.(gif|png|jpe?g)$/i,
           type: 'asset',
+          use: [
+            {
+              loader: 'file-loader',
+              options: {
+                name: 'static/images/[hash].[ext]',
+              },
+            },
+          ],
         },
         {
           test: /\.svg$/,
+          type: 'asset',
           use: [
             {
               loader: '@svgr/webpack',
@@ -132,7 +141,7 @@ module.exports = (options) => {
             {
               loader: 'file-loader',
               options: {
-                name: 'static/images/[name].[hash].[ext]',
+                name: 'static/images/[hash].[ext]',
               },
             },
           ],
@@ -142,20 +151,22 @@ module.exports = (options) => {
         },
         {
           test: /\.(eot|woff|woff2|ttf)(\?\S*)?$/,
+          type: 'asset',
           use: [
             {
               loader: 'file-loader',
               options: {
-                name: '[name].[ext]',
-                outputPath: 'static/fonts/',
-                publicPath: '../static/fonts/',
+                name: 'static/fonts/[hash].[ext]',
               },
             },
           ],
         },
         {
           test: /\.css$/,
-          use: ['style-loader', 'css-loader'],
+          use: [
+            'style-loader',
+            'css-loader',
+          ],
         },
         {
           test: /\.m?js$/,
