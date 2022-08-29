@@ -73,7 +73,10 @@ const Header = function (props) {
   const show = (menu) ? 'show' : '';
 
   return (
-    <header className="rootRow header" style={{ height }}>
+    <header
+      className="rootRow header"
+      style={{ height }}
+    >
       <Navbar
         ref={heightRef}
         fixed="top"

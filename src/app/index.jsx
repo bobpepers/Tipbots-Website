@@ -19,7 +19,6 @@ import store from './reducers'
 import { messages as enMessages } from './locales/en/messages'
 import { messages as nlMessages } from './locales/nl/messages'
 import { messages as frMessages } from './locales/fr/messages'
-import '@fortawesome/fontawesome-free/css/all.css';
 import './assets/fonts/texgyreheros-regular.woff';
 import './theme/style.scss';
 import LoadingContainer from './containers/Loading';

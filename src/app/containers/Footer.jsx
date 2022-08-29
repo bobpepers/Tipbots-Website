@@ -72,8 +72,6 @@ function Footer(props) {
     <div className="footer">
       <Grid
         container
-        // className="height100 d-flex justify-content-around justify-content-md-center Grid itemst-unstyled categories ng-scope"
-        // ng-controller="myController"
         direction="row"
         justifyContent="center"
         alignItems="baseline"
@@ -84,8 +82,6 @@ function Footer(props) {
           sm={4}
           md={2}
           align="center"
-          // alignItems="center"
-          // direction="row"
         >
           <ThemeToggle />
         </Grid>
@@ -98,16 +94,14 @@ function Footer(props) {
           style={{
             marginBottom: 'auto',
           }}
-          // alignItems="center"
-          // direction="row"
         >
           <Button
-            // aria-controls="simple-menu"
-            // aria-haspopup="true"
             onClick={handleClickLangMenu}
             className="langPadding toggleLangWrapper"
             id="user-nav-dropdown"
-            style={{ color: '#bdbdbd' }}
+            style={{
+              color: '#bdbdbd',
+            }}
           >
             <Badge
               color="secondary"
