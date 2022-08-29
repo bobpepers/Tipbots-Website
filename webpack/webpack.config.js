@@ -154,7 +154,12 @@ module.exports = (options) => {
         {
           test: /\.css$/,
           use: [
-            'style-loader',
+            {
+              loader: 'style-loader',
+              options: {
+                injectType: 'singletonStyleTag',
+              },
+            },
             'css-loader',
           ],
         },
@@ -218,26 +223,6 @@ module.exports = (options) => {
       }),
     );
 
-    webpackConfig.module.rules.push({
-      test: /\.scss$/,
-      use: [
-        'style-loader', // or MiniCssExtractPlugin.loader
-        {
-          loader: 'css-loader',
-          options: {
-            sourceMap: true,
-            importLoaders: 1,
-          },
-        },
-        {
-          loader: 'sass-loader',
-          options: {
-            sourceMap: true,
-          },
-        },
-      ],
-    });
-
     webpackConfig.plugins.push(
       new WebpackObfuscator({
         rotateStringArray: true,
@@ -255,7 +240,12 @@ module.exports = (options) => {
         {
           test: /\.scss$/,
           use: [
-            'style-loader',
+            {
+              loader: 'style-loader',
+              options: {
+                injectType: 'singletonStyleTag',
+              },
+            },
             'css-loader',
             'sass-loader',
           ],
