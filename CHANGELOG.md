@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.16](https://github.com/bobpepers/Tipbots-Website/compare/v0.0.15...v0.0.16) (2022-08-29)
+
+
+### Build
+
+* **webpack:** 🔧 optimize webpack config ([524b402](https://github.com/bobpepers/Tipbots-Website/commit/524b402d56167d23e6c1cd4c963d61034f2db2b5))
+
 ### [0.0.15](https://github.com/bobpepers/Tipbots-Website/compare/v0.0.14...v0.0.15) (2022-08-29)
 
 
