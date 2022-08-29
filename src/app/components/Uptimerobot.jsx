@@ -12,6 +12,7 @@ import {
 import CheckIcon from '@mui/icons-material/Check';
 import CloseIcon from '@mui/icons-material/Close';
 import QuestionMarkIcon from '@mui/icons-material/QuestionMark';
+import { Trans, t } from '@lingui/macro';
 import PropTypes from 'prop-types';
 import {
   formatDuration,
@@ -25,9 +26,9 @@ function UptimeRobot({
   WhichTipBots,
 }) {
   const status = {
-    ok: 'Ok',
-    down: 'Down',
-    unknown: 'Unknown',
+    ok: t`Ok`,
+    down: t`Down`,
+    unknown: t`Unknown`,
   };
 
   const [monitors, setMonitors] = useState();
@@ -101,14 +102,14 @@ function UptimeRobot({
               let upTimeStatus = '';
               let text = `${data.date.format('DD-MM-YYYY ')}`;
               if (data.uptime >= 100) {
-                upTimeStatus = 'ok';
-                text += `<br />availability: ${formatNumber(data.uptime)}%`;
+                upTimeStatus = t`ok`;
+                text += t`<br />availability: ${formatNumber(data.uptime)}%`;
               } else if (data.uptime <= 0 && data.down.times === 0) {
-                upTimeStatus = 'none';
-                text += 'No data';
+                upTimeStatus = t`none`;
+                text += t`No data`;
               } else {
-                upTimeStatus = 'down';
-                text += `<br />Faulted: ${data.down.times} time<br />outage-time: ${formatDuration(data.down.duration)}<br />availability: ${formatNumber(data.uptime)}%`;
+                upTimeStatus = t`down`;
+                text += t`<br />Faulted: ${data.down.times} time<br />outage-time: ${formatDuration(data.down.duration)}<br />availability: ${formatNumber(data.uptime)}%`;
               }
               return (
                 <i
@@ -134,7 +135,9 @@ function UptimeRobot({
                 variant="subtitle2"
                 align="right"
               >
-                today
+                <Trans>
+                  today
+                </Trans>
               </Typography>
             </Grid>
 
@@ -146,16 +149,16 @@ function UptimeRobot({
                 align="center"
               >
                 {site.total.times
-                  ? `recent ${CountDays} day`
-                  : `recent ${CountDays} day`}
+                  ? t`recent ${CountDays} days`
+                  : t`recent ${CountDays} day`}
               </Typography>
               <Typography
                 variant="subtitle2"
                 align="center"
               >
                 {site.total.times
-                  ? `outages ${site.total.times} times，outage-time ${formatDuration(site.total.duration)}，average availability ${site.average}%`
-                  : `availability ${site.average}%`}
+                  ? t`outages ${site.total.times} times，outage-time ${formatDuration(site.total.duration)}，average availability ${site.average}%`
+                  : t`availability ${site.average}%`}
               </Typography>
             </Grid>
           </Grid>
@@ -178,15 +181,12 @@ function UptimeRobot({
             }}
           >
             <a href={site.url} target="_blank" rel="noreferrer">
-              View
-              {' '}
-              {site.name}
-              {' '}
-              status on UpTimeRobot
+              <Trans>
+                {`View ${site.name} status on UpTimeRobot`}
+              </Trans>
             </a>
           </Grid>
         </Grid>
-
       </Grid>
     ));
   }
