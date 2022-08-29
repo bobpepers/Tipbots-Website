@@ -26,12 +26,15 @@ function Uptime() {
         <Grid
           item
           xs={12}
+          className="mt-1 mb-1"
         >
           <Typography
             variant="h3"
             align="center"
           >
-            <Trans>Uptime Monitor</Trans>
+            <Trans>
+              Uptime Monitor
+            </Trans>
           </Typography>
         </Grid>
 
@@ -66,7 +69,9 @@ function Uptime() {
             aria-haspopup="true"
             className="headerMenuTextColor"
           >
-            <Trans>View monitor on</Trans>
+            <Trans>
+              View monitor on
+            </Trans>
             {' '}
             UptimeRobot
           </Button>

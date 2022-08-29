@@ -70,13 +70,13 @@ function TextFieldF(props) {
 
 TextFieldWrapper.propTypes = {
   meta: PropTypes.shape({
-    error: PropTypes.string.isRequired,
-    submitError: PropTypes.func.isRequired,
-  }).isRequired,
+    error: PropTypes.string,
+    submitError: PropTypes.func,
+  }),
   required: PropTypes.bool,
   fullWidth: PropTypes.bool,
-  helperText: PropTypes.string.isRequired,
-  showError: PropTypes.func.isRequired,
+  helperText: PropTypes.string,
+  showError: PropTypes.func,
   input: PropTypes.shape({
     name: PropTypes.string.isRequired,
     type: PropTypes.string.isRequired,
@@ -90,12 +90,24 @@ TextFieldWrapper.propTypes = {
 TextFieldWrapper.defaultProps = {
   required: false,
   fullWidth: false,
+  showError: showErrorOnChange,
+  helperText: '',
+  meta: {
+    error: '',
+    submitError: () => null,
+  },
 };
 
 TextFieldF.propTypes = {
   name: PropTypes.string.isRequired,
-  type: PropTypes.string.isRequired,
-  fieldProps: PropTypes.shape({}).isRequired,
+  type: PropTypes.string,
+  fieldProps: PropTypes.shape({}),
+};
+
+TextFieldF.defaultProps = {
+  fieldProps: {},
+  type: '',
+
 };
 
 export default TextFieldF;

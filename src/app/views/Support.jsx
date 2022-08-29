@@ -6,14 +6,17 @@ import {
   Grid,
   Typography,
 } from '@mui/material';
-import { Trans } from '@lingui/macro';
+import {
+  Trans,
+  t,
+} from '@lingui/macro';
 import Discord from '../assets/images/discord.svg';
 import { withRouter } from '../hooks/withRouter';
 import SupportForm from '../components/SupportForm';
 
 const Support = function () {
   useEffect(() => {
-    document.title = 'Tipbots - Support';
+    document.title = t`Tipbots - Support`;
   }, []);
 
   return (
@@ -33,13 +36,15 @@ const Support = function () {
             variant="h3"
             align="center"
           >
-            <Trans>Support</Trans>
+            <Trans>
+              Support
+            </Trans>
           </Typography>
         </Grid>
         <Grid
           item
           xs={12}
-          className="mt-1 mb-1"
+          className="mb-1"
         >
           <Typography
             variant="body1"
@@ -70,7 +75,9 @@ const Support = function () {
         >
           <a
             href="https://discord.gg/CdUSaVfp8Q"
-            style={{ textAlign: 'center' }}
+            style={{
+              textAlign: 'center',
+            }}
           >
             <Discord
               className="tipBotLinkLogo mb-1"
@@ -79,7 +86,9 @@ const Support = function () {
               variant="subtitle1"
               align="center"
             >
-              <Trans>Join Discord Support Server</Trans>
+              <Trans>
+                Join Discord Support Server
+              </Trans>
             </Typography>
           </a>
 
@@ -107,7 +116,10 @@ const Support = function () {
             </Trans>
           </Typography>
         </Grid>
-        <Grid item xs={12}>
+        <Grid
+          item
+          xs={12}
+        >
           <SupportForm />
         </Grid>
       </Grid>

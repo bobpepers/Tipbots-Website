@@ -43,18 +43,21 @@ const RoutesX = function (props) {
       />
       {tipbotInfoArray.map((tipbot) => (
         <Route
+          key={`tipbot-${tipbot.name}`}
           path={`/tipbots/${tipbot.name.toLowerCase()}`}
           element={<Tipbot />}
         />
       ))}
       {tipbotInfoArray.map((tipbot) => (
         <Route
+          key={`tipbot-${tipbot.name}-tos`}
           path={`/tipbots/${tipbot.name.toLowerCase()}/terms-of-service`}
           element={<TermsOfService />}
         />
       ))}
       {tipbotInfoArray.map((tipbot) => (
         <Route
+          key={`tipbot-${tipbot.name}-pp`}
           path={`/tipbots/${tipbot.name.toLowerCase()}/privacy-policy`}
           element={<PrivacyPolicy />}
         />

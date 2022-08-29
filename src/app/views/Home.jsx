@@ -2,7 +2,10 @@ import React, {
   useEffect,
 } from 'react';
 import PropTypes from 'prop-types';
-import { Trans } from '@lingui/macro';
+import {
+  Trans,
+  t,
+} from '@lingui/macro';
 import { connect } from 'react-redux';
 import {
   Grid,
@@ -27,7 +30,7 @@ const Home = function (props) {
   const lgUp = useMediaQuery(theme.breakpoints.up('lg'));
 
   useEffect(() => {
-    document.title = 'Tipbots - Home';
+    document.title = t`Tipbots - Home`;
   }, []);
 
   useEffect(
@@ -139,7 +142,9 @@ const Home = function (props) {
             gutterBottom
             className={lgUp ? 'addExampleTextMarginLeft' : ''}
           >
-            <Trans>Personalized Discord and Telegram tipbots for crypto projects.</Trans>
+            <Trans>
+              Personalized Discord and Telegram tipbots for crypto projects.
+            </Trans>
           </Typography>
           <Typography
             variant="body1"
@@ -214,8 +219,9 @@ const Home = function (props) {
               variant="h3"
               align="center"
             >
-              <Trans>Discord Tipbots</Trans>
-
+              <Trans>
+                Discord Tipbots
+              </Trans>
             </Typography>
           </Grid>
 
@@ -394,7 +400,6 @@ const Home = function (props) {
 }
 
 Home.propTypes = {
-  classes: PropTypes.shape({}).isRequired,
   nodeStatus: PropTypes.shape({}).isRequired,
 };
 

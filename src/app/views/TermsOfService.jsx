@@ -3,10 +3,10 @@ import React, {
   useState,
 } from 'react';
 import PropTypes from 'prop-types';
-import { Trans } from '@lingui/macro';
 import {
-  useNavigate,
-} from 'react-router-dom';
+  Trans,
+  t,
+} from '@lingui/macro';
 import { connect } from 'react-redux';
 import {
   Grid,
@@ -14,9 +14,6 @@ import {
   Typography,
 } from '@mui/material';
 import { tipbotInfoArray } from '../helpers/tipbotsInfoArray';
-
-import { ReactComponent as Discord } from '../assets/images/discord.svg';
-import { ReactComponent as Telegram } from '../assets/images/telegram.svg';
 
 import { withRouter } from '../hooks/withRouter';
 
@@ -33,7 +30,7 @@ const Tipbot = function (props) {
   }, []);
 
   useEffect(() => {
-    document.title = `${tipbotInfo.name} - Terms of Service`;
+    document.title = t`${tipbotInfo.name} - Terms of Service`;
   }, [tipbotInfo]);
 
   return (
@@ -47,11 +44,11 @@ const Tipbot = function (props) {
         <Grid
           container
           item
-          xs={3}
+          xs={6}
           md={3}
           alignItems="center"
           justifyContent="center"
-          className="mb-1"
+          className="mb-1 mt-1"
         >
           <img
             className="tipbotLogo"

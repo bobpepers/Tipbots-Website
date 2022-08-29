@@ -132,6 +132,7 @@ function Header() {
       >
         {tipbotInfoArray.map((tipbot) => (
           <Link
+            key={`tipbot-link-${tipbot.name}`}
             className="nav-link"
             to={`/tipbots/${tipbot.name.toLowerCase()}`}
             onClick={() => toggleCloseMenu()}

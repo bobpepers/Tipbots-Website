@@ -50,6 +50,7 @@ function UptimeRobot({
   if (monitors) {
     return monitors.map((site) => (
       <Grid
+        key={site.id}
         container
         className="uptime"
       >
@@ -98,7 +99,7 @@ function UptimeRobot({
             </Typography>
           </div>
           <div className="timeline">
-            {site.daily.map((data, index) => {
+            {site.daily.map((data) => {
               let upTimeStatus = '';
               let text = `${data.date.format('DD-MM-YYYY ')}`;
               if (data.uptime >= 100) {
@@ -113,7 +114,7 @@ function UptimeRobot({
               }
               return (
                 <i
-                  key={index}
+                  key={data.index}
                   className={upTimeStatus}
                   data-tip={text}
                 />

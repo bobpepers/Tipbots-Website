@@ -53,6 +53,7 @@ export async function GetMonitors(
         sumLength += newRanges[index] !== '0.000' && newRanges[index] ? 1 : 0;
         map[date.format('YYYYMMDD')] = index;
         daily[index] = {
+          index,
           date,
           uptime: formatNumber(newRanges[index]),
           down: {

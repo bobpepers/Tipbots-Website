@@ -107,16 +107,27 @@ function Select(props) {
 Select.propTypes = {
   name: PropTypes.string.isRequired,
   label: PropTypes.string.isRequired,
-  helperText: PropTypes.string.isRequired,
+  helperText: PropTypes.string,
   required: PropTypes.bool.isRequired,
-  showError: PropTypes.func.isRequired,
-  children: PropTypes.shape([]).isRequired,
-  data: PropTypes.shape([]).isRequired,
-  fieldProps: PropTypes.shape({}).isRequired,
+  showError: PropTypes.func,
+  children: PropTypes.shape([]),
+  data: PropTypes.shape([]),
+  fieldProps: PropTypes.shape({}),
   formControlProps: PropTypes.shape({}).isRequired,
-  inputLabelProps: PropTypes.shape({}).isRequired,
-  menuItemProps: PropTypes.shape({}).isRequired,
-  formHelperTextProps: PropTypes.shape({}).isRequired,
+  inputLabelProps: PropTypes.shape({}),
+  menuItemProps: PropTypes.shape({}),
+  formHelperTextProps: PropTypes.shape({}),
+};
+
+Select.defaultProps = {
+  helperText: '',
+  showError: showErrorOnChange,
+  children: [],
+  data: [],
+  fieldProps: {},
+  inputLabelProps: {},
+  menuItemProps: {},
+  formHelperTextProps: {},
 };
 
 export default Select;

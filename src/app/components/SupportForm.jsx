@@ -1,6 +1,7 @@
 import React, {
   useEffect,
   useState,
+  forwardRef,
 } from 'react';
 import { connect } from 'react-redux';
 import {
@@ -17,13 +18,21 @@ import TextField from './FormComponents/TextField';
 import Select from './FormComponents/Select';
 import { tipbotInfoArray } from '../helpers/tipbotsInfoArray';
 
-function SubmitButton(props) {
-  return <button {...props} type="submit" />
-}
+const SubmitButton = forwardRef((props, ref) => (
+  <button
+    ref={ref}
+    {...props}
+    type="submit"
+  />
+));
 
-function ResetButton(props) {
-  return <button {...props} type="button" />
-}
+const ResetButton = forwardRef((props, ref) => (
+  <button
+    ref={ref}
+    {...props}
+    type="button"
+  />
+));
 
 const SupportForm = function () {
   const [formSubmitting, setFormSubmitting] = useState('waiting');
@@ -104,6 +113,7 @@ const SupportForm = function () {
                   >
                     {tipbotInfoArray.map((tipbot) => (
                       <MenuItem
+                        key={`tipbotNameMenu-${tipbot.name}`}
                         value={tipbot.name.toLowerCase()}
                       >
                         {tipbot.name}

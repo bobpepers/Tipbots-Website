@@ -34,12 +34,21 @@ export const showErrorOnChange = ({
 export const useFieldForErrors = (name) => useField(name, config);
 
 ErrorMessage.propTypes = {
-  showError: PropTypes.func.isRequired,
-  type: PropTypes.string.isRequired,
+  showError: PropTypes.bool,
+  type: PropTypes.string,
   helperText: PropTypes.string.isRequired,
   meta: PropTypes.shape({
-    error: PropTypes.string.isRequired,
-    submitError: PropTypes.func.isRequired,
-  }).isRequired,
+    error: PropTypes.string,
+    submitError: PropTypes.func,
+  }),
   formHelperTextProps: PropTypes.shape({}).isRequired,
+};
+
+ErrorMessage.defaultProps = {
+  showError: false,
+  type: '',
+  meta: {
+    error: '',
+    submitError: () => null,
+  },
 };

@@ -3,7 +3,10 @@ import React, {
   useState,
 } from 'react';
 import PropTypes from 'prop-types';
-import { Trans } from '@lingui/macro';
+import {
+  Trans,
+  t,
+} from '@lingui/macro';
 import {
   useLocation,
   Link,
@@ -23,9 +26,7 @@ import Telegram from '../assets/images/telegram.svg';
 
 import { withRouter } from '../hooks/withRouter';
 
-const Tipbot = function (
-  props,
-) {
+const Tipbot = function () {
   const location = useLocation();
 
   const [tipbotInfo, setTipBotInfo] = useState(tipbotInfoArray.find((x) => x.name.toLowerCase() === location.pathname.split('/')[2]));
@@ -35,8 +36,8 @@ const Tipbot = function (
   }, [location.pathname]);
 
   useEffect(() => {
-    document.title = `Tipbots - ${tipbotInfo.name}`;
-  }, [tipbotInfo]);
+    document.title = t`Tipbots - ${tipbotInfo.name}`;
+  }, []);
 
   return (
     <div className="height100 content tipbots">
