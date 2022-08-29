@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.21](https://github.com/bobpepers/Tipbots-Website/compare/v0.0.20...v0.0.21) (2022-08-29)
+
+
+### Bug Fixes
+
+* **Header:** 🎨 fix telegram icon, add missing css ([0162d37](https://github.com/bobpepers/Tipbots-Website/commit/0162d37aa17e0b77de8337b0576f47b4c7b1a2d4))
+
 ### [0.0.20](https://github.com/bobpepers/Tipbots-Website/compare/v0.0.19...v0.0.20) (2022-08-29)
 
 
