@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.17](https://github.com/bobpepers/Tipbots-Website/compare/v0.0.16...v0.0.17) (2022-08-29)
+
+
+### Bug Fixes
+
+* **webpack:** 🚑️ fix a webpack issue ([29e7c21](https://github.com/bobpepers/Tipbots-Website/commit/29e7c2157aa9548191772219deae8339eca65d4b))
+
 ### [0.0.16](https://github.com/bobpepers/Tipbots-Website/compare/v0.0.15...v0.0.16) (2022-08-29)
 
 
