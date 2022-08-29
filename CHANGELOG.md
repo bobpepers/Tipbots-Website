@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.15](https://github.com/bobpepers/Tipbots-Website/compare/v0.0.14...v0.0.15) (2022-08-29)
+
+
+### Bug Fixes
+
+* **translations:** 🐛 dont translate classname ([95616e8](https://github.com/bobpepers/Tipbots-Website/commit/95616e88866fc2e8a84579eec3bd80ec85772d46))
+
 ### [0.0.14](https://github.com/bobpepers/Tipbots-Website/compare/v0.0.13...v0.0.14) (2022-08-29)
 
 
