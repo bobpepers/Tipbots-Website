@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.20](https://github.com/bobpepers/Tipbots-Website/compare/v0.0.19...v0.0.20) (2022-08-29)
+
+
+### Performance
+
+* ➖ Remove react-bootstrap dependency (no longer user) ([30e19cd](https://github.com/bobpepers/Tipbots-Website/commit/30e19cdca6d637f7fd7f406e49e54f812bef3fc0))
+* **Header:** ⚡️ Rework Header menu (Use mui5 instead of bootstrap) ([935111f](https://github.com/bobpepers/Tipbots-Website/commit/935111ffce12c7d84ea7e9de99ade0b161a30c4f))
+
 ### [0.0.19](https://github.com/bobpepers/Tipbots-Website/compare/v0.0.18...v0.0.19) (2022-08-29)
 
 
