@@ -146,7 +146,7 @@ module.exports = (options) => {
             {
               loader: 'file-loader',
               options: {
-                name: 'statis/fonts/[name].[ext]',
+                name: '[name].[ext]',
                 outputPath: 'static/fonts/',
                 publicPath: '../static/fonts/',
               },
