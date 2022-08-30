@@ -21,7 +21,6 @@ import { messages as nlMessages } from './locales/nl/messages';
 import { messages as frMessages } from './locales/fr/messages';
 import LoadingContainer from './containers/Loading';
 import ScrollToTop from './handle/ScrollToTop';
-import './assets/fonts/texgyreheros-regular.woff';
 import './theme/style.scss';
 
 const Particles = lazy(() => import('./components/Particles'));
