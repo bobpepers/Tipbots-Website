@@ -11,12 +11,12 @@ import ReactCountryFlag from 'react-country-flag';
 import MenuItem from '@mui/material/MenuItem';
 import Menu from '@mui/material/Menu';
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
+import PropTypes from 'prop-types';
 import ThemeToggle from '../components/ThemeToggle';
 
 function Footer(props) {
   const {
     i18n,
-    loading,
   } = props;
   const LANGUAGE_KEY = 'language';
   const [language, setLanguage] = useState('');
@@ -64,10 +64,6 @@ function Footer(props) {
     setAnchorElLang(null);
   };
 
-  if (loading) {
-    return <div>Loading...</div>;
-  }
-
   return (
     <div className="footer">
       <Grid
@@ -107,7 +103,10 @@ function Footer(props) {
               color="secondary"
             >
               <span>
-                <ReactCountryFlag countryCode={countryCode(language)} svg />
+                <ReactCountryFlag
+                  countryCode={countryCode(language)}
+                  svg
+                />
                 {' '}
                 {`${language}`}
               </span>
@@ -143,7 +142,10 @@ function Footer(props) {
               }}
             >
               <div>
-                <ReactCountryFlag countryCode="fr" svg />
+                <ReactCountryFlag
+                  countryCode="fr"
+                  svg
+                />
                 {' '}
                 FR
               </div>
@@ -155,7 +157,10 @@ function Footer(props) {
               }}
             >
               <div>
-                <ReactCountryFlag countryCode="nl" svg />
+                <ReactCountryFlag
+                  countryCode="nl"
+                  svg
+                />
                 {' '}
                 NL
               </div>
@@ -166,5 +171,11 @@ function Footer(props) {
     </div>
   );
 }
+
+Footer.propTypes = {
+  i18n: PropTypes.shape({
+    activate: PropTypes.func.isRequired,
+  }).isRequired,
+};
 
 export default Footer;
