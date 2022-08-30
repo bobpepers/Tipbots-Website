@@ -92,6 +92,25 @@ module.exports = (options) => {
         typescript: false,
       },
     },
+    plugins: [
+      !options.isProduction && new ReactRefreshWebpackPlugin(),
+      new Webpack.ProvidePlugin({
+        process: 'process/browser',
+      }),
+      new Webpack.ProvidePlugin({
+        Buffer: [
+          'buffer',
+          'Buffer',
+        ],
+      }),
+      new HtmlWebpackPlugin({
+        template: Path.join(__dirname, '../src/index.html'),
+        NODE_ENV: options.isProduction ? 'production' : 'development',
+        minify: {
+          removeComments: false,
+        },
+      }),
+    ].filter(Boolean),
     module: {
       rules: [
         {
@@ -187,27 +206,25 @@ module.exports = (options) => {
           },
         }],
     },
-
-    plugins: [
-      !options.isProduction && new ReactRefreshWebpackPlugin(),
-      new Webpack.ProvidePlugin({
-        process: 'process/browser',
-      }),
-      new Webpack.ProvidePlugin({
-        Buffer: [
-          'buffer',
-          'Buffer',
-        ],
-      }),
-      new HtmlWebpackPlugin({
-        template: Path.join(__dirname, '../src/index.html'),
-        NODE_ENV: options.isProduction ? 'production' : 'development',
-        minify: {
-          removeComments: false,
-        },
-      }),
-    ].filter(Boolean),
   };
+
+  webpackConfig.module.rules.push({
+    rules: [
+      {
+        test: /\.scss$/,
+        use: [
+          {
+            loader: 'style-loader',
+            options: {
+              injectType: 'singletonStyleTag',
+            },
+          },
+          'css-loader',
+          'sass-loader',
+        ],
+      },
+    ],
+  });
 
   if (options.isProduction) {
     webpackConfig.entry = [Path.join(__dirname, '../src/app/index')];
@@ -234,24 +251,6 @@ module.exports = (options) => {
     webpackConfig.plugins.push(
       new Webpack.HotModuleReplacementPlugin(),
     );
-
-    webpackConfig.module.rules.push({
-      rules: [
-        {
-          test: /\.scss$/,
-          use: [
-            {
-              loader: 'style-loader',
-              options: {
-                injectType: 'singletonStyleTag',
-              },
-            },
-            'css-loader',
-            'sass-loader',
-          ],
-        },
-      ],
-    });
 
     webpackConfig.devServer = {
       hot: !!options.isProduction,

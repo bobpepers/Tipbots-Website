@@ -2,6 +2,28 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.23](https://github.com/bobpepers/Tipbots-Website/compare/v0.0.22...v0.0.23) (2022-08-30)
+
+
+### Bug Fixes
+
+* 🚨 Fix a linting warning ([3342b1d](https://github.com/bobpepers/Tipbots-Website/commit/3342b1df38a4fd59d1b0a09916c3dd2deab77f62))
+
+
+### Build
+
+* **webpack:** 🔧 style-loader signletonStyleTag, remove duplicate rule push ([b8cdfb6](https://github.com/bobpepers/Tipbots-Website/commit/b8cdfb6bd62fb3e391162e531b72575a415557ad))
+
+
+### Style
+
+* **Header:** 🚸 make header stick to top ([bf36aff](https://github.com/bobpepers/Tipbots-Website/commit/bf36aff81a5deab36f6184fac6afd8e8fbdefe04))
+
+
+### Refactor
+
+* ⚰️ remove an unnecessary font import ([35f9f87](https://github.com/bobpepers/Tipbots-Website/commit/35f9f877eebf37b003f196e4f40d5744da411ba2))
+
 ### [0.0.22](https://github.com/bobpepers/Tipbots-Website/compare/v0.0.21...v0.0.22) (2022-08-29)
 
 
