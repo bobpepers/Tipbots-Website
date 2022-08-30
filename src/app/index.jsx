@@ -94,13 +94,21 @@ i18n.loadLocaleData({
 i18n.activate('en');
 
 const persistedLanguage = localStorage.getItem('language');
+
 if (!persistedLanguage) {
-  localStorage.setItem('language', 'en');
+  localStorage.setItem(
+    'language',
+    'en',
+  );
 }
 
 function DismissAction({ id }) {
   return (
-    <Button onClick={() => notistackRef.current.closeSnackbar(id)}>Dismiss</Button>
+    <Button
+      onClick={() => notistackRef.current.closeSnackbar(id)}
+    >
+      Dismiss
+    </Button>
   )
 }
 

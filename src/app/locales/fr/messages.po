@@ -13,55 +13,55 @@ msgstr ""
 "Plural-Forms: \n"
 "X-Generator: Poedit 3.0.1\n"
 
-#: src/app/views/PrivacyPolicy.jsx:91
+#: src/app/views/PrivacyPolicy.jsx:87
 msgid "1. Introduction"
 msgstr "1. Introduction"
 
-#: src/app/views/PrivacyPolicy.jsx:193
+#: src/app/views/PrivacyPolicy.jsx:189
 msgid "2. Information we may collect about you"
 msgstr "2. Informations que nous pouvons collecter à votre sujet"
 
-#: src/app/views/PrivacyPolicy.jsx:235
+#: src/app/views/PrivacyPolicy.jsx:231
 msgid "3. Collecting, processing and using personal data"
 msgstr ""
 
-#: src/app/views/PrivacyPolicy.jsx:263
+#: src/app/views/PrivacyPolicy.jsx:259
 msgid "4. Why we collect information about you (purpose of processing)"
 msgstr ""
 
-#: src/app/views/PrivacyPolicy.jsx:286
+#: src/app/views/PrivacyPolicy.jsx:282
 msgid "5. Log files"
 msgstr ""
 
-#: src/app/views/PrivacyPolicy.jsx:309
+#: src/app/views/PrivacyPolicy.jsx:305
 msgid "6. Data sharing"
 msgstr ""
 
-#: src/app/views/PrivacyPolicy.jsx:350
+#: src/app/views/PrivacyPolicy.jsx:346
 msgid "7. Your rights"
 msgstr ""
 
-#: src/app/components/Uptimerobot.jsx:112
+#: src/app/components/Uptimerobot.jsx:113
 msgid "<br />Faulted: {0} time<br />outage-time: {1}<br />availability: {2}%"
 msgstr ""
 
-#: src/app/components/Uptimerobot.jsx:106
+#: src/app/components/Uptimerobot.jsx:107
 msgid "<br />availability: {0}%"
 msgstr ""
 
-#: src/app/views/Home.jsx:160
+#: src/app/views/Home.jsx:165
 msgid "A rich arsenal of features like tip, multi-tip, rain, flood, soak, sleet, voicerain, hurricane, thunderstorm, thunder, reactdrop, trivia, faucet, help, info, balance, statistics, ignoreme, support, ..."
 msgstr ""
 
-#: src/app/views/TermsOfService.jsx:171
+#: src/app/views/TermsOfService.jsx:168
 msgid "Abuse"
 msgstr ""
 
-#: src/app/views/Support.jsx:101
+#: src/app/views/Support.jsx:106
 msgid "Alternatively you can fill out the form below."
 msgstr ""
 
-#: src/app/views/TermsOfService.jsx:194
+#: src/app/views/TermsOfService.jsx:191
 msgid "Always keep small sums of coins in your {0}'s{1}wallet"
 msgstr ""
 
@@ -86,7 +86,7 @@ msgstr ""
 msgid "Discord Commands"
 msgstr ""
 
-#: src/app/views/Home.jsx:217
+#: src/app/views/Home.jsx:222
 msgid "Discord Tipbots"
 msgstr ""
 
@@ -145,11 +145,11 @@ msgstr ""
 msgid "Down"
 msgstr ""
 
-#: src/app/views/PrivacyPolicy.jsx:294
+#: src/app/views/PrivacyPolicy.jsx:290
 msgid "During every interaction with the Service, user data is store in a database and protocol files, the so-called log files. The datasets stored here may contain such data as date and time of the interaction, ID and username of the interacting user, the command used, ID and name of the Discord Server in which the interaction took place as well as the ID and name of the Discord Channel the interaction took place in."
 msgstr ""
 
-#: src/app/views/TermsOfService.jsx:205
+#: src/app/views/TermsOfService.jsx:202
 msgid "Even if we keep up with industry standards in terms of security practices, we ask you to not keep huge sums on the bot. Please keep them in a non-custodial wallet."
 msgstr ""
 
@@ -228,7 +228,7 @@ msgstr ""
 msgid "Help"
 msgstr ""
 
-#: src/app/containers/Header.jsx:117
+#: src/app/containers/Header.jsx:100
 msgid "Home"
 msgstr ""
 
@@ -236,11 +236,11 @@ msgstr ""
 msgid "Hurricane"
 msgstr ""
 
-#: src/app/views/TermsOfService.jsx:179
+#: src/app/views/TermsOfService.jsx:176
 msgid "If you are found abusing any systems, your funds will be frozen and seized. We reserve the right to freeze suspicious accounts as well, until proven innocent."
 msgstr ""
 
-#: src/app/views/PrivacyPolicy.jsx:110
+#: src/app/views/PrivacyPolicy.jsx:106
 msgid "If you have any questions or comments about this Privacy Policy, please contact {0}{1}support or the developer through discord"
 msgstr ""
 
@@ -248,7 +248,7 @@ msgstr ""
 msgid "IgnoreMe"
 msgstr ""
 
-#: src/app/views/TermsOfService.jsx:101
+#: src/app/views/TermsOfService.jsx:98
 msgid "In no event shall {0}{1}or its authors be responsible for any lost, misdirected or stolen funds."
 msgstr ""
 
@@ -257,18 +257,18 @@ msgstr ""
 msgid "Info"
 msgstr ""
 
-#: src/app/views/Home.jsx:273
-#: src/app/views/Home.jsx:384
-#: src/app/views/Tipbot.jsx:168
-#: src/app/views/Tipbot.jsx:196
+#: src/app/views/Home.jsx:279
+#: src/app/views/Home.jsx:390
+#: src/app/views/Tipbot.jsx:169
+#: src/app/views/Tipbot.jsx:197
 msgid "Invite"
 msgstr ""
 
-#: src/app/components/SupportForm.jsx:139
+#: src/app/components/SupportForm.jsx:149
 msgid "Issue Description"
 msgstr ""
 
-#: src/app/views/Support.jsx:86
+#: src/app/views/Support.jsx:89
 msgid "Join Discord Support Server"
 msgstr ""
 
@@ -287,7 +287,7 @@ msgstr ""
 msgid "Multiple users:"
 msgstr ""
 
-#: src/app/components/Uptimerobot.jsx:109
+#: src/app/components/Uptimerobot.jsx:110
 msgid "No data"
 msgstr ""
 
@@ -303,27 +303,27 @@ msgstr ""
 msgid "Performs a trivia with the amount of {0},  optionally with set amount of of people, optionally within custom time. &lt;time&gt; parameter accepts time interval expressions in the form of: 60s, 5m, 1h. Default time interval is 5m (5minutes)"
 msgstr ""
 
-#: src/app/views/Home.jsx:142
+#: src/app/views/Home.jsx:145
 msgid "Personalized Discord and Telegram tipbots for crypto projects."
 msgstr ""
 
-#: src/app/views/Home.jsx:82
+#: src/app/views/Home.jsx:85
 msgid "Personalized Tipbots"
 msgstr ""
 
-#: src/app/views/PrivacyPolicy.jsx:326
+#: src/app/views/PrivacyPolicy.jsx:322
 msgid "Personnel: We keep your information confidential, but may disclose it to our personnel insofar as it is reasonably necessary for the purposes set out in this Privacy Policy. However, this is on the basis that they do not make independent use of the information, and have agreed to safeguard it."
 msgstr ""
 
-#: src/app/components/SupportForm.jsx:121
+#: src/app/components/SupportForm.jsx:131
 msgid "Platform"
 msgstr ""
 
-#: src/app/views/Support.jsx:109
+#: src/app/views/Support.jsx:114
 msgid "Please note: Using form to contact support has a significant longer wait-time then using the Ticket Tool"
 msgstr ""
 
-#: src/app/views/Support.jsx:60
+#: src/app/views/Support.jsx:61
 msgid "Prefered way to request support is by opening a ticket with the \"Ticket Tool\" that you find in the Discord community server"
 msgstr ""
 
@@ -332,8 +332,8 @@ msgstr ""
 msgid "Price"
 msgstr ""
 
-#: src/app/views/PrivacyPolicy.jsx:76
-#: src/app/views/Tipbot.jsx:129
+#: src/app/views/PrivacyPolicy.jsx:72
+#: src/app/views/Tipbot.jsx:130
 msgid "Privacy Policy"
 msgstr ""
 
@@ -358,11 +358,11 @@ msgstr ""
 msgid "Reactdrop"
 msgstr ""
 
-#: src/app/views/PrivacyPolicy.jsx:335
+#: src/app/views/PrivacyPolicy.jsx:331
 msgid "Required by law: In addition, we may disclose your information to the extent that we are required to do so by law (which may include to government bodies and law enforcement agencies); in connection with any legal proceedings or prospective legal proceedings; and in order to establish, exercise or defend our legal rights."
 msgstr ""
 
-#: src/app/components/SupportForm.jsx:199
+#: src/app/components/SupportForm.jsx:209
 msgid "Reset"
 msgstr ""
 
@@ -387,7 +387,7 @@ msgstr ""
 msgid "Soaks the desired amount of {0}{1}onto all online and idle users (optionally, within specified role)"
 msgstr ""
 
-#: src/app/components/SupportForm.jsx:178
+#: src/app/components/SupportForm.jsx:188
 msgid "Something went wrong, please retry submitting"
 msgstr ""
 
@@ -395,17 +395,17 @@ msgstr ""
 msgid "Statistics"
 msgstr ""
 
-#: src/app/components/SupportForm.jsx:160
+#: src/app/components/SupportForm.jsx:170
 msgid "Submit"
 msgstr ""
 
-#: src/app/components/SupportForm.jsx:220
+#: src/app/components/SupportForm.jsx:230
 msgid "Successfully Send Support Request"
 msgstr ""
 
 #: src/app/components/DiscordCommands.jsx:1131
-#: src/app/containers/Header.jsx:209
-#: src/app/views/Support.jsx:40
+#: src/app/containers/Header.jsx:196
+#: src/app/views/Support.jsx:39
 msgid "Support"
 msgstr ""
 
@@ -413,20 +413,20 @@ msgstr ""
 msgid "Telegram Commands"
 msgstr ""
 
-#: src/app/views/Home.jsx:328
+#: src/app/views/Home.jsx:334
 msgid "Telegram Tipbots"
 msgstr ""
 
-#: src/app/views/TermsOfService.jsx:77
-#: src/app/views/Tipbot.jsx:99
+#: src/app/views/TermsOfService.jsx:74
+#: src/app/views/Tipbot.jsx:100
 msgid "Terms of Service"
 msgstr ""
 
-#: src/app/views/PrivacyPolicy.jsx:156
+#: src/app/views/PrivacyPolicy.jsx:152
 msgid "The Services may contain links to services owned and operated by third parties. (BlockExplorer, Coin Project Website, Advertisement, ...)"
 msgstr ""
 
-#: src/app/views/PrivacyPolicy.jsx:99
+#: src/app/views/PrivacyPolicy.jsx:95
 msgid "This Privacy Policy (“Privacy Policy“) apply to the use of the service (“Service“, “Bot“) provided by {0}{1}(hereinafter also referred as “we” or “us”)."
 msgstr ""
 
@@ -443,12 +443,28 @@ msgstr ""
 msgid "Tip"
 msgstr ""
 
-#: src/app/components/SupportForm.jsx:101
+#: src/app/components/SupportForm.jsx:110
 msgid "Tipbot"
 msgstr ""
 
-#: src/app/containers/Header.jsx:137
+#: src/app/containers/Header.jsx:121
 msgid "Tipbots"
+msgstr ""
+
+#: src/app/views/Home.jsx:33
+msgid "Tipbots - Home"
+msgstr ""
+
+#: src/app/views/Support.jsx:19
+msgid "Tipbots - Support"
+msgstr ""
+
+#: src/app/views/Uptime.jsx:22
+msgid "Tipbots - Uptime"
+msgstr ""
+
+#: src/app/views/Tipbot.jsx:39
+msgid "Tipbots - {0}"
 msgstr ""
 
 #: src/app/components/DiscordCommands.jsx:718
@@ -468,11 +484,11 @@ msgstr ""
 msgid "Tips the @ mentioned user with the desired amount of {0}"
 msgstr ""
 
-#: src/app/views/PrivacyPolicy.jsx:367
+#: src/app/views/PrivacyPolicy.jsx:363
 msgid "To make a request, please let contact support or the developer on discord: Bago#7842"
 msgstr ""
 
-#: src/app/views/Home.jsx:150
+#: src/app/views/Home.jsx:155
 msgid "Top quality personalized tipbots for bitcoin forks, zcash forks, komodo smartchains with dedicated developer and support."
 msgstr ""
 
@@ -488,19 +504,19 @@ msgstr ""
 msgid "Unknown"
 msgstr ""
 
-#: src/app/containers/Header.jsx:186
+#: src/app/containers/Header.jsx:172
 msgid "Uptime"
 msgstr ""
 
-#: src/app/views/Uptime.jsx:34
+#: src/app/views/Uptime.jsx:42
 msgid "Uptime Monitor"
 msgstr ""
 
-#: src/app/views/Uptime.jsx:69
+#: src/app/views/Uptime.jsx:79
 msgid "View monitor on"
 msgstr ""
 
-#: src/app/components/Uptimerobot.jsx:184
+#: src/app/components/Uptimerobot.jsx:185
 msgid "View {0} status on UpTimeRobot"
 msgstr ""
 
@@ -508,59 +524,59 @@ msgstr ""
 msgid "VoiceRain"
 msgstr ""
 
-#: src/app/views/PrivacyPolicy.jsx:123
+#: src/app/views/PrivacyPolicy.jsx:119
 msgid "We are committed to protecting and respecting your privacy. The Privacy Policy explains the basis on which personal information we collect from you will be processed by us or on our behalf. Where we decide the purpose or means for which personal data you supply through these Services is processed, we are the “controller”. Where you decide the purpose or means for which personal data you supply through these Services is processed, you are the “controller”. We will comply with proper and applicable data protection laws."
 msgstr ""
 
-#: src/app/views/PrivacyPolicy.jsx:201
+#: src/app/views/PrivacyPolicy.jsx:197
 msgid "We collect and process the following information which may include your personal data."
 msgstr ""
 
-#: src/app/views/PrivacyPolicy.jsx:165
+#: src/app/views/PrivacyPolicy.jsx:161
 msgid "We do NOT provide third-parties any personal data."
 msgstr ""
 
-#: src/app/views/PrivacyPolicy.jsx:317
+#: src/app/views/PrivacyPolicy.jsx:313
 msgid "We do NOT sell your personal data and we don’t provide it to anyone outside our organisation for any other purpose than the Service you subscribed for."
 msgstr ""
 
-#: src/app/views/PrivacyPolicy.jsx:220
+#: src/app/views/PrivacyPolicy.jsx:216
 msgid "We do not access or store emails or phone numbers for our Discord bot users."
 msgstr ""
 
-#: src/app/views/TermsOfService.jsx:127
+#: src/app/views/TermsOfService.jsx:124
 msgid "We don't reverse or refund any tips that made by the user. Please check twice before making any tips."
 msgstr ""
 
-#: src/app/views/PrivacyPolicy.jsx:136
+#: src/app/views/PrivacyPolicy.jsx:132
 msgid "We encourage you to read this Privacy Policy carefully as it contains important information about the following:"
 msgstr ""
 
-#: src/app/views/PrivacyPolicy.jsx:174
+#: src/app/views/PrivacyPolicy.jsx:170
 msgid "We may make changes to this Privacy Policy in the future. You should check this page from time to time to ensure you are aware of any changes. Where appropriate we may notify you of such changes."
 msgstr ""
 
-#: src/app/views/Support.jsx:52
+#: src/app/views/Support.jsx:53
 msgid "We offer extensive tipbot support in the Runebase Discord community server."
 msgstr ""
 
-#: src/app/views/PrivacyPolicy.jsx:243
+#: src/app/views/PrivacyPolicy.jsx:239
 msgid "We only store and process your personal data when you have voluntarily supplied us with it such as adding {0}{1}on your server or by interacting with {2}.{3}Your personal data will only be disclosed or otherwise transmitted if this is necessary to implement the contract, render our Services or you have given your prior consent."
 msgstr ""
 
-#: src/app/views/TermsOfService.jsx:225
+#: src/app/views/TermsOfService.jsx:222
 msgid "We reserve the right to change or modify any of the terms and conditions contained in the ToS, at any time and in our sole discretion. Any changes or modifications will be effective immediately"
 msgstr ""
 
-#: src/app/views/PrivacyPolicy.jsx:271
+#: src/app/views/PrivacyPolicy.jsx:267
 msgid "We will use information about you for delivering our Services to you under the terms of use agreed between us. The processing of information in this way is necessary for us to provide you the Service properly and to ensure the features function properly so that you have the best Service possible."
 msgstr ""
 
-#: src/app/views/PrivacyPolicy.jsx:145
+#: src/app/views/PrivacyPolicy.jsx:141
 msgid "What information we may collect about you; How we will use the information we collect about you; Whether we will disclose your details to anyone else; And your choices and rights regarding the personal information you have provided to us."
 msgstr ""
 
-#: src/app/views/TermsOfService.jsx:246
+#: src/app/views/TermsOfService.jsx:243
 msgid "When using {0},  you agree to the terms and conditions above."
 msgstr ""
 
@@ -577,23 +593,23 @@ msgstr ""
 msgid "Withdraws the entered amount to a {0}{1}address of your choice"
 msgstr ""
 
-#: src/app/views/PrivacyPolicy.jsx:358
+#: src/app/views/PrivacyPolicy.jsx:354
 msgid "You have the following rights over the way your personal data are processed."
 msgstr ""
 
-#: src/app/views/PrivacyPolicy.jsx:376
+#: src/app/views/PrivacyPolicy.jsx:372
 msgid "You have the right to request a copy of the personal information we process about you and to have any inaccuracies corrected. You can ask us to restrict, stop processing personal data."
 msgstr ""
 
-#: src/app/views/PrivacyPolicy.jsx:209
+#: src/app/views/PrivacyPolicy.jsx:205
 msgid "Your Discord ID, Discord Username, Discord Server ID & Name, Discord Channel ID & Name, your user preferences as well as all the data you supply to us and information provided by you when using the Service ({0})."
 msgstr ""
 
-#: src/app/views/TermsOfService.jsx:153
+#: src/app/views/TermsOfService.jsx:150
 msgid "Your tipbot wallet security is as safe as your Discord account is. Use features like two-factor authentication to keep your account secure. In regards to {0}'s{1}security, we hold up to industry standards. Your wallet is powered by proven technology. In case of concerns, please contact our support."
 msgstr ""
 
-#: src/app/components/Uptimerobot.jsx:161
+#: src/app/components/Uptimerobot.jsx:162
 msgid "availability {0}%"
 msgstr ""
 
@@ -601,7 +617,7 @@ msgstr ""
 #~ msgid "down"
 #~ msgstr ""
 
-#: src/app/views/TermsOfService.jsx:93
+#: src/app/views/TermsOfService.jsx:90
 msgid "is beta software"
 msgstr ""
 
@@ -613,26 +629,34 @@ msgstr ""
 #~ msgid "ok"
 #~ msgstr ""
 
-#: src/app/components/Uptimerobot.jsx:160
+#: src/app/components/Uptimerobot.jsx:161
 msgid "outages {0} times，outage-time {1}，average availability {2}%"
 msgstr ""
 
-#: src/app/components/Uptimerobot.jsx:153
+#: src/app/components/Uptimerobot.jsx:154
 msgid "recent {CountDays} day"
 msgstr ""
 
-#: src/app/components/Uptimerobot.jsx:152
+#: src/app/components/Uptimerobot.jsx:153
 msgid "recent {CountDays} days"
 msgstr ""
 
-#: src/app/views/TermsOfService.jsx:145
+#: src/app/views/TermsOfService.jsx:142
 msgid "security"
 msgstr ""
 
-#: src/app/components/Uptimerobot.jsx:138
+#: src/app/components/Uptimerobot.jsx:139
 msgid "today"
 msgstr ""
 
-#: src/app/views/TermsOfService.jsx:119
+#: src/app/views/PrivacyPolicy.jsx:31
+msgid "{0} - Privacy Policy"
+msgstr ""
+
+#: src/app/views/TermsOfService.jsx:33
+msgid "{0} - Terms of Service"
+msgstr ""
+
+#: src/app/views/TermsOfService.jsx:116
 msgid "{0}Tips are non-reversible and non-refundable."
 msgstr ""

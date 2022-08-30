@@ -29,34 +29,14 @@ import MobileNav from '../assets/images/mobilenav.svg';
 function Header() {
   const heightRef = useRef(null);
   const [menu, setMenu] = useState(false);
-  const [height, setHeight] = useState(0);
+  const [mainMenuHeight, setMainMenuHeight] = useState(0);
   const [anchorElTipBots, setAnchorElTipBots] = useState(null);
   const openTipBots = Boolean(anchorElTipBots);
   const theme = useTheme();
   const mdDown = useMediaQuery(theme.breakpoints.down('md'));
 
-  const handleWindowResize = useCallback(() => {
-    if (height !== heightRef.current.clientHeight) {
-      setHeight(heightRef.current.clientHeight);
-    }
-  }, []);
-
   useEffect(() => {
-    window.addEventListener(
-      'resize',
-      handleWindowResize,
-    );
-
-    return () => {
-      window.removeEventListener(
-        'resize',
-        handleWindowResize,
-      );
-    };
-  }, [handleWindowResize]);
-
-  useEffect(() => {
-    setHeight(heightRef.current.clientHeight);
+    setMainMenuHeight(heightRef.current.clientHeight);
   }, [menu]);
 
   const toggleMenu = () => {
@@ -263,14 +243,17 @@ function Header() {
 
   return (
     <div
+      className="header initHeaderHeight"
       style={{
-        height,
+        height: mainMenuHeight,
       }}
-      className="header"
     >
       <AppBar
         position="relative"
         className="navbar"
+        sx={{
+          width: '100%',
+        }}
       >
         <Toolbar
           disableGutters

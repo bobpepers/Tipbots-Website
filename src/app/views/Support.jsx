@@ -59,7 +59,7 @@ const Support = function () {
             align="center"
           >
             <Trans>
-              Prefered way to request support is by opening a ticket with the "Ticket Tool" that you find in the Discord community server
+              Prefered way to request support is by opening a ticket with the &quot;Ticket Tool&quot; that you find in the Discord community server
             </Trans>
           </Typography>
         </Grid>

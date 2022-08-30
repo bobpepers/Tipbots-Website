@@ -6,7 +6,10 @@ import {
   Typography,
   Button,
 } from '@mui/material';
-import { Trans } from '@lingui/macro';
+import {
+  Trans,
+  t,
+} from '@lingui/macro';
 import UptimeRobot from '../components/Uptimerobot';
 import { tipbotInfoArray } from '../helpers/tipbotsInfoArray';
 
@@ -14,6 +17,10 @@ const monitorIds = tipbotInfoArray.map((a) => a.uptimeRobotMonitorId);
 
 function Uptime() {
   useEffect(() => { }, []);
+
+  useEffect(() => {
+    document.title = t`Tipbots - Uptime`;
+  }, []);
 
   return (
     <div className="height100 content">

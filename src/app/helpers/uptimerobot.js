@@ -63,8 +63,8 @@ export async function GetMonitors(
         }
       });
 
-      const total = monitor.logs.reduce((total, log) => {
-        console.log(log.type);
+      const total = monitor.logs.reduce((newTotal, log) => {
+        const totalX = {};
         if (log.type === 1) {
           const date = moment.unix(log.datetime).format('YYYYMMDD');
           totalX.duration += log.duration;

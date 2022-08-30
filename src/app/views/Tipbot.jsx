@@ -37,7 +37,7 @@ const Tipbot = function () {
 
   useEffect(() => {
     document.title = t`Tipbots - ${tipbotInfo.name}`;
-  }, []);
+  }, [tipbotInfo]);
 
   return (
     <div className="height100 content tipbots">
@@ -53,6 +53,7 @@ const Tipbot = function () {
           xs={12}
           alignItems="center"
           justifyContent="center"
+          className="mt-1"
         >
           <img
             className="tipbotLogo"

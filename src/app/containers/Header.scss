@@ -12,6 +12,8 @@ svg {
 }
 
 .navbar {
+  z-index: 1;
+  position: fixed;
   padding: 0rem 1rem;
   background-color: var(--footer);
   -webkit-box-shadow: 0 4px 10px -2px var(--menuBorderShadow);
@@ -59,4 +61,10 @@ header {
 
 .headerMenuTextColor {
   color: var(--buttonColorMenu);
+}
+
+
+
+.initHeaderHeight {
+  height: 64px;
 }
