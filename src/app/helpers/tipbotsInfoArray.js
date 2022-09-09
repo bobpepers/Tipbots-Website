@@ -1,6 +1,7 @@
 import RunesCoin from '../assets/images/runescoin.png';
 import Pirate from '../assets/images/pirate.png';
 import Tokel from '../assets/images/tokel.png';
+import Secret from '../assets/images/secret.png';
 
 export const tipbotInfoArray = [
   {
@@ -41,5 +42,18 @@ export const tipbotInfoArray = [
     telegramCommandPrefix: '!tokeltip',
     uptimeRobotMonitorId: '792311676',
     exampleAddress: 'RAKZ3UY99x5GRGMJ8AKr1Yqxs8Rqnr7YGb',
+  },
+  {
+    name: 'SecretTip',
+    ticker: 'SCRT',
+    coin: 'Secret Network',
+    logo: Secret,
+    explorer: 'https://www.mintscan.io/secret',
+    discordLink: 'https://discord.com/api/oauth2/authorize?client_id=1017103311570223144&permissions=523328&scope=bot%20applications.commands',
+    telegramLink: 'https://t.me/SecretTip_bot',
+    discordCommandPrefix: '/secrettip',
+    telegramCommandPrefix: '!secrettip',
+    uptimeRobotMonitorId: '792646669',
+    exampleAddress: 'secret1fsw6l4nkvy3pnjynnqyehdyhvh26qk4y9hvnru',
   },
 ]
