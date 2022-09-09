@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.24](https://github.com/bobpepers/Tipbots-Website/compare/v0.0.23...v0.0.24) (2022-09-09)
+
+
+### Features
+
+* ✨ Add secrettip ([8a64536](https://github.com/bobpepers/Tipbots-Website/commit/8a6453616081c6d25cf7b6d2da5680489f5c6e6e))
+
 ### [0.0.23](https://github.com/bobpepers/Tipbots-Website/compare/v0.0.22...v0.0.23) (2022-08-30)
 
 
