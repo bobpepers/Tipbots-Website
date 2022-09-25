@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.25](https://github.com/bobpepers/Tipbots-Website/compare/v0.0.24...v0.0.25) (2022-09-25)
+
+
+### Refactor
+
+* ⚡️ lazy loading for routes ([43fdd2d](https://github.com/bobpepers/Tipbots-Website/commit/43fdd2dc365b764875ea6823fa451d5a1e467797))
+
 ### [0.0.24](https://github.com/bobpepers/Tipbots-Website/compare/v0.0.23...v0.0.24) (2022-09-09)
 
 

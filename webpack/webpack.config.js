@@ -85,7 +85,6 @@ module.exports = (options) => {
         '.jsx',
       ],
       alias: {
-        // url: require.resolve('url/'),
         buffer: require.resolve('buffer/'),
         fs: false,
         module: false,
