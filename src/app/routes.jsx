@@ -1,5 +1,6 @@
 import React, {
   useEffect,
+  lazy,
 } from 'react';
 import {
   Route,
@@ -8,14 +9,14 @@ import {
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import toggleTheme from './helpers/toggleTheme';
-
-import Home from './views/Home';
-import Uptime from './views/Uptime';
-import Tipbot from './views/Tipbot';
-import PrivacyPolicy from './views/PrivacyPolicy';
-import TermsOfService from './views/TermsOfService';
-import Support from './views/Support';
 import { tipbotInfoArray } from './helpers/tipbotsInfoArray';
+
+const Home = lazy(() => import('./views/Home'));
+const Uptime = lazy(() => import('./views/Uptime'));
+const Tipbot = lazy(() => import('./views/Tipbot'));
+const PrivacyPolicy = lazy(() => import('./views/PrivacyPolicy'));
+const TermsOfService = lazy(() => import('./views/TermsOfService'));
+const Support = lazy(() => import('./views/Support'));
 
 const RoutesX = function (props) {
   const {
