@@ -6,6 +6,8 @@ const CopyPlugin = require('copy-webpack-plugin');
 const WebpackObfuscator = require('webpack-obfuscator');
 const ImageMinimizerPlugin = require('image-minimizer-webpack-plugin');
 const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 
 module.exports = (options) => {
   const webpackConfig = {
@@ -27,6 +29,7 @@ module.exports = (options) => {
       chunkIds: 'total-size',
       moduleIds: 'size',
       minimizer: [
+        new CssMinimizerPlugin(),
         new ImageMinimizerPlugin({
           minimizer: {
             implementation: ImageMinimizerPlugin.imageminMinify,
@@ -109,6 +112,7 @@ module.exports = (options) => {
           removeComments: false,
         },
       }),
+      new MiniCssExtractPlugin(),
     ].filter(Boolean),
     module: {
       rules: [
@@ -171,15 +175,7 @@ module.exports = (options) => {
         },
         {
           test: /\.css$/,
-          use: [
-            {
-              loader: 'style-loader',
-              options: {
-                injectType: 'singletonStyleTag',
-              },
-            },
-            'css-loader',
-          ],
+          use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader'],
         },
         {
           test: /\.m?js$/,
@@ -211,16 +207,7 @@ module.exports = (options) => {
     rules: [
       {
         test: /\.scss$/,
-        use: [
-          {
-            loader: 'style-loader',
-            options: {
-              injectType: 'singletonStyleTag',
-            },
-          },
-          'css-loader',
-          'sass-loader',
-        ],
+        use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader'],
       },
     ],
   });
