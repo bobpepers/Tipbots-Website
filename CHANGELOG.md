@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.26](https://github.com/bobpepers/Tipbots-Website/compare/v0.0.25...v0.0.26) (2022-10-10)
+
+
+### Features
+
+* ✨ Add StellarTip to website ([c9dea01](https://github.com/bobpepers/Tipbots-Website/commit/c9dea01059f0ecf9d3fcab88af07aa32a219b34b))
+
+
+### Performance
+
+* **webpack:** ⚡️ css minifier plugin webpack ([cdaa015](https://github.com/bobpepers/Tipbots-Website/commit/cdaa015240d03d36326e9929861130bf9a4f3705))
+
 ### [0.0.25](https://github.com/bobpepers/Tipbots-Website/compare/v0.0.24...v0.0.25) (2022-09-25)
 
 
