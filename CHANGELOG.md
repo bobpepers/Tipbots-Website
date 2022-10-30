@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.27](https://github.com/bobpepers/Tipbots-Website/compare/v0.0.26...v0.0.27) (2022-10-30)
+
+
+### Features
+
+* ✨ user dashboard: auth, balances ([8ac63e8](https://github.com/bobpepers/Tipbots-Website/commit/8ac63e8c6d7b02f10d12a3f2c0ef13984b1973ce))
+
 ### [0.0.26](https://github.com/bobpepers/Tipbots-Website/compare/v0.0.25...v0.0.26) (2022-10-10)
 
 
