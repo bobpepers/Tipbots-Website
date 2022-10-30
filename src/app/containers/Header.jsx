@@ -30,7 +30,9 @@ function Header() {
   const [menu, setMenu] = useState(false);
   const [mainMenuHeight, setMainMenuHeight] = useState(0);
   const [anchorElTipBots, setAnchorElTipBots] = useState(null);
+  const [anchorElDashboards, setAnchorElDashboards] = useState(null);
   const openTipBots = Boolean(anchorElTipBots);
+  const openDashboards = Boolean(anchorElDashboards);
   const theme = useTheme();
   const mdDown = useMediaQuery(theme.breakpoints.down('md'));
 
@@ -52,6 +54,14 @@ function Header() {
 
   const handleCloseTipbots = () => {
     setAnchorElTipBots(null);
+  };
+
+  const handleClickDashboards = (event) => {
+    setAnchorElDashboards(event.currentTarget);
+  };
+
+  const handleCloseDashboards = () => {
+    setAnchorElDashboards(null);
   };
 
   const mainMenuItems = () => (
@@ -80,6 +90,48 @@ function Header() {
           Home
         </Trans>
       </Button>
+      {/* <Button
+        aria-controls="basic-menu"
+        aria-haspopup="true"
+        aria-expanded={openDashboards ? 'true' : undefined}
+        onClick={handleClickDashboards}
+        variant="outlined"
+        style={{
+          fontSize: '14px',
+          fontWeight: 200,
+          marginRight: mdDown ? '0px' : '10px',
+          marginBottom: mdDown ? '0.5rem' : '0px',
+        }}
+        className="headerMenuTextColor"
+      >
+        <SmartToyIcon
+          className="buttonMenuIcon headerMenuTextColor"
+        />
+        <Trans>
+          Dashboard
+        </Trans>
+      </Button>
+      <Menu
+        anchorEl={anchorElDashboards}
+        open={openDashboards}
+        onClose={handleCloseDashboards}
+        MenuListProps={{
+          //  'aria-labelledby': 'basic-button',
+        }}
+      >
+        <Link
+          key="dashboard-link-discord"
+          className="nav-link"
+          to="/dashboard/discord"
+          onClick={() => toggleCloseMenu()}
+        >
+          <MenuItem
+            onClick={handleCloseDashboards}
+          >
+            Discord
+          </MenuItem>
+        </Link>
+      </Menu> */}
       <Button
         aria-controls="basic-menu"
         aria-haspopup="true"

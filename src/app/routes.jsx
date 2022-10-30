@@ -17,6 +17,7 @@ const Tipbot = lazy(() => import('./views/Tipbot'));
 const PrivacyPolicy = lazy(() => import('./views/PrivacyPolicy'));
 const TermsOfService = lazy(() => import('./views/TermsOfService'));
 const Support = lazy(() => import('./views/Support'));
+const DiscordDashboard = lazy(() => import('./views/dashboard/Discord'));
 
 const RoutesX = function (props) {
   const {
@@ -41,6 +42,18 @@ const RoutesX = function (props) {
       <Route
         path="/support"
         element={<Support />}
+      />
+      <Route
+        path="/dashboard/discord"
+        element={<DiscordDashboard />}
+      />
+      <Route
+        path="/dashboard/telegram"
+        element={<DiscordDashboard />}
+      />
+      <Route
+        path="/dashboard/matrix"
+        element={<DiscordDashboard />}
       />
       {tipbotInfoArray.map((tipbot) => (
         <Route
