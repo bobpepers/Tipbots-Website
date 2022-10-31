@@ -12,13 +12,16 @@ import {
   FETCH_DISCORD_USER_IDLE,
 } from './types/index';
 import { notistackErrorAdd } from './helpers/notistackError';
+import { tipbotInfoArray } from '../helpers/tipbotsInfoArray';
+
+const mainApi = tipbotInfoArray.find((x) => x.ticker === 'RUNES');
 
 export function loginDiscordAction() {
   return function (dispatch) {
     dispatch({
       type: LOGIN_DISCORD_USER_BEGIN,
     });
-    axios.get(`${window.myConfig.apiUrl}/user/discord/login`)
+    axios.get(`${mainApi.userApiUrl}/discord/login`)
       .then((response) => {
         window.location.href = response.data.result;
         dispatch({
@@ -43,7 +46,7 @@ export function revokeDiscordTokenAction() {
     dispatch({
       type: REVOKE_DISCORD_TOKEN_BEGIN,
     });
-    axios.get(`${window.myConfig.apiUrl}/user/discord/revoke`)
+    axios.get(`${mainApi.userApiUrl}/discord/revoke`)
       .then((response) => {
         dispatch({
           type: REVOKE_DISCORD_TOKEN_SUCCESS,
@@ -70,7 +73,7 @@ export function fetchDiscordUserAction() {
     dispatch({
       type: FETCH_DISCORD_USER_BEGIN,
     });
-    axios.get(`${window.myConfig.apiUrl}/user`)
+    axios.get(`${mainApi.userApiUrl}`)
       .then((response) => {
         if (response.data.result === 'NO_USER_FOUND') {
           dispatch({

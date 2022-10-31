@@ -18,7 +18,8 @@ export const tipbotInfoArray = [
     uptimeRobotMonitorId: '791625646',
     exampleAddress: 'ReU2nhYXamYRd2VBk4auwresov6jwLEuSg',
     multiToken: false,
-    userApiUrl: 'https:/tip.runebase.io/api/user',
+    userApiUrl: 'https://tip.runebase.io/api/user',
+    // userApiUrl: 'https://localhost/api/user',
   },
   {
     name: 'PirateTip',
@@ -33,7 +34,7 @@ export const tipbotInfoArray = [
     uptimeRobotMonitorId: '791626722',
     exampleAddress: 'zs1e3zh7a00wz4ej2lacpl2fvnrl680hkk766nt7z4ujl6rlj04n59ex7hjlnknvhwdc7vxzn0kcvt',
     multiToken: false,
-    userApiUrl: 'https://localhost/api/user',
+    userApiUrl: 'https://pirate.runebase.io/api/user',
   },
   {
     name: 'TokelTip',
@@ -47,7 +48,7 @@ export const tipbotInfoArray = [
     telegramCommandPrefix: '!tokeltip',
     uptimeRobotMonitorId: '792311676',
     exampleAddress: 'RAKZ3UY99x5GRGMJ8AKr1Yqxs8Rqnr7YGb',
-    userApiUrl: 'https:/tokel.runebase.io/api/user',
+    userApiUrl: 'https://tokel.runebase.io/api/user',
   },
   {
     name: 'SecretTip',
@@ -62,7 +63,7 @@ export const tipbotInfoArray = [
     uptimeRobotMonitorId: '792646669',
     exampleAddress: 'secret1fsw6l4nkvy3pnjynnqyehdyhvh26qk4y9hvnru',
     multiToken: false,
-    userApiUrl: 'https:/secret.runebase.io/api/user',
+    userApiUrl: 'https://secret.runebase.io/api/user',
   },
   {
     name: 'StellarTip',
@@ -76,7 +77,7 @@ export const tipbotInfoArray = [
     telegramCommandPrefix: '!stellartip',
     uptimeRobotMonitorId: '792830503',
     exampleAddress: 'GBBZSVVHGE2RV642Z6BYO6EU4RZVAC56D2YHJDE7AZIU6LZSRYBVRWAM',
-    userApiUrl: 'https:/stellar.runebase.io/api/user',
+    userApiUrl: 'https://stellar.runebase.io/api/user',
     multiToken: true,
     tokens: [
       'DXLM',
