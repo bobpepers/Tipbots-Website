@@ -10,7 +10,9 @@ import {
   LOGIN_DISCORD_USER_SUCCESS,
   LOGIN_DISCORD_USER_FAIL,
   FETCH_DISCORD_USER_IDLE,
+  FETCH_DISCORD_USER_BALANCE_IDLE,
 } from './types/index';
+
 import { notistackErrorAdd } from './helpers/notistackError';
 import { tipbotInfoArray } from '../helpers/tipbotsInfoArray';
 
@@ -54,6 +56,9 @@ export function revokeDiscordTokenAction() {
         });
         dispatch({
           type: FETCH_DISCORD_USER_IDLE,
+        });
+        dispatch({
+          type: FETCH_DISCORD_USER_BALANCE_IDLE,
         });
       }).catch((error) => {
         notistackErrorAdd(

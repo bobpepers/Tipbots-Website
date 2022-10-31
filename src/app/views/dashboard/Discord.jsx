@@ -7,7 +7,10 @@ import {
   Trans,
   t,
 } from '@lingui/macro';
-import { connect, useDispatch } from 'react-redux';
+import {
+  connect,
+  useDispatch,
+} from 'react-redux';
 import {
   Grid,
   Divider,
