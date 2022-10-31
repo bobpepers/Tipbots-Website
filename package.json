@@ -1,6 +1,6 @@
 {
   "name": "tipbots-website",
-  "version": "0.0.29",
+  "version": "0.0.30",
   "description": "Website for Tipbots",
   "scripts": {
     "lingui:extract": "lingui extract",

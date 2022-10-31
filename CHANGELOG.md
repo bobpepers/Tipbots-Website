@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.30](https://github.com/bobpepers/Tipbots-Website/compare/v0.0.29...v0.0.30) (2022-10-31)
+
+
+### Bug Fixes
+
+* 🐛 clear balances from store on token revoke ([0058bf3](https://github.com/bobpepers/Tipbots-Website/commit/0058bf34a68a0c4003e5142c58efaa45594fe892))
+
 ### [0.0.29](https://github.com/bobpepers/Tipbots-Website/compare/v0.0.28...v0.0.29) (2022-10-31)
 
 ### [0.0.28](https://github.com/bobpepers/Tipbots-Website/compare/v0.0.27...v0.0.28) (2022-10-31)
