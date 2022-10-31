@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.28](https://github.com/bobpepers/Tipbots-Website/compare/v0.0.27...v0.0.28) (2022-10-31)
+
+
+### Bug Fixes
+
+* 🐛 grab api url from helper, fix typos ([77b84dd](https://github.com/bobpepers/Tipbots-Website/commit/77b84ddfb2986e21fe6da5c82ee755ee5ac67a8b))
+
 ### [0.0.27](https://github.com/bobpepers/Tipbots-Website/compare/v0.0.26...v0.0.27) (2022-10-30)
 
 
