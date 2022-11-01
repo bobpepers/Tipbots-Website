@@ -208,7 +208,11 @@ const DiscordDashboardView = function (props) {
 
             <Grid
               item
-              xs={4}
+              xs={12}
+              sm={12}
+              ms={6}
+              lg={6}
+              xl={4}
               // style={{ border: '5px dotted black' }}
             >
               <Grid
@@ -248,7 +252,7 @@ const DiscordDashboardView = function (props) {
                   justifyContent="center"
                 >
                   <TableContainer>
-                    <Table sx={{ minWidth: 650 }} aria-label="simple table">
+                    <Table aria-label="simple table">
                       <TableHead>
                         <TableRow>
                           <TableCell>Coin</TableCell>
