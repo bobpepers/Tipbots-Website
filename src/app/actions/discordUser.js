@@ -37,7 +37,7 @@ export function loginDiscordAction() {
         );
         dispatch({
           type: LOGIN_DISCORD_USER_FAIL,
-          payload: error,
+          payload: error.code,
         });
       });
   }
@@ -67,7 +67,7 @@ export function revokeDiscordTokenAction() {
         );
         dispatch({
           type: REVOKE_DISCORD_TOKEN_FAIL,
-          payload: error,
+          payload: error.code,
         });
       });
   }
