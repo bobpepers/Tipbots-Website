@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.36](https://github.com/bobpepers/Tipbots-Website/compare/v0.0.35...v0.0.36) (2022-11-01)
+
+
+### Build
+
+* ⚡️ Add build hash to css file ([6938e75](https://github.com/bobpepers/Tipbots-Website/commit/6938e7571f8166fa8e9e2135ac022f8a4f3ba981))
+
 ### [0.0.35](https://github.com/bobpepers/Tipbots-Website/compare/v0.0.34...v0.0.35) (2022-11-01)
 
 
