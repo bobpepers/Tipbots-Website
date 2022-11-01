@@ -20,6 +20,7 @@ import KeyboardDoubleArrowUpIcon from '@mui/icons-material/KeyboardDoubleArrowUp
 import SupportAgentIcon from '@mui/icons-material/SupportAgent';
 import SmartToyIcon from '@mui/icons-material/SmartToy';
 import { useTheme } from '@mui/material/styles';
+import DashboardIcon from '@mui/icons-material/Dashboard';
 import Discord from '../assets/images/discord.svg';
 import Telegram from '../assets/images/telegram.svg';
 import { tipbotInfoArray } from '../helpers/tipbotsInfoArray';
@@ -90,7 +91,7 @@ function Header() {
           Home
         </Trans>
       </Button>
-      {/* <Button
+      <Button
         aria-controls="basic-menu"
         aria-haspopup="true"
         aria-expanded={openDashboards ? 'true' : undefined}
@@ -104,7 +105,7 @@ function Header() {
         }}
         className="headerMenuTextColor"
       >
-        <SmartToyIcon
+        <DashboardIcon
           className="buttonMenuIcon headerMenuTextColor"
         />
         <Trans>
@@ -128,10 +129,14 @@ function Header() {
           <MenuItem
             onClick={handleCloseDashboards}
           >
+            <Discord
+              className="menuIcon"
+              alt="Discord Logo"
+            />
             Discord
           </MenuItem>
         </Link>
-      </Menu> */}
+      </Menu>
       <Button
         aria-controls="basic-menu"
         aria-haspopup="true"
@@ -150,7 +155,7 @@ function Header() {
           className="buttonMenuIcon headerMenuTextColor"
         />
         <Trans>
-          Tipbots
+          Bots Help
         </Trans>
       </Button>
       <Menu
