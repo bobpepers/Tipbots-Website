@@ -14,7 +14,7 @@ export function fetchDiscordUserBalanceAction(
     dispatch({
       type: FETCH_DISCORD_USER_BALANCE_BEGIN,
     });
-    axios.get(`${tipbotInfo.userApiUrl}/discord/balance`)
+    axios.get(`${tipbotInfo.userApiUrl}/discord/balance`, { withCredentials: true })
       .then((response) => {
         console.log(response);
         if (response.data.result === 'NO_USER_FOUND') {

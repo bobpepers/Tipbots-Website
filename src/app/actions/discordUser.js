@@ -23,7 +23,7 @@ export function loginDiscordAction() {
     dispatch({
       type: LOGIN_DISCORD_USER_BEGIN,
     });
-    axios.get(`${mainApi.userApiUrl}/discord/login`)
+    axios.get(`${mainApi.userApiUrl}/discord/login`, { withCredentials: true })
       .then((response) => {
         window.location.href = response.data.result;
         dispatch({
@@ -48,7 +48,7 @@ export function revokeDiscordTokenAction() {
     dispatch({
       type: REVOKE_DISCORD_TOKEN_BEGIN,
     });
-    axios.get(`${mainApi.userApiUrl}/discord/revoke`)
+    axios.get(`${mainApi.userApiUrl}/discord/revoke`, { withCredentials: true })
       .then((response) => {
         dispatch({
           type: REVOKE_DISCORD_TOKEN_SUCCESS,
@@ -78,7 +78,7 @@ export function fetchDiscordUserAction() {
     dispatch({
       type: FETCH_DISCORD_USER_BEGIN,
     });
-    axios.get(`${mainApi.userApiUrl}`)
+    axios.get(`${mainApi.userApiUrl}`, { withCredentials: true })
       .then((response) => {
         if (response.data.result === 'NO_USER_FOUND') {
           dispatch({
