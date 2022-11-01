@@ -49,17 +49,12 @@ const DiscordDashboardView = function (props) {
   }, []);
 
   useEffect(
-    () => { },
-    [
-      discordUser,
-    ],
-  );
-  useEffect(
     () => {
       dispatch(fetchDiscordUserAction())
     },
     [],
   );
+
   useEffect(
     () => {
       if (discordUser && discordUser.data) {
@@ -68,20 +63,28 @@ const DiscordDashboardView = function (props) {
         });
       }
     },
-    [discordUser],
+    [
+      discordUser,
+    ],
   );
 
   useEffect(
     () => {
       let totalAverage = new BigNumber(0);
-      if (discordUserBalance && discordUserBalance.data) {
-        discordUserBalance.data.forEach((obj) => {
-          obj.wallets.map((o) => {
-            const estimatedAvailable = new BigNumber(o.available).dividedBy(`1e${o.coin.dp}`).times(o.coin.price).dp(8);
-            const estimatedLocked = new BigNumber(o.locked).dividedBy(`1e${o.coin.dp}`).times(o.coin.price).dp(8);
-            totalAverage = totalAverage.plus(estimatedAvailable).plus(estimatedLocked);
-            return o;
-          });
+      if (
+        discordUserBalance
+        && discordUserBalance.data
+        && Object.keys(discordUserBalance.data).length > 0
+      ) {
+        Object.keys(discordUserBalance.data).forEach((key, index) => {
+          if (discordUserBalance.data[key].wallets) {
+            discordUserBalance.data[key].wallets.map((o) => {
+              const estimatedAvailable = new BigNumber(o.available).dividedBy(`1e${o.coin.dp}`).times(o.coin.price).dp(8);
+              const estimatedLocked = new BigNumber(o.locked).dividedBy(`1e${o.coin.dp}`).times(o.coin.price).dp(8);
+              totalAverage = totalAverage.plus(estimatedAvailable).plus(estimatedLocked);
+              return o;
+            });
+          }
         });
       }
       setEstimatedTotal(totalAverage.toString());
@@ -91,108 +94,117 @@ const DiscordDashboardView = function (props) {
     ],
   );
 
+  useEffect(
+    () => {
+      console.log(discordUserBalance);
+    },
+    [
+      discordUser,
+      discordUserBalance,
+    ],
+  );
+
   return (
     <div className="height100 content">
-      {discordUser && discordUser.data ? (
-        <Grid
-          container
-          style={{
-            marginTop: '10px',
-          }}
-        >
+      {discordUser
+      && discordUser.data
+        ? (
           <Grid
             container
-            item
-            xs={4}
-            direction="column"
-            alignItems="center"
-            justifyContent="center"
+            style={{
+              marginTop: '10px',
+            }}
           >
-            <div>
-              <img
-                src={`https://cdn.discordapp.com/avatars/${discordUser.data.id}/${discordUser.data.avatar}.png`}
-                alt="User Profile Picture"
-                aria-hidden
-              />
-            </div>
-            <Typography
-              variant="body1"
-              align="center"
-              style={{
-                display: 'inline-block',
-              }}
+            <Grid
+              container
+              item
+              xs={4}
+              direction="column"
+              alignItems="center"
+              justifyContent="center"
             >
-              {discordUser.data.username}
-              #
-              {discordUser.data.discriminator}
-            </Typography>
-            <Button
-              variant="contained"
-              color="success"
-              fullWidth
-              size="large"
-              onClick={() => dispatch(revokeDiscordTokenAction())}
+              <div>
+                <img
+                  src={`https://cdn.discordapp.com/avatars/${discordUser.data.id}/${discordUser.data.avatar}.png`}
+                  alt="User Profile Picture"
+                  aria-hidden
+                />
+              </div>
+              <Typography
+                variant="body1"
+                align="center"
+                style={{
+                  display: 'inline-block',
+                }}
+              >
+                {discordUser.data.username}
+                #
+                {discordUser.data.discriminator}
+              </Typography>
+              <Button
+                variant="contained"
+                color="success"
+                fullWidth
+                size="large"
+                onClick={() => dispatch(revokeDiscordTokenAction())}
+              >
+                <Trans>
+                  Logout
+                </Trans>
+              </Button>
+            </Grid>
+            <Grid
+              container
+              item
+              xs={6}
+              direction="column"
+              alignItems="center"
+              justifyContent="center"
             >
-              <Trans>
-                Logout
-              </Trans>
-            </Button>
+              Your Estimated Value: $
+              {estimatedTotal}
+            </Grid>
           </Grid>
+        ) : (
           <Grid
             container
-            item
-            xs={6}
-            direction="column"
-            alignItems="center"
-            justifyContent="center"
-          >
-            Your Estimated Value: $
-            {estimatedTotal}
-          </Grid>
-        </Grid>
-      ) : (
-        <Grid
-          container
-          // className="LoginButtonContainer"
-          sm="auto"
-          md="auto"
-          alignContent="center"
-          alignItems="center"
-          justifyContent="center"
-        >
-          <Grid
-            container
-            item
-            xs={12}
-            sm="auto"
-            md="auto"
             alignContent="center"
             alignItems="center"
             justifyContent="center"
           >
-            <Discord
-              className="tipBotLinkLogo mb-1"
-              onClick={() => dispatch(loginDiscordAction())}
-              style={{
-                paddingTop: '1rem',
-              }}
-            />
-          </Grid>
-          <Grid item xs={12}>
-            <Button
-              variant="contained"
-              color="discord"
-              fullWidth
-              size="large"
-              onClick={() => dispatch(loginDiscordAction())}
+            <Grid
+              container
+              item
+              xs={12}
+              sm="auto"
+              md="auto"
+              alignContent="center"
+              alignItems="center"
+              justifyContent="center"
             >
-              <Trans>
-                Login Through Discord
-              </Trans>
-            </Button>
+              <Discord
+                className="tipBotLinkLogo mb-1"
+                onClick={() => dispatch(loginDiscordAction())}
+                style={{
+                  paddingTop: '1rem',
+                }}
+              />
+            </Grid>
+            <Grid item xs={12}>
+              <Button
+                variant="contained"
+                color="discord"
+                fullWidth
+                size="large"
+                onClick={() => dispatch(loginDiscordAction())}
+              >
+                <Trans>
+                  Login Through Discord
+                </Trans>
+              </Button>
+            </Grid>
           </Grid>
-        </Grid>
-      )}
+        )}
       <Divider
         style={{
           width: '100%',
@@ -204,8 +216,10 @@ const DiscordDashboardView = function (props) {
         spacing={4}
       >
         {
-          discordUserBalance && discordUserBalance.data && discordUserBalance.data.map((tipbot) => (
-
+          discordUserBalance
+          && discordUserBalance.data
+          && Object.keys(discordUserBalance.data).length > 0
+          && Object.keys(discordUserBalance.data).map((key) => (
             <Grid
               item
               xs={12}
@@ -213,6 +227,7 @@ const DiscordDashboardView = function (props) {
               ms={6}
               lg={6}
               xl={4}
+              key={`balance-${discordUserBalance.data[key].name}`}
               // style={{ border: '5px dotted black' }}
             >
               <Grid
@@ -232,16 +247,16 @@ const DiscordDashboardView = function (props) {
                   justifyContent="center"
                 >
                   <a
-                    href={tipbot.discordLink}
+                    href={discordUserBalance.data[key].discordLink}
                     style={{ textAlign: 'center' }}
                   >
                     <img
-                      src={tipbot.logo}
-                      alt={`${tipbot.name} Logo`}
+                      src={discordUserBalance.data[key].logo}
+                      alt={`${discordUserBalance.data[key].name} Logo`}
                       className="tipBotLinkLogo"
                     />
                   </a>
-                  {tipbot.name}
+                  {discordUserBalance.data[key].name}
                 </Grid>
                 <Grid
                   container
@@ -261,7 +276,9 @@ const DiscordDashboardView = function (props) {
                         </TableRow>
                       </TableHead>
                       <TableBody>
-                        {tipbot && tipbot.wallets && tipbot.wallets.map((wallet) => (
+                        {discordUserBalance.data[key]
+                        && discordUserBalance.data[key].wallets
+                        && discordUserBalance.data[key].wallets.map((wallet) => (
                           <TableRow
                             key={wallet.coin.ticker}
                             sx={{ '&:last-child td, &:last-child th': { border: 0 } }}

@@ -16,12 +16,11 @@ export function fetchDiscordUserBalanceAction(
     });
     axios.get(`${tipbotInfo.userApiUrl}/discord/balance`, { withCredentials: true })
       .then((response) => {
-        console.log(response);
         if (response.data.result === 'NO_USER_FOUND') {
           dispatch({
             type: FETCH_DISCORD_USER_BALANCE_IDLE,
           });
-        } else {
+        } else if (response.data.result) {
           dispatch({
             type: FETCH_DISCORD_USER_BALANCE_SUCCESS,
             payload: response.data.result,
@@ -29,14 +28,13 @@ export function fetchDiscordUserBalanceAction(
           });
         }
       }).catch((error) => {
-        console.log(error);
         notistackErrorAdd(
           dispatch,
           error,
         );
         dispatch({
           type: FETCH_DISCORD_USER_BALANCE_FAIL,
-          payload: error,
+          payload: error.code,
         });
       });
   }

@@ -26,17 +26,20 @@ export default (state = initialState, action) => {
       error: null,
     };
   case FETCH_DISCORD_USER_BALANCE_SUCCESS:
-    if (!state.data.find((x) => x.name === action.tipbotInfo.name)) {
+    if (
+      state.data
+      && !state.data.find((x) => x.name === action.tipbotInfo.name)
+    ) {
       return {
         ...state,
-        data: [
+        data: {
           ...state.data,
-          {
+          [action.tipbotInfo.name]: {
             name: action.tipbotInfo.name,
             logo: action.tipbotInfo.logo,
             wallets: action.payload,
           },
-        ],
+        },
         isFetching: false,
       };
     }
@@ -52,10 +55,10 @@ export default (state = initialState, action) => {
     };
 
   case FETCH_DISCORD_USER_BALANCE_FAIL:
-    console.log('Error: ', action.error);
     return {
       ...state,
-      error: action.error,
+      data: state.data,
+      error: action.payload,
       isFetching: false,
     };
   default:

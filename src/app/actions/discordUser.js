@@ -97,7 +97,7 @@ export function fetchDiscordUserAction() {
         );
         dispatch({
           type: FETCH_DISCORD_USER_FAIL,
-          payload: error,
+          payload: error.code,
         });
       });
   }
