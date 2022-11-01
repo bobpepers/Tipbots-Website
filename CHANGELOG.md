@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.35](https://github.com/bobpepers/Tipbots-Website/compare/v0.0.34...v0.0.35) (2022-11-01)
+
+
+### Bug Fixes
+
+* 🐛 Error code dispatcher ([aef9ebe](https://github.com/bobpepers/Tipbots-Website/commit/aef9ebec6edc04d0647c3a38d909168bc10be16b))
+* 🐛 user balance reducer ([56abea3](https://github.com/bobpepers/Tipbots-Website/commit/56abea31953e71c5e248f10fa1eda43f2804454c))
+
 ### [0.0.34](https://github.com/bobpepers/Tipbots-Website/compare/v0.0.33...v0.0.34) (2022-11-01)
 
 
