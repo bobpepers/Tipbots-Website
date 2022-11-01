@@ -30,6 +30,12 @@ const Footer = lazy(() => import('./containers/Footer'));
 const Routes = lazy(() => import('./routes'));
 
 const theme = createTheme({
+  palette: {
+    discord: {
+      main: '#5865F2',
+      contrastText: '#fff',
+    },
+  },
   typography: {
     whiteSpace: 'break-spaces',
     fontFamily: [

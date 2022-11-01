@@ -33,6 +33,7 @@ import {
   loginDiscordAction,
 } from '../../actions/discordUser';
 import { tipbotInfoArray } from '../../helpers/tipbotsInfoArray';
+import Discord from '../../assets/images/discord.svg';
 
 import { withRouter } from '../../hooks/withRouter';
 
@@ -110,6 +111,8 @@ const DiscordDashboardView = function (props) {
             <div>
               <img
                 src={`https://cdn.discordapp.com/avatars/${discordUser.data.id}/${discordUser.data.avatar}.png`}
+                alt="User Profile Picture"
+                aria-hidden
               />
             </div>
             <Typography
@@ -150,26 +153,41 @@ const DiscordDashboardView = function (props) {
       ) : (
         <Grid
           container
-          spacing={0}
-
+          // className="LoginButtonContainer"
+          sm="auto"
+          md="auto"
+          alignContent="center"
+          alignItems="center"
+          justifyContent="center"
         >
           <Grid
             container
             item
-            xs={4}
-            direction="column"
+            xs={12}
+            sm="auto"
+            md="auto"
+            alignContent="center"
             alignItems="center"
             justifyContent="center"
           >
+            <Discord
+              className="tipBotLinkLogo mb-1"
+              onClick={() => dispatch(loginDiscordAction())}
+              style={{
+                paddingTop: '1rem',
+              }}
+            />
+          </Grid>
+          <Grid item xs={12}>
             <Button
               variant="contained"
-              color="success"
+              color="discord"
               fullWidth
               size="large"
               onClick={() => dispatch(loginDiscordAction())}
             >
               <Trans>
-                Login
+                Login Through Discord
               </Trans>
             </Button>
           </Grid>
