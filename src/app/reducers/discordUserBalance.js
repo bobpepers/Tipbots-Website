@@ -26,29 +26,14 @@ export default (state = initialState, action) => {
       error: null,
     };
   case FETCH_DISCORD_USER_BALANCE_SUCCESS:
-    if (
-      state.data
-      && !state.data.find((x) => x.name === action.tipbotInfo.name)
-    ) {
-      return {
-        ...state,
-        data: {
-          ...state.data,
-          [action.tipbotInfo.name]: {
-            name: action.tipbotInfo.name,
-            logo: action.tipbotInfo.logo,
-            wallets: action.payload,
-          },
-        },
-        isFetching: false,
-      };
-    }
     return {
       ...state,
       data: {
         ...state.data,
         [action.tipbotInfo.name]: {
-          ...action.payload,
+          name: action.tipbotInfo.name,
+          logo: action.tipbotInfo.logo,
+          wallets: action.payload,
         },
       },
       isFetching: false,

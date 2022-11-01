@@ -35,6 +35,7 @@ export const tipbotInfoArray = [
     exampleAddress: 'zs1e3zh7a00wz4ej2lacpl2fvnrl680hkk766nt7z4ujl6rlj04n59ex7hjlnknvhwdc7vxzn0kcvt',
     multiToken: false,
     userApiUrl: 'https://pirate.runebase.io/api/user',
+    // userApiUrl: 'https://localhost:5551/user',
   },
   {
     name: 'TokelTip',
