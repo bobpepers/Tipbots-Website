@@ -112,7 +112,9 @@ module.exports = (options) => {
           removeComments: false,
         },
       }),
-      new MiniCssExtractPlugin(),
+      new MiniCssExtractPlugin({
+        filename: '[name][fullhash].css',
+      }),
     ].filter(Boolean),
     module: {
       rules: [
