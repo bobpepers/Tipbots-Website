@@ -2,6 +2,25 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.33](https://github.com/bobpepers/Tipbots-Website/compare/v0.0.32...v0.0.33) (2022-11-01)
+
+
+### Features
+
+* **Header:** ✨ Discord dashboard menu item ([dd3b2ba](https://github.com/bobpepers/Tipbots-Website/commit/dd3b2bab2d695fb659108e3ce42159792e3b55e3))
+
+
+### Bug Fixes
+
+* ⚡️ Only add credentials to axios calls that require them ([7d612d6](https://github.com/bobpepers/Tipbots-Website/commit/7d612d68b7cebd526d7006da463b956f227e408a))
+
+
+### Style
+
+* ♻️ Remove total from tables (only available and locked) ([2863d08](https://github.com/bobpepers/Tipbots-Website/commit/2863d087a0fd4118b29034e5294e873f6b94b3c1))
+* 🎨 Add discord color to pallete, login through discord button ([ab600cc](https://github.com/bobpepers/Tipbots-Website/commit/ab600ccfe59dc7351931a7e28f1b660059b0e293))
+* 🎨 set grid breakpoints wallets ([1f53cc4](https://github.com/bobpepers/Tipbots-Website/commit/1f53cc4dc9fea27648e763d23de2c42cd56efd72))
+
 ### [0.0.32](https://github.com/bobpepers/Tipbots-Website/compare/v0.0.31...v0.0.32) (2022-10-31)
 
 ### [0.0.31](https://github.com/bobpepers/Tipbots-Website/compare/v0.0.30...v0.0.31) (2022-10-31)
