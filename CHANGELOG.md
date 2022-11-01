@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.34](https://github.com/bobpepers/Tipbots-Website/compare/v0.0.33...v0.0.34) (2022-11-01)
+
+
+### Bug Fixes
+
+* 🐛 Fix soft reload white screen issue balances ([d011250](https://github.com/bobpepers/Tipbots-Website/commit/d01125021e85a164834573eedac496cedea9ae4a))
+
 ### [0.0.33](https://github.com/bobpepers/Tipbots-Website/compare/v0.0.32...v0.0.33) (2022-11-01)
 
 
