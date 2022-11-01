@@ -254,7 +254,6 @@ const DiscordDashboardView = function (props) {
                           <TableCell>Coin</TableCell>
                           <TableCell align="right">available</TableCell>
                           <TableCell align="right">locked</TableCell>
-                          <TableCell align="right">total</TableCell>
                         </TableRow>
                       </TableHead>
                       <TableBody>
@@ -279,15 +278,6 @@ const DiscordDashboardView = function (props) {
                               {' '}
                               (≈$
                               {new BigNumber(wallet.locked).dividedBy(`1e${wallet.coin.dp}`).times(wallet.coin.price).dp(4)
-                                .toString()}
-                              )
-                            </TableCell>
-                            <TableCell align="right">
-                              {new BigNumber(wallet.available).plus(wallet.locked).dividedBy(`1e${wallet.coin.dp}`).toString() }
-                              {' '}
-                              (≈$
-                              {new BigNumber(wallet.available).plus(wallet.locked).dividedBy(`1e${wallet.coin.dp}`).times(wallet.coin.price)
-                                .dp(4)
                                 .toString()}
                               )
                             </TableCell>
