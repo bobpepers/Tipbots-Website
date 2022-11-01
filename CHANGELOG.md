@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.37](https://github.com/bobpepers/Tipbots-Website/compare/v0.0.36...v0.0.37) (2022-11-01)
+
+
+### Bug Fixes
+
+* 🐛 remove height 100 from content wrapper ([60d9818](https://github.com/bobpepers/Tipbots-Website/commit/60d98184a97825e4e0dcaaff6a5c173f03591479))
+
 ### [0.0.36](https://github.com/bobpepers/Tipbots-Website/compare/v0.0.35...v0.0.36) (2022-11-01)
 
 
