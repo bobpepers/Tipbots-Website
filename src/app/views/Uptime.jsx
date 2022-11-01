@@ -23,7 +23,7 @@ function Uptime() {
   }, []);
 
   return (
-    <div className="height100 content">
+    <div className="content">
       <Grid
         container
         spacing={0}

@@ -43,7 +43,7 @@ const Home = function (props) {
   );
 
   return (
-    <div className="height100 content">
+    <div className="content">
       <Grid
         container
         spacing={0}

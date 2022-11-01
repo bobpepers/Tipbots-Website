@@ -105,7 +105,7 @@ const DiscordDashboardView = function (props) {
   );
 
   return (
-    <div className="height100 content">
+    <div className="content">
       {discordUser
       && discordUser.data
         ? (
