@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.39](https://github.com/bobpepers/Tipbots-Website/compare/v0.0.38...v0.0.39) (2022-11-02)
+
+
+### Bug Fixes
+
+* 🧑‍💻 Add NODE_ENV env var ([5b846d7](https://github.com/bobpepers/Tipbots-Website/commit/5b846d79f056f88b7cd19b76a4763ef6c8677c43))
+
 ### [0.0.38](https://github.com/bobpepers/Tipbots-Website/compare/v0.0.37...v0.0.38) (2022-11-02)
 
 
