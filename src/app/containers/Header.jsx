@@ -136,6 +136,22 @@ function Header() {
             Discord
           </MenuItem>
         </Link>
+        <Link
+          key="dashboard-link-telegram"
+          className="nav-link"
+          to="/dashboard/telegram"
+          onClick={() => toggleCloseMenu()}
+        >
+          <MenuItem
+            onClick={handleCloseDashboards}
+          >
+            <Telegram
+              className="menuIcon"
+              alt="Telegram Logo"
+            />
+            Telegram
+          </MenuItem>
+        </Link>
       </Menu>
       <Button
         aria-controls="basic-menu"
