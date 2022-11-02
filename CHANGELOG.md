@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.38](https://github.com/bobpepers/Tipbots-Website/compare/v0.0.37...v0.0.38) (2022-11-02)
+
+
+### Features
+
+* ✨ Telegram authentication & balances ([a82006d](https://github.com/bobpepers/Tipbots-Website/commit/a82006df44387baf06f6c079df6e803c39ae9b03))
+
 ### [0.0.37](https://github.com/bobpepers/Tipbots-Website/compare/v0.0.36...v0.0.37) (2022-11-01)
 
 
