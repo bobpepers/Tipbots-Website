@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.40](https://github.com/bobpepers/Tipbots-Website/compare/v0.0.39...v0.0.40) (2022-11-02)
+
+
+### Features
+
+* ✨ Add menu item: Telegram dashboard ([0b2ea28](https://github.com/bobpepers/Tipbots-Website/commit/0b2ea28605c56d6c9aff30d0cd89b719dd11a387))
+
 ### [0.0.39](https://github.com/bobpepers/Tipbots-Website/compare/v0.0.38...v0.0.39) (2022-11-02)
 
 
