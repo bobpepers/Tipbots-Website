@@ -245,6 +245,10 @@ module.exports = (options) => {
       port: options.port,
       historyApiFallback: true,
       host: 'localhost',
+      allowedHosts: [
+        'localhost',
+        'devwebsite.runebase.io',
+      ],
       client: {
         overlay: false,
         logging: 'warn', // Want to set this to 'warn' or 'error'

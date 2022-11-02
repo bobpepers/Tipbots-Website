@@ -18,6 +18,7 @@ const PrivacyPolicy = lazy(() => import('./views/PrivacyPolicy'));
 const TermsOfService = lazy(() => import('./views/TermsOfService'));
 const Support = lazy(() => import('./views/Support'));
 const DiscordDashboard = lazy(() => import('./views/dashboard/Discord'));
+const TelegramDashboard = lazy(() => import('./views/dashboard/Telegram'));
 
 const RoutesX = function (props) {
   const {
@@ -46,6 +47,10 @@ const RoutesX = function (props) {
       <Route
         path="/dashboard/discord"
         element={<DiscordDashboard />}
+      />
+      <Route
+        path="/dashboard/telegram"
+        element={<TelegramDashboard />}
       />
       <Route
         path="/dashboard/telegram"

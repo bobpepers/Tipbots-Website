@@ -19,7 +19,7 @@ export const tipbotInfoArray = [
     exampleAddress: 'ReU2nhYXamYRd2VBk4auwresov6jwLEuSg',
     multiToken: false,
     userApiUrl: 'https://tip.runebase.io/api/user',
-    // userApiUrl: 'https://localhost/api/user',
+    // userApiUrl: 'https://devwebsite.runebase.io/api/user',
   },
   {
     name: 'PirateTip',

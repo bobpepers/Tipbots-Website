@@ -1,7 +1,7 @@
 import {
-  REVOKE_DISCORD_TOKEN_BEGIN,
-  REVOKE_DISCORD_TOKEN_SUCCESS,
-  REVOKE_DISCORD_TOKEN_FAIL,
+  REVOKE_TELEGRAM_TOKEN_BEGIN,
+  REVOKE_TELEGRAM_TOKEN_SUCCESS,
+  REVOKE_TELEGRAM_TOKEN_FAIL,
 } from '../actions/types/index';
 
 const initialState = {
@@ -11,19 +11,19 @@ const initialState = {
 
 export default (state = initialState, action) => {
   switch (action.type) {
-  case REVOKE_DISCORD_TOKEN_BEGIN:
+  case REVOKE_TELEGRAM_TOKEN_BEGIN:
     return {
       ...state,
       isFetching: true,
       error: null,
     };
-  case REVOKE_DISCORD_TOKEN_SUCCESS:
+  case REVOKE_TELEGRAM_TOKEN_SUCCESS:
     return {
       ...state,
       data: action.payload,
       isFetching: false,
     };
-  case REVOKE_DISCORD_TOKEN_FAIL:
+  case REVOKE_TELEGRAM_TOKEN_FAIL:
     return {
       ...state,
       error: action.payload,
