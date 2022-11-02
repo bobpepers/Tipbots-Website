@@ -95,16 +95,6 @@ module.exports = (options) => {
       },
     },
     plugins: [
-      !options.isProduction && new ReactRefreshWebpackPlugin(),
-      new Webpack.ProvidePlugin({
-        process: 'process/browser',
-      }),
-      new Webpack.ProvidePlugin({
-        Buffer: [
-          'buffer',
-          'Buffer',
-        ],
-      }),
       new HtmlWebpackPlugin({
         template: Path.join(__dirname, '../src/index.html'),
         NODE_ENV: options.isProduction ? 'production' : 'development',
@@ -112,6 +102,19 @@ module.exports = (options) => {
           removeComments: false,
         },
       }),
+      !options.isProduction && new ReactRefreshWebpackPlugin(),
+      new Webpack.DefinePlugin({
+        'process.env': {
+          ENV: options.isProduction ? JSON.stringify('production') : JSON.stringify('development'),
+        },
+      }),
+      new Webpack.ProvidePlugin({
+        Buffer: [
+          'buffer',
+          'Buffer',
+        ],
+      }),
+
       new MiniCssExtractPlugin({
         filename: '[name][fullhash].css',
       }),

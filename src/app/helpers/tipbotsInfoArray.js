@@ -18,8 +18,9 @@ export const tipbotInfoArray = [
     uptimeRobotMonitorId: '791625646',
     exampleAddress: 'ReU2nhYXamYRd2VBk4auwresov6jwLEuSg',
     multiToken: false,
-    userApiUrl: 'https://tip.runebase.io/api/user',
-    // userApiUrl: 'https://devwebsite.runebase.io/api/user',
+    userApiUrl: process.env.ENV === 'development'
+      ? 'https://devwebsite.runebase.io/api/user'
+      : 'https://tip.runebase.io/api/user',
   },
   {
     name: 'PirateTip',

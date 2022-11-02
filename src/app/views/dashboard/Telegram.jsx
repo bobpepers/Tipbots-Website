@@ -203,7 +203,11 @@ const TelegramDashboardView = function (props) {
               justifyContent="center"
             >
               <TelegramLoginButton
-                dataAuthUrl="http://devwebsite.runebase.io/api/user/telegram/callback"
+                dataAuthUrl={
+                  process.env.ENV === 'development'
+                    ? 'http://devwebsite.runebase.io/api/user/telegram/callback'
+                    : 'http://tip.runebase.io/api/user/telegram/callback'
+                }
                 botName="runebaseBots_bot"
                 language="en"
                 data-size="large"
