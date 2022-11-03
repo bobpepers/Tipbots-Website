@@ -82,7 +82,7 @@ function Header() {
         aria-controls="basic-menu"
         aria-haspopup="true"
         className="headerMenuTextColor"
-        onClick={() => toggleCloseMenu()}
+        onClick={toggleCloseMenu}
       >
         <HomeIcon
           className="buttonMenuIcon headerMenuTextColor"
@@ -124,7 +124,7 @@ function Header() {
           key="dashboard-link-discord"
           className="nav-link"
           to="/dashboard/discord"
-          onClick={() => toggleCloseMenu()}
+          onClick={toggleCloseMenu}
         >
           <MenuItem
             onClick={handleCloseDashboards}
@@ -140,7 +140,7 @@ function Header() {
           key="dashboard-link-telegram"
           className="nav-link"
           to="/dashboard/telegram"
-          onClick={() => toggleCloseMenu()}
+          onClick={toggleCloseMenu}
         >
           <MenuItem
             onClick={handleCloseDashboards}
@@ -187,7 +187,7 @@ function Header() {
             key={`tipbot-link-${tipbot.name}`}
             className="nav-link"
             to={`/tipbots/${tipbot.name.toLowerCase()}`}
-            onClick={() => toggleCloseMenu()}
+            onClick={toggleCloseMenu}
           >
             <MenuItem
               onClick={handleCloseTipbots}
@@ -216,7 +216,7 @@ function Header() {
         aria-controls="basic-menu"
         aria-haspopup="true"
         className="headerMenuTextColor"
-        onClick={() => toggleCloseMenu()}
+        onClick={toggleCloseMenu}
       >
         <KeyboardDoubleArrowUpIcon
           className="buttonMenuIcon headerMenuTextColor"
@@ -240,7 +240,7 @@ function Header() {
         aria-controls="basic-menu"
         aria-haspopup="true"
         className="headerMenuTextColor"
-        onClick={() => toggleCloseMenu()}
+        onClick={toggleCloseMenu}
       >
         <SupportAgentIcon
           className="buttonMenuIcon headerMenuTextColor"
