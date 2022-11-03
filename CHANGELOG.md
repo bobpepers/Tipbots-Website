@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.42](https://github.com/bobpepers/Tipbots-Website/compare/v0.0.41...v0.0.42) (2022-11-03)
+
+
+### Refactor
+
+* 🐛 refactor dropdown header menu, remove some lazy loads ([1fe2efc](https://github.com/bobpepers/Tipbots-Website/commit/1fe2efcdccfb235681922309c725b77a1b777c3f))
+
 ### [0.0.41](https://github.com/bobpepers/Tipbots-Website/compare/v0.0.40...v0.0.41) (2022-11-03)
 
 
