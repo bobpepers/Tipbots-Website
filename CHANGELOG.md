@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.44](https://github.com/bobpepers/Tipbots-Website/compare/v0.0.43...v0.0.44) (2022-11-03)
+
+
+### Bug Fixes
+
+* 🐛 only load ticker image if exists ([3a2b636](https://github.com/bobpepers/Tipbots-Website/commit/3a2b636b716e5e6354ce3dd8525953bc044894a8))
+
+
+### Style
+
+* 🎨 Add missing dxlm ticker image ([bf739c4](https://github.com/bobpepers/Tipbots-Website/commit/bf739c45c58d50222cadf528cce12dbcb837aaad))
+
 ### [0.0.43](https://github.com/bobpepers/Tipbots-Website/compare/v0.0.42...v0.0.43) (2022-11-03)
 
 
