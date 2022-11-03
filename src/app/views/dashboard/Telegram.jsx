@@ -203,7 +203,11 @@ const TelegramDashboardView = function (props) {
                     ? 'http://devwebsite.runebase.io/api/user/telegram/callback'
                     : 'http://tip.runebase.io/api/user/telegram/callback'
                 }
-                botName="runebaseBots_bot"
+                botName={
+                  process.env.ENV === 'development'
+                    ? 'devweb_runebase_io_bot'
+                    : 'runebaseBots_bot'
+                }
                 language="en"
                 data-size="large"
                 data-request-access="write"

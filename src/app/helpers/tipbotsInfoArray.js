@@ -35,8 +35,9 @@ export const tipbotInfoArray = [
     uptimeRobotMonitorId: '791626722',
     exampleAddress: 'zs1e3zh7a00wz4ej2lacpl2fvnrl680hkk766nt7z4ujl6rlj04n59ex7hjlnknvhwdc7vxzn0kcvt',
     multiToken: false,
-    userApiUrl: 'https://pirate.runebase.io/api/user',
-    //  userApiUrl: 'http://localhost:55551/api/user',
+    userApiUrl: process.env.ENV === 'development'
+      ? 'http://localhost:55551/api/user'
+      : 'https://pirate.runebase.io/api/user',
   },
   {
     name: 'TokelTip',

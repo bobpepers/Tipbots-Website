@@ -20,7 +20,7 @@ const TipBotWalletComponent = function (props) {
     tipbotWallet,
   } = props;
 
-  const [image, setImage] = useState('');
+  const [image, setImage] = useState({});
 
   return (
     <Grid
@@ -80,42 +80,46 @@ const TipBotWalletComponent = function (props) {
               </TableHead>
               <TableBody>
                 {tipbotWallet
-                          && tipbotWallet.wallets
-                          && tipbotWallet.wallets.map((wallet) => {
-                            import(
-                              `../../assets/images/coins/${wallet.coin.ticker}.png`
-                            ).then((tickerImage) => setImage(tickerImage.default));
-                            return (
-                              <TableRow
-                                key={wallet.coin.ticker}
-                                sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
-                              >
-                                <TableCell component="th" scope="row">
-                                  {wallet.coin.ticker}
-                                </TableCell>
-                                <TableCell
-                                  align="right"
-                                >
-                                  {image && <img alt="" className="coinTickerThumb" src={image} />}
-                                  {new BigNumber(wallet.available).dividedBy(`1e${wallet.coin.dp}`).toString()}
-                                  {' '}
-                                  (≈$
-                                  {new BigNumber(wallet.available).dividedBy(`1e${wallet.coin.dp}`).times(wallet.coin.price).dp(4)
-                                    .toString()}
-                                  )
-                                </TableCell>
-                                <TableCell align="right">
-                                  {image && <img alt="" className="coinTickerThumb" src={image} />}
-                                  {new BigNumber(wallet.locked).dividedBy(`1e${wallet.coin.dp}`).toString() }
-                                  {' '}
-                                  (≈$
-                                  {new BigNumber(wallet.locked).dividedBy(`1e${wallet.coin.dp}`).times(wallet.coin.price).dp(4)
-                                    .toString()}
-                                  )
-                                </TableCell>
-                              </TableRow>
-                            )
-                          })}
+                  && tipbotWallet.wallets
+                  && tipbotWallet.wallets.map((wallet) => {
+                    import(
+                      `../../assets/images/coins/${wallet.coin.ticker}.png`
+                    ).then((tickerImage) => {
+                      setImage((prevState) => ({ ...prevState, [wallet.coin.ticker]: tickerImage.default }));
+                    }).catch(() => {
+                      setImage((prevState) => ({ ...prevState, [wallet.coin.ticker]: null }));
+                    });
+                    return (
+                      <TableRow
+                        key={wallet.coin.ticker}
+                        sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+                      >
+                        <TableCell component="th" scope="row">
+                          {wallet.coin.ticker}
+                        </TableCell>
+                        <TableCell
+                          align="right"
+                        >
+                          {image && image[wallet.coin.ticker] && <img alt="" className="coinTickerThumb" src={image[wallet.coin.ticker]} />}
+                          {new BigNumber(wallet.available).dividedBy(`1e${wallet.coin.dp}`).toString()}
+                          {' '}
+                          (≈$
+                          {new BigNumber(wallet.available).dividedBy(`1e${wallet.coin.dp}`).times(wallet.coin.price).dp(4)
+                            .toString()}
+                          )
+                        </TableCell>
+                        <TableCell align="right">
+                          {image && image[wallet.coin.ticker] && <img alt="" className="coinTickerThumb" src={image[wallet.coin.ticker]} />}
+                          {new BigNumber(wallet.locked).dividedBy(`1e${wallet.coin.dp}`).toString() }
+                          {' '}
+                          (≈$
+                          {new BigNumber(wallet.locked).dividedBy(`1e${wallet.coin.dp}`).times(wallet.coin.price).dp(4)
+                            .toString()}
+                          )
+                        </TableCell>
+                      </TableRow>
+                    )
+                  })}
               </TableBody>
             </Table>
           </TableContainer>
