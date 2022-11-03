@@ -10,15 +10,18 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import toggleTheme from './helpers/toggleTheme';
 import { tipbotInfoArray } from './helpers/tipbotsInfoArray';
+import DiscordDashboard from './views/dashboard/Discord';
+import TelegramDashboard from './views/dashboard/Telegram';
+import Tipbot from './views/Tipbot';
 
 const Home = lazy(() => import('./views/Home'));
 const Uptime = lazy(() => import('./views/Uptime'));
-const Tipbot = lazy(() => import('./views/Tipbot'));
+// const Tipbot = lazy(() => import('./views/Tipbot'));
 const PrivacyPolicy = lazy(() => import('./views/PrivacyPolicy'));
 const TermsOfService = lazy(() => import('./views/TermsOfService'));
 const Support = lazy(() => import('./views/Support'));
-const DiscordDashboard = lazy(() => import('./views/dashboard/Discord'));
-const TelegramDashboard = lazy(() => import('./views/dashboard/Telegram'));
+// const DiscordDashboard = lazy(() => import('./views/dashboard/Discord'));
+// const TelegramDashboard = lazy(() => import('./views/dashboard/Telegram'));
 
 const RoutesX = function (props) {
   const {

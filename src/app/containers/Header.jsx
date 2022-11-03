@@ -7,7 +7,9 @@ import React, {
   useEffect,
   useRef,
 } from 'react';
-import { Link } from 'react-router-dom';
+import {
+  Link,
+} from 'react-router-dom';
 import {
   Button,
   MenuItem,
@@ -21,6 +23,11 @@ import SupportAgentIcon from '@mui/icons-material/SupportAgent';
 import SmartToyIcon from '@mui/icons-material/SmartToy';
 import { useTheme } from '@mui/material/styles';
 import DashboardIcon from '@mui/icons-material/Dashboard';
+import {
+  usePopupState,
+  bindTrigger,
+  bindMenu,
+} from 'material-ui-popup-state/hooks'
 import Discord from '../assets/images/discord.svg';
 import Telegram from '../assets/images/telegram.svg';
 import { tipbotInfoArray } from '../helpers/tipbotsInfoArray';
@@ -30,10 +37,6 @@ function Header() {
   const heightRef = useRef(null);
   const [menu, setMenu] = useState(false);
   const [mainMenuHeight, setMainMenuHeight] = useState(0);
-  const [anchorElTipBots, setAnchorElTipBots] = useState(null);
-  const [anchorElDashboards, setAnchorElDashboards] = useState(null);
-  const openTipBots = Boolean(anchorElTipBots);
-  const openDashboards = Boolean(anchorElDashboards);
   const theme = useTheme();
   const mdDown = useMediaQuery(theme.breakpoints.down('md'));
 
@@ -49,21 +52,8 @@ function Header() {
     setMenu(false);
   };
 
-  const handleClickTipbots = (event) => {
-    setAnchorElTipBots(event.currentTarget);
-  };
-
-  const handleCloseTipbots = () => {
-    setAnchorElTipBots(null);
-  };
-
-  const handleClickDashboards = (event) => {
-    setAnchorElDashboards(event.currentTarget);
-  };
-
-  const handleCloseDashboards = () => {
-    setAnchorElDashboards(null);
-  };
+  const popupStateDashboard = usePopupState({ variant: 'popover', popupId: 'dashboardMenu' });
+  const popupStateTipbots = usePopupState({ variant: 'popover', popupId: 'tipbotsMenu' });
 
   const mainMenuItems = () => (
     <>
@@ -91,11 +81,9 @@ function Header() {
           Home
         </Trans>
       </Button>
+
       <Button
-        aria-controls="basic-menu"
-        aria-haspopup="true"
-        aria-expanded={openDashboards ? 'true' : undefined}
-        onClick={handleClickDashboards}
+        {...bindTrigger(popupStateDashboard)}
         variant="outlined"
         style={{
           fontSize: '14px',
@@ -112,52 +100,47 @@ function Header() {
           Dashboard
         </Trans>
       </Button>
-      <Menu
-        anchorEl={anchorElDashboards}
-        open={openDashboards}
-        onClose={handleCloseDashboards}
-        MenuListProps={{
-          //  'aria-labelledby': 'basic-button',
-        }}
-      >
-        <Link
+      <Menu {...bindMenu(popupStateDashboard)}>
+        <MenuItem
           key="dashboard-link-discord"
-          className="nav-link"
-          to="/dashboard/discord"
-          onClick={toggleCloseMenu}
+          onClick={() => {
+            popupStateDashboard.close();
+            toggleCloseMenu();
+          }}
         >
-          <MenuItem
-            onClick={handleCloseDashboards}
+          <Link
+            className="nav-link"
+            to="/dashboard/discord"
           >
             <Discord
               className="menuIcon"
               alt="Discord Logo"
             />
             Discord
-          </MenuItem>
-        </Link>
-        <Link
+          </Link>
+        </MenuItem>
+
+        <MenuItem
           key="dashboard-link-telegram"
-          className="nav-link"
-          to="/dashboard/telegram"
-          onClick={toggleCloseMenu}
+          onClick={() => {
+            popupStateDashboard.close();
+            toggleCloseMenu();
+          }}
         >
-          <MenuItem
-            onClick={handleCloseDashboards}
+          <Link
+            className="nav-link"
+            to="/dashboard/telegram"
           >
             <Telegram
               className="menuIcon"
               alt="Telegram Logo"
             />
             Telegram
-          </MenuItem>
-        </Link>
+          </Link>
+        </MenuItem>
       </Menu>
       <Button
-        aria-controls="basic-menu"
-        aria-haspopup="true"
-        aria-expanded={openTipBots ? 'true' : undefined}
-        onClick={handleClickTipbots}
+        {...bindTrigger(popupStateTipbots)}
         variant="outlined"
         style={{
           fontSize: '14px',
@@ -174,23 +157,18 @@ function Header() {
           Bots Help
         </Trans>
       </Button>
-      <Menu
-        anchorEl={anchorElTipBots}
-        open={openTipBots}
-        onClose={handleCloseTipbots}
-        MenuListProps={{
-          //  'aria-labelledby': 'basic-button',
-        }}
-      >
+      <Menu {...bindMenu(popupStateTipbots)}>
         {tipbotInfoArray.map((tipbot) => (
-          <Link
-            key={`tipbot-link-${tipbot.name}`}
-            className="nav-link"
-            to={`/tipbots/${tipbot.name.toLowerCase()}`}
-            onClick={toggleCloseMenu}
+          <MenuItem
+            onClick={() => {
+              popupStateTipbots.close();
+              toggleCloseMenu();
+            }}
           >
-            <MenuItem
-              onClick={handleCloseTipbots}
+            <Link
+              key={`tipbot-link-${tipbot.name}`}
+              className="nav-link"
+              to={`/tipbots/${tipbot.name.toLowerCase()}`}
             >
               <img
                 className="menuIcon"
@@ -198,8 +176,8 @@ function Header() {
                 alt={`${tipbot.name} Logo`}
               />
               {tipbot.name}
-            </MenuItem>
-          </Link>
+            </Link>
+          </MenuItem>
         ))}
       </Menu>
       <Button
