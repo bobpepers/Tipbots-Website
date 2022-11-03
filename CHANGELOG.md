@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.43](https://github.com/bobpepers/Tipbots-Website/compare/v0.0.42...v0.0.43) (2022-11-03)
+
+
+### Refactor
+
+* 🎨 TipbotWallet as component, add ticker images ([30864a3](https://github.com/bobpepers/Tipbots-Website/commit/30864a38731b2e1a7630aef511b08c26c32c2d03))
+
 ### [0.0.42](https://github.com/bobpepers/Tipbots-Website/compare/v0.0.41...v0.0.42) (2022-11-03)
 
 
