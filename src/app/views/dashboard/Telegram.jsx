@@ -19,12 +19,6 @@ import {
   Button,
 } from '@mui/material';
 import BigNumber from 'bignumber.js'
-import Table from '@mui/material/Table';
-import TableBody from '@mui/material/TableBody';
-import TableCell from '@mui/material/TableCell';
-import TableContainer from '@mui/material/TableContainer';
-import TableHead from '@mui/material/TableHead';
-import TableRow from '@mui/material/TableRow';
 import {
   fetchTelegramUserBalanceAction,
 } from '../../actions/telegramUserBalance';
@@ -37,6 +31,7 @@ import { tipbotInfoArray } from '../../helpers/tipbotsInfoArray';
 import Telegram from '../../assets/images/telegram.svg';
 
 import { withRouter } from '../../hooks/withRouter';
+import TipBotWalletComponent from '../../components/Dashboard/TipbotWallet';
 
 const TelegramDashboardView = function (props) {
   const {
@@ -231,96 +226,9 @@ const TelegramDashboardView = function (props) {
             && telegramUserBalance.data
             && Object.keys(telegramUserBalance.data).length > 0
             && Object.keys(telegramUserBalance.data).map((key) => (
-              <Grid
-                item
-                xs={12}
-                sm={12}
-                ms={6}
-                lg={6}
-                xl={4}
-                key={`balance-${telegramUserBalance.data[key].name}`}
-                // style={{ border: '5px dotted black' }}
-              >
-                <Grid
-                  container
-                  item
-                  xs={12}
-                  direction="column"
-                  alignItems="center"
-                  justifyContent="center"
-                >
-                  <Grid
-                    container
-                    item
-                    xs={12}
-                    direction="column"
-                    alignItems="center"
-                    justifyContent="center"
-                  >
-                    <a
-                      href={telegramUserBalance.data[key].discordLink}
-                      style={{ textAlign: 'center' }}
-                    >
-                      <img
-                        src={telegramUserBalance.data[key].logo}
-                        alt={`${telegramUserBalance.data[key].name} Logo`}
-                        className="tipBotLinkLogo"
-                      />
-                    </a>
-                    {telegramUserBalance.data[key].name}
-                  </Grid>
-                  <Grid
-                    container
-                    item
-                    xs={12}
-                    direction="column"
-                    alignItems="center"
-                    justifyContent="center"
-                  >
-                    <TableContainer>
-                      <Table aria-label="simple table">
-                        <TableHead>
-                          <TableRow>
-                            <TableCell>Coin</TableCell>
-                            <TableCell align="right">available</TableCell>
-                            <TableCell align="right">locked</TableCell>
-                          </TableRow>
-                        </TableHead>
-                        <TableBody>
-                          {telegramUserBalance.data[key]
-                          && telegramUserBalance.data[key].wallets
-                          && telegramUserBalance.data[key].wallets.map((wallet) => (
-                            <TableRow
-                              key={wallet.coin.ticker}
-                              sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
-                            >
-                              <TableCell component="th" scope="row">
-                                {wallet.coin.ticker}
-                              </TableCell>
-                              <TableCell align="right">
-                                {new BigNumber(wallet.available).dividedBy(`1e${wallet.coin.dp}`).toString()}
-                                {' '}
-                                (≈$
-                                {new BigNumber(wallet.available).dividedBy(`1e${wallet.coin.dp}`).times(wallet.coin.price).dp(4)
-                                  .toString()}
-                                )
-                              </TableCell>
-                              <TableCell align="right">
-                                {new BigNumber(wallet.locked).dividedBy(`1e${wallet.coin.dp}`).toString() }
-                                {' '}
-                                (≈$
-                                {new BigNumber(wallet.locked).dividedBy(`1e${wallet.coin.dp}`).times(wallet.coin.price).dp(4)
-                                  .toString()}
-                                )
-                              </TableCell>
-                            </TableRow>
-                          ))}
-                        </TableBody>
-                      </Table>
-                    </TableContainer>
-                  </Grid>
-                </Grid>
-              </Grid>
+              <TipBotWalletComponent
+                tipbotWallet={telegramUserBalance.data[key]}
+              />
             ))
         }
       </Grid>
