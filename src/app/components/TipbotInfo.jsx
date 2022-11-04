@@ -85,6 +85,8 @@ const TipBotInfoComponent = function (props) {
         </Grid>
         <Grid
           container
+          alignItems="center"
+          justifyContent="center"
           style={{
             marginTop: '1rem',
             marginBottom: '1rem',
@@ -155,9 +157,6 @@ const TipBotInfoComponent = function (props) {
           alignItems="center"
           justifyContent="center"
         >
-          <Grid item xs={12}>
-            Feature Stats
-          </Grid>
           <TableContainer>
             <Table
               aria-label="tipbotWallet table"

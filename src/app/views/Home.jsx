@@ -49,7 +49,6 @@ const Home = function (props) {
 
   useEffect(
     () => {
-      console.log(botInfo);
     },
     [
       botInfo,
