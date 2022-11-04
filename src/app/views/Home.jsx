@@ -201,7 +201,7 @@ const Home = function (props) {
       />
       <Grid
         container
-        spacing={0}
+        spacing={4}
         alignItems="center"
         justifyContent="center"
       >
