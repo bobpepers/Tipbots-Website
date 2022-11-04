@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.1.0](https://github.com/bobpepers/Tipbots-Website/compare/v0.0.44...v0.1.0) (2022-11-04)
+
+
+### Features
+
+* ⚡️ userDash: add bot version number to tipbot name ([21619c2](https://github.com/bobpepers/Tipbots-Website/commit/21619c297e76de48ab45bb1f1da6331656aa6dff))
+* ✨ Home tipbot grid ([eaf4219](https://github.com/bobpepers/Tipbots-Website/commit/eaf42193c47a39f62c8a2a0f3bcc0c08cd2f991f))
+* ✨ website version number in footer ([9641dff](https://github.com/bobpepers/Tipbots-Website/commit/9641dff75a41209112121716c49f37cbbfcbee00))
+
 ### [0.0.44](https://github.com/bobpepers/Tipbots-Website/compare/v0.0.43...v0.0.44) (2022-11-03)
 
 
