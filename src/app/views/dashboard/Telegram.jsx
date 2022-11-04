@@ -231,6 +231,7 @@ const TelegramDashboardView = function (props) {
             && Object.keys(telegramUserBalance.data).length > 0
             && Object.keys(telegramUserBalance.data).map((key) => (
               <TipBotWalletComponent
+                key={`tipbotWallet-${telegramUserBalance.data[key].name}`}
                 tipbotWallet={telegramUserBalance.data[key]}
               />
             ))

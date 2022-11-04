@@ -216,6 +216,7 @@ const DiscordDashboardView = function (props) {
           && Object.keys(discordUserBalance.data).length > 0
           && Object.keys(discordUserBalance.data).map((key) => (
             <TipBotWalletComponent
+              key={`tipbotWallet-${discordUserBalance.data[key].name}`}
               tipbotWallet={discordUserBalance.data[key]}
             />
           ))

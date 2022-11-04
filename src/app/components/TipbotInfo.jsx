@@ -23,7 +23,7 @@ const TipBotInfoComponent = function (props) {
     tipbotInfo,
   } = props;
 
-  const [image, setImage] = useState({});
+  const images = require.context('../assets/images/coins', true);
 
   return (
     <Grid
@@ -71,23 +71,13 @@ const TipBotInfoComponent = function (props) {
           {tipbotInfo
             && tipbotInfo.coins
             && tipbotInfo.coins.map((coin) => {
-              import(
-                `../assets/images/coins/${coin.ticker}.png`
-              ).then((tickerImage) => {
-                setImage((prevState) => ({ ...prevState, [coin.ticker]: tickerImage.default }));
-              }).catch(() => {
-                setImage((prevState) => ({ ...prevState, [coin.ticker]: null }));
-              });
+              const image = images(`./${coin.ticker}.png`);
               return (
                 <Grid
                   item
                   key={`${tipbotInfo.name}-${coin.ticker}`}
                 >
-                  {
-                    image
-                    && image[coin.ticker]
-                    && <img alt="" className="coinTickerThumb" src={image[coin.ticker]} />
-                  }
+                  <img alt="" className="coinTickerThumb" src={image} />
                   {coin.ticker}
                 </Grid>
               )

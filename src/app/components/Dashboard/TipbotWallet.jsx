@@ -20,7 +20,7 @@ const TipBotWalletComponent = function (props) {
     tipbotWallet,
   } = props;
 
-  const [image, setImage] = useState({});
+  const images = require.context('../../assets/images/coins', true);
 
   return (
     <Grid
@@ -85,13 +85,7 @@ const TipBotWalletComponent = function (props) {
                 {tipbotWallet
                   && tipbotWallet.wallets
                   && tipbotWallet.wallets.map((wallet) => {
-                    import(
-                      `../../assets/images/coins/${wallet.coin.ticker}.png`
-                    ).then((tickerImage) => {
-                      setImage((prevState) => ({ ...prevState, [wallet.coin.ticker]: tickerImage.default }));
-                    }).catch(() => {
-                      setImage((prevState) => ({ ...prevState, [wallet.coin.ticker]: null }));
-                    });
+                    const image = images(`./${wallet.coin.ticker}.png`);
                     return (
                       <TableRow
                         key={wallet.coin.ticker}
@@ -103,7 +97,7 @@ const TipBotWalletComponent = function (props) {
                         <TableCell
                           align="right"
                         >
-                          {image && image[wallet.coin.ticker] && <img alt="" className="coinTickerThumb" src={image[wallet.coin.ticker]} />}
+                          <img alt="" className="coinTickerThumb" src={image} />
                           {new BigNumber(wallet.available).dividedBy(`1e${wallet.coin.dp}`).toString()}
                           {' '}
                           (≈$
@@ -112,7 +106,7 @@ const TipBotWalletComponent = function (props) {
                           )
                         </TableCell>
                         <TableCell align="right">
-                          {image && image[wallet.coin.ticker] && <img alt="" className="coinTickerThumb" src={image[wallet.coin.ticker]} />}
+                          <img alt="" className="coinTickerThumb" src={image} />
                           {new BigNumber(wallet.locked).dividedBy(`1e${wallet.coin.dp}`).toString() }
                           {' '}
                           (≈$
