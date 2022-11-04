@@ -1,6 +1,6 @@
 {
   "name": "tipbots-website",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Website for Tipbots",
   "scripts": {
     "lingui:extract": "lingui extract",
@@ -13,13 +13,14 @@
     "lint:fix": "eslint src test webpack --fix --ext .js,.jsx .",
     "fix-js": "eslint-auto-fix",
     "standard-version": "git add . && standard-version --commit-all",
-    "pre-release:minor": "git add . && standard-version --commit-all --release-as minor",
-    "pre-release:patch": "git add . && standard-version --commit-all --release-as patch",
-    "pre-release:major": "git add . && standard-version --commit-all --release-as major",
+    "pre-release:minor": "git add . && standard-version --skip.commit --skip.tag --release-as minor",
+    "pre-release:patch": "git add . && standard-version --skip.commit --skip.tag --release-as patch",
+    "pre-release:major": "git add . && standard-version --skip.commit --skip.tag --release-as major",
+    "release-final": "git add . && standard-version --commit-all --skip.bump",
     "release": "npm-run-all build standard-version",
-    "release:patch": "npm-run-all build pre-release:patch",
-    "release:minor": "npm-run-all build pre-release:minor",
-    "release:major": "npm-run-all build pre-release:major"
+    "release:patch": "npm-run-all pre-release:patch build release-final",
+    "release:minor": "npm-run-all pre-release:minor build release-final",
+    "release:major": "npm-run-all pre-release:major build release-final"
   },
   "keywords": [
     "Runes",
