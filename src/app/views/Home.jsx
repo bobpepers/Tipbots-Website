@@ -18,16 +18,13 @@ import {
 } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
 import Runebase from '../assets/images/runebaseloop.gif';
-// import FloodExample from '../assets/images/floodExample.gif';
 import { tipbotInfoArray } from '../helpers/tipbotsInfoArray';
-
 import { withRouter } from '../hooks/withRouter';
 import { fetchBotInfoAction } from '../actions/botInfo';
 import TipBotInfoComponent from '../components/TipbotInfo';
 
 const Home = function (props) {
   const {
-    nodeStatus,
     botInfo,
   } = props;
   const theme = useTheme();
@@ -37,15 +34,6 @@ const Home = function (props) {
   useEffect(() => {
     document.title = t`Tipbots - Home`;
   }, []);
-
-  useEffect(
-    () => {
-      console.log(nodeStatus);
-    },
-    [
-      nodeStatus,
-    ],
-  );
 
   useEffect(
     () => {
@@ -120,30 +108,6 @@ const Home = function (props) {
         container
         spacing={0}
       >
-        {/* <Grid
-          item
-          xs={12}
-          sm={12}
-          md={12}
-          lg={6}
-          order={{
-            xs: 2,
-            sm: 2,
-            md: 2,
-            lg: 1,
-          }}
-        >
-          <Typography
-            variant="body1"
-            align="left"
-          >
-            <img
-              src={FloodExample}
-              alt="runestip flood example"
-              className="botExampleGifs"
-            />
-          </Typography>
-        </Grid> */}
         <Grid
           item
           xs={12}
@@ -196,6 +160,7 @@ const Home = function (props) {
         style={{
           width: '100%',
           marginTop: '2rem',
+          marginBottom: '2rem',
         }}
       />
       <Grid
@@ -221,7 +186,6 @@ const Home = function (props) {
 }
 
 Home.propTypes = {
-  nodeStatus: PropTypes.shape({}).isRequired,
   botInfo: PropTypes.shape({
     data: PropTypes.shape({
     }).isRequired,
@@ -229,7 +193,6 @@ Home.propTypes = {
 };
 
 const mapStateToProps = (state) => ({
-  nodeStatus: state.nodeStatus,
   botInfo: state.botInfo,
 })
 
