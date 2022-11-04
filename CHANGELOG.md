@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.5](https://github.com/bobpepers/Tipbots-Website/compare/v0.1.4...v0.1.5) (2022-11-04)
+
+
+### Style
+
+* 🎨 add bottom margin divider ([8becd00](https://github.com/bobpepers/Tipbots-Website/commit/8becd00b96cbc769b78d00966746a4ae7623997a))
+* 🎨 center invite buttons ([bcc7f45](https://github.com/bobpepers/Tipbots-Website/commit/bcc7f45eebc68cb02213c5033736dc01e043d798))
+
+### [0.1.5](https://github.com/bobpepers/Tipbots-Website/compare/v0.1.4...v0.1.5) (2022-11-04)
+
+
+### Style
+
+* 🎨 add bottom margin divider ([8becd00](https://github.com/bobpepers/Tipbots-Website/commit/8becd00b96cbc769b78d00966746a4ae7623997a))
+* 🎨 center invite buttons ([bcc7f45](https://github.com/bobpepers/Tipbots-Website/commit/bcc7f45eebc68cb02213c5033736dc01e043d798))
+
 ### [0.1.4](https://github.com/bobpepers/Tipbots-Website/compare/v0.1.3...v0.1.4) (2022-11-04)
 
 
