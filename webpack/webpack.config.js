@@ -8,6 +8,7 @@ const ImageMinimizerPlugin = require('image-minimizer-webpack-plugin');
 const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
+const packageJson = require('../package.json');
 
 module.exports = (options) => {
   const webpackConfig = {
@@ -105,6 +106,7 @@ module.exports = (options) => {
       !options.isProduction && new ReactRefreshWebpackPlugin(),
       new Webpack.DefinePlugin({
         'process.env': {
+          APP_VERSION: JSON.stringify(packageJson.version),
           ENV: options.isProduction ? JSON.stringify('production') : JSON.stringify('development'),
         },
       }),

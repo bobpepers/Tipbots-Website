@@ -6,6 +6,7 @@ import {
   Button,
   Grid,
   Badge,
+  Typography,
 } from '@mui/material';
 import ReactCountryFlag from 'react-country-flag';
 import MenuItem from '@mui/material/MenuItem';
@@ -76,17 +77,34 @@ function Footer(props) {
           item
           xs={6}
           sm={4}
-          md={2}
+          md={4}
           align="center"
         >
-          <ThemeToggle />
+          <Typography
+            variant="body1"
+            align="center"
+          >
+            v
+            {process.env.APP_VERSION}
+          </Typography>
         </Grid>
         <Grid
           item
           xs={6}
           sm={4}
-          md={2}
+          md={4}
           align="center"
+        >
+          <ThemeToggle />
+        </Grid>
+        <Grid
+          container
+          item
+          xs={6}
+          sm={4}
+          md={4}
+          alignItems="center"
+          justifyContent="center"
           style={{
             marginBottom: 'auto',
           }}
