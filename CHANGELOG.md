@@ -2,6 +2,30 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.4](https://github.com/bobpepers/Tipbots-Website/compare/v0.1.3...v0.1.4) (2022-11-04)
+
+
+### Bug Fixes
+
+* 🐛 Use context for dynamic image imports ([46f88dd](https://github.com/bobpepers/Tipbots-Website/commit/46f88ddd5c847ef6f0ef9f096ae1b75e16cde961))
+
+
+### Performance
+
+* Add missing propTypes ([0fc48f6](https://github.com/bobpepers/Tipbots-Website/commit/0fc48f61de6d0501bfc803ff4f9e128365444b60))
+
+### [0.1.4](https://github.com/bobpepers/Tipbots-Website/compare/v0.1.3...v0.1.4) (2022-11-04)
+
+
+### Bug Fixes
+
+* 🐛 Use context for dynamic image imports ([46f88dd](https://github.com/bobpepers/Tipbots-Website/commit/46f88ddd5c847ef6f0ef9f096ae1b75e16cde961))
+
+
+### Performance
+
+* Add missing propTypes ([0fc48f6](https://github.com/bobpepers/Tipbots-Website/commit/0fc48f61de6d0501bfc803ff4f9e128365444b60))
+
 ### [0.1.3](https://github.com/bobpepers/Tipbots-Website/compare/v0.1.1...v0.1.3) (2022-11-04)
 
 
