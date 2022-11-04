@@ -30,10 +30,11 @@ export default (state = initialState, action) => {
       ...state,
       data: {
         ...state.data,
-        [action.tipbotInfo.name]: {
-          name: action.tipbotInfo.name,
+        [action.payload.name]: {
+          name: action.payload.name,
+          version: action.payload.version,
           logo: action.tipbotInfo.logo,
-          wallets: action.payload,
+          wallets: action.payload.wallets,
         },
       },
       isFetching: false,

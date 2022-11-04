@@ -60,6 +60,9 @@ const TipBotWalletComponent = function (props) {
             />
           </a>
           {tipbotWallet.name}
+          {' '}
+          v
+          {tipbotWallet.version}
         </Grid>
         <Grid
           container
@@ -70,12 +73,12 @@ const TipBotWalletComponent = function (props) {
           justifyContent="center"
         >
           <TableContainer>
-            <Table aria-label="simple table">
+            <Table aria-label="tipbotWallet table">
               <TableHead>
                 <TableRow>
                   <TableCell>Coin</TableCell>
-                  <TableCell align="right">available</TableCell>
-                  <TableCell align="right">locked</TableCell>
+                  <TableCell align="right">Available</TableCell>
+                  <TableCell align="right">Locked</TableCell>
                 </TableRow>
               </TableHead>
               <TableBody>
