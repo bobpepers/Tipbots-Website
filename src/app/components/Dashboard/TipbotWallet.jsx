@@ -49,16 +49,11 @@ const TipBotWalletComponent = function (props) {
           alignItems="center"
           justifyContent="center"
         >
-          <a
-            href={tipbotWallet.discordLink}
-            style={{ textAlign: 'center' }}
-          >
-            <img
-              src={tipbotWallet.logo}
-              alt={`${tipbotWallet.name} Logo`}
-              className="tipBotLinkLogo"
-            />
-          </a>
+          <img
+            src={tipbotWallet.logo}
+            alt={`${tipbotWallet.name} Logo`}
+            className="tipBotLinkLogo"
+          />
           {tipbotWallet.name}
           {' '}
           v
@@ -127,7 +122,13 @@ const TipBotWalletComponent = function (props) {
 }
 
 TipBotWalletComponent.propTypes = {
-
+  tipbotWallet: PropTypes.shape({
+    name: PropTypes.string.isRequired,
+    version: PropTypes.string.isRequired,
+    logo: PropTypes.string.isRequired,
+    wallets: PropTypes.arrayOf(PropTypes.shape({
+    })).isRequired,
+  }).isRequired,
 };
 
 export default TipBotWalletComponent;

@@ -72,7 +72,7 @@ const TelegramDashboardView = function (props) {
           && telegramUserBalance.data
           && Object.keys(telegramUserBalance.data).length > 0
       ) {
-        Object.keys(telegramUserBalance.data).forEach((key, index) => {
+        Object.keys(telegramUserBalance.data).forEach((key) => {
           if (telegramUserBalance.data[key].wallets) {
             telegramUserBalance.data[key].wallets.map((o) => {
               const estimatedAvailable = new BigNumber(o.available).dividedBy(`1e${o.coin.dp}`).times(o.coin.price).dp(8);
@@ -242,7 +242,20 @@ const TelegramDashboardView = function (props) {
 }
 
 TelegramDashboardView.propTypes = {
-
+  telegramUserBalance: PropTypes.shape({
+    data: PropTypes.arrayOf(PropTypes.shape({
+      name: PropTypes.string.isRequired,
+      wallets: PropTypes.arrayOf(PropTypes.shape({
+      })).isRequired,
+    })).isRequired,
+  }).isRequired,
+  telegramUser: PropTypes.shape({
+    data: PropTypes.arrayOf(PropTypes.shape({
+      username: PropTypes.string.isRequired,
+      first_name: PropTypes.string.isRequired,
+      last_name: PropTypes.string.isRequired,
+    })).isRequired,
+  }).isRequired,
 };
 
 const mapStateToProps = (state) => ({

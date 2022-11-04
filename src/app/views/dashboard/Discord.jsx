@@ -71,7 +71,7 @@ const DiscordDashboardView = function (props) {
         && discordUserBalance.data
         && Object.keys(discordUserBalance.data).length > 0
       ) {
-        Object.keys(discordUserBalance.data).forEach((key, index) => {
+        Object.keys(discordUserBalance.data).forEach((key) => {
           if (discordUserBalance.data[key].wallets) {
             discordUserBalance.data[key].wallets.map((o) => {
               const estimatedAvailable = new BigNumber(o.available).dividedBy(`1e${o.coin.dp}`).times(o.coin.price).dp(8);
@@ -227,7 +227,19 @@ const DiscordDashboardView = function (props) {
 }
 
 DiscordDashboardView.propTypes = {
-
+  discordUserBalance: PropTypes.shape({
+    data: PropTypes.arrayOf(PropTypes.shape({
+      name: PropTypes.string.isRequired,
+      wallets: PropTypes.arrayOf(PropTypes.shape({
+      })).isRequired,
+    })).isRequired,
+  }).isRequired,
+  discordUser: PropTypes.shape({
+    data: PropTypes.arrayOf(PropTypes.shape({
+      username: PropTypes.string.isRequired,
+      discriminator: PropTypes.string.isRequired,
+    })).isRequired,
+  }).isRequired,
 };
 
 const mapStateToProps = (state) => ({

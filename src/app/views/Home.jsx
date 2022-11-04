@@ -223,6 +223,10 @@ const Home = function (props) {
 
 Home.propTypes = {
   nodeStatus: PropTypes.shape({}).isRequired,
+  botInfo: PropTypes.shape({
+    data: PropTypes.shape({
+    }).isRequired,
+  }).isRequired,
 };
 
 const mapStateToProps = (state) => ({
