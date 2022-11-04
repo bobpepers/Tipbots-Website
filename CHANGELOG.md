@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.1](https://github.com/bobpepers/Tipbots-Website/compare/v0.1.0...v0.1.1) (2022-11-04)
+
+
+### Style
+
+* 🎨 Add spacing to tipbot grid (home) ([6a9c001](https://github.com/bobpepers/Tipbots-Website/commit/6a9c0018051a1c2f6576a47e064eb79ce11b4e6e))
+
 ## [0.1.0](https://github.com/bobpepers/Tipbots-Website/compare/v0.0.44...v0.1.0) (2022-11-04)
 
 
