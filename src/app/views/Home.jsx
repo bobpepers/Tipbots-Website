@@ -6,7 +6,10 @@ import {
   Trans,
   t,
 } from '@lingui/macro';
-import { connect } from 'react-redux';
+import {
+  connect,
+  useDispatch,
+} from 'react-redux';
 import {
   Grid,
   Divider,
@@ -15,18 +18,20 @@ import {
 } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
 import Runebase from '../assets/images/runebaseloop.gif';
-import FloodExample from '../assets/images/floodExample.gif';
-import Discord from '../assets/images/discord.svg';
-import Telegram from '../assets/images/telegram.svg';
+// import FloodExample from '../assets/images/floodExample.gif';
 import { tipbotInfoArray } from '../helpers/tipbotsInfoArray';
 
 import { withRouter } from '../hooks/withRouter';
+import { fetchBotInfoAction } from '../actions/botInfo';
+import TipBotInfoComponent from '../components/TipbotInfo';
 
 const Home = function (props) {
   const {
     nodeStatus,
+    botInfo,
   } = props;
   const theme = useTheme();
+  const dispatch = useDispatch();
   const lgUp = useMediaQuery(theme.breakpoints.up('lg'));
 
   useEffect(() => {
@@ -39,6 +44,25 @@ const Home = function (props) {
     },
     [
       nodeStatus,
+    ],
+  );
+
+  useEffect(
+    () => {
+      console.log(botInfo);
+    },
+    [
+      botInfo,
+    ],
+  );
+
+  useEffect(
+    () => {
+      tipbotInfoArray.forEach((tipbot) => {
+        dispatch(fetchBotInfoAction(tipbot))
+      });
+    },
+    [
     ],
   );
 
@@ -73,7 +97,6 @@ const Home = function (props) {
             width: '100%',
           }}
         />
-
         <Grid
           item
           xs={12}
@@ -86,7 +109,6 @@ const Home = function (props) {
               Personalized Tipbots
             </Trans>
           </Typography>
-
         </Grid>
         <Divider
           style={{
@@ -99,7 +121,7 @@ const Home = function (props) {
         container
         spacing={0}
       >
-        <Grid
+        {/* <Grid
           item
           xs={12}
           sm={12}
@@ -122,13 +144,13 @@ const Home = function (props) {
               className="botExampleGifs"
             />
           </Typography>
-        </Grid>
+        </Grid> */}
         <Grid
           item
           xs={12}
           sm={12}
           md={12}
-          lg={6}
+          lg={12}
           order={{
             xs: 1,
             sm: 1,
@@ -138,7 +160,8 @@ const Home = function (props) {
         >
           <Typography
             variant="body1"
-            align={lgUp ? 'left' : 'center'}
+            // align={lgUp ? 'left' : 'center'}
+            align="center"
             gutterBottom
             className={lgUp ? 'addExampleTextMarginLeft' : ''}
           >
@@ -148,25 +171,26 @@ const Home = function (props) {
           </Typography>
           <Typography
             variant="body1"
-            align={lgUp ? 'left' : 'center'}
+            // align={lgUp ? 'left' : 'center'}
+            align="center"
             gutterBottom
             className={lgUp ? 'addExampleTextMarginLeft' : ''}
           >
             <Trans>
-              Top quality personalized tipbots for bitcoin forks, zcash forks, komodo smartchains with dedicated developer and support.
+              Tipbots for bitcoin forks, zcash forks, secret, komodo smartchains, stellar assets with dedicated developer and support.
             </Trans>
           </Typography>
           <Typography
             variant="body1"
-            align={lgUp ? 'left' : 'center'}
+            // align={lgUp ? 'left' : 'center'}
+            align="center"
             gutterBottom
             className={lgUp ? 'addExampleTextMarginLeft' : ''}
           >
             <Trans>
-              A rich arsenal of features like tip, multi-tip, rain, flood, soak, sleet, voicerain, hurricane, thunderstorm, thunder, reactdrop, trivia, faucet, help, info, balance, statistics, ignoreme, support, ...
+              A rich arsenal of features like tip, multi-tip, rain, flood, soak, sleet, voicerain, hurricane, thunderstorm, thunder, reactdrop, trivia, faucet, help, info, balance, statistics, settings,...
             </Trans>
           </Typography>
-
         </Grid>
       </Grid>
       <Divider
@@ -181,219 +205,17 @@ const Home = function (props) {
         alignItems="center"
         justifyContent="center"
       >
-        <Grid
-          container
-          item
-          xs={12}
-          alignItems="center"
-          justifyContent="center"
-        >
-          <Grid
-            container
-            item
-            xs={12}
-            sm="auto"
-            md="auto"
-            alignItems="center"
-            justifyContent="center"
-          >
-            <Discord
-              style={{
-                marginLeft: '15px',
-                marginRight: '15px',
-                height: '3rem',
-                width: '3rem',
-              }}
+        {
+          botInfo
+          && botInfo.data
+          && Object.keys(botInfo.data).length > 0
+          && Object.keys(botInfo.data).map((key) => (
+            <TipBotInfoComponent
+              tipbotInfo={botInfo.data[key]}
+              key={key}
             />
-          </Grid>
-          <Grid
-            container
-            item
-            xs={12}
-            sm="auto"
-            md="auto"
-            alignItems="center"
-            justifyContent="center"
-          >
-            <Typography
-              variant="h3"
-              align="center"
-            >
-              <Trans>
-                Discord Tipbots
-              </Trans>
-            </Typography>
-          </Grid>
-
-          <Grid
-            container
-            item
-            xs={12}
-            sm="auto"
-            md="auto"
-            alignItems="center"
-            justifyContent="center"
-          >
-            <Discord
-              style={{
-                marginLeft: '15px',
-                marginRight: '15px',
-                height: '3rem',
-                width: '3rem',
-              }}
-            />
-          </Grid>
-
-        </Grid>
-        <Divider
-          style={{
-            width: '100%',
-          }}
-        />
-        {tipbotInfoArray.map((tipbot) => (
-          <Grid
-            container
-            item
-            xs={12}
-            sm={12}
-            md={6}
-            lg={4}
-            alignItems="center"
-            justifyContent="center"
-            className="tipBotLinkLogoContainer"
-            key={`discord-${tipbot.name}`}
-          >
-            <a
-              href={tipbot.discordLink}
-              style={{ textAlign: 'center' }}
-            >
-              <img
-                src={tipbot.logo}
-                alt={`${tipbot.name} Logo`}
-                className="tipBotLinkLogo"
-              />
-              <Typography
-                variant="subtitle1"
-                align="center"
-              >
-                <Trans>Invite</Trans>
-                {' '}
-                {tipbot.name}
-              </Typography>
-            </a>
-          </Grid>
-        ))}
-
-        <Divider
-          style={{
-            width: '100%',
-          }}
-        />
-
-        <Grid
-          container
-          item
-          xs={12}
-          alignItems="center"
-          justifyContent="center"
-        >
-          <Grid
-            container
-            item
-            xs={12}
-            sm="auto"
-            md="auto"
-            alignItems="center"
-            justifyContent="center"
-          >
-            <Telegram
-              style={{
-                marginLeft: '15px',
-                marginRight: '15px',
-                height: '3rem',
-                width: '3rem',
-              }}
-            />
-          </Grid>
-          <Grid
-            container
-            item
-            xs={12}
-            sm="auto"
-            md="auto"
-            alignItems="center"
-            justifyContent="center"
-          >
-            <Typography
-              variant="h3"
-              align="center"
-              style={{
-                display: 'inline-block',
-              }}
-            >
-              <Trans>
-                Telegram Tipbots
-              </Trans>
-            </Typography>
-          </Grid>
-          <Grid
-            container
-            item
-            xs={12}
-            sm="auto"
-            md="auto"
-            alignItems="center"
-            justifyContent="center"
-          >
-            <Telegram
-              style={{
-                marginLeft: '15px',
-                marginRight: '15px',
-                height: '3rem',
-                width: '3rem',
-              }}
-            />
-          </Grid>
-
-        </Grid>
-        <Divider
-          style={{
-            width: '100%',
-          }}
-        />
-        {tipbotInfoArray.map((tipbot) => (
-          <Grid
-            container
-            item
-            xs={12}
-            sm={12}
-            md={6}
-            lg={4}
-            alignItems="center"
-            justifyContent="center"
-            className="tipBotLinkLogoContainer"
-            key={`telegram-${tipbot.name}`}
-          >
-            <a
-              href={tipbot.telegramLink}
-              style={{ textAlign: 'center' }}
-            >
-              <img
-                src={tipbot.logo}
-                alt={`${tipbot.name} Logo`}
-                className="tipBotLinkLogo"
-              />
-              <Typography
-                variant="subtitle1"
-                align="center"
-              >
-                <Trans>Invite</Trans>
-                {' '}
-                {tipbot.name}
-              </Typography>
-            </a>
-          </Grid>
-        ))}
+          ))
+        }
       </Grid>
     </div>
   );
@@ -405,6 +227,7 @@ Home.propTypes = {
 
 const mapStateToProps = (state) => ({
   nodeStatus: state.nodeStatus,
+  botInfo: state.botInfo,
 })
 
 export default withRouter(connect(mapStateToProps, null)(Home));

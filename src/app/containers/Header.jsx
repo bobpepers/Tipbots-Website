@@ -160,13 +160,13 @@ function Header() {
       <Menu {...bindMenu(popupStateTipbots)}>
         {tipbotInfoArray.map((tipbot) => (
           <MenuItem
+            key={`tipbot-link-${tipbot.name}`}
             onClick={() => {
               popupStateTipbots.close();
               toggleCloseMenu();
             }}
           >
             <Link
-              key={`tipbot-link-${tipbot.name}`}
               className="nav-link"
               to={`/tipbots/${tipbot.name.toLowerCase()}`}
             >
