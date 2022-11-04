@@ -2,6 +2,54 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.3](https://github.com/bobpepers/Tipbots-Website/compare/v0.1.1...v0.1.3) (2022-11-04)
+
+
+### Bug Fixes
+
+* 🐛 Bump version before production build ([d4293b0](https://github.com/bobpepers/Tipbots-Website/commit/d4293b04158def0c9061423c4dea2bef0ae26282))
+
+
+### Build
+
+* 🐛 Bump version before production build ([a16119f](https://github.com/bobpepers/Tipbots-Website/commit/a16119fe14815db2cb7b01945ff9ff2f6c6394de))
+
+### [0.1.3](https://github.com/bobpepers/Tipbots-Website/compare/v0.1.1...v0.1.3) (2022-11-04)
+
+
+### Bug Fixes
+
+* 🐛 Bump version before production build ([d4293b0](https://github.com/bobpepers/Tipbots-Website/commit/d4293b04158def0c9061423c4dea2bef0ae26282))
+
+
+### Build
+
+* 🐛 Bump version before production build ([a16119f](https://github.com/bobpepers/Tipbots-Website/commit/a16119fe14815db2cb7b01945ff9ff2f6c6394de))
+
+### [0.1.2](https://github.com/bobpepers/Tipbots-Website/compare/v0.1.1...v0.1.2) (2022-11-04)
+
+
+### Bug Fixes
+
+* 🐛 Bump version before production build ([d4293b0](https://github.com/bobpepers/Tipbots-Website/commit/d4293b04158def0c9061423c4dea2bef0ae26282))
+
+
+### Build
+
+* 🐛 Bump version before production build ([a16119f](https://github.com/bobpepers/Tipbots-Website/commit/a16119fe14815db2cb7b01945ff9ff2f6c6394de))
+
+### [0.1.2](https://github.com/bobpepers/Tipbots-Website/compare/v0.1.1...v0.1.2) (2022-11-04)
+
+
+### Bug Fixes
+
+* 🐛 Bump version before production build ([d4293b0](https://github.com/bobpepers/Tipbots-Website/commit/d4293b04158def0c9061423c4dea2bef0ae26282))
+
+
+### Build
+
+* 🐛 Bump version before production build ([a16119f](https://github.com/bobpepers/Tipbots-Website/commit/a16119fe14815db2cb7b01945ff9ff2f6c6394de))
+
 ### [0.1.2](https://github.com/bobpepers/Tipbots-Website/compare/v0.1.1...v0.1.2) (2022-11-04)
 
 ### [0.1.2](https://github.com/bobpepers/Tipbots-Website/compare/v0.1.1...v0.1.2) (2022-11-04)
