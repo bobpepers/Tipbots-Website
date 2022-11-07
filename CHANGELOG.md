@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.6](https://github.com/bobpepers/Tipbots-Website/compare/v0.1.5...v0.1.6) (2022-11-07)
+
+
+### Features
+
+* ✨ Add deposit button & dialog ([2164501](https://github.com/bobpepers/Tipbots-Website/commit/2164501d88b89d014b6d4b24f4096e690e604944))
+
+### [0.1.6](https://github.com/bobpepers/Tipbots-Website/compare/v0.1.5...v0.1.6) (2022-11-07)
+
+
+### Features
+
+* ✨ Add deposit button & dialog ([2164501](https://github.com/bobpepers/Tipbots-Website/commit/2164501d88b89d014b6d4b24f4096e690e604944))
+
 ### [0.1.5](https://github.com/bobpepers/Tipbots-Website/compare/v0.1.4...v0.1.5) (2022-11-04)
 
 
