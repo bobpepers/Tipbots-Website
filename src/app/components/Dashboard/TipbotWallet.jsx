@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import {
   Trans,
@@ -14,6 +14,7 @@ import TableCell from '@mui/material/TableCell';
 import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
+import DepositDialog from './DepositDialog'
 
 const TipBotWalletComponent = function (props) {
   const {
@@ -88,6 +89,10 @@ const TipBotWalletComponent = function (props) {
                       >
                         <TableCell component="th" scope="row">
                           {wallet.coin.ticker}
+                          <DepositDialog
+                            tickerLogo={image}
+                            wallet={wallet}
+                          />
                         </TableCell>
                         <TableCell
                           align="right"
