@@ -25,6 +25,7 @@ import {
   TableHead,
   TableRow,
   CircularProgress,
+  Button,
 } from '@mui/material';
 import TravelExploreIcon from '@mui/icons-material/TravelExplore';
 import GitHubIcon from '@mui/icons-material/GitHub';
@@ -34,8 +35,11 @@ import { fetchCoinInfoAction } from '../actions/coinInfo';
 import Discord from '../assets/images/discord.svg';
 import Telegram from '../assets/images/telegram.svg';
 import { fetchCurrenciesAction } from '../actions/currencies';
-
 import { withRouter } from '../hooks/withRouter';
+
+function removeHttp(url) {
+  return url.replace(/^https?:\/\//, '');
+}
 
 function RenderCoinInfo(props) {
   const {
@@ -51,10 +55,11 @@ function RenderCoinInfo(props) {
         xs={12}
         justifyContent="center"
         align="center"
+        className="mt-1"
       >
         <img
           src={image}
-          className="coinImage"
+          className="tipBotLinkLogo"
           alt={`${coin.ticker} logo`}
         />
       </Grid>
@@ -91,7 +96,19 @@ function RenderCoinInfo(props) {
           gutterBottom
           align="center"
         >
-          {coin.coinInfo.website}
+          <a
+            href={coin.coinInfo.explorer}
+            style={{ textAlign: 'center' }}
+            target="_blank"
+            rel="noreferrer"
+          >
+            <Button
+              variant="outlined"
+              size="large"
+            >
+              {removeHttp(coin.coinInfo.website)}
+            </Button>
+          </a>
         </Typography>
       </Grid>
       <Grid
