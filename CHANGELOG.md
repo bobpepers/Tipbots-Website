@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.8](https://github.com/bobpepers/Tipbots-Website/compare/v0.1.7...v0.1.8) (2022-11-09)
+
+
+### Bug Fixes
+
+* 🎨 Add coinInfo ticker buttons tipbotWallet ([9110ded](https://github.com/bobpepers/Tipbots-Website/commit/9110dedad27b56b7b3d0b8fcd25dc47186d8b744))
+* 🎨 CoinInfo: Fixed coin image size, Button link to project website ([8f8260f](https://github.com/bobpepers/Tipbots-Website/commit/8f8260f0695e28de22c99a6e1594cccab145b655))
+
+### [0.1.8](https://github.com/bobpepers/Tipbots-Website/compare/v0.1.7...v0.1.8) (2022-11-09)
+
+
+### Bug Fixes
+
+* 🎨 Add coinInfo ticker buttons tipbotWallet ([9110ded](https://github.com/bobpepers/Tipbots-Website/commit/9110dedad27b56b7b3d0b8fcd25dc47186d8b744))
+* 🎨 CoinInfo: Fixed coin image size, Button link to project website ([8f8260f](https://github.com/bobpepers/Tipbots-Website/commit/8f8260f0695e28de22c99a6e1594cccab145b655))
+
 ### [0.1.7](https://github.com/bobpepers/Tipbots-Website/compare/v0.1.6...v0.1.7) (2022-11-09)
 
 
