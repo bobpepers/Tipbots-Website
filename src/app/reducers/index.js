@@ -3,6 +3,8 @@ import theme from './changeTheme';
 import alert from './alert';
 import nodeStatus from './nodeStatus';
 import botInfo from './botInfo';
+import coinInfo from './coinInfo';
+import currencies from './currencies';
 
 import discordUser from './discordUser';
 import discordUserBalance from './discordUserBalance';
@@ -18,6 +20,8 @@ const store = configureStore({
     alert,
     nodeStatus,
     botInfo,
+    coinInfo,
+    currencies,
 
     // Discord
     discordUser,

@@ -36,8 +36,7 @@ const Home = function (props) {
   }, []);
 
   useEffect(
-    () => {
-    },
+    () => {},
     [
       botInfo,
     ],

@@ -8,6 +8,9 @@ import {
   Grid,
   Button,
 } from '@mui/material';
+import {
+  useNavigate,
+} from 'react-router-dom';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
@@ -22,6 +25,7 @@ const TipBotInfoComponent = function (props) {
   const {
     tipbotInfo,
   } = props;
+  const navigate = useNavigate();
 
   const images = require.context('../assets/images/coins', true);
 
@@ -66,22 +70,36 @@ const TipBotInfoComponent = function (props) {
           container
           alignItems="center"
           justifyContent="center"
-          spacing={1}
+          style={{
+            marginTop: '1rem',
+          }}
         >
-          {tipbotInfo
+          <Grid
+            item
+            xs={12}
+            align="center"
+          >
+            {tipbotInfo
             && tipbotInfo.coins
             && tipbotInfo.coins.map((coin) => {
               const image = images(`./${coin.ticker}.png`);
               return (
-                <Grid
-                  item
+                <Button
+                  variant="outlined"
                   key={`${tipbotInfo.name}-${coin.ticker}`}
+                  onClick={() => navigate(`/tipbots/${tipbotInfo.name.toLowerCase()}/coin/${coin.ticker}`)}
+                  style={{
+                    marginLeft: '0.2rem',
+                    marginRight: '0.2rem',
+                  }}
                 >
                   <img alt="" className="coinTickerThumb" src={image} />
                   {coin.ticker}
-                </Grid>
+                </Button>
+
               )
             })}
+          </Grid>
         </Grid>
         <Grid
           container
