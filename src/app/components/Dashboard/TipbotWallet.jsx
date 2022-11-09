@@ -6,14 +6,18 @@ import {
 } from '@lingui/macro';
 import {
   Grid,
+  Button,
+  Table,
+  TableBody,
+  TableCell,
+  TableRow,
+  TableContainer,
+  TableHead,
 } from '@mui/material';
 import BigNumber from 'bignumber.js'
-import Table from '@mui/material/Table';
-import TableBody from '@mui/material/TableBody';
-import TableCell from '@mui/material/TableCell';
-import TableContainer from '@mui/material/TableContainer';
-import TableHead from '@mui/material/TableHead';
-import TableRow from '@mui/material/TableRow';
+import {
+  useNavigate,
+} from 'react-router-dom';
 import DepositDialog from './DepositDialog'
 
 const TipBotWalletComponent = function (props) {
@@ -22,6 +26,7 @@ const TipBotWalletComponent = function (props) {
   } = props;
 
   const images = require.context('../../assets/images/coins', true);
+  const navigate = useNavigate();
 
   return (
     <Grid
@@ -59,6 +64,40 @@ const TipBotWalletComponent = function (props) {
           {' '}
           v
           {tipbotWallet.version}
+        </Grid>
+        <Grid
+          container
+          alignItems="center"
+          justifyContent="center"
+          style={{
+            marginTop: '1rem',
+          }}
+        >
+          <Grid
+            item
+            xs={12}
+            align="center"
+          >
+            {tipbotWallet
+            && tipbotWallet.wallets
+            && tipbotWallet.wallets.map((myWallet) => {
+              const image = images(`./${myWallet.coin.ticker}.png`);
+              return (
+                <Button
+                  variant="outlined"
+                  key={`${tipbotWallet.name}-${myWallet.coin.ticker}`}
+                  onClick={() => navigate(`/tipbots/${tipbotWallet.name.toLowerCase()}/coin/${myWallet.coin.ticker}`)}
+                  style={{
+                    marginLeft: '0.2rem',
+                    marginRight: '0.2rem',
+                  }}
+                >
+                  <img alt="" className="coinTickerThumb" src={image} />
+                  {myWallet.coin.ticker}
+                </Button>
+              )
+            })}
+          </Grid>
         </Grid>
         <Grid
           container

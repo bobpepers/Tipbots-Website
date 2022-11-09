@@ -58,18 +58,19 @@ export default function DepositDialog(
 
   return (
     <>
-      <IconButton
+      <Button
         color="success"
-        variant="contained"
+        variant="outlined"
         aria-label="deposit"
-        component="label"
+        size="small"
         onClick={handleClickOpen}
         style={{
           marginLeft: '1rem',
+          minWidth: 0,
         }}
       >
         <AddIcon />
-      </IconButton>
+      </Button>
       <Dialog
         fullScreen={fullScreen}
         open={open}
