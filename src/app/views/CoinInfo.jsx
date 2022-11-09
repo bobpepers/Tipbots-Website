@@ -43,7 +43,6 @@ function RenderCoinInfo(props) {
     coin,
     currencies,
   } = props;
-  console.log(images);
   const image = images(`./${coin.ticker}.png`);
   return (
     <Grid container>
@@ -348,6 +347,7 @@ RenderCoinInfo.propTypes = {
     updatedAt: PropTypes.string.isRequired,
     conversionRate: PropTypes.string.isRequired,
   })).isRequired,
+  images: PropTypes.func.isRequired,
 };
 
 const CoinInfoView = function (props) {
