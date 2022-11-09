@@ -2,6 +2,30 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.7](https://github.com/bobpepers/Tipbots-Website/compare/v0.1.6...v0.1.7) (2022-11-09)
+
+
+### Features
+
+* ✨ Coin info view ([1885ac0](https://github.com/bobpepers/Tipbots-Website/commit/1885ac0dd4226e0cf78abf4ae7fb26c2c5ae1b48))
+
+
+### Refactor
+
+* 🩹 Add missing proptype for context images ([5c487b1](https://github.com/bobpepers/Tipbots-Website/commit/5c487b1c56934e797f48e0410c9547b4dce15175))
+
+### [0.1.7](https://github.com/bobpepers/Tipbots-Website/compare/v0.1.6...v0.1.7) (2022-11-09)
+
+
+### Features
+
+* ✨ Coin info view ([1885ac0](https://github.com/bobpepers/Tipbots-Website/commit/1885ac0dd4226e0cf78abf4ae7fb26c2c5ae1b48))
+
+
+### Refactor
+
+* 🩹 Add missing proptype for context images ([5c487b1](https://github.com/bobpepers/Tipbots-Website/commit/5c487b1c56934e797f48e0410c9547b4dce15175))
+
 ### [0.1.6](https://github.com/bobpepers/Tipbots-Website/compare/v0.1.5...v0.1.6) (2022-11-07)
 
 
