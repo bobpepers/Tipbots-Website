@@ -91,9 +91,7 @@ const TelegramDashboardView = function (props) {
   );
 
   useEffect(
-    () => {
-      console.log(telegramUserBalance);
-    },
+    () => { },
     [
       telegramUser,
       telegramUserBalance,
@@ -157,13 +155,18 @@ const TelegramDashboardView = function (props) {
             <Grid
               container
               item
-              xs={6}
+              xs={8}
               direction="column"
               alignItems="center"
               justifyContent="center"
             >
-              Your Estimated Value: $
-              {estimatedTotal}
+              <Typography
+                variant="body1"
+                align="center"
+              >
+                Your Estimated Value: $
+                {estimatedTotal}
+              </Typography>
             </Grid>
           </Grid>
         ) : (
