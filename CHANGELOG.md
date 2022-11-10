@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.10](https://github.com/bobpepers/Tipbots-Website/compare/v0.1.9...v0.1.10) (2022-11-10)
+
+
+### Bug Fixes
+
+* 🐛 wordBreak deposit address (small screen fix) ([105242e](https://github.com/bobpepers/Tipbots-Website/commit/105242e3e11fd88e41023d7b5bb91857d2f866bd))
+
+### [0.1.10](https://github.com/bobpepers/Tipbots-Website/compare/v0.1.9...v0.1.10) (2022-11-10)
+
+
+### Bug Fixes
+
+* 🐛 wordBreak deposit address (small screen fix) ([105242e](https://github.com/bobpepers/Tipbots-Website/commit/105242e3e11fd88e41023d7b5bb91857d2f866bd))
+
 ### [0.1.9](https://github.com/bobpepers/Tipbots-Website/compare/v0.1.8...v0.1.9) (2022-11-10)
 
 
