@@ -129,7 +129,6 @@ export default function DepositDialog(
                 Copy address to clipboard
               </Button>
             </div>
-
             {copied && (
               <div>
                 <Typography
@@ -145,7 +144,13 @@ export default function DepositDialog(
                 </Typography>
               </div>
             )}
-            <Typography variant="subtitle2" align="center">
+            <Typography
+              variant="subtitle2"
+              align="center"
+              sx={{
+                wordBreak: 'break-word',
+              }}
+            >
               {wallet.address.address}
             </Typography>
             {wallet.address.memo && (
