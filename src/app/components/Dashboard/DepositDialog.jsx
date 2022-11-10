@@ -27,6 +27,7 @@ export default function DepositDialog(
   const [open, setOpen] = React.useState(false);
   const theme = useTheme();
   const fullScreen = useMediaQuery(theme.breakpoints.down('md'));
+  const smDown = useMediaQuery(theme.breakpoints.down('sm'));
   const [imagePath, setImagePath] = React.useState('');
   const [copied, setCopied] = React.useState(false);
 
@@ -65,7 +66,7 @@ export default function DepositDialog(
         size="small"
         onClick={handleClickOpen}
         style={{
-          marginLeft: '1rem',
+          marginLeft: smDown ? 0 : '1rem',
           minWidth: 0,
         }}
       >
