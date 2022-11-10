@@ -75,7 +75,7 @@ function Footer(props) {
       >
         <Grid
           item
-          xs={6}
+          xs={4}
           sm={4}
           md={4}
           align="center"
@@ -90,7 +90,7 @@ function Footer(props) {
         </Grid>
         <Grid
           item
-          xs={6}
+          xs={4}
           sm={4}
           md={4}
           align="center"
@@ -100,7 +100,7 @@ function Footer(props) {
         <Grid
           container
           item
-          xs={6}
+          xs={4}
           sm={4}
           md={4}
           alignItems="center"
