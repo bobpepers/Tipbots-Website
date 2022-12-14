@@ -131,6 +131,7 @@ const TipBotWalletComponent = function (props) {
                           <DepositDialog
                             tickerLogo={image}
                             wallet={wallet}
+                            name={tipbotWallet.name}
                           />
                         </TableCell>
                         <TableCell

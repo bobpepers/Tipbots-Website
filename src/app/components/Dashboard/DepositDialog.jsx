@@ -1,11 +1,11 @@
 import React, {
   useEffect,
+  useState,
 } from 'react';
 import {
   Button,
   Dialog,
   DialogContent,
-  DialogContentText,
   DialogTitle,
   useMediaQuery,
   IconButton,
@@ -16,6 +16,13 @@ import CloseIcon from '@mui/icons-material/Close';
 import AddIcon from '@mui/icons-material/Add';
 import QRCode from 'qrcode';
 import PropTypes from 'prop-types';
+import {
+  Wallet,
+  SecretNetworkClient,
+  MsgSend,
+} from 'secretjs';
+
+const secretEnv = process.env.ENV === 'development' ? 'pulsar-2' : 'secret-4';
 
 export default function DepositDialog(
   props,
@@ -23,13 +30,16 @@ export default function DepositDialog(
   const {
     wallet,
     tickerLogo,
+    name,
   } = props;
-  const [open, setOpen] = React.useState(false);
+  const [offlineSigner, setOfflineSigner] = useState(undefined);
+  const [open, setOpen] = useState(false);
   const theme = useTheme();
   const fullScreen = useMediaQuery(theme.breakpoints.down('md'));
   const smDown = useMediaQuery(theme.breakpoints.down('sm'));
-  const [imagePath, setImagePath] = React.useState('');
-  const [copied, setCopied] = React.useState(false);
+  const [imagePath, setImagePath] = useState('');
+  const [copied, setCopied] = useState(false);
+  const [hasKeplr, setHasKeplr] = useState(true);
 
   const handleClickCopyAddress = () => {
     window.navigator.clipboard.writeText(wallet.address.address)
@@ -39,9 +49,25 @@ export default function DepositDialog(
     }, 5000)
   };
 
-  const handleClickOpen = () => {
-    setOpen(true);
+  const handleClickOpen = async () => {
+    if (name === 'SecretTip') {
+      if (!window.keplr) {
+        setHasKeplr(false);
+      } else {
+        await window.keplr.enable(secretEnv);
+        setOfflineSigner(window.getOfflineSigner(secretEnv));
+      }
+      setOpen(true);
+    } else {
+      setOpen(true);
+    }
   };
+
+  useEffect(() => {
+    console.log(offlineSigner);
+  }, [
+    offlineSigner,
+  ]);
 
   const handleClose = () => {
     setOpen(false);
@@ -82,119 +108,140 @@ export default function DepositDialog(
           Deposit
           {' '}
           {wallet.coin.ticker}
-          <IconButton
-            aria-label="close"
-            onClick={handleClose}
-            sx={{
-              position: 'absolute',
-              right: 8,
-              top: 8,
-              color: theme.palette.grey[500],
-            }}
-          >
-            <CloseIcon />
-          </IconButton>
         </DialogTitle>
+        <IconButton
+          aria-label="close"
+          onClick={handleClose}
+          sx={{
+            position: 'absolute',
+            right: 8,
+            top: 8,
+            color: theme.palette.grey[500],
+          }}
+        >
+          <CloseIcon />
+        </IconButton>
         <DialogContent>
-          <DialogContentText>
-            <div
-              style={{
-                width: '100%',
-                textAlign: 'center',
-              }}
-            >
-              <img alt="" className="coinTickerDeposit" src={tickerLogo} />
-            </div>
-            <Typography variant="subtitle2" align="center">
-              Deposit Address
-            </Typography>
-            <div
-              style={{
-                width: '100%',
-                textAlign: 'center',
-              }}
-            >
-              <img
-                src={imagePath}
-                alt={`${wallet.coin.ticker} Deposit 2FA QR Code`}
-              />
-            </div>
-            <div
-              style={{
-                width: '100%',
-                textAlign: 'center',
-              }}
-            >
-              <Button variant="outlined" onClick={handleClickCopyAddress}>
-                Copy address to clipboard
+          {!hasKeplr && name === 'SecretTip' && (
+            <>
+              <Typography variant="subtitle2" align="center">
+                Please install Keplr
+              </Typography>
+              <Button
+                // target="_blank"
+                href="https://chrome.google.com/webstore/detail/keplr/dmkamcknogkgcdfhhbddcghachkejeap"
+              >
+                Download Keplr for chrome
               </Button>
-            </div>
-            {copied && (
-              <div>
-                <Typography
-                  variant="subtitle2"
-                  align="center"
-                  style={{ color: '#00adb5' }}
-                >
-                  Successfully Copied
-                  {' '}
-                  {wallet.coin.ticker}
-                  {' '}
-                  Address
-                </Typography>
-              </div>
-            )}
-            <Typography
-              variant="subtitle2"
-              align="center"
-              sx={{
-                wordBreak: 'break-word',
-              }}
-            >
-              {wallet.address.address}
+            </>
+
+          )}
+          {hasKeplr && name === 'SecretTip' && (
+            <Typography variant="subtitle2" align="center">
+              Found Keplr (Keplr form here)
             </Typography>
-            {wallet.address.memo && (
+          )}
+          {name !== 'SecretTip' && (
+            <>
               <div
                 style={{
-                  border: '1px solid black',
+                  width: '100%',
+                  textAlign: 'center',
                 }}
               >
-                <Typography variant="subtitle2" align="center">
-                  Your MEMO Number
-                </Typography>
-                <Typography
-                  variant="subtitle2"
-                  align="center"
-                  style={{
-                    fontWeight: 'bold',
-                    marginBottom: '10px',
-                  }}
-                >
-                  {wallet.address.memo}
-                </Typography>
-                <Typography
-                  variant="subtitle2"
-                  align="center"
-                  style={{
-                    fontWeight: 'bold',
-                    color: '#c08a3e',
-                  }}
-                >
-                  WARNING
-                </Typography>
-                <Typography
-                  variant="subtitle2"
-                  align="center"
-                  style={{
-                    fontWeight: 'bold',
-                    color: '#c08a3e',
-                  }}
-                >
-                  MEMO IS REQUIRED OR COINS WILL BE LOST
-                </Typography>
+                <img alt="" className="coinTickerDeposit" src={tickerLogo} />
               </div>
-            )}
-          </DialogContentText>
+              <Typography variant="subtitle2" align="center">
+                Deposit Address
+              </Typography>
+              <div
+                style={{
+                  width: '100%',
+                  textAlign: 'center',
+                }}
+              >
+                <img
+                  src={imagePath}
+                  alt={`${wallet.coin.ticker} Deposit 2FA QR Code`}
+                />
+              </div>
+              <div
+                style={{
+                  width: '100%',
+                  textAlign: 'center',
+                }}
+              >
+                <Button variant="outlined" onClick={handleClickCopyAddress}>
+                  Copy address to clipboard
+                </Button>
+              </div>
+              {copied && (
+                <div>
+                  <Typography
+                    variant="subtitle2"
+                    align="center"
+                    style={{ color: '#00adb5' }}
+                  >
+                    Successfully Copied
+                    {' '}
+                    {wallet.coin.ticker}
+                    {' '}
+                    Address
+                  </Typography>
+                </div>
+              )}
+              <Typography
+                variant="subtitle2"
+                align="center"
+                sx={{
+                  wordBreak: 'break-word',
+                }}
+              >
+                {wallet.address.address}
+              </Typography>
+              {wallet.address.memo && (
+                <div
+                  style={{
+                    border: '1px solid black',
+                  }}
+                >
+                  <Typography variant="subtitle2" align="center">
+                    Your MEMO Number
+                  </Typography>
+                  <Typography
+                    variant="subtitle2"
+                    align="center"
+                    style={{
+                      fontWeight: 'bold',
+                      marginBottom: '10px',
+                    }}
+                  >
+                    {wallet.address.memo}
+                  </Typography>
+                  <Typography
+                    variant="subtitle2"
+                    align="center"
+                    style={{
+                      fontWeight: 'bold',
+                      color: '#c08a3e',
+                    }}
+                  >
+                    WARNING
+                  </Typography>
+                  <Typography
+                    variant="subtitle2"
+                    align="center"
+                    style={{
+                      fontWeight: 'bold',
+                      color: '#c08a3e',
+                    }}
+                  >
+                    MEMO IS REQUIRED OR COINS WILL BE LOST
+                  </Typography>
+                </div>
+              )}
+            </>
+          )}
         </DialogContent>
       </Dialog>
     </>
@@ -203,12 +250,14 @@ export default function DepositDialog(
 
 DepositDialog.propTypes = {
   wallet: PropTypes.shape({
-    coin: PropTypes.arrayOf(PropTypes.shape({
+    coin: PropTypes.shape({
       ticker: PropTypes.string.isRequired,
-    })).isRequired,
-    address: PropTypes.arrayOf(PropTypes.shape({
+    }).isRequired,
+    address: PropTypes.shape({
       address: PropTypes.string.isRequired,
-    })).isRequired,
+      memo: PropTypes.string,
+    }).isRequired,
   }).isRequired,
   tickerLogo: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
 };

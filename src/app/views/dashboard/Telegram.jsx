@@ -246,18 +246,19 @@ const TelegramDashboardView = function (props) {
 
 TelegramDashboardView.propTypes = {
   telegramUserBalance: PropTypes.shape({
-    data: PropTypes.arrayOf(PropTypes.shape({
-      name: PropTypes.string.isRequired,
+    data: PropTypes.shape({
+      name: PropTypes.string,
       wallets: PropTypes.arrayOf(PropTypes.shape({
-      })).isRequired,
-    })).isRequired,
+      })),
+    }).isRequired,
   }).isRequired,
   telegramUser: PropTypes.shape({
-    data: PropTypes.arrayOf(PropTypes.shape({
-      username: PropTypes.string.isRequired,
-      first_name: PropTypes.string.isRequired,
-      last_name: PropTypes.string.isRequired,
-    })).isRequired,
+    data: PropTypes.shape({
+      username: PropTypes.string,
+      first_name: PropTypes.string,
+      last_name: PropTypes.string,
+      photo_url: PropTypes.string,
+    }),
   }).isRequired,
 };
 

@@ -8,7 +8,7 @@ import {
 const initialState = {
   isFetching: false, // Default to fetching..
   error: null,
-  data: [],
+  data: {},
 };
 
 export default (state = initialState, action) => {
@@ -16,7 +16,7 @@ export default (state = initialState, action) => {
   case FETCH_TELEGRAM_USER_BALANCE_IDLE:
     return {
       ...state,
-      data: [],
+      data: {},
       error: null,
     };
   case FETCH_TELEGRAM_USER_BALANCE_BEGIN:
