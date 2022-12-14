@@ -14,11 +14,11 @@ import {
   TableContainer,
   TableHead,
 } from '@mui/material';
-import BigNumber from 'bignumber.js'
+import BigNumber from 'bignumber.js';
 import {
   useNavigate,
 } from 'react-router-dom';
-import DepositDialog from './DepositDialog'
+import DepositDialog from './DepositDialog';
 
 const TipBotWalletComponent = function (props) {
   const {

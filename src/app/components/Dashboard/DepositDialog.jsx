@@ -16,6 +16,7 @@ import CloseIcon from '@mui/icons-material/Close';
 import AddIcon from '@mui/icons-material/Add';
 import QRCode from 'qrcode';
 import PropTypes from 'prop-types';
+import BigNumber from 'bignumber.js';
 import {
   Wallet,
   SecretNetworkClient,
@@ -23,6 +24,129 @@ import {
 } from 'secretjs';
 
 const secretEnv = process.env.ENV === 'development' ? 'pulsar-2' : 'secret-4';
+const secretRPC = process.env.ENV === 'development' ? 'https://lcd.testnet.secretsaturn.net' : 'https://scrt-lcd.agoranodes.com';
+
+const defaultDepositContent = (
+  tickerLogo,
+  imagePath,
+  wallet,
+  handleClickCopyAddress,
+  copied,
+) => (
+  <>
+    <div
+      style={{
+        width: '100%',
+        textAlign: 'center',
+      }}
+    >
+      <img alt="" className="coinTickerDeposit" src={tickerLogo} />
+    </div>
+    <Typography variant="subtitle2" align="center">
+      Deposit Address
+    </Typography>
+    <div
+      style={{
+        width: '100%',
+        textAlign: 'center',
+      }}
+    >
+      <img
+        src={imagePath}
+        alt={`${wallet.coin.ticker} Deposit 2FA QR Code`}
+      />
+    </div>
+    <div
+      style={{
+        width: '100%',
+        textAlign: 'center',
+      }}
+    >
+      <Button variant="outlined" onClick={handleClickCopyAddress}>
+        Copy address to clipboard
+      </Button>
+    </div>
+    {copied && (
+      <div>
+        <Typography
+          variant="subtitle2"
+          align="center"
+          style={{ color: '#00adb5' }}
+        >
+          Successfully Copied
+          {' '}
+          {wallet.coin.ticker}
+          {' '}
+          Address
+        </Typography>
+      </div>
+    )}
+    <Typography
+      variant="subtitle2"
+      align="center"
+      sx={{
+        wordBreak: 'break-word',
+      }}
+    >
+      {wallet.address.address}
+    </Typography>
+    {wallet.address.memo && (
+      <div
+        style={{
+          border: '1px solid black',
+        }}
+      >
+        <Typography variant="subtitle2" align="center">
+          Your MEMO Number
+        </Typography>
+        <Typography
+          variant="subtitle2"
+          align="center"
+          style={{
+            fontWeight: 'bold',
+            marginBottom: '10px',
+          }}
+        >
+          {wallet.address.memo}
+        </Typography>
+        <Typography
+          variant="subtitle2"
+          align="center"
+          style={{
+            fontWeight: 'bold',
+            color: '#c08a3e',
+          }}
+        >
+          WARNING
+        </Typography>
+        <Typography
+          variant="subtitle2"
+          align="center"
+          style={{
+            fontWeight: 'bold',
+            color: '#c08a3e',
+          }}
+        >
+          MEMO IS REQUIRED OR COINS WILL BE LOST
+        </Typography>
+      </div>
+    )}
+  </>
+)
+
+const keplrNotFoundContent = () => (
+  <>
+    <Typography variant="subtitle2" align="center">
+      Please install Keplr
+    </Typography>
+    <Button
+      // target="_blank"
+      href="https://chrome.google.com/webstore/detail/keplr/dmkamcknogkgcdfhhbddcghachkejeap"
+    >
+      Download Keplr for chrome
+    </Button>
+  </>
+)
 
 export default function DepositDialog(
   props,
@@ -33,6 +157,8 @@ export default function DepositDialog(
     name,
   } = props;
   const [offlineSigner, setOfflineSigner] = useState(undefined);
+  const [keplrAccounts, setKeplrAccounts] = useState(undefined);
+  const [secretJs, setSecretJs] = useState(undefined);
   const [open, setOpen] = useState(false);
   const theme = useTheme();
   const fullScreen = useMediaQuery(theme.breakpoints.down('md'));
@@ -40,6 +166,7 @@ export default function DepositDialog(
   const [imagePath, setImagePath] = useState('');
   const [copied, setCopied] = useState(false);
   const [hasKeplr, setHasKeplr] = useState(true);
+  const [keplrBalance, setKeplrBalance] = useState(0);
 
   const handleClickCopyAddress = () => {
     window.navigator.clipboard.writeText(wallet.address.address)
@@ -51,11 +178,16 @@ export default function DepositDialog(
 
   const handleClickOpen = async () => {
     if (name === 'SecretTip') {
-      if (!window.keplr) {
+      if (
+        !window.keplr
+        || !window.getOfflineSigner
+        || !window.getEnigmaUtils
+      ) {
         setHasKeplr(false);
       } else {
         await window.keplr.enable(secretEnv);
-        setOfflineSigner(window.getOfflineSigner(secretEnv));
+        const keplrOfflineSigner = await window.getOfflineSignerOnlyAmino(secretEnv);
+        setOfflineSigner(keplrOfflineSigner);
       }
       setOpen(true);
     } else {
@@ -64,9 +196,80 @@ export default function DepositDialog(
   };
 
   useEffect(() => {
-    console.log(offlineSigner);
+    async function fetchKeplrAccounts() {
+      if (offlineSigner) {
+        setKeplrAccounts(await offlineSigner.getAccounts());
+      }
+    }
+    fetchKeplrAccounts();
   }, [
     offlineSigner,
+  ]);
+
+  useEffect(() => {
+    if (keplrAccounts) {
+      setSecretJs(new SecretNetworkClient({
+        url: secretRPC,
+        chainId: secretEnv,
+        wallet: offlineSigner,
+        walletAddress: keplrAccounts[0].address,
+        encryptionUtils: window.getEnigmaUtils(secretEnv),
+      }));
+    }
+  }, [
+    keplrAccounts,
+  ]);
+
+  useEffect(() => {
+    async function fetchKeplrBalance(coin) {
+      if (coin.type === 'native') {
+        const {
+          balance: {
+            amount,
+          },
+        } = await secretJs.query.bank.balance(
+          {
+            address: keplrAccounts[0].address,
+            denom: `u${coin.ticker.toLowerCase()}`,
+          },
+        );
+        const amountToFormat = new BigNumber(amount).dividedBy(`1e${coin.dp}`)
+        setKeplrBalance(new Intl.NumberFormat('en-US', {}).format(amountToFormat.toNumber()));
+      }
+      if (coin.type === 'token') {
+        const viewingKey = await window.keplr.getSecret20ViewingKey(
+          secretEnv,
+          coin.tokenId,
+        );
+        const {
+          balance: {
+            amount,
+          },
+        } = await secretJs.query.compute.queryContract({
+          contract_address: coin.tokenId,
+          code_hash: coin.codeHash,
+          query: {
+            balance: {
+              address: keplrAccounts[0].address,
+              key: viewingKey,
+            },
+          },
+        });
+        const amountToFormat = new BigNumber(amount).dividedBy(`1e${coin.dp}`)
+        setKeplrBalance(new Intl.NumberFormat('en-US', {}).format(amountToFormat.toNumber()));
+      }
+    }
+    if (secretJs) {
+      fetchKeplrBalance(wallet.coin);
+    }
+  }, [
+    secretJs,
+  ]);
+
+  useEffect(() => {
+    console.log(keplrBalance);
+  }, [
+    keplrBalance,
   ]);
 
   const handleClose = () => {
@@ -122,125 +325,32 @@ export default function DepositDialog(
           <CloseIcon />
         </IconButton>
         <DialogContent>
-          {!hasKeplr && name === 'SecretTip' && (
-            <>
-              <Typography variant="subtitle2" align="center">
-                Please install Keplr
-              </Typography>
-              <Button
-                // target="_blank"
-                href="https://chrome.google.com/webstore/detail/keplr/dmkamcknogkgcdfhhbddcghachkejeap"
-              >
-                Download Keplr for chrome
-              </Button>
-            </>
-
-          )}
+          {!hasKeplr && name === 'SecretTip' && keplrNotFoundContent()}
           {hasKeplr && name === 'SecretTip' && (
-            <Typography variant="subtitle2" align="center">
-              Found Keplr (Keplr form here)
-            </Typography>
-          )}
-          {name !== 'SecretTip' && (
-            <>
-              <div
-                style={{
-                  width: '100%',
-                  textAlign: 'center',
-                }}
-              >
-                <img alt="" className="coinTickerDeposit" src={tickerLogo} />
-              </div>
-              <Typography variant="subtitle2" align="center">
-                Deposit Address
-              </Typography>
-              <div
-                style={{
-                  width: '100%',
-                  textAlign: 'center',
-                }}
-              >
-                <img
-                  src={imagePath}
-                  alt={`${wallet.coin.ticker} Deposit 2FA QR Code`}
-                />
-              </div>
-              <div
-                style={{
-                  width: '100%',
-                  textAlign: 'center',
-                }}
-              >
-                <Button variant="outlined" onClick={handleClickCopyAddress}>
-                  Copy address to clipboard
-                </Button>
-              </div>
-              {copied && (
-                <div>
-                  <Typography
-                    variant="subtitle2"
-                    align="center"
-                    style={{ color: '#00adb5' }}
-                  >
-                    Successfully Copied
+            <div>
+              {
+                !secretJs ? (
+                  <Typography variant="subtitle2" align="center">
+                    Waiting for keplr integration...
+                  </Typography>
+                ) : (
+                  <Typography variant="subtitle2" align="center">
+                    Your Keplr balance:
+                    {' '}
+                    {keplrBalance}
                     {' '}
                     {wallet.coin.ticker}
-                    {' '}
-                    Address
                   </Typography>
-                </div>
-              )}
-              <Typography
-                variant="subtitle2"
-                align="center"
-                sx={{
-                  wordBreak: 'break-word',
-                }}
-              >
-                {wallet.address.address}
-              </Typography>
-              {wallet.address.memo && (
-                <div
-                  style={{
-                    border: '1px solid black',
-                  }}
-                >
-                  <Typography variant="subtitle2" align="center">
-                    Your MEMO Number
-                  </Typography>
-                  <Typography
-                    variant="subtitle2"
-                    align="center"
-                    style={{
-                      fontWeight: 'bold',
-                      marginBottom: '10px',
-                    }}
-                  >
-                    {wallet.address.memo}
-                  </Typography>
-                  <Typography
-                    variant="subtitle2"
-                    align="center"
-                    style={{
-                      fontWeight: 'bold',
-                      color: '#c08a3e',
-                    }}
-                  >
-                    WARNING
-                  </Typography>
-                  <Typography
-                    variant="subtitle2"
-                    align="center"
-                    style={{
-                      fontWeight: 'bold',
-                      color: '#c08a3e',
-                    }}
-                  >
-                    MEMO IS REQUIRED OR COINS WILL BE LOST
-                  </Typography>
-                </div>
-              )}
-            </>
+                )
+              }
+            </div>
+          )}
+          {name !== 'SecretTip' && defaultDepositContent(
+            tickerLogo,
+            imagePath,
+            wallet,
+            handleClickCopyAddress,
+            copied,
           )}
         </DialogContent>
       </Dialog>
