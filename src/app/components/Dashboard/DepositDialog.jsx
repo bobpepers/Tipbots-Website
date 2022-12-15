@@ -10,6 +10,9 @@ import {
   useMediaQuery,
   IconButton,
   Typography,
+  TextField,
+  Grid,
+  CircularProgress,
 } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
 import CloseIcon from '@mui/icons-material/Close';
@@ -18,7 +21,6 @@ import QRCode from 'qrcode';
 import PropTypes from 'prop-types';
 import BigNumber from 'bignumber.js';
 import {
-  Wallet,
   SecretNetworkClient,
   MsgSend,
 } from 'secretjs';
@@ -167,6 +169,9 @@ export default function DepositDialog(
   const [copied, setCopied] = useState(false);
   const [hasKeplr, setHasKeplr] = useState(true);
   const [keplrBalance, setKeplrBalance] = useState(0);
+  const [depositAmount, setDepositAmount] = useState('');
+  const [isBroadcastingKeplrTx, setIsBroadcastingKeplrTx] = useState(false);
+  const [keplrTxData, setKeplrTxData] = useState(undefined);
 
   const handleClickCopyAddress = () => {
     window.navigator.clipboard.writeText(wallet.address.address)
@@ -234,7 +239,7 @@ export default function DepositDialog(
           },
         );
         const amountToFormat = new BigNumber(amount).dividedBy(`1e${coin.dp}`)
-        setKeplrBalance(new Intl.NumberFormat('en-US', {}).format(amountToFormat.toNumber()));
+        setKeplrBalance(amountToFormat);
       }
       if (coin.type === 'token') {
         const viewingKey = await window.keplr.getSecret20ViewingKey(
@@ -256,7 +261,7 @@ export default function DepositDialog(
           },
         });
         const amountToFormat = new BigNumber(amount).dividedBy(`1e${coin.dp}`)
-        setKeplrBalance(new Intl.NumberFormat('en-US', {}).format(amountToFormat.toNumber()));
+        setKeplrBalance(amountToFormat);
       }
     }
     if (secretJs) {
@@ -264,12 +269,15 @@ export default function DepositDialog(
     }
   }, [
     secretJs,
+    keplrTxData,
   ]);
 
   useEffect(() => {
-    console.log(keplrBalance);
+    // console.log(keplrBalance);
+    // console.log(depositAmount);
   }, [
     keplrBalance,
+    depositAmount,
   ]);
 
   const handleClose = () => {
@@ -285,6 +293,76 @@ export default function DepositDialog(
       setImagePath(imageUrl);
     });
   }, []);
+
+  const changeDepositAmount = (e) => {
+    const { value } = e.target;
+    if (value < 0 && value) {
+      setDepositAmount(0);
+      return;
+    }
+    if (value > keplrBalance.toNumber()) {
+      setDepositAmount(keplrBalance.toNumber());
+      return;
+    }
+    setDepositAmount(value);
+  }
+
+  const executeKeplrDeposit = async () => {
+    setIsBroadcastingKeplrTx(true);
+    setKeplrTxData(undefined);
+    if (wallet.coin.type === 'native') {
+      const msg = new MsgSend({
+        from_address: keplrAccounts[0].address,
+        to_address: wallet.address.address,
+        amount: [{
+          denom: 'uscrt',
+          amount: new BigNumber(depositAmount).times(`1e${wallet.coin.dp}`).toString(),
+        }],
+      });
+      try {
+        const tx = await secretJs.tx.broadcast([msg], {
+          gasLimit: 20000,
+          gasPriceInFeeDenom: 0.1,
+          // feeDenom: 'uscrt',
+          memo: wallet.address.memo,
+        });
+        if (tx) {
+          console.log(tx);
+          setKeplrTxData(tx);
+          setIsBroadcastingKeplrTx(false);
+        }
+      } catch (e) {
+        setIsBroadcastingKeplrTx(false);
+      }
+    }
+    if (wallet.coin.type === 'token') {
+      try {
+        const tx = await secretJs.tx.compute.executeContract({
+          sender: keplrAccounts[0].address,
+          contract_address: wallet.coin.tokenId,
+          code_hash: wallet.coin.codeHash,
+          msg: {
+            transfer: {
+              owner: keplrAccounts[0].address,
+              recipient: wallet.address.address,
+              amount: new BigNumber(depositAmount).times(`1e${wallet.coin.dp}`).toString(),
+              memo: wallet.address.memo,
+            },
+          },
+        }, {
+          gasLimit: 60000,
+          memo: wallet.address.memo,
+        });
+        if (tx) {
+          console.log(tx);
+          setKeplrTxData(tx);
+          setIsBroadcastingKeplrTx(false);
+        }
+      } catch (e) {
+        setIsBroadcastingKeplrTx(false);
+      }
+    }
+  }
 
   return (
     <>
@@ -306,6 +384,7 @@ export default function DepositDialog(
         open={open}
         onClose={handleClose}
         aria-labelledby="responsive-dialog-title"
+        className="tipbotWallet"
       >
         <DialogTitle id="responsive-dialog-title">
           Deposit
@@ -334,13 +413,85 @@ export default function DepositDialog(
                     Waiting for keplr integration...
                   </Typography>
                 ) : (
-                  <Typography variant="subtitle2" align="center">
-                    Your Keplr balance:
-                    {' '}
-                    {keplrBalance}
-                    {' '}
-                    {wallet.coin.ticker}
-                  </Typography>
+                  <Grid container spacing={1}>
+                    <Grid item xs={12}>
+                      <div
+                        style={{
+                          width: '100%',
+                          textAlign: 'center',
+                        }}
+                      >
+                        <img alt="" className="coinTickerDeposit" src={tickerLogo} />
+                      </div>
+
+                    </Grid>
+                    <Grid item xs={12}>
+                      <Typography variant="subtitle2" align="center">
+                        Your Keplr balance
+                      </Typography>
+                      <Typography variant="subtitle2" align="center">
+                        {new Intl.NumberFormat('en-US', {}).format(keplrBalance)}
+                        {' '}
+                        {wallet.coin.ticker}
+                      </Typography>
+                    </Grid>
+                    {
+                      isBroadcastingKeplrTx && (
+                        <Grid
+                          item
+                          xs={12}
+                          align="center"
+                          alignContent="center"
+                          justifyContent="center"
+                        >
+                          <CircularProgress />
+                        </Grid>
+                      )
+                    }
+                    {
+                      keplrTxData && (
+                        <Grid item xs={12}>
+                          <Typography variant="subtitle2" align="center">
+                            Transaction Success!
+                          </Typography>
+                          <Typography variant="subtitle2" align="center">
+                            {keplrTxData.transactionHash}
+                          </Typography>
+                        </Grid>
+                      )
+                    }
+                    <Grid item xs={12}>
+                      <TextField
+                        type="number"
+                        label="depositAmount"
+                        variant="filled"
+                        fullWidth
+                        value={depositAmount}
+                        onChange={changeDepositAmount}
+                      />
+                    </Grid>
+                    <Grid item xs={12}>
+                      <TextField
+                        type="text"
+                        label="Memo"
+                        variant="filled"
+                        fullWidth
+                        disabled
+                        defaultValue={wallet.address.memo}
+                      />
+                    </Grid>
+                    <Grid item xs={12}>
+                      <Button
+                        fullWidth
+                        variant="contained"
+                        size="large"
+                        onClick={() => executeKeplrDeposit()}
+                        disabled={depositAmount === ''}
+                      >
+                        Deposit
+                      </Button>
+                    </Grid>
+                  </Grid>
                 )
               }
             </div>
@@ -362,6 +513,10 @@ DepositDialog.propTypes = {
   wallet: PropTypes.shape({
     coin: PropTypes.shape({
       ticker: PropTypes.string.isRequired,
+      tokenId: PropTypes.string,
+      codeHash: PropTypes.string,
+      type: PropTypes.string.isRequired,
+      dp: PropTypes.number.isRequired,
     }).isRequired,
     address: PropTypes.shape({
       address: PropTypes.string.isRequired,
