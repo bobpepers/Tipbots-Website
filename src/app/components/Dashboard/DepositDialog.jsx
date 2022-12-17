@@ -13,6 +13,13 @@ import {
   TextField,
   Grid,
   CircularProgress,
+  Box,
+  InputAdornment,
+  InputLabel,
+  FormControl,
+  FilledInput,
+  Input,
+  OutlinedInput,
 } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
 import CloseIcon from '@mui/icons-material/Close';
@@ -176,6 +183,7 @@ export default function DepositDialog(
   const [depositAmount, setDepositAmount] = useState('');
   const [isBroadcastingKeplrTx, setIsBroadcastingKeplrTx] = useState(false);
   const [keplrTxData, setKeplrTxData] = useState(undefined);
+  const [depositAmountEstValue, setDepositAmountEstValue] = useState(undefined);
 
   useEffect(() => {
     setKeplrTxData(undefined);
@@ -344,6 +352,7 @@ export default function DepositDialog(
   }, [
     keplrBalance,
     depositAmount,
+    depositAmountEstValue,
   ]);
 
   const handleClose = () => {
@@ -362,14 +371,22 @@ export default function DepositDialog(
 
   const changeDepositAmount = (e) => {
     const { value } = e.target;
+    if (!value || value === '') {
+      setDepositAmountEstValue(undefined);
+    }
     if (value < 0 && value) {
-      setDepositAmount(0);
+      setDepositAmount('');
+      setDepositAmountEstValue(undefined);
       return;
     }
     if (value > keplrBalance.toNumber()) {
       setDepositAmount(keplrBalance.toNumber());
+      setDepositAmountEstValue(new BigNumber(keplrBalance.toNumber()).times(wallet.coin.price).dp(4)
+        .toString());
       return;
     }
+    setDepositAmountEstValue(new BigNumber(value).times(wallet.coin.price).dp(4)
+      .toString());
     setDepositAmount(value);
   }
 
@@ -469,7 +486,9 @@ export default function DepositDialog(
         >
           <CloseIcon />
         </IconButton>
-        <DialogContent>
+        <DialogContent
+          className="depositDialogContent"
+        >
           {!hasKeplr && name === 'SecretTip' && keplrNotFoundContent()}
           {hasKeplr && name === 'SecretTip' && (
             <div>
@@ -511,15 +530,21 @@ export default function DepositDialog(
                             </>
 
                           ) : (
-                            <>
-                              {new Intl.NumberFormat('en-US', {}).format(keplrBalance)}
-                              {' '}
-                              {wallet.coin.ticker}
+                            <Typography
+                              variant="subtitle2"
+                              align="center"
+                            >
+                              <Box sx={{ fontWeight: 'bold', m: 1 }}>
+                                {new Intl.NumberFormat('en-US', {}).format(keplrBalance)}
+                                {' '}
+                                {wallet.coin.ticker}
+                              </Box>
+
                               (≈$
                               {new BigNumber(keplrBalance).times(wallet.coin.price).dp(4)
                                 .toString()}
                               )
-                            </>
+                            </Typography>
                           )
                         }
 
@@ -571,17 +596,17 @@ export default function DepositDialog(
                             >
                               Your deposit of
                               {' '}
-                              {depositAmount}
+                              <span style={{ fontWeight: 'bold' }}>
+                                {depositAmount}
+                                {' '}
+                                {wallet.coin.ticker}
+                              </span>
                               {' '}
-                              {wallet.coin.ticker}
-                              {' '}
-                              will be reflected into your wallet in ~100 confirmations
-                            </Typography>
-                            <Typography
-                              variant="subtitle2"
-                              align="center"
-                            >
-                              (estimated 400 seconds)
+                              will be reflected into your wallet in
+                              <Box sx={{ fontWeight: 'bold' }}>
+                                {' '}
+                                ~100 confirmations (est. 400 seconds)
+                              </Box>
                             </Typography>
                             <Typography variant="subtitle2" align="center">
                               {keplrTxData.transactionHash}
@@ -600,14 +625,21 @@ export default function DepositDialog(
                       )
                     }
                     <Grid item xs={12}>
-                      <TextField
-                        type="number"
-                        label="depositAmount"
-                        variant="filled"
-                        fullWidth
-                        value={depositAmount}
-                        onChange={changeDepositAmount}
-                      />
+                      <FormControl fullWidth variant="outlined">
+                        <InputLabel htmlFor="adornment-amount">Amount</InputLabel>
+                        <FilledInput
+                          id="adornment-amount"
+                          type="number"
+                          value={depositAmount}
+                          onChange={changeDepositAmount}
+                          endAdornment={(
+                            <InputAdornment position="end">
+                              {depositAmountEstValue && `(≈$${depositAmountEstValue})`}
+                            </InputAdornment>
+                          )}
+                          label="Amount"
+                        />
+                      </FormControl>
                     </Grid>
                     <Grid item xs={12}>
                       <TextField
