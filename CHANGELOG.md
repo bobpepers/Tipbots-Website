@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.14](https://github.com/bobpepers/Tipbots-Website/compare/v0.1.13...v0.1.14) (2022-12-17)
+
+
+### Features
+
+* 🎨 deposit input value est, message format ([a11aea9](https://github.com/bobpepers/Tipbots-Website/commit/a11aea92d67a69fa5d751f78b1b8bde181d35f57))
+
+### [0.1.14](https://github.com/bobpepers/Tipbots-Website/compare/v0.1.13...v0.1.14) (2022-12-17)
+
+
+### Features
+
+* 🎨 deposit input value est, message format ([a11aea9](https://github.com/bobpepers/Tipbots-Website/commit/a11aea92d67a69fa5d751f78b1b8bde181d35f57))
+
 ### [0.1.13](https://github.com/bobpepers/Tipbots-Website/compare/v0.1.12...v0.1.13) (2022-12-17)
 
 
