@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.13](https://github.com/bobpepers/Tipbots-Website/compare/v0.1.12...v0.1.13) (2022-12-17)
+
+
+### Bug Fixes
+
+* 🐛 Fix coinInfo crash when undefined website ([a89a5ad](https://github.com/bobpepers/Tipbots-Website/commit/a89a5ad63188b6526e61dd407dff6eaa6d2d4838))
+
+### [0.1.13](https://github.com/bobpepers/Tipbots-Website/compare/v0.1.12...v0.1.13) (2022-12-17)
+
+
+### Bug Fixes
+
+* 🐛 Fix coinInfo crash when undefined website ([a89a5ad](https://github.com/bobpepers/Tipbots-Website/commit/a89a5ad63188b6526e61dd407dff6eaa6d2d4838))
+
 ### [0.1.12](https://github.com/bobpepers/Tipbots-Website/compare/v0.1.11...v0.1.12) (2022-12-17)
 
 
