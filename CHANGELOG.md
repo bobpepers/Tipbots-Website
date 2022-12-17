@@ -2,6 +2,48 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.12](https://github.com/bobpepers/Tipbots-Website/compare/v0.1.11...v0.1.12) (2022-12-17)
+
+
+### Features
+
+* ✨ Detect keplr if SecretTip deposit ([db64990](https://github.com/bobpepers/Tipbots-Website/commit/db64990feb3a3a07e21a753d53fdced5d3bb95c4))
+* ✨ Secret network: Keplr deposits ([224e86a](https://github.com/bobpepers/Tipbots-Website/commit/224e86a1295233944b5c816a6b17c726a5e112b3))
+* ✨ secretjs query keplr native&snip balance (deposits) ([fca8eaf](https://github.com/bobpepers/Tipbots-Website/commit/fca8eafd48bfc3d9ebb66fe79dada3cc9f0cc8fe))
+
+
+### Performance
+
+* ⚡️ Keplr deposit ui improvement ([293d63d](https://github.com/bobpepers/Tipbots-Website/commit/293d63d70806bbd5dfcbd9be2b7bc56afb273504))
+
+
+### Style
+
+* 🎨 Add estimated $value keplr balance ([c0411d6](https://github.com/bobpepers/Tipbots-Website/commit/c0411d65d78a6ebdfc0f07029c9fa390924b5b0c))
+* 🎨 Add SXMR, SHD coin images ([4b8bd6a](https://github.com/bobpepers/Tipbots-Website/commit/4b8bd6aed8ccc8765c7b124c47b63cd7ce7c08cc))
+* 🎨 Better snip20 deposit confirmation message ([ef34816](https://github.com/bobpepers/Tipbots-Website/commit/ef348164fc10d2e1beaa5844fcd116c7f43e6b0e))
+
+### [0.1.12](https://github.com/bobpepers/Tipbots-Website/compare/v0.1.11...v0.1.12) (2022-12-17)
+
+
+### Features
+
+* ✨ Detect keplr if SecretTip deposit ([db64990](https://github.com/bobpepers/Tipbots-Website/commit/db64990feb3a3a07e21a753d53fdced5d3bb95c4))
+* ✨ Secret network: Keplr deposits ([224e86a](https://github.com/bobpepers/Tipbots-Website/commit/224e86a1295233944b5c816a6b17c726a5e112b3))
+* ✨ secretjs query keplr native&snip balance (deposits) ([fca8eaf](https://github.com/bobpepers/Tipbots-Website/commit/fca8eafd48bfc3d9ebb66fe79dada3cc9f0cc8fe))
+
+
+### Performance
+
+* ⚡️ Keplr deposit ui improvement ([293d63d](https://github.com/bobpepers/Tipbots-Website/commit/293d63d70806bbd5dfcbd9be2b7bc56afb273504))
+
+
+### Style
+
+* 🎨 Add estimated $value keplr balance ([c0411d6](https://github.com/bobpepers/Tipbots-Website/commit/c0411d65d78a6ebdfc0f07029c9fa390924b5b0c))
+* 🎨 Add SXMR, SHD coin images ([4b8bd6a](https://github.com/bobpepers/Tipbots-Website/commit/4b8bd6aed8ccc8765c7b124c47b63cd7ce7c08cc))
+* 🎨 Better snip20 deposit confirmation message ([ef34816](https://github.com/bobpepers/Tipbots-Website/commit/ef348164fc10d2e1beaa5844fcd116c7f43e6b0e))
+
 ### [0.1.11](https://github.com/bobpepers/Tipbots-Website/compare/v0.1.10...v0.1.11) (2022-12-03)
 
 ### [0.1.11](https://github.com/bobpepers/Tipbots-Website/compare/v0.1.10...v0.1.11) (2022-12-03)
