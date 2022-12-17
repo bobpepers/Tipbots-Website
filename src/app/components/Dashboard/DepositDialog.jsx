@@ -515,6 +515,10 @@ export default function DepositDialog(
                               {new Intl.NumberFormat('en-US', {}).format(keplrBalance)}
                               {' '}
                               {wallet.coin.ticker}
+                              (≈$
+                              {new BigNumber(keplrBalance).times(wallet.coin.price).dp(4)
+                                .toString()}
+                              )
                             </>
                           )
                         }
