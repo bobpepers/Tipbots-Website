@@ -26,7 +26,9 @@ import {
 } from 'secretjs';
 
 const secretEnv = process.env.ENV === 'development' ? 'pulsar-2' : 'secret-4';
-const secretRPC = process.env.ENV === 'development' ? 'https://lcd.testnet.secretsaturn.net' : 'https://scrt-lcd.agoranodes.com';
+const secretLCD = process.env.ENV === 'development' ? 'https://lcd.testnet.secretsaturn.net' : 'https://scrt-lcd.agoranodes.com';
+const secretRPC = process.env.ENV === 'development' ? 'https://rpc.testnet.secretsaturn.net' : 'https://scrt-rpc.agoranodes.com';
+const secretChainName = process.env.ENV === 'development' ? 'Secret Testnet' : 'Secret Network';
 
 const defaultDepositContent = (
   tickerLogo,
@@ -168,7 +170,7 @@ export default function DepositDialog(
   const [imagePath, setImagePath] = useState('');
   const [copied, setCopied] = useState(false);
   const [hasKeplr, setHasKeplr] = useState(true);
-  const [keplrBalance, setKeplrBalance] = useState(0);
+  const [keplrBalance, setKeplrBalance] = useState(undefined);
   const [depositAmount, setDepositAmount] = useState('');
   const [isBroadcastingKeplrTx, setIsBroadcastingKeplrTx] = useState(false);
   const [keplrTxData, setKeplrTxData] = useState(undefined);
@@ -190,6 +192,49 @@ export default function DepositDialog(
       ) {
         setHasKeplr(false);
       } else {
+        await window.keplr.experimentalSuggestChain({
+          chainId: secretEnv,
+          chainName: secretChainName,
+          rpc: secretRPC,
+          rest: secretLCD,
+          bip44: {
+            coinType: 529,
+          },
+          coinType: 529,
+          stakeCurrency: {
+            coinDenom: 'SCRT',
+            coinMinimalDenom: 'uscrt',
+            coinDecimals: 6,
+          },
+          bech32Config: {
+            bech32PrefixAccAddr: 'secret',
+            bech32PrefixAccPub: 'secretpub',
+            bech32PrefixValAddr: 'secretvaloper',
+            bech32PrefixValPub: 'secretvaloperpub',
+            bech32PrefixConsAddr: 'secretvalcons',
+            bech32PrefixConsPub: 'secretvalconspub',
+          },
+          currencies: [
+            {
+              coinDenom: 'SCRT',
+              coinMinimalDenom: 'uscrt',
+              coinDecimals: 6,
+            },
+          ],
+          feeCurrencies: [
+            {
+              coinDenom: 'SCRT',
+              coinMinimalDenom: 'uscrt',
+              coinDecimals: 6,
+            },
+          ],
+          gasPriceStep: {
+            low: 0.1,
+            average: 0.25,
+            high: 0.4,
+          },
+          features: ['secretwasm'],
+        });
         await window.keplr.enable(secretEnv);
         const keplrOfflineSigner = await window.getOfflineSignerOnlyAmino(secretEnv);
         setOfflineSigner(keplrOfflineSigner);
@@ -214,7 +259,7 @@ export default function DepositDialog(
   useEffect(() => {
     if (keplrAccounts) {
       setSecretJs(new SecretNetworkClient({
-        url: secretRPC,
+        url: secretLCD,
         chainId: secretEnv,
         wallet: offlineSigner,
         walletAddress: keplrAccounts[0].address,
@@ -225,23 +270,24 @@ export default function DepositDialog(
     keplrAccounts,
   ]);
 
-  useEffect(() => {
-    async function fetchKeplrBalance(coin) {
-      if (coin.type === 'native') {
-        const {
-          balance: {
-            amount,
-          },
-        } = await secretJs.query.bank.balance(
-          {
-            address: keplrAccounts[0].address,
-            denom: `u${coin.ticker.toLowerCase()}`,
-          },
-        );
-        const amountToFormat = new BigNumber(amount).dividedBy(`1e${coin.dp}`)
-        setKeplrBalance(amountToFormat);
-      }
-      if (coin.type === 'token') {
+  const fetchKeplrBalance = async (coin) => {
+    if (coin.type === 'native') {
+      const {
+        balance: {
+          amount,
+        },
+      } = await secretJs.query.bank.balance(
+        {
+          address: keplrAccounts[0].address,
+          denom: `u${coin.ticker.toLowerCase()}`,
+        },
+      );
+      const amountToFormat = new BigNumber(amount).dividedBy(`1e${coin.dp}`)
+      setKeplrBalance(amountToFormat);
+    }
+    if (coin.type === 'token') {
+      try {
+        await window.keplr.suggestToken(secretEnv, coin.tokenId);
         const viewingKey = await window.keplr.getSecret20ViewingKey(
           secretEnv,
           coin.tokenId,
@@ -262,8 +308,13 @@ export default function DepositDialog(
         });
         const amountToFormat = new BigNumber(amount).dividedBy(`1e${coin.dp}`)
         setKeplrBalance(amountToFormat);
+      } catch (e) {
+        setKeplrBalance(undefined);
       }
     }
+  }
+
+  useEffect(() => {
     if (secretJs) {
       fetchKeplrBalance(wallet.coin);
     }
@@ -271,6 +322,11 @@ export default function DepositDialog(
     secretJs,
     keplrTxData,
   ]);
+
+  const setViewingKey = async () => {
+    await window.keplr.suggestToken(secretEnv, wallet.coin.tokenId);
+    fetchKeplrBalance(wallet.coin);
+  }
 
   useEffect(() => {
     // console.log(keplrBalance);
@@ -430,9 +486,29 @@ export default function DepositDialog(
                         Your Keplr balance
                       </Typography>
                       <Typography variant="subtitle2" align="center">
-                        {new Intl.NumberFormat('en-US', {}).format(keplrBalance)}
-                        {' '}
-                        {wallet.coin.ticker}
+                        {
+                          !keplrBalance ? (
+                            <>
+                              🚫
+                              <Button
+                                fullWidth
+                                variant="contained"
+                                size="large"
+                                onClick={() => setViewingKey()}
+                              >
+                                Set viewing key
+                              </Button>
+                            </>
+
+                          ) : (
+                            <>
+                              {new Intl.NumberFormat('en-US', {}).format(keplrBalance)}
+                              {' '}
+                              {wallet.coin.ticker}
+                            </>
+                          )
+                        }
+
                       </Typography>
                     </Grid>
                     {

@@ -233,17 +233,17 @@ const DiscordDashboardView = function (props) {
 
 DiscordDashboardView.propTypes = {
   discordUserBalance: PropTypes.shape({
-    data: PropTypes.arrayOf(PropTypes.shape({
-      name: PropTypes.string.isRequired,
+    data: PropTypes.shape({
+      name: PropTypes.string,
       wallets: PropTypes.arrayOf(PropTypes.shape({
-      })).isRequired,
-    })).isRequired,
+      })),
+    }),
   }).isRequired,
   discordUser: PropTypes.shape({
-    data: PropTypes.arrayOf(PropTypes.shape({
+    data: PropTypes.shape({
       username: PropTypes.string.isRequired,
       discriminator: PropTypes.string.isRequired,
-    })).isRequired,
+    }),
   }).isRequired,
 };
 
