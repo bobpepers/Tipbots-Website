@@ -24,11 +24,13 @@ import {
   SecretNetworkClient,
   MsgSend,
 } from 'secretjs';
+import DoneIcon from '@mui/icons-material/Done';
 
 const secretEnv = process.env.ENV === 'development' ? 'pulsar-2' : 'secret-4';
 const secretLCD = process.env.ENV === 'development' ? 'https://lcd.testnet.secretsaturn.net' : 'https://scrt-lcd.agoranodes.com';
 const secretRPC = process.env.ENV === 'development' ? 'https://rpc.testnet.secretsaturn.net' : 'https://scrt-rpc.agoranodes.com';
 const secretChainName = process.env.ENV === 'development' ? 'Secret Testnet' : 'Secret Network';
+const secretTxExplorer = process.env.ENV === 'development' ? 'https://testnet.ping.pub/secret/tx/' : 'https://ping.pub/secret/tx/';
 
 const defaultDepositContent = (
   tickerLogo,
@@ -174,6 +176,14 @@ export default function DepositDialog(
   const [depositAmount, setDepositAmount] = useState('');
   const [isBroadcastingKeplrTx, setIsBroadcastingKeplrTx] = useState(false);
   const [keplrTxData, setKeplrTxData] = useState(undefined);
+
+  useEffect(() => {
+    setKeplrTxData(undefined);
+    setKeplrBalance(undefined);
+    setDepositAmount('');
+  }, [
+    open,
+  ]);
 
   const handleClickCopyAddress = () => {
     window.navigator.clipboard.writeText(wallet.address.address)
@@ -526,14 +536,63 @@ export default function DepositDialog(
                     }
                     {
                       keplrTxData && (
-                        <Grid item xs={12}>
-                          <Typography variant="subtitle2" align="center">
-                            Transaction Success!
-                          </Typography>
-                          <Typography variant="subtitle2" align="center">
-                            {keplrTxData.transactionHash}
-                          </Typography>
-                        </Grid>
+                        <>
+                          <Grid
+                            item
+                            xs={12}
+                            align="center"
+                            alignContent="center"
+                            justifyContent="center"
+                          >
+                            <DoneIcon
+                              style={{
+                                color: '#00B200',
+                                fontSize: '60px',
+                              }}
+                            />
+                          </Grid>
+                          <Grid item xs={12}>
+                            <Typography
+                              variant="subtitle2"
+                              align="center"
+                              sx={{
+                                color: '#00B200',
+                              }}
+                            >
+                              Transaction Success!
+                            </Typography>
+                            <Typography
+                              variant="subtitle2"
+                              align="center"
+                            >
+                              Your deposit of
+                              {' '}
+                              {depositAmount}
+                              {' '}
+                              {wallet.coin.ticker}
+                              {' '}
+                              will be reflected into your wallet in ~100 confirmations
+                            </Typography>
+                            <Typography
+                              variant="subtitle2"
+                              align="center"
+                            >
+                              (estimated 400 seconds)
+                            </Typography>
+                            <Typography variant="subtitle2" align="center">
+                              {keplrTxData.transactionHash}
+                            </Typography>
+                            <Button
+                              fullWidth
+                              variant="contained"
+                              size="large"
+                              target="_blank"
+                              href={`${secretTxExplorer}${keplrTxData.transactionHash}`}
+                            >
+                              View on explorer
+                            </Button>
+                          </Grid>
+                        </>
                       )
                     }
                     <Grid item xs={12}>
