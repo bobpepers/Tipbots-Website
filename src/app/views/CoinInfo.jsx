@@ -47,6 +47,8 @@ function RenderCoinInfo(props) {
     coin,
     currencies,
   } = props;
+  console.log('rendering coin info');
+  console.log(coin);
   const image = images(`./${coin.ticker}.png`);
   return (
     <Grid container>
@@ -106,7 +108,7 @@ function RenderCoinInfo(props) {
               variant="outlined"
               size="large"
             >
-              {removeHttp(coin.coinInfo.website)}
+              {coin.coinInfo.website && removeHttp(coin.coinInfo.website)}
             </Button>
           </a>
         </Typography>
@@ -450,7 +452,7 @@ CoinInfoView.propTypes = {
       ticker: PropTypes.string.isRequired,
     }),
     error: PropTypes.shape({
-      status: PropTypes.number.isRequired,
+      status: PropTypes.number,
       message: PropTypes.string.isRequired,
     }),
     isLoading: PropTypes.bool.isRequired,
@@ -459,7 +461,7 @@ CoinInfoView.propTypes = {
     data: PropTypes.arrayOf(PropTypes.shape({
     })),
     error: PropTypes.shape({
-      status: PropTypes.number.isRequired,
+      status: PropTypes.number,
       message: PropTypes.string.isRequired,
     }),
     isLoading: PropTypes.bool.isRequired,
