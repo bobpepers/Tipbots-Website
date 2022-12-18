@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.15](https://github.com/bobpepers/Tipbots-Website/compare/v0.1.14...v0.1.15) (2022-12-18)
+
+
+### Bug Fixes
+
+* ♻️ keplr change rpc&lcd endpoint mainnet ([49884cc](https://github.com/bobpepers/Tipbots-Website/commit/49884cc344c232749faefee123360ccec7b9032a))
+
+### [0.1.15](https://github.com/bobpepers/Tipbots-Website/compare/v0.1.14...v0.1.15) (2022-12-18)
+
+
+### Bug Fixes
+
+* ♻️ keplr change rpc&lcd endpoint mainnet ([49884cc](https://github.com/bobpepers/Tipbots-Website/commit/49884cc344c232749faefee123360ccec7b9032a))
+
 ### [0.1.14](https://github.com/bobpepers/Tipbots-Website/compare/v0.1.13...v0.1.14) (2022-12-17)
 
 
