@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.16](https://github.com/bobpepers/Tipbots-Website/compare/v0.1.15...v0.1.16) (2022-12-18)
+
+
+### Bug Fixes
+
+* 🩹 secretTip/stellarTip: correct discord invitelink ([912896e](https://github.com/bobpepers/Tipbots-Website/commit/912896e3bd0d79e0fd3ad642626b7a9297862575))
+
+### [0.1.16](https://github.com/bobpepers/Tipbots-Website/compare/v0.1.15...v0.1.16) (2022-12-18)
+
+
+### Bug Fixes
+
+* 🩹 secretTip/stellarTip: correct discord invitelink ([912896e](https://github.com/bobpepers/Tipbots-Website/commit/912896e3bd0d79e0fd3ad642626b7a9297862575))
+
 ### [0.1.15](https://github.com/bobpepers/Tipbots-Website/compare/v0.1.14...v0.1.15) (2022-12-18)
 
 
