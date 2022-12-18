@@ -18,8 +18,6 @@ import {
   InputLabel,
   FormControl,
   FilledInput,
-  Input,
-  OutlinedInput,
 } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
 import CloseIcon from '@mui/icons-material/Close';
@@ -34,8 +32,8 @@ import {
 import DoneIcon from '@mui/icons-material/Done';
 
 const secretEnv = process.env.ENV === 'development' ? 'pulsar-2' : 'secret-4';
-const secretLCD = process.env.ENV === 'development' ? 'https://lcd.testnet.secretsaturn.net' : 'https://scrt-lcd.agoranodes.com';
-const secretRPC = process.env.ENV === 'development' ? 'https://rpc.testnet.secretsaturn.net' : 'https://scrt-rpc.agoranodes.com';
+const secretLCD = process.env.ENV === 'development' ? 'https://lcd.testnet.secretsaturn.net' : 'https://lcd-secret.keplr.app';
+const secretRPC = process.env.ENV === 'development' ? 'https://rpc.testnet.secretsaturn.net' : 'https://rpc-secret.keplr.app';
 const secretChainName = process.env.ENV === 'development' ? 'Secret Testnet' : 'Secret Network';
 const secretTxExplorer = process.env.ENV === 'development' ? 'https://testnet.ping.pub/secret/tx/' : 'https://ping.pub/secret/tx/';
 
