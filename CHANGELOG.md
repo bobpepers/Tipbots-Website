@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.17](https://github.com/bobpepers/Tipbots-Website/compare/v0.1.16...v0.1.17) (2022-12-19)
+
+
+### Style
+
+* 🎨 IBR coin image ([4775904](https://github.com/bobpepers/Tipbots-Website/commit/4775904495c24c73ab9145d3f6e8b3582d629f28))
+
+### [0.1.17](https://github.com/bobpepers/Tipbots-Website/compare/v0.1.16...v0.1.17) (2022-12-19)
+
+
+### Style
+
+* 🎨 IBR coin image ([4775904](https://github.com/bobpepers/Tipbots-Website/commit/4775904495c24c73ab9145d3f6e8b3582d629f28))
+
 ### [0.1.16](https://github.com/bobpepers/Tipbots-Website/compare/v0.1.15...v0.1.16) (2022-12-18)
 
 
