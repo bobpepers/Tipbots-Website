@@ -114,7 +114,7 @@
     "react-tooltip": "^4.5.1",
     "react-tsparticles": "^2.6.0",
     "redux": "^4.2.0",
-    "secretjs": "^1.5.1",
+    "secretjs": "^1.5.3",
     "tsparticles": "^2.6.0",
     "tss-react": "^4.4.5"
   }
