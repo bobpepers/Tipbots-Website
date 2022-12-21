@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.2.0](https://github.com/bobpepers/Tipbots-Website/compare/v0.1.17...v0.2.0) (2022-12-21)
+
+
+### Features
+
+* ✨ History (Tipbots) ([4ebbab8](https://github.com/bobpepers/Tipbots-Website/commit/4ebbab8c735cc7416e91c647240a9443ed921fcc))
+
+## [0.2.0](https://github.com/bobpepers/Tipbots-Website/compare/v0.1.17...v0.2.0) (2022-12-21)
+
+
+### Features
+
+* ✨ History (Tipbots) ([4ebbab8](https://github.com/bobpepers/Tipbots-Website/commit/4ebbab8c735cc7416e91c647240a9443ed921fcc))
+
 ### [0.1.17](https://github.com/bobpepers/Tipbots-Website/compare/v0.1.16...v0.1.17) (2022-12-19)
 
 
