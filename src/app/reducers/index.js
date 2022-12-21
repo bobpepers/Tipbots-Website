@@ -13,6 +13,7 @@ import revokeDiscordToken from './revokeDiscordToken';
 import telegramUser from './telegramUser';
 import telegramUserBalance from './telegramUserBalance';
 import revokeTelegramToken from './revokeTelegramToken';
+import history from './history';
 
 const store = configureStore({
   reducer: {
@@ -22,6 +23,7 @@ const store = configureStore({
     botInfo,
     coinInfo,
     currencies,
+    history,
 
     // Discord
     discordUser,

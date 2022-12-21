@@ -236,6 +236,7 @@ const TelegramDashboardView = function (props) {
               <TipBotWalletComponent
                 key={`tipbotWallet-${telegramUserBalance.data[key].name}`}
                 tipbotWallet={telegramUserBalance.data[key]}
+                chatClient="telegram"
               />
             ))
         }

@@ -223,6 +223,7 @@ const DiscordDashboardView = function (props) {
             <TipBotWalletComponent
               key={`tipbotWallet-${discordUserBalance.data[key].name}`}
               tipbotWallet={discordUserBalance.data[key]}
+              chatClient="discord"
             />
           ))
         }

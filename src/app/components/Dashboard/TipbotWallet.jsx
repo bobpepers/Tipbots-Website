@@ -16,6 +16,7 @@ import {
 } from '@mui/material';
 import BigNumber from 'bignumber.js';
 import {
+  Link,
   useNavigate,
 } from 'react-router-dom';
 import DepositDialog from './DepositDialog';
@@ -23,6 +24,7 @@ import DepositDialog from './DepositDialog';
 const TipBotWalletComponent = function (props) {
   const {
     tipbotWallet,
+    chatClient,
   } = props;
 
   const images = require.context('../../assets/images/coins', true);
@@ -64,6 +66,27 @@ const TipBotWalletComponent = function (props) {
           {' '}
           v
           {tipbotWallet.version}
+        </Grid>
+        <Grid
+          container
+          item
+          xs={12}
+          // direction="column"
+          alignItems="center"
+          justifyContent="center"
+          style={{
+            marginTop: '1rem',
+          }}
+        >
+          <Button
+            variant="outlined"
+            component={Link}
+            to={{
+              pathname: `/dashboard/${chatClient}/history/${tipbotWallet.name.toLowerCase()}`,
+            }}
+          >
+            History
+          </Button>
         </Grid>
         <Grid
           container
@@ -174,6 +197,7 @@ TipBotWalletComponent.propTypes = {
     wallets: PropTypes.arrayOf(PropTypes.shape({
     })).isRequired,
   }).isRequired,
+  chatClient: PropTypes.string.isRequired,
 };
 
 export default TipBotWalletComponent;
