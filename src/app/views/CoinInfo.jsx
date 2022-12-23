@@ -409,6 +409,12 @@ const CoinInfoView = function (props) {
     currencies,
   ]);
 
+  useEffect(() => {
+    // console.log(coinInfo);
+  }, [
+    coinInfo,
+  ]);
+
   return (
     <div className="content tipbots">
       {
@@ -451,10 +457,7 @@ CoinInfoView.propTypes = {
     data: PropTypes.shape({
       ticker: PropTypes.string.isRequired,
     }),
-    error: PropTypes.shape({
-      status: PropTypes.number,
-      message: PropTypes.string.isRequired,
-    }),
+    error: PropTypes.string,
     isLoading: PropTypes.bool.isRequired,
   }),
   currencies: PropTypes.shape({
