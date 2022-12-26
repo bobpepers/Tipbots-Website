@@ -43,9 +43,6 @@ const TipBotWalletComponent = function (props) {
     >
       <Grid
         container
-        item
-        xs={12}
-        direction="column"
         alignItems="center"
         justifyContent="center"
       >
@@ -71,7 +68,8 @@ const TipBotWalletComponent = function (props) {
           container
           item
           xs={12}
-          // direction="column"
+          sm={12}
+          md={12}
           alignItems="center"
           justifyContent="center"
           style={{
@@ -86,6 +84,28 @@ const TipBotWalletComponent = function (props) {
             }}
           >
             Activity History
+          </Button>
+        </Grid>
+        <Grid
+          container
+          item
+          xs={12}
+          sm={12}
+          md={12}
+          alignItems="center"
+          justifyContent="center"
+          style={{
+            marginTop: '1rem',
+          }}
+        >
+          <Button
+            variant="outlined"
+            component={Link}
+            to={{
+              pathname: `/dashboard/${chatClient}/history/transaction/${tipbotWallet.name.toLowerCase()}`,
+            }}
+          >
+            Transaction History
           </Button>
         </Grid>
         <Grid

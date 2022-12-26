@@ -22,15 +22,15 @@ import {
 } from '@mui/material';
 import { useParams } from 'react-router-dom';
 import { tipbotInfoArray } from '../../helpers/tipbotsInfoArray';
-import { fetchActivityHistoryAction } from '../../actions/activityHistory';
+import { fetchTransactionHistoryAction } from '../../actions/transactionHistory';
 import { fetchBotInfoAction } from '../../actions/botInfo';
-import ActivityHistoryTable from '../../components/Dashboard/ActivityHistoryTable';
+import TransactionHistoryTable from '../../components/Dashboard/TransactionHistoryTable';
 
 import { withRouter } from '../../hooks/withRouter';
 
-const ActivityHistoryDashboardView = function (props) {
+const TransactionHistoryDashboardView = function (props) {
   const {
-    activityHistory,
+    transactionHistory,
     botInfo,
   } = props;
   const {
@@ -39,7 +39,6 @@ const ActivityHistoryDashboardView = function (props) {
   } = useParams();
   const dispatch = useDispatch();
   const [currentTipbotConfig, setCurrentTipbotConfig] = useState(undefined);
-  const [feature, setFeature] = useState('All');
   const [type, setType] = useState('All');
   const [coin, setCoin] = useState('All');
   const [coinList, setCoinList] = useState(undefined);
@@ -47,18 +46,17 @@ const ActivityHistoryDashboardView = function (props) {
   const [rowsPerPage, setRowsPerPage] = useState(50);
 
   useEffect(() => {
-    document.title = t`Tipbots - History`;
+    document.title = t`Tipbots - Transaction History`;
     setCurrentTipbotConfig(tipbotInfoArray.find((x) => x.name.toLowerCase() === botName));
   }, []);
 
   useEffect(
     () => {
       if (currentTipbotConfig) {
-        dispatch(fetchActivityHistoryAction(
+        dispatch(fetchTransactionHistoryAction(
           currentTipbotConfig.userApiUrl,
           chatClient,
           coin,
-          feature,
           type,
           page * rowsPerPage,
           rowsPerPage,
@@ -68,7 +66,6 @@ const ActivityHistoryDashboardView = function (props) {
     [
       currentTipbotConfig,
       coin,
-      feature,
       type,
       page,
       rowsPerPage,
@@ -87,12 +84,14 @@ const ActivityHistoryDashboardView = function (props) {
   );
 
   useEffect(
-    () => { },
+    () => {},
     [
-      activityHistory,
+      transactionHistory,
+      transactionHistory.data,
       botInfo,
     ],
   );
+
   useEffect(
     () => {
       if (botInfo.data) {
@@ -114,9 +113,7 @@ const ActivityHistoryDashboardView = function (props) {
   const handleChangeCoin = (e) => {
     setCoin(e.target.value);
   }
-  const handleChangeFeature = (e) => {
-    setFeature(e.target.value);
-  }
+
   const handleChangeType = (e) => {
     setType(e.target.value);
   }
@@ -138,11 +135,11 @@ const ActivityHistoryDashboardView = function (props) {
             {currentTipbotConfig && currentTipbotConfig.name}
             {' '}
             <Trans>
-              Activity History
+              Transaction History
             </Trans>
           </Typography>
         </Grid>
-        <Grid item xs={4}>
+        <Grid item xs={6}>
           <FormControl fullWidth>
             <InputLabel id="coin-select-label">Coin</InputLabel>
             <Select
@@ -155,55 +152,14 @@ const ActivityHistoryDashboardView = function (props) {
               <MenuItem value="All">All</MenuItem>
               [
               {coinList
-              && coinList.map((x) => (
-                <MenuItem key={x.ticker} value={x.ticker}>{x.ticker}</MenuItem>
-              ))}
+                && coinList.map((x) => (
+                  <MenuItem key={x.ticker} value={x.ticker}>{x.ticker}</MenuItem>
+                ))}
               ]
             </Select>
           </FormControl>
         </Grid>
-        <Grid item xs={4}>
-          <FormControl fullWidth>
-            <InputLabel id="feature-select-label">Feature</InputLabel>
-            <Select
-              labelId="feature-select-label"
-              id="feature-select"
-              value={feature}
-              label="Feature"
-              onChange={handleChangeFeature}
-            >
-              <MenuItem key="feature-all" value="All">All</MenuItem>
-              {
-                chatClient === 'discord' && [
-                  <MenuItem key="feature-tip" value="tip">Tip</MenuItem>,
-                  <MenuItem key="feature-reactdrop" value="reactdrop">Reactdrop</MenuItem>,
-                  <MenuItem key="feature-trivia" value="trivia">Trivia</MenuItem>,
-                  <MenuItem key="feature-flood" value="flood">Flood</MenuItem>,
-                  <MenuItem key="feature-rain" value="rain">Rain</MenuItem>,
-                  <MenuItem key="feature-hurricane" value="hurricane">Hurricane</MenuItem>,
-                  <MenuItem key="feature-sleet" value="sleet">Sleet</MenuItem>,
-                  <MenuItem key="feature-soak" value="soak">Soak</MenuItem>,
-                  <MenuItem key="feature-thunder" value="thunder">Thunder</MenuItem>,
-                  <MenuItem key="feature-thunderstorm" value="thunderstorm">Thunderstorm</MenuItem>,
-                  <MenuItem key="feature-voicerain" value="voicerain">Voicerain</MenuItem>,
-                  <MenuItem key="feature-withdraw" value="withdraw">Withdraw</MenuItem>,
-                  <MenuItem key="feature-deposit" value="deposit">Deposit</MenuItem>,
-                ]
-              }
-              {
-                chatClient === 'telegram' && [
-                  <MenuItem key="feature-tip" value="tip">Tip</MenuItem>,
-                  <MenuItem key="feature-flood" value="flood">Flood</MenuItem>,
-                  <MenuItem key="feature-rain" value="rain">Rain</MenuItem>,
-                  <MenuItem key="feature-sleet" value="sleet">Sleet</MenuItem>,
-                  <MenuItem key="feature-withdraw" value="withdraw">Withdraw</MenuItem>,
-                  <MenuItem key="feature-deposit" value="deposit">Deposit</MenuItem>,
-                ]
-              }
-            </Select>
-          </FormControl>
-        </Grid>
-        <Grid item xs={4}>
+        <Grid item xs={6}>
           <FormControl fullWidth>
             <InputLabel id="type-select-label">Type</InputLabel>
             <Select
@@ -214,25 +170,25 @@ const ActivityHistoryDashboardView = function (props) {
               onChange={handleChangeType}
             >
               <MenuItem value="All">All</MenuItem>
-              <MenuItem value="received">Received</MenuItem>
-              <MenuItem value="sent">Sent</MenuItem>
+              <MenuItem value="deposit">Deposit</MenuItem>
+              <MenuItem value="withdrawal">Withdrawal</MenuItem>
             </Select>
           </FormControl>
         </Grid>
         <Grid item xs={12}>
           {
-            activityHistory && activityHistory.isLoading
+            transactionHistory && transactionHistory.isLoading
               ? (<CircularProgress />)
               : (
-                <ActivityHistoryTable
+                <TransactionHistoryTable
                   page={page}
                   setPage={setPage}
                   rowsPerPage={rowsPerPage}
                   setRowsPerPage={setRowsPerPage}
-                  totalCount={activityHistory && activityHistory.count ? activityHistory.count : 0}
-                  history={activityHistory
-                    && activityHistory.data
-                    ? activityHistory.data
+                  totalCount={transactionHistory && transactionHistory.count ? transactionHistory.count : 0}
+                  history={transactionHistory
+                      && transactionHistory.data
+                    ? transactionHistory.data
                     : []}
                 />
               )
@@ -244,18 +200,18 @@ const ActivityHistoryDashboardView = function (props) {
   );
 }
 
-ActivityHistoryDashboardView.defaultProps = {
-  activityHistory: {
+TransactionHistoryDashboardView.defaultProps = {
+  transactionHistory: {
     data: undefined,
   },
 };
 
-ActivityHistoryDashboardView.propTypes = {
+TransactionHistoryDashboardView.propTypes = {
   botInfo: PropTypes.shape({
     data: PropTypes.shape({
     }).isRequired,
   }).isRequired,
-  activityHistory: PropTypes.shape({
+  transactionHistory: PropTypes.shape({
     data: PropTypes.arrayOf(PropTypes.shape({
     })),
     count: PropTypes.number,
@@ -264,8 +220,8 @@ ActivityHistoryDashboardView.propTypes = {
 };
 
 const mapStateToProps = (state) => ({
-  activityHistory: state.activityHistory,
+  transactionHistory: state.transactionHistory,
   botInfo: state.botInfo,
 })
 
-export default withRouter(connect(mapStateToProps, null)(ActivityHistoryDashboardView));
+export default withRouter(connect(mapStateToProps, null)(TransactionHistoryDashboardView));

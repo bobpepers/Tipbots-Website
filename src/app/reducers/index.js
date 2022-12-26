@@ -14,6 +14,7 @@ import telegramUser from './telegramUser';
 import telegramUserBalance from './telegramUserBalance';
 import revokeTelegramToken from './revokeTelegramToken';
 import activityHistory from './activityHistory';
+import transactionHistory from './transactionHistory';
 import changelog from './changelog';
 
 const store = configureStore({
@@ -25,6 +26,7 @@ const store = configureStore({
     coinInfo,
     currencies,
     activityHistory,
+    transactionHistory,
     changelog,
 
     // Discord
