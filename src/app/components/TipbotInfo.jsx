@@ -81,10 +81,8 @@ const TipBotInfoComponent = function (props) {
             style={{
               fontSize: '14px',
               fontWeight: 200,
-              marginRight: '10px',
             }}
             size="small"
-            // to={`/tipbots/${tipbotInfo.name.toLowerCase()}/changelog`}
             onClick={() => navigate(`/tipbots/${tipbotInfo.name.toLowerCase()}/changelog`)}
             aria-controls="basic-menu"
             aria-haspopup="true"
@@ -140,7 +138,9 @@ const TipBotInfoComponent = function (props) {
           }}
         >
           <Stack
-            direction="row"
+            direction={{ xs: 'column', sm: 'column', md: 'row' }}
+            justifyContent="center"
+            alignItems="center"
             spacing={2}
           >
             <a
