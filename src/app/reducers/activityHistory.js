@@ -1,7 +1,7 @@
 import {
-  FETCH_HISTORY_BEGIN,
-  FETCH_HISTORY_SUCCESS,
-  FETCH_HISTORY_FAIL,
+  FETCH_ACTIVITY_HISTORY_BEGIN,
+  FETCH_ACTIVITY_HISTORY_SUCCESS,
+  FETCH_ACTIVITY_HISTORY_FAIL,
 } from '../actions/types/index';
 
 const initialState = {
@@ -11,13 +11,13 @@ const initialState = {
 
 export default (state = initialState, action) => {
   switch (action.type) {
-  case FETCH_HISTORY_BEGIN:
+  case FETCH_ACTIVITY_HISTORY_BEGIN:
     return {
       ...state,
       isLoading: true,
       error: null,
     };
-  case FETCH_HISTORY_SUCCESS:
+  case FETCH_ACTIVITY_HISTORY_SUCCESS:
     return {
       ...state,
       data: action.payload.result,
@@ -25,7 +25,7 @@ export default (state = initialState, action) => {
       isLoading: false,
     };
 
-  case FETCH_HISTORY_FAIL:
+  case FETCH_ACTIVITY_HISTORY_FAIL:
     return {
       ...state,
       data: state.data,

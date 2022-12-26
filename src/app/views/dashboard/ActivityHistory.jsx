@@ -22,15 +22,15 @@ import {
 } from '@mui/material';
 import { useParams } from 'react-router-dom';
 import { tipbotInfoArray } from '../../helpers/tipbotsInfoArray';
-import { fetchHistoryAction } from '../../actions/history';
+import { fetchActivityHistoryAction } from '../../actions/activityHistory';
 import { fetchBotInfoAction } from '../../actions/botInfo';
-import HistoryTable from '../../components/Dashboard/HistoryTable';
+import ActivityHistoryTable from '../../components/Dashboard/ActivityHistoryTable';
 
 import { withRouter } from '../../hooks/withRouter';
 
-const HistoryDashboardView = function (props) {
+const ActivityHistoryDashboardView = function (props) {
   const {
-    history,
+    activityHistory,
     botInfo,
   } = props;
   const {
@@ -54,7 +54,7 @@ const HistoryDashboardView = function (props) {
   useEffect(
     () => {
       if (currentTipbotConfig) {
-        dispatch(fetchHistoryAction(
+        dispatch(fetchActivityHistoryAction(
           currentTipbotConfig.userApiUrl,
           chatClient,
           coin,
@@ -89,7 +89,7 @@ const HistoryDashboardView = function (props) {
   useEffect(
     () => { },
     [
-      history,
+      activityHistory,
       botInfo,
     ],
   );
@@ -138,7 +138,7 @@ const HistoryDashboardView = function (props) {
             {currentTipbotConfig && currentTipbotConfig.name}
             {' '}
             <Trans>
-              History
+              Activity History
             </Trans>
           </Typography>
         </Grid>
@@ -221,18 +221,18 @@ const HistoryDashboardView = function (props) {
         </Grid>
         <Grid item xs={12}>
           {
-            history && history.isLoading
+            activityHistory && activityHistory.isLoading
               ? (<CircularProgress />)
               : (
-                <HistoryTable
+                <ActivityHistoryTable
                   page={page}
                   setPage={setPage}
                   rowsPerPage={rowsPerPage}
                   setRowsPerPage={setRowsPerPage}
-                  totalCount={history && history.count ? history.count : 0}
-                  history={history
-                    && history.data
-                    ? history.data
+                  totalCount={activityHistory && activityHistory.count ? activityHistory.count : 0}
+                  history={activityHistory
+                    && activityHistory.data
+                    ? activityHistory.data
                     : []}
                 />
               )
@@ -244,26 +244,26 @@ const HistoryDashboardView = function (props) {
   );
 }
 
-HistoryDashboardView.defaultProps = {
-  history: {
+ActivityHistoryDashboardView.defaultProps = {
+  activityHistory: {
     data: undefined,
   },
 };
 
-HistoryDashboardView.propTypes = {
+ActivityHistoryDashboardView.propTypes = {
   botInfo: PropTypes.shape({
     data: PropTypes.shape({
     }).isRequired,
   }).isRequired,
-  history: PropTypes.shape({
+  activityHistory: PropTypes.shape({
     data: PropTypes.arrayOf(PropTypes.shape({
     })),
   }),
 };
 
 const mapStateToProps = (state) => ({
-  history: state.history,
+  activityHistory: state.activityHistory,
   botInfo: state.botInfo,
 })
 
-export default withRouter(connect(mapStateToProps, null)(HistoryDashboardView));
+export default withRouter(connect(mapStateToProps, null)(ActivityHistoryDashboardView));

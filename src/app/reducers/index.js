@@ -13,7 +13,7 @@ import revokeDiscordToken from './revokeDiscordToken';
 import telegramUser from './telegramUser';
 import telegramUserBalance from './telegramUserBalance';
 import revokeTelegramToken from './revokeTelegramToken';
-import history from './history';
+import activityHistory from './activityHistory';
 import changelog from './changelog';
 
 const store = configureStore({
@@ -24,7 +24,7 @@ const store = configureStore({
     botInfo,
     coinInfo,
     currencies,
-    history,
+    activityHistory,
     changelog,
 
     // Discord

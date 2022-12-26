@@ -12,7 +12,7 @@ import toggleTheme from './helpers/toggleTheme';
 import { tipbotInfoArray } from './helpers/tipbotsInfoArray';
 import DiscordDashboard from './views/dashboard/Discord';
 import TelegramDashboard from './views/dashboard/Telegram';
-import HistoryDashboard from './views/dashboard/History';
+import ActivityHistoryDashboar from './views/dashboard/ActivityHistory';
 import Tipbot from './views/Tipbot';
 import CoinInfo from './views/CoinInfo';
 import ChangeLog from './views/ChangeLog';
@@ -67,8 +67,8 @@ const RoutesX = function (props) {
         element={<DiscordDashboard />}
       />
       <Route
-        path="/dashboard/:chatClient/history/:botName"
-        element={<HistoryDashboard />}
+        path="/dashboard/:chatClient/history/activity/:botName"
+        element={<ActivityHistoryDashboar />}
       />
       <Route
         path="/tipbots/:botName/coin/:coinTicker"

@@ -81,7 +81,7 @@ function EnhancedTableHead() {
   );
 }
 
-function HistoryTable(props) {
+function ActivityHistoryTable(props) {
   const {
     history,
     page,
@@ -286,7 +286,7 @@ function HistoryTable(props) {
   );
 }
 
-HistoryTable.propTypes = {
+ActivityHistoryTable.propTypes = {
   history: PropTypes.arrayOf(PropTypes.shape({
   })).isRequired,
   page: PropTypes.number.isRequired,
@@ -296,4 +296,4 @@ HistoryTable.propTypes = {
   totalCount: PropTypes.number.isRequired,
 };
 
-export default HistoryTable;
+export default ActivityHistoryTable;

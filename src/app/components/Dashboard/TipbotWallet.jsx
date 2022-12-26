@@ -82,10 +82,10 @@ const TipBotWalletComponent = function (props) {
             variant="outlined"
             component={Link}
             to={{
-              pathname: `/dashboard/${chatClient}/history/${tipbotWallet.name.toLowerCase()}`,
+              pathname: `/dashboard/${chatClient}/history/activity/${tipbotWallet.name.toLowerCase()}`,
             }}
           >
-            History
+            Activity History
           </Button>
         </Grid>
         <Grid
