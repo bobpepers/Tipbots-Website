@@ -15,6 +15,7 @@ import TelegramDashboard from './views/dashboard/Telegram';
 import HistoryDashboard from './views/dashboard/History';
 import Tipbot from './views/Tipbot';
 import CoinInfo from './views/CoinInfo';
+import ChangeLog from './views/ChangeLog';
 
 const Home = lazy(() => import('./views/Home'));
 const Uptime = lazy(() => import('./views/Uptime'));
@@ -72,6 +73,10 @@ const RoutesX = function (props) {
       <Route
         path="/tipbots/:botName/coin/:coinTicker"
         element={<CoinInfo />}
+      />
+      <Route
+        path="/tipbots/:botName/changelog"
+        element={<ChangeLog />}
       />
       {tipbotInfoArray.map((tipbot) => (
         <Route

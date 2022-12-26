@@ -68,6 +68,35 @@ const TipBotInfoComponent = function (props) {
         </Grid>
         <Grid
           container
+          item
+          xs={12}
+          sm={12}
+          md={4}
+          alignItems="center"
+          justifyContent="center"
+          className="mt-1"
+        >
+          <Button
+            variant="outlined"
+            style={{
+              fontSize: '14px',
+              fontWeight: 200,
+              marginRight: '10px',
+            }}
+            size="small"
+            // to={`/tipbots/${tipbotInfo.name.toLowerCase()}/changelog`}
+            onClick={() => navigate(`/tipbots/${tipbotInfo.name.toLowerCase()}/changelog`)}
+            aria-controls="basic-menu"
+            aria-haspopup="true"
+            className="headerMenuTextColor"
+          >
+            <Trans>
+              ChangeLog
+            </Trans>
+          </Button>
+        </Grid>
+        <Grid
+          container
           alignItems="center"
           justifyContent="center"
           style={{

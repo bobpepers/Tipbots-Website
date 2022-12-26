@@ -78,8 +78,38 @@ const Tipbot = function () {
           container
           item
           xs={12}
+          sm={12}
+          md={4}
+          alignItems="center"
+          justifyContent="center"
+          className="mb-1"
+        >
+          <Button
+            component={Link}
+            variant="outlined"
+            style={{
+              fontSize: '14px',
+              fontWeight: 200,
+              marginRight: '10px',
+            }}
+            size="large"
+            to={`/tipbots/${tipbotInfo.name.toLowerCase()}/changelog`}
+            aria-controls="basic-menu"
+            aria-haspopup="true"
+            className="headerMenuTextColor"
+          >
+            <Trans>
+              ChangeLog
+            </Trans>
+          </Button>
+        </Grid>
+
+        <Grid
+          container
+          item
+          xs={12}
           sm={6}
-          md={6}
+          md={4}
           alignItems="center"
           justifyContent="center"
           className="mb-1"
@@ -109,7 +139,7 @@ const Tipbot = function () {
           item
           xs={12}
           sm={6}
-          md={6}
+          md={4}
           alignItems="center"
           justifyContent="center"
           className="mb-1"
