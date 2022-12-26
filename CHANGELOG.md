@@ -2,6 +2,42 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.3](https://github.com/bobpepers/Tipbots-Website/compare/v0.2.2...v0.2.3) (2022-12-26)
+
+
+### Features
+
+* ✨ Changelog view, route, action, reducer, ... ([4e26609](https://github.com/bobpepers/Tipbots-Website/commit/4e266097a821a179a4454084334c2060c3a7cfd0))
+* ✨ Transaction History ([ac3a7e9](https://github.com/bobpepers/Tipbots-Website/commit/ac3a7e9cda7112f558149aec68df625ca7f5e223))
+
+
+### Refactor
+
+* ♻️ history becomes activityHistory ([a9a67c6](https://github.com/bobpepers/Tipbots-Website/commit/a9a67c64cf4ef4269550eb7fa31c29197150c03b))
+
+
+### Style
+
+* 🎨 better invite button breakpoints ([4ab4b6a](https://github.com/bobpepers/Tipbots-Website/commit/4ab4b6a18857f74cfd378f7f2997ca100992d2b4))
+
+### [0.2.3](https://github.com/bobpepers/Tipbots-Website/compare/v0.2.2...v0.2.3) (2022-12-26)
+
+
+### Features
+
+* ✨ Changelog view, route, action, reducer, ... ([4e26609](https://github.com/bobpepers/Tipbots-Website/commit/4e266097a821a179a4454084334c2060c3a7cfd0))
+* ✨ Transaction History ([ac3a7e9](https://github.com/bobpepers/Tipbots-Website/commit/ac3a7e9cda7112f558149aec68df625ca7f5e223))
+
+
+### Refactor
+
+* ♻️ history becomes activityHistory ([a9a67c6](https://github.com/bobpepers/Tipbots-Website/commit/a9a67c64cf4ef4269550eb7fa31c29197150c03b))
+
+
+### Style
+
+* 🎨 better invite button breakpoints ([4ab4b6a](https://github.com/bobpepers/Tipbots-Website/commit/4ab4b6a18857f74cfd378f7f2997ca100992d2b4))
+
 ### [0.2.2](https://github.com/bobpepers/Tipbots-Website/compare/v0.2.1...v0.2.2) (2022-12-24)
 
 ### [0.2.2](https://github.com/bobpepers/Tipbots-Website/compare/v0.2.1...v0.2.2) (2022-12-24)
