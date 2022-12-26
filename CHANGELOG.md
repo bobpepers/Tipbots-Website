@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.4](https://github.com/bobpepers/Tipbots-Website/compare/v0.2.3...v0.2.4) (2022-12-26)
+
+
+### Style
+
+* 🎨 BUTT, SATOM, SOSMO png coin logos ([456c201](https://github.com/bobpepers/Tipbots-Website/commit/456c201789db041e941df3ee8367ac4af67affa7))
+
+### [0.2.4](https://github.com/bobpepers/Tipbots-Website/compare/v0.2.3...v0.2.4) (2022-12-26)
+
+
+### Style
+
+* 🎨 BUTT, SATOM, SOSMO png coin logos ([456c201](https://github.com/bobpepers/Tipbots-Website/commit/456c201789db041e941df3ee8367ac4af67affa7))
+
 ### [0.2.3](https://github.com/bobpepers/Tipbots-Website/compare/v0.2.2...v0.2.3) (2022-12-26)
 
 
