@@ -97,9 +97,6 @@ const TipBotInfoComponent = function (props) {
           container
           alignItems="center"
           justifyContent="center"
-          style={{
-            marginTop: '1rem',
-          }}
         >
           <Grid
             item
@@ -115,6 +112,7 @@ const TipBotInfoComponent = function (props) {
                   variant="outlined"
                   key={`${tipbotInfo.name}-${coin.ticker}`}
                   onClick={() => navigate(`/tipbots/${tipbotInfo.name.toLowerCase()}/coin/${coin.ticker}`)}
+                  className="mt-1"
                   style={{
                     marginLeft: '0.2rem',
                     marginRight: '0.2rem',
