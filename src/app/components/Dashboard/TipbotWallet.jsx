@@ -94,9 +94,7 @@ const TipBotWalletComponent = function (props) {
           md={12}
           alignItems="center"
           justifyContent="center"
-          style={{
-            marginTop: '1rem',
-          }}
+          className="mt-1"
         >
           <Button
             variant="outlined"
@@ -112,9 +110,6 @@ const TipBotWalletComponent = function (props) {
           container
           alignItems="center"
           justifyContent="center"
-          style={{
-            marginTop: '1rem',
-          }}
         >
           <Grid
             item
@@ -127,6 +122,7 @@ const TipBotWalletComponent = function (props) {
               const image = images(`./${myWallet.coin.ticker}.png`);
               return (
                 <Button
+                  className="mt-1"
                   variant="outlined"
                   key={`${tipbotWallet.name}-${myWallet.coin.ticker}`}
                   onClick={() => navigate(`/tipbots/${tipbotWallet.name.toLowerCase()}/coin/${myWallet.coin.ticker}`)}
