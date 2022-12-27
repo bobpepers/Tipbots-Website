@@ -2,6 +2,32 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.5](https://github.com/bobpepers/Tipbots-Website/compare/v0.2.4...v0.2.5) (2022-12-27)
+
+
+### Bug Fixes
+
+* 🎨 coinInfoButton margin ([bcc86b6](https://github.com/bobpepers/Tipbots-Website/commit/bcc86b628a290b9d981cf982b8d51bd6feba559e))
+* 🎨 wallet CoinInfoButton margin ([4c21dfa](https://github.com/bobpepers/Tipbots-Website/commit/4c21dfacbfbd29fd7e84f12dfa0934e6ac9fb8bc))
+
+
+### Style
+
+* 🎨 Add SEVMOS coin logo ([6e18950](https://github.com/bobpepers/Tipbots-Website/commit/6e18950b6591433d244f22a71e3fc44c5d7edad8))
+
+### [0.2.5](https://github.com/bobpepers/Tipbots-Website/compare/v0.2.4...v0.2.5) (2022-12-27)
+
+
+### Bug Fixes
+
+* 🎨 coinInfoButton margin ([bcc86b6](https://github.com/bobpepers/Tipbots-Website/commit/bcc86b628a290b9d981cf982b8d51bd6feba559e))
+* 🎨 wallet CoinInfoButton margin ([4c21dfa](https://github.com/bobpepers/Tipbots-Website/commit/4c21dfacbfbd29fd7e84f12dfa0934e6ac9fb8bc))
+
+
+### Style
+
+* 🎨 Add SEVMOS coin logo ([6e18950](https://github.com/bobpepers/Tipbots-Website/commit/6e18950b6591433d244f22a71e3fc44c5d7edad8))
+
 ### [0.2.4](https://github.com/bobpepers/Tipbots-Website/compare/v0.2.3...v0.2.4) (2022-12-26)
 
 
