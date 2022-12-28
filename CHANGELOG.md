@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.7](https://github.com/bobpepers/Tipbots-Website/compare/v0.2.6...v0.2.7) (2022-12-28)
+
+
+### Style
+
+* 🎨 Add OVRL token logo ([dca07a0](https://github.com/bobpepers/Tipbots-Website/commit/dca07a0679015a981a2f8b7a76081a31e74d00b7))
+
+### [0.2.7](https://github.com/bobpepers/Tipbots-Website/compare/v0.2.6...v0.2.7) (2022-12-28)
+
+
+### Style
+
+* 🎨 Add OVRL token logo ([dca07a0](https://github.com/bobpepers/Tipbots-Website/commit/dca07a0679015a981a2f8b7a76081a31e74d00b7))
+
 ### [0.2.6](https://github.com/bobpepers/Tipbots-Website/compare/v0.2.5...v0.2.6) (2022-12-28)
 
 
