@@ -131,7 +131,7 @@ const Home = function (props) {
               Personalized Discord and Telegram tipbots for crypto projects.
             </Trans>
           </Typography>
-          <Typography
+          {/* <Typography
             variant="body1"
             // align={lgUp ? 'left' : 'center'}
             align="center"
@@ -141,8 +141,8 @@ const Home = function (props) {
             <Trans>
               Tipbots for bitcoin forks, zcash forks, secret, komodo smartchains, stellar assets with dedicated developer and support.
             </Trans>
-          </Typography>
-          <Typography
+          </Typography> */}
+          {/* <Typography
             variant="body1"
             // align={lgUp ? 'left' : 'center'}
             align="center"
@@ -152,7 +152,7 @@ const Home = function (props) {
             <Trans>
               A rich arsenal of features like tip, multi-tip, rain, flood, soak, sleet, voicerain, hurricane, thunderstorm, thunder, reactdrop, trivia, faucet, help, info, balance, statistics, settings,...
             </Trans>
-          </Typography>
+          </Typography> */}
         </Grid>
       </Grid>
       <Divider
