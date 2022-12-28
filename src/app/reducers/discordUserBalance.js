@@ -35,6 +35,7 @@ export default (state = initialState, action) => {
           version: action.payload.version,
           logo: action.tipbotInfo.logo,
           wallets: action.payload.wallets,
+          myServers: action.payload.myServers,
         },
       },
       isFetching: false,

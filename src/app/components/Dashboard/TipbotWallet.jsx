@@ -20,11 +20,13 @@ import {
   useNavigate,
 } from 'react-router-dom';
 import DepositDialog from './DepositDialog';
+import ServerManagementModal from './ServerManagement';
 
 const TipBotWalletComponent = function (props) {
   const {
     tipbotWallet,
     chatClient,
+    userApiUrl,
   } = props;
 
   const images = require.context('../../assets/images/coins', true);
@@ -64,6 +66,27 @@ const TipBotWalletComponent = function (props) {
           v
           {tipbotWallet.version}
         </Grid>
+        {
+          tipbotWallet.myServers && tipbotWallet.myServers.length > 0 && (
+            <Grid
+              container
+              item
+              xs={12}
+              sm={12}
+              md={12}
+              alignItems="center"
+              justifyContent="center"
+              style={{
+                marginTop: '1rem',
+              }}
+            >
+              <ServerManagementModal
+                myServers={tipbotWallet.myServers}
+                userApiUrl={userApiUrl}
+              />
+            </Grid>
+          )
+        }
         <Grid
           container
           item
