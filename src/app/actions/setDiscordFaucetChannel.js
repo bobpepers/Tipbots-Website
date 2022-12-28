@@ -1,21 +1,27 @@
 import axios from '../axios';
 import {
   ENQUEUE_SNACKBAR,
+  UPDATE_DISCORD_USER_BALANCE_SERVER,
 } from './types/index';
 import { notistackErrorAdd } from './helpers/notistackError';
 
 export function setDiscordFaucetChannelAction(
-  userApiUrl,
+  tipbotInfo,
   serverId,
   channelId,
 ) {
   return function (dispatch) {
-    axios.post(`${userApiUrl}/dashboard/config/channel/faucet`, {
+    axios.post(`${tipbotInfo.userApiUrl}/dashboard/config/channel/faucet`, {
       serverId,
       channelId,
     }, {
       withCredentials: true,
     }).then((response) => {
+      dispatch({
+        type: UPDATE_DISCORD_USER_BALANCE_SERVER,
+        payload: response.data.result,
+        tipbotInfo,
+      });
       dispatch({
         type: ENQUEUE_SNACKBAR,
         notification: {

@@ -26,7 +26,7 @@ const TipBotWalletComponent = function (props) {
   const {
     tipbotWallet,
     chatClient,
-    userApiUrl,
+    tipbotInfo,
   } = props;
 
   const images = require.context('../../assets/images/coins', true);
@@ -82,7 +82,7 @@ const TipBotWalletComponent = function (props) {
             >
               <ServerManagementModal
                 myServers={tipbotWallet.myServers}
-                userApiUrl={userApiUrl}
+                tipbotInfo={tipbotInfo}
               />
             </Grid>
           )

@@ -35,7 +35,7 @@ const style = {
 export default function ServerManagementModal(props) {
   const {
     myServers,
-    userApiUrl,
+    tipbotInfo,
   } = props;
   const dispatch = useDispatch();
   const [open, setOpen] = useState(false);
@@ -58,7 +58,7 @@ export default function ServerManagementModal(props) {
     const channelId = event.target.value;
     dispatch(
       setDiscordFaucetChannelAction(
-        userApiUrl,
+        tipbotInfo,
         selectedServer.groupId,
         channelId,
       ),
@@ -70,7 +70,7 @@ export default function ServerManagementModal(props) {
     const channelId = event.target.value;
     dispatch(
       setDiscordTipChannelAction(
-        userApiUrl,
+        tipbotInfo,
         selectedServer.groupId,
         channelId,
       ),
@@ -83,6 +83,13 @@ export default function ServerManagementModal(props) {
     selectedServer,
     selectedFaucetChannel,
     selectedTipChannel,
+  ]);
+
+  useEffect(() => {
+    setSelectedFaucetChannel(selectedServer.channels.find((x) => x.id === selectedServer.discordFaucetChannelId)?.id || 'none');
+    setSelectedTipChannel(selectedServer.channels.find((x) => x.id === selectedServer.discordTipMessageChannelId)?.id || 'none')
+  }, [
+    selectedServer,
   ]);
 
   return (

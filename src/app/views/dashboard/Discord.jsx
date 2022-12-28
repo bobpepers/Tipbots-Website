@@ -96,6 +96,7 @@ const DiscordDashboardView = function (props) {
     [
       discordUser,
       discordUserBalance,
+      discordUserBalance.data,
     ],
   );
 
@@ -220,13 +221,13 @@ const DiscordDashboardView = function (props) {
           && discordUserBalance.data
           && Object.keys(discordUserBalance.data).length > 0
           && Object.keys(discordUserBalance.data).map((key) => {
-            const { userApiUrl } = tipbotInfoArray.find((x) => x.name === discordUserBalance.data[key].name);
+            const tipbotInfo = tipbotInfoArray.find((x) => x.name === discordUserBalance.data[key].name);
             return (
               <TipBotWalletComponent
                 key={`tipbotWallet-${discordUserBalance.data[key].name}`}
                 tipbotWallet={discordUserBalance.data[key]}
                 chatClient="discord"
-                userApiUrl={userApiUrl}
+                tipbotInfo={tipbotInfo}
               />
             )
           })
