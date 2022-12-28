@@ -2,6 +2,40 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.6](https://github.com/bobpepers/Tipbots-Website/compare/v0.2.5...v0.2.6) (2022-12-28)
+
+
+### Features
+
+* ✨ Server owners: channel config menu ([7dae071](https://github.com/bobpepers/Tipbots-Website/commit/7dae071d1c10cc9a2df1757f5ccd7c62553a4ee6))
+
+
+### Bug Fixes
+
+* ⚡️ Update reducer on channelupdates (discord) ([424c5e1](https://github.com/bobpepers/Tipbots-Website/commit/424c5e133d4ae2eeede8f8314e3a322c07a84cd7))
+
+
+### Style
+
+* 💩 Comment out poor introduction ([ec3b2f4](https://github.com/bobpepers/Tipbots-Website/commit/ec3b2f491c8cbe2a91a97a712f3f820372073a3f))
+
+### [0.2.6](https://github.com/bobpepers/Tipbots-Website/compare/v0.2.5...v0.2.6) (2022-12-28)
+
+
+### Features
+
+* ✨ Server owners: channel config menu ([7dae071](https://github.com/bobpepers/Tipbots-Website/commit/7dae071d1c10cc9a2df1757f5ccd7c62553a4ee6))
+
+
+### Bug Fixes
+
+* ⚡️ Update reducer on channelupdates (discord) ([424c5e1](https://github.com/bobpepers/Tipbots-Website/commit/424c5e133d4ae2eeede8f8314e3a322c07a84cd7))
+
+
+### Style
+
+* 💩 Comment out poor introduction ([ec3b2f4](https://github.com/bobpepers/Tipbots-Website/commit/ec3b2f491c8cbe2a91a97a712f3f820372073a3f))
+
 ### [0.2.5](https://github.com/bobpepers/Tipbots-Website/compare/v0.2.4...v0.2.5) (2022-12-27)
 
 
