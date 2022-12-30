@@ -31,6 +31,7 @@ import Discord from '../../assets/images/discord.svg';
 
 import { withRouter } from '../../hooks/withRouter';
 import TipBotWalletComponent from '../../components/Dashboard/TipbotWallet';
+import { tipbotSort } from '../../helpers/utils';
 
 const DiscordDashboardView = function (props) {
   const {
@@ -220,7 +221,7 @@ const DiscordDashboardView = function (props) {
           discordUserBalance
           && discordUserBalance.data
           && Object.keys(discordUserBalance.data).length > 0
-          && Object.keys(discordUserBalance.data).map((key) => {
+          && Object.keys(discordUserBalance.data).sort(tipbotSort).map((key) => {
             const tipbotInfo = tipbotInfoArray.find((x) => x.name === discordUserBalance.data[key].name);
             return (
               <TipBotWalletComponent

@@ -22,6 +22,7 @@ import { tipbotInfoArray } from '../helpers/tipbotsInfoArray';
 import { withRouter } from '../hooks/withRouter';
 import { fetchBotInfoAction } from '../actions/botInfo';
 import TipBotInfoComponent from '../components/TipbotInfo';
+import { tipbotSort } from '../helpers/utils';
 
 const Home = function (props) {
   const {
@@ -172,7 +173,7 @@ const Home = function (props) {
           botInfo
           && botInfo.data
           && Object.keys(botInfo.data).length > 0
-          && Object.keys(botInfo.data).map((key) => (
+          && Object.keys(botInfo.data).sort(tipbotSort).map((key) => (
             <TipBotInfoComponent
               tipbotInfo={botInfo.data[key]}
               key={key}

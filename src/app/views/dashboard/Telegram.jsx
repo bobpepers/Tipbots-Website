@@ -32,6 +32,7 @@ import Telegram from '../../assets/images/telegram.svg';
 
 import { withRouter } from '../../hooks/withRouter';
 import TipBotWalletComponent from '../../components/Dashboard/TipbotWallet';
+import { tipbotSort } from '../../helpers/utils';
 
 const TelegramDashboardView = function (props) {
   const {
@@ -232,7 +233,7 @@ const TelegramDashboardView = function (props) {
           telegramUserBalance
             && telegramUserBalance.data
             && Object.keys(telegramUserBalance.data).length > 0
-            && Object.keys(telegramUserBalance.data).map((key) => (
+            && Object.keys(telegramUserBalance.data).sort(tipbotSort).map((key) => (
               <TipBotWalletComponent
                 key={`tipbotWallet-${telegramUserBalance.data[key].name}`}
                 tipbotWallet={telegramUserBalance.data[key]}

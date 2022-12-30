@@ -17,3 +17,12 @@ export const formatDuration = (seconds) => {
   if (h > 0) text = `${h} Hours ${text}`;
   return text;
 }
+const shouldBeSortedAs = [
+  'RunesTip',
+  'PirateTip',
+  'TokelTip',
+  'SecretTip',
+  'StellarTip',
+];
+
+export const tipbotSort = (x, y) => shouldBeSortedAs.indexOf(x) - shouldBeSortedAs.indexOf(y)
