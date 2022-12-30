@@ -112,7 +112,7 @@
     "react-redux": "^8.0.5",
     "react-router-dom": "^6.6.1",
     "react-telegram-login": "^1.1.2",
-    "react-tooltip": "^4.5.1",
+    "react-tooltip": "^5.3.2",
     "react-tsparticles": "^2.7.1",
     "redux": "^4.2.0",
     "secretjs": "^1.6.4",

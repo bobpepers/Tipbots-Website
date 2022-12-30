@@ -2,7 +2,7 @@ import React, {
   useEffect,
   useState,
 } from 'react';
-import ReactTooltip from 'react-tooltip';
+import { Tooltip } from 'react-tooltip';
 import {
   Grid,
   Box,
@@ -12,13 +12,17 @@ import {
 import CheckIcon from '@mui/icons-material/Check';
 import CloseIcon from '@mui/icons-material/Close';
 import QuestionMarkIcon from '@mui/icons-material/QuestionMark';
-import { Trans, t } from '@lingui/macro';
+import {
+  Trans,
+  t,
+} from '@lingui/macro';
 import PropTypes from 'prop-types';
 import {
   formatDuration,
   formatNumber,
 } from '../helpers/utils';
 import { GetMonitors } from '../helpers/uptimerobot';
+import 'react-tooltip/dist/react-tooltip.css';
 
 function UptimeRobot({
   apikey,
@@ -113,11 +117,21 @@ function UptimeRobot({
                 text += t`<br />Faulted: ${data.down.times} time<br />outage-time: ${formatDuration(data.down.duration)}<br />availability: ${formatNumber(data.uptime)}%`;
               }
               return (
-                <i
-                  key={data.index}
-                  className={upTimeStatus}
-                  data-tip={text}
-                />
+                <>
+                  <i
+                    id={`${site.name}-tooltip-${data.index}`}
+                    key={data.index}
+                    className={upTimeStatus}
+                    data-tooltip-content={text}
+                  />
+                  <Tooltip
+                    anchorId={`${site.name}-tooltip-${data.index}`}
+                    className="tooltip"
+                    place="top"
+                    variant="info"
+                    html
+                  />
+                </>
               )
             })}
           </div>
@@ -163,13 +177,6 @@ function UptimeRobot({
               </Typography>
             </Grid>
           </Grid>
-          <ReactTooltip
-            className="tooltip"
-            place="top"
-            type="dark"
-            effect="solid"
-            html
-          />
         </Grid>
         <Grid
           container
