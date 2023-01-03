@@ -2,6 +2,42 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.8](https://github.com/bobpepers/Tipbots-Website/compare/v0.2.7...v0.2.8) (2023-01-03)
+
+
+### Features
+
+* 🎨 Add SKUJI, SSTARS token logo's ([4c435af](https://github.com/bobpepers/Tipbots-Website/commit/4c435af1865993ef891304c2789acb9b86d190f2))
+
+
+### Bug Fixes
+
+* 🎨 Correction SBNB, SSTARS token logo ([a956f71](https://github.com/bobpepers/Tipbots-Website/commit/a956f71f435751a509ccfc034149420240d28f9d))
+* 🐛 fix filename typo, SHUAHUA ([6a81a27](https://github.com/bobpepers/Tipbots-Website/commit/6a81a270ceed4cb5b4d0046a4e244abdbff3c654))
+
+
+### Style
+
+* Pre-defined sort tipbots ([fccc95c](https://github.com/bobpepers/Tipbots-Website/commit/fccc95c2176a8cd230b6d8a891ccfb5d780a34f1))
+
+### [0.2.8](https://github.com/bobpepers/Tipbots-Website/compare/v0.2.7...v0.2.8) (2023-01-03)
+
+
+### Features
+
+* 🎨 Add SKUJI, SSTARS token logo's ([4c435af](https://github.com/bobpepers/Tipbots-Website/commit/4c435af1865993ef891304c2789acb9b86d190f2))
+
+
+### Bug Fixes
+
+* 🎨 Correction SBNB, SSTARS token logo ([a956f71](https://github.com/bobpepers/Tipbots-Website/commit/a956f71f435751a509ccfc034149420240d28f9d))
+* 🐛 fix filename typo, SHUAHUA ([6a81a27](https://github.com/bobpepers/Tipbots-Website/commit/6a81a270ceed4cb5b4d0046a4e244abdbff3c654))
+
+
+### Style
+
+* Pre-defined sort tipbots ([fccc95c](https://github.com/bobpepers/Tipbots-Website/commit/fccc95c2176a8cd230b6d8a891ccfb5d780a34f1))
+
 ### [0.2.7](https://github.com/bobpepers/Tipbots-Website/compare/v0.2.6...v0.2.7) (2022-12-28)
 
 
