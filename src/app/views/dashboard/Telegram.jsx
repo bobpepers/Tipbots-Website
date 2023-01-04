@@ -233,13 +233,17 @@ const TelegramDashboardView = function (props) {
           telegramUserBalance
             && telegramUserBalance.data
             && Object.keys(telegramUserBalance.data).length > 0
-            && Object.keys(telegramUserBalance.data).sort(tipbotSort).map((key) => (
-              <TipBotWalletComponent
-                key={`tipbotWallet-${telegramUserBalance.data[key].name}`}
-                tipbotWallet={telegramUserBalance.data[key]}
-                chatClient="telegram"
-              />
-            ))
+            && Object.keys(telegramUserBalance.data).sort(tipbotSort).map((key) => {
+              const tipbotInfo = tipbotInfoArray.find((x) => x.name === telegramUserBalance.data[key].name);
+              return (
+                <TipBotWalletComponent
+                  key={`tipbotWallet-${telegramUserBalance.data[key].name}`}
+                  tipbotWallet={telegramUserBalance.data[key]}
+                  chatClient="telegram"
+                  tipbotInfo={tipbotInfo}
+                />
+              )
+            })
         }
       </Grid>
     </div>

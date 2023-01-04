@@ -17,10 +17,10 @@ import {
 import BigNumber from 'bignumber.js';
 import {
   Link,
-  useNavigate,
 } from 'react-router-dom';
 import DepositDialog from './DepositDialog';
 import ServerManagementModal from './ServerManagement';
+import UserSettingsModal from './UserSettings';
 
 const TipBotWalletComponent = function (props) {
   const {
@@ -30,7 +30,6 @@ const TipBotWalletComponent = function (props) {
   } = props;
 
   const images = require.context('../../assets/images/coins', true);
-  const navigate = useNavigate();
 
   return (
     <Grid
@@ -71,9 +70,9 @@ const TipBotWalletComponent = function (props) {
             <Grid
               container
               item
-              xs={12}
-              sm={12}
-              md={12}
+              xs={6}
+              sm={6}
+              md={6}
               alignItems="center"
               justifyContent="center"
               style={{
@@ -83,6 +82,26 @@ const TipBotWalletComponent = function (props) {
               <ServerManagementModal
                 myServers={tipbotWallet.myServers}
                 tipbotInfo={tipbotInfo}
+              />
+            </Grid>
+          )
+        }
+        {
+          tipbotWallet.userSettings && (
+            <Grid
+              container
+              item
+              xs={tipbotWallet.myServers && tipbotWallet.myServers.length > 0 ? 6 : 12}
+              alignItems="center"
+              justifyContent="center"
+              style={{
+                marginTop: '1rem',
+              }}
+            >
+              <UserSettingsModal
+                userSettings={tipbotWallet.userSettings}
+                tipbotInfo={tipbotInfo}
+                chatClient={chatClient}
               />
             </Grid>
           )
@@ -128,38 +147,6 @@ const TipBotWalletComponent = function (props) {
           >
             Transaction History
           </Button>
-        </Grid>
-        <Grid
-          container
-          alignItems="center"
-          justifyContent="center"
-        >
-          <Grid
-            item
-            xs={12}
-            align="center"
-          >
-            {tipbotWallet
-            && tipbotWallet.wallets
-            && tipbotWallet.wallets.map((myWallet) => {
-              const image = images(`./${myWallet.coin.ticker}.png`);
-              return (
-                <Button
-                  className="mt-1"
-                  variant="outlined"
-                  key={`${tipbotWallet.name}-${myWallet.coin.ticker}`}
-                  onClick={() => navigate(`/tipbots/${tipbotWallet.name.toLowerCase()}/coin/${myWallet.coin.ticker}`)}
-                  style={{
-                    marginLeft: '0.2rem',
-                    marginRight: '0.2rem',
-                  }}
-                >
-                  <img alt="" className="coinTickerThumb" src={image} />
-                  {myWallet.coin.ticker}
-                </Button>
-              )
-            })}
-          </Grid>
         </Grid>
         <Grid
           container
