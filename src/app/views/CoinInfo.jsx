@@ -41,17 +41,22 @@ function removeHttp(url) {
   return url.replace(/^https?:\/\//, '');
 }
 
-function RenderCoinInfo(props) {
+function RenderCoinInfo(
+  props,
+) {
   const {
     images,
     coin,
     currencies,
+    tipbotInfo,
   } = props;
   console.log('rendering coin info');
   console.log(coin);
   const image = images(`./${coin.ticker}.png`);
   return (
-    <Grid container>
+    <Grid
+      container
+    >
       <Grid
         item
         xs={12}
@@ -125,6 +130,42 @@ function RenderCoinInfo(props) {
           {coin.coinInfo.description}
         </Typography>
       </Grid>
+      {
+        coin.type === 'token' && (
+          <Grid
+            item
+            xs={12}
+            style={{
+              marginTop: '1rem',
+            }}
+          >
+            <Typography
+              variant="h6"
+              gutterBottom
+              align="center"
+            >
+              { tipbotInfo.name === 'SecretTip' && 'Secret Network Snip20 Token'}
+              { tipbotInfo.name === 'StellarTip' && 'Stellar Asset'}
+            </Typography>
+            <Typography
+              variant="subtitle2"
+              gutterBottom
+              align="center"
+              sx={{ textDecoration: 'underline' }}
+            >
+              Token Id
+            </Typography>
+            <Typography
+              variant="caption"
+              display="block"
+              gutterBottom
+              align="center"
+            >
+              {coin.tokenId}
+            </Typography>
+          </Grid>
+        )
+      }
       <Grid
         container
         item
@@ -345,7 +386,12 @@ function RenderCoinInfo(props) {
 }
 
 RenderCoinInfo.propTypes = {
+  tipbotInfo: PropTypes.shape({
+    name: PropTypes.string.isRequired,
+  }).isRequired,
   coin: PropTypes.shape({
+    type: PropTypes.string.isRequired,
+    tokenId: PropTypes.string.isRequired,
     ticker: PropTypes.string.isRequired,
     updatedAt: PropTypes.string.isRequired,
     price: PropTypes.string.isRequired,
@@ -379,24 +425,24 @@ const CoinInfoView = function (props) {
   const dispatch = useDispatch();
   const { botName, coinTicker } = useParams();
 
-  const [userApiUrl, setUserApiUrl] = useState(tipbotInfoArray.find((x) => x.name.toLowerCase() === botName.toLowerCase()).userApiUrl);
+  const [tipbotInfo, setTipBotInfo] = useState(tipbotInfoArray.find((x) => x.name.toLowerCase() === botName.toLowerCase()));
 
   useEffect(() => {
-    setUserApiUrl(tipbotInfoArray.find((x) => x.name.toLowerCase() === botName.toLowerCase()).userApiUrl);
+    setTipBotInfo(tipbotInfoArray.find((x) => x.name.toLowerCase() === botName.toLowerCase()));
   }, [location.pathname]);
 
   useEffect(() => {
-    if (coinTicker && userApiUrl) {
+    if (coinTicker && tipbotInfo.userApiUrl) {
       dispatch(fetchCoinInfoAction(
-        userApiUrl.toLowerCase(),
+        tipbotInfo.userApiUrl.toLowerCase(),
         coinTicker.toUpperCase(),
       ));
       dispatch(fetchCurrenciesAction(
-        userApiUrl.toLowerCase(),
+        tipbotInfo.userApiUrl.toLowerCase(),
       ))
     }
   }, [
-    userApiUrl,
+    tipbotInfo.userApiUrl,
     coinTicker,
   ]);
 
@@ -442,6 +488,7 @@ const CoinInfoView = function (props) {
             coin={coinInfo.data}
             images={images}
             currencies={currencies.data}
+            tipbotInfo={tipbotInfo}
           />
         )
       }
