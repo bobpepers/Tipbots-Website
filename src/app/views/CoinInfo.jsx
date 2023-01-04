@@ -99,7 +99,7 @@ function RenderCoinInfo(props) {
           align="center"
         >
           <a
-            href={coin.coinInfo.explorer}
+            href={coin.coinInfo.website}
             style={{ textAlign: 'center' }}
             target="_blank"
             rel="noreferrer"
