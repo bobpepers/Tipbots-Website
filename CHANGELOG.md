@@ -2,6 +2,32 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.9](https://github.com/bobpepers/Tipbots-Website/compare/v0.2.8...v0.2.9) (2023-01-04)
+
+
+### Features
+
+* ⚡️ Add tokenId to CoinInfo if type is token ([a949748](https://github.com/bobpepers/Tipbots-Website/commit/a9497489680ea45b9d26f4e6e4046b8fddc2aa60))
+* ✨ User Settings ([718858e](https://github.com/bobpepers/Tipbots-Website/commit/718858e4c0a31db52a272a8ee22af583c5f4e57e))
+
+
+### Bug Fixes
+
+* ✏️ Correct CoinInfo website href ([01a6a17](https://github.com/bobpepers/Tipbots-Website/commit/01a6a17f47c4f9920248fc09df3ad6e95773212c))
+
+### [0.2.9](https://github.com/bobpepers/Tipbots-Website/compare/v0.2.8...v0.2.9) (2023-01-04)
+
+
+### Features
+
+* ⚡️ Add tokenId to CoinInfo if type is token ([a949748](https://github.com/bobpepers/Tipbots-Website/commit/a9497489680ea45b9d26f4e6e4046b8fddc2aa60))
+* ✨ User Settings ([718858e](https://github.com/bobpepers/Tipbots-Website/commit/718858e4c0a31db52a272a8ee22af583c5f4e57e))
+
+
+### Bug Fixes
+
+* ✏️ Correct CoinInfo website href ([01a6a17](https://github.com/bobpepers/Tipbots-Website/commit/01a6a17f47c4f9920248fc09df3ad6e95773212c))
+
 ### [0.2.8](https://github.com/bobpepers/Tipbots-Website/compare/v0.2.7...v0.2.8) (2023-01-03)
 
 
